@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">ProkatProject</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="main">Գլխավոր</string>
+    <string name="topof">Թոփ առաջարկներ</string>
+    <string name="newof">Նոր առաջարկներ</string>
+    <string name="about">Մեր մասին</string>
+    <string name="conditions">Պայմաններ</string>
+    <string name="feedback">Հետադարձ կապ</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="phone">Հեռ.՝ +374 94 77 25 28, +374 99 77 25 28</string>
+    <string name="phone_land_1">Հեռ.՝  </string>
+    <string name="phone_land_2">+374 94 77 25 28</string>
+    <string name="phone_land_3">+374 99 77 25 28</string>
+    <string name="email">Էլ. փոստ՝    </string>
+    <string name="info_prokat_am">info@prokat.am</string>
+    <string name="adress">Հասցե՝ Սարյան 5</string>
+    <string name="namehint">Անուն *</string>
+    <string name="emaihint">Էլ. փոստ *</string>
+    <string name="phonetint">Հեռախոս</string>
+    <string name="submit">Ուղարկել</string>
+    <string name="hintmessage">Հաղորդագրություն *</string>
+    <string name="add_title">Ավելացնել առաջարկ</string>
+    <string name="intro">Այստեղ Դուք կարող եք ավելացնել ցանկացած տեսակի ապրանք վարձով տալու համար, որը կուսումնասիրվի ադմինիստրատորի կողմից և նպատակահարմար լինելու դեպքում կտեղադրվի կայքում: Հիշեցնենք, որ պատվերի դեպքում ապրանքի վարձակալությունից ստացված գումարի որոշակի տոկոսը պահվում է ընկերության կողմից:</string>
+    <string name="goods">Ապրանքներ</string>
+    <string name="transport">Տրանսպորտ</string>
+    <string name="realty">Անշարժ գույք</string>
+    <string name="service">Ծառայություններ</string>
+</resources>
