@@ -20,7 +20,20 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
+                <android.support.v7.widget.SearchView
+
+                    android:id="@+id/search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="4dp"
+                    android:clickable="true" />
+
+            </RelativeLayout>
 
 
         </android.support.v7.widget.Toolbar>
@@ -37,14 +50,8 @@
             android:name="com.realmucho.prokatproject.Fragments.MainFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></fragment>
-    </RelativeLayout>
-    <android.support.v7.widget.SearchView
-        android:id="@+id/search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
-        android:clickable="true"
-        android:layout_gravity="right"
-        android:layout_marginTop="4dp"/>
+    </RelativeLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>

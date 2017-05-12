@@ -36,7 +36,21 @@
         <fragment
             android:name="com.realmucho.prokatproject.Fragments.MainFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></fragment>
+            android:layout_height="match_parent"
+            android:id="@+id/frag"></fragment>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:src="@drawable/add"
+            app:backgroundTint="@color/maincolorblue"
+
+
+            />
     </RelativeLayout>
     <android.support.v7.widget.SearchView
         android:id="@+id/search"

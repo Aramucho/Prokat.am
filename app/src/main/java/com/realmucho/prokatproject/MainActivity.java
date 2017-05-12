@@ -1,5 +1,6 @@
 package com.realmucho.prokatproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,13 +20,19 @@ import android.view.MenuItem;
 import com.realmucho.prokatproject.Fragments.AboutFragment;
 import com.realmucho.prokatproject.Fragments.ConditionsFragment;
 import com.realmucho.prokatproject.Fragments.FeedBackFragment;
+import com.realmucho.prokatproject.Fragments.GoodsFragment;
 import com.realmucho.prokatproject.Fragments.MainFragment;
 import com.realmucho.prokatproject.Fragments.NewOfFragment;
+import com.realmucho.prokatproject.Fragments.RealtyFragment;
+import com.realmucho.prokatproject.Fragments.ServiceFragment;
 import com.realmucho.prokatproject.Fragments.TopOfFragment;
+import com.realmucho.prokatproject.Fragments.TransportFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private SearchView search;
+    private FloatingActionButton add;
+    private Fragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +41,39 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         search = (SearchView) findViewById(R.id.search);
+        add = (FloatingActionButton) findViewById(R.id.fab);
+        fragment = (Fragment)this.getSupportFragmentManager().findFragmentById(R.id.frag);
+        if (fragment instanceof MainFragment){
+            add.setVisibility(View.VISIBLE);
+        }
+        else if(fragment instanceof TopOfFragment){
+            add.setVisibility(View.GONE);
+        }
+        else if(fragment instanceof NewOfFragment){
+            add.setVisibility(View.GONE);
+        }
+        else if(fragment instanceof FeedBackFragment){
+            add.setVisibility(View.GONE);
+        }
+        else if(fragment instanceof ConditionsFragment){
+            add.setVisibility(View.GONE);
+        }
+        else if(fragment instanceof AboutFragment){
+            add.setVisibility(View.GONE);
+        }
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int id=v.getId();
+                Intent intent;
+                switch (id){
+            case R.id.fab:
+                intent=new Intent(MainActivity.this, AddActivity.class);
+                startActivity(intent);
+                break;
+            }
+        }});
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -70,22 +110,27 @@ public class MainActivity extends AppCompatActivity
                 fragment = new MainFragment();
                 search.setVisibility(View.VISIBLE);
                 search.setQuery("",false);
+                add.setVisibility(View.VISIBLE);
+
                 break;
             case R.id.topof:
                 fragment = new TopOfFragment();
                 search.setVisibility(View.VISIBLE);
                 search.setQuery("",false);
+                add.setVisibility(View.GONE);
 
                 break;
             case R.id.newof:
                 fragment = new NewOfFragment();
                 search.setVisibility(View.VISIBLE);
                 search.setQuery("",false);
-
+                add.setVisibility(View.GONE);
                 break;
             case R.id.about:
                 fragment = new AboutFragment();
                 search.setVisibility(View.GONE);
+                add.setVisibility(View.GONE);
+
                 break;
             case R.id.conditions:
                 fragment = new ConditionsFragment();
@@ -99,10 +144,34 @@ public class MainActivity extends AppCompatActivity
         }
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.root, fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.frag, fragment).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        fragment = (Fragment)this.getSupportFragmentManager().findFragmentById(R.id.frag);
+        if (fragment instanceof MainFragment){
+            add.setVisibility(View.VISIBLE);
+        }
+        else if(fragment instanceof TopOfFragment){
+            add.setVisibility(View.GONE);
+        }
+        else if(fragment instanceof NewOfFragment){
+            add.setVisibility(View.GONE);
+        }
+        else if(fragment instanceof FeedBackFragment){
+            add.setVisibility(View.GONE);
+        }
+        else if(fragment instanceof ConditionsFragment){
+            add.setVisibility(View.GONE);
+        }
+        else if(fragment instanceof AboutFragment){
+            add.setVisibility(View.GONE);
+        }
     }
 }
