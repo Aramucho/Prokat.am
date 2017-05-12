@@ -12,13 +12,16 @@
             android:name=".MainActivity"
             android:configChanges="keyboardHidden|screenSize|navigation|orientation"
             android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".AddActivity" />
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddActivity"></activity>
     </application>
 
 </manifest>

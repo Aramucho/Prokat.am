@@ -3,11 +3,29 @@
 
     <item
         is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.3.1_918960d95c2860fa17a8b289dcbdb65ef594977d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.3.1_e9f0197a97c8844f81680167b5a5b2f3be31c934.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="734768030be3cb1dea23c3e0c2b2dfac403f6427">
+        sha1="27cea9d89686a0fa8a0b36de9eabc7b14062f19f">
         <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_0a318f9088b9767a673b10ee66ecb168c98a17e0.jar" />
     </item>
     <item
@@ -18,6 +36,24 @@
         revision="25.0.2"
         sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
         <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.3.1_9e786fc0d70e08eb800fcd7c55cf99b9957ad161.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.3.1_31a46777e61c26169ac14a32af981f2210c29bfe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.3.1_1a77ef0ce73d97b16f228d844bebc4c236115c47.jar" />
     </item>
     <item
         is-multidex="false"
@@ -45,6 +81,15 @@
         revision="25.0.2"
         sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
         <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_b63e249705fd622ca3bdc164686bd257bf85b67c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.3.1_b2835c0800a1fc7c90d8b738f7bcaa38a4fdcf34.jar" />
     </item>
     <item
         is-multidex="false"
@@ -84,66 +129,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.3.1_bd61a701873d8b5f8dc9e56d4f75869ad224d622.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.3.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.3.1_918960d95c2860fa17a8b289dcbdb65ef594977d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.3.1_e9f0197a97c8844f81680167b5a5b2f3be31c934.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.3.1_31a46777e61c26169ac14a32af981f2210c29bfe.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.3.1_1a77ef0ce73d97b16f228d844bebc4c236115c47.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.3.1_b2835c0800a1fc7c90d8b738f7bcaa38a4fdcf34.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
         <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.3.1_f7c0ea3805ae411461e294b5496020594e90b03b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.3.1_bd61a701873d8b5f8dc9e56d4f75869ad224d622.jar" />
     </item>
 
 </items>
