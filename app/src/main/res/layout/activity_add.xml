@@ -30,6 +30,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/add_toolbar"
         app:tabGravity="fill"
+        app:tabBackground="@drawable/tab_checked_color"
+        app:tabIndicatorColor="@color/maincolorwhite"
+
         app:tabMode="fixed"
         android:background="@color/maincolorblue"/>
 

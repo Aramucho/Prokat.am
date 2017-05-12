@@ -110,6 +110,10 @@ public class MainActivity extends AppCompatActivity
                 fragment = new MainFragment();
                 search.setVisibility(View.VISIBLE);
                 search.setQuery("",false);
+                if(!search.isIconified())
+                {
+                    search.setIconified(true);
+                }
                 add.setVisibility(View.VISIBLE);
 
                 break;
@@ -118,13 +122,20 @@ public class MainActivity extends AppCompatActivity
                 search.setVisibility(View.VISIBLE);
                 search.setQuery("",false);
                 add.setVisibility(View.GONE);
-
+                if(!search.isIconified())
+                {
+                    search.setIconified(true);
+                }
                 break;
             case R.id.newof:
                 fragment = new NewOfFragment();
                 search.setVisibility(View.VISIBLE);
                 search.setQuery("",false);
                 add.setVisibility(View.GONE);
+                if(!search.isIconified())
+                {
+                    search.setIconified(true);
+                }
                 break;
             case R.id.about:
                 fragment = new AboutFragment();

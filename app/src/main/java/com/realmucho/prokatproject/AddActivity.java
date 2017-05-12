@@ -33,10 +33,10 @@ public class AddActivity extends AppCompatActivity {
     }
 
     private void setupTabIcons() {
-        tabLayout.getTabAt(0).setIcon(R.drawable.goods_icon);
-        tabLayout.getTabAt(1).setIcon(R.drawable.transport_icon);
-        tabLayout.getTabAt(2).setIcon(R.drawable.realty_icon);
-        tabLayout.getTabAt(3).setIcon(R.drawable.service_icon);
+        tabLayout.getTabAt(0).setIcon(R.drawable.goods_icon_change);
+        tabLayout.getTabAt(1).setIcon(R.drawable.transport_icon_change);
+        tabLayout.getTabAt(2).setIcon(R.drawable.realty_icon_change);
+        tabLayout.getTabAt(3).setIcon(R.drawable.service_icon_change);
 
 
     }
