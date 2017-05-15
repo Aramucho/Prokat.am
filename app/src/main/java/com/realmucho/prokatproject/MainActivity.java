@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.conditions:
                 fragment = new ConditionsFragment();
                 search.setVisibility(View.GONE);
-                add.setVisibility(View.GONE);
+
                 break;
             case R.id.feedback:
                 fragment = new FeedBackFragment();
