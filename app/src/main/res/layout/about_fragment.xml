@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#789889">
+    android:background="@color/maincolorwhite">
 
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/about_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/about"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/about_text"
+        android:layout_margin="5dp"
+        android:scrollbars="vertical">
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_all"
+            android:textColor="#000000"
+            android:padding="10dp" />
+
+    </ScrollView>
+
+</RelativeLayout>
