@@ -42,25 +42,14 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         search = (SearchView) findViewById(R.id.search);
         add = (FloatingActionButton) findViewById(R.id.fab);
-        fragment = (Fragment)this.getSupportFragmentManager().findFragmentById(R.id.frag);
+        fragment = this.getSupportFragmentManager().findFragmentById(R.id.frag);
         if (fragment instanceof MainFragment){
             add.setVisibility(View.VISIBLE);
-        }
-        else if(fragment instanceof TopOfFragment){
+        } else
+        {
             add.setVisibility(View.GONE);
         }
-        else if(fragment instanceof NewOfFragment){
-            add.setVisibility(View.GONE);
-        }
-        else if(fragment instanceof FeedBackFragment){
-            add.setVisibility(View.GONE);
-        }
-        else if(fragment instanceof ConditionsFragment){
-            add.setVisibility(View.GONE);
-        }
-        else if(fragment instanceof AboutFragment){
-            add.setVisibility(View.GONE);
-        }
+
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,9 +81,12 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        }  else {
             super.onBackPressed();
+
         }
+
+
     }
 
 
@@ -167,23 +159,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        fragment = (Fragment)this.getSupportFragmentManager().findFragmentById(R.id.frag);
+        fragment = this.getSupportFragmentManager().findFragmentById(R.id.frag);
         if (fragment instanceof MainFragment){
             add.setVisibility(View.VISIBLE);
         }
-        else if(fragment instanceof TopOfFragment){
-            add.setVisibility(View.GONE);
-        }
-        else if(fragment instanceof NewOfFragment){
-            add.setVisibility(View.GONE);
-        }
-        else if(fragment instanceof FeedBackFragment){
-            add.setVisibility(View.GONE);
-        }
-        else if(fragment instanceof ConditionsFragment){
-            add.setVisibility(View.GONE);
-        }
-        else if(fragment instanceof AboutFragment){
+        else
+        {
             add.setVisibility(View.GONE);
         }
     }
