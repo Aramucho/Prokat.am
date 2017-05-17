@@ -301,7 +301,7 @@
                         android:layout_height="wrap_content"
                         android:background="#55606060"
                         android:text="@string/photo_button"
-                        android:layout_weight="0.15"
+
                         android:layout_marginTop="5dp"/>
 
                     <Button
@@ -310,7 +310,7 @@
                         android:layout_height="wrap_content"
                         android:background="#55606060"
                         android:text="@string/photo_button"
-                        android:layout_weight="0.15"
+
                         android:layout_marginTop="5dp"/>
 
                     <Button
@@ -319,7 +319,7 @@
                         android:layout_height="wrap_content"
                         android:background="#55606060"
                         android:text="@string/photo_button"
-                        android:layout_weight="0.15"
+
                         android:layout_marginTop="5dp"/>
 
 
