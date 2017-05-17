@@ -249,12 +249,11 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/photos_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/time_period_layout"
-                android:orientation="horizontal"
 
                 >
 
@@ -262,70 +261,130 @@
                     android:id="@+id/photos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
-                    android:gravity="center_vertical"
+                    android:gravity="center_horizontal"
                     android:minHeight="40dp"
-                    android:text="Նկարներ\n(800x600px -.jpg)"
+                    android:text="@string/photos_title"
                     android:textColor="#000000"
                     android:textSize="20sp"
-                    />
 
+
+                    />
                 <LinearLayout
-                    android:id="@+id/photo_buttons"
-                    android:layout_width="match_parent"
+                    android:id="@+id/photo_numbers"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_weight="0.4"
+                    android:layout_below="@id/photos"
                     >
 
-                    <Button
-                        android:id="@+id/photo_1"
+                    <TextView
+                        android:id="@+id/number_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="#55606060"
-                        android:text="@string/photo_button"
-                        android:layout_weight="0.15"/>
+                        android:text="@string/number_1"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        />
 
-                    <Button
-                        android:id="@+id/photo_2"
+                    <TextView
+                        android:id="@+id/number_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="#55606060"
-                        android:text="@string/photo_button"
-                        android:layout_weight="0.15"
-                        android:layout_marginTop="5dp"/>
+                        android:text="@string/number_2"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#000000"
+                        android:textSize="20sp"/>
 
-                    <Button
-                        android:id="@+id/photo_3"
+                    <TextView
+                        android:id="@+id/number_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="#55606060"
-                        android:text="@string/photo_button"
+                        android:text="@string/number_3"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#000000"
+                        android:textSize="20sp"/>
 
-                        android:layout_marginTop="5dp"/>
-
-                    <Button
-                        android:id="@+id/photo_4"
+                    <TextView
+                        android:id="@+id/number_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="#55606060"
-                        android:text="@string/photo_button"
-
-                        android:layout_marginTop="5dp"/>
-
-                    <Button
-                        android:id="@+id/photo_5"
+                        android:text="@string/number_4"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#000000"
+                        android:textSize="20sp"/>
+                    <TextView
+                        android:id="@+id/number_5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="#55606060"
-                        android:text="@string/photo_button"
-
-                        android:layout_marginTop="5dp"/>
-
-
+                        android:text="@string/number_5"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#000000"
+                        android:textSize="20sp"/>
                 </LinearLayout>
 
-            </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/photo_buttons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_below="@id/photos"
+                        android:layout_toEndOf="@id/photo_numbers"
+                        android:layout_marginLeft="8dp"
+                        >
+
+                        <Button
+                            android:id="@+id/photo_1"
+                            android:layout_width="40dp"
+                            android:layout_height="24dp"
+                            android:background="#55606060"
+                            android:text="@string/photo_button"
+                            />
+
+                        <Button
+                            android:id="@+id/photo_2"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="#55606060"
+                            android:text="@string/photo_button"
+
+                            android:layout_marginTop="5dp"/>
+
+                        <Button
+                            android:id="@+id/photo_3"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="#55606060"
+                            android:text="@string/photo_button"
+
+                            android:layout_marginTop="5dp"/>
+
+                        <Button
+                            android:id="@+id/photo_4"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="#55606060"
+                            android:text="@string/photo_button"
+
+                            android:layout_marginTop="5dp"/>
+
+                        <Button
+                            android:id="@+id/photo_5"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="#55606060"
+                            android:text="@string/photo_button"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
+
+
+
+
+
+
+
+
+            </RelativeLayout>
 
         </RelativeLayout>
 
