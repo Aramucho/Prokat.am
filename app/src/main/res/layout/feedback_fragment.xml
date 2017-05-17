@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#ffffff"
     android:padding="10dp">
 
@@ -16,12 +16,12 @@
         android:textSize="30sp" />
 
     <LinearLayout
+        android:id="@+id/feedback_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/feedbacktitle"
         android:layout_marginTop="15dp"
-        android:orientation="vertical"
-        android:id="@+id/feedback_info">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
@@ -58,61 +58,78 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="@string/adress"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/location_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/adress"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/map_watch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/maincolorwhite"
+                android:clickable="true"
+                android:src="@drawable/location_icon"
+                android:layout_marginLeft="7dp"/>
+        </LinearLayout>
 
         <EditText
             android:id="@+id/name_feed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:background="@drawable/edit_text_drawable"
+            android:ellipsize="end"
             android:hint="@string/namehint"
+            android:lines="1"
+            android:minHeight="40dp"
             android:paddingLeft="10dp"
             android:textColor="#000000"
-            android:textColorHint="#e35c5a5a"
-            android:background="@drawable/edit_text_drawable"
-            android:minHeight="40dp"
-            android:lines="1"
-            android:ellipsize="end"/>
+            android:textColorHint="#e35c5a5a" />
 
         <EditText
             android:id="@+id/email_feed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text_drawable"
+            android:ellipsize="end"
             android:hint="@string/emaihint"
+            android:lines="1"
+            android:minHeight="40dp"
             android:paddingLeft="10dp"
             android:textColor="#000000"
-            android:textColorHint="#e35c5a5a"
-            android:minHeight="40dp"
-            android:background="@drawable/edit_text_drawable"
-            android:lines="1"
-            android:ellipsize="end"/>
+            android:textColorHint="#e35c5a5a" />
 
         <EditText
             android:id="@+id/phone_feed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="@string/phonetint"
-            android:textColor="#000000"
-            android:textColorHint="#e35c5a5a"
-            android:minHeight="40dp"
             android:background="@drawable/edit_text_drawable"
-            android:lines="1"
-            android:paddingLeft="10dp"
             android:ellipsize="end"
+            android:hint="@string/phonetint"
             android:inputType="number"
-            />
+            android:lines="1"
+            android:minHeight="40dp"
+            android:paddingLeft="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#e35c5a5a" />
     </LinearLayout>
 
     <Button
+        android:id="@+id/submitbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -120,54 +137,46 @@
         android:layout_marginBottom="10dp"
         android:background="@color/maincolorblue"
         android:text="@string/submit"
-        android:textAllCaps="false"
-        android:id="@+id/submitbutton"/>
+        android:textAllCaps="false" />
+
     <EditText
+        android:id="@+id/message"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/message"
         android:layout_above="@id/submitbutton"
         android:layout_below="@id/feedback_info"
+        android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
-        android:paddingLeft="10dp"
-        android:hint="@string/hintmessage"
-        android:textColorHint="#e35c5a5a"
         android:background="@drawable/edit_text_drawable"
-        android:layout_marginBottom="10dp"
         android:gravity="top"
-        android:textColor="#000000"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/submitbutton"
-        android:layout_alignParentBottom="true"
-        android:text="Map"
-        android:textAllCaps="true"
-        android:background="@color/maincolorblue"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="10dp"
-        android:clickable="true"
-        android:id="@+id/map_watch"/>
+        android:hint="@string/hintmessage"
+        android:paddingLeft="10dp"
+        android:textColor="#000000"
+        android:textColorHint="#e35c5a5a" />
+
+
     <android.support.design.widget.CoordinatorLayout
 
         android:id="@+id/main_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
-        <android.support.v4.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="500dp"
+        android:layout_height="match_parent">
 
+        <android.support.v4.widget.NestedScrollView
             android:id="@+id/bottom_sheet"
-            android:clipToPadding="true"
-            android:background="#00ff0000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
 
-
-            <com.google.android.gms.maps.MapView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/map_view"></com.google.android.gms.maps.MapView>
+                android:layout_height="match_parent">
+
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/map_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1000dp" />
+            </RelativeLayout>
+
         </android.support.v4.widget.NestedScrollView>
     </android.support.design.widget.CoordinatorLayout>
 

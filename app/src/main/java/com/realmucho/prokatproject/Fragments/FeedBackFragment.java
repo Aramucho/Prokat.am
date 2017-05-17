@@ -5,22 +5,17 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.ImageButton;
 
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -30,7 +25,8 @@ import com.realmucho.prokatproject.R;
 public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
     private BottomSheetBehavior bottomSheetBehavior;
-    private Button mapwatch, submit;
+    private Button  submit;
+    private ImageButton mapwatch;
     private MapView mMapView;
     private GoogleMap googleMap;
 
@@ -49,8 +45,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         }
 
 
-
-        mapwatch = (Button) view.findViewById(R.id.map_watch);
+        mapwatch = (ImageButton) view.findViewById(R.id.map_watch);
         submit = (Button) view.findViewById(R.id.submitbutton);
         mapwatch.setOnClickListener(this);
         submit.setOnClickListener(this);
@@ -85,10 +80,10 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
                 googleMap.setMyLocationEnabled(true);
 
-                LatLng sydney = new LatLng(-34, 151);
-                googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker Title").snippet("Marker Description"));
+                LatLng location = new LatLng(40.18659663201023, 44.5089211251659);
+                googleMap.addMarker(new MarkerOptions().position(location).title("Marker Title").snippet("Marker Description"));
 
-                CameraPosition cameraPosition = new CameraPosition.Builder().target(sydney).zoom(12).build();
+                CameraPosition cameraPosition = new CameraPosition.Builder().target(location).zoom(17).build();
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
             }
         });
@@ -114,6 +109,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
 
     }
+
     @Override
     public void onResume() {
         super.onResume();
