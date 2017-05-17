@@ -51,10 +51,6 @@
     <string name="day">Օր</string>
     <string name="month">Ամիս</string>
     <string name="photo_button">...</string>
-    <string name="photos_title">Նկարներ(800x600px -.jpg)</string>
-    <string name="number_1">1.</string>
-    <string name="number_2">2.</string>
-    <string name="number_5">5.</string>
-    <string name="number_3">3.</string>
-    <string name="number_4">4.</string>
+    <string name="transport_mark">Մակնիշ</string>
+    <string name="transport_model">Մոդել</string>
 </resources>
