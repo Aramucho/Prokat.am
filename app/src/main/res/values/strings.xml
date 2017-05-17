@@ -13,6 +13,7 @@
     <string name="feedback">Հետադարձ կապ</string>
 
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="spinner_default">---</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="phone">Հեռ.՝ +374 94 77 25 28, +374 99 77 25 28</string>
     <string name="phone_land_1">Հեռ.՝  </string>
@@ -40,4 +41,14 @@
 \n\t«Քանի-որ կենցաղում գոյություն ունեն այնպիսի ապրանքներ, որոնք հաճախ չեն օգտագործվում, իսկ անհրաժեշտության դեպքում էլ թանկ են գնելու համար, մենք կարծեցինք, որ շատ-շատերն ունեն «Prokat.am»-ի կարիքը: Իսկապես, ինչու՞ գնել, եթե կարելի է վարձել»: (Ընկերության հիմնադիրներ):</string>
     <string name="service">Ծառայություններ</string>
     <string name="conditions_all">- Վարձակալի և վարձատուի հարաբերությունները կարգավորվում են պայմանագրով\t\n - Վարձակալը պատվերը տալիս է նախապես` 2 օր առաջ\t\n - Գործարքը իրականացվում է 50% կանխավճարով\t\n - Ժամկետը երկարացնելու համար անհրաժեշտ է նախապես վճարել ավելացված օրերի վարձավճարն ամբողջությամբ\t\n - Անհրաժեշտ փաստաթղթեր` անձը հաստատող փաստաթուղթ և վարորդական իրավունք (մեքենայի վարձակալության դեպքում)\t\n - Պայմանագրին ավելի մանրամասն ծանոթանալու համար սեղմեք\n</string>
+    <string name="section">Բաժին</string>
+    <string name="subsection">Ենթաբաժին</string>
+    <string name="city">Քաղաք</string>
+    <string name="description">Բնութագիր</string>
+    <string name="price">Գին</string>
+    <string name="time_period">Ժամանակ</string>
+    <string name="hour">Ժամ</string>
+    <string name="day">Օր</string>
+    <string name="month">Ամիս</string>
+    <string name="photo_button">...</string>
 </resources>
