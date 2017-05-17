@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#ffffff"
     android:padding="10dp">
 
@@ -135,4 +136,39 @@
         android:layout_marginBottom="10dp"
         android:gravity="top"
         android:textColor="#000000"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/submitbutton"
+        android:layout_alignParentBottom="true"
+        android:text="Map"
+        android:textAllCaps="true"
+        android:background="@color/maincolorblue"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:id="@+id/map_watch"/>
+    <android.support.design.widget.CoordinatorLayout
+
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+
+            android:id="@+id/bottom_sheet"
+            android:clipToPadding="true"
+            android:background="#00ff0000"
+            app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+
+            <com.google.android.gms.maps.MapView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/map_view"></com.google.android.gms.maps.MapView>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.design.widget.CoordinatorLayout>
+
 </RelativeLayout>
