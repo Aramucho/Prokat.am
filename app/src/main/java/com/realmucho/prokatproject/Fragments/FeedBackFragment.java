@@ -102,7 +102,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
                 LatLng location = new LatLng(40.18659663201023, 44.5089211251659);
 
-                googleMap.addMarker(new MarkerOptions().position(location).snippet(getString(R.string.lcoationadress)));
+                googleMap.addMarker(new MarkerOptions().position(location));
 
                 CameraPosition cameraPosition = new CameraPosition.Builder().target(location).zoom(17).build();
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
