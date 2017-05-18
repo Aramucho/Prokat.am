@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         search = (SearchView) findViewById(R.id.search);
         add = (FloatingActionButton) findViewById(R.id.fab);
         fragment = this.getSupportFragmentManager().findFragmentById(R.id.frag);

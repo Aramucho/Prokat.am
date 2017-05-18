@@ -55,6 +55,7 @@
                 android:text="@string/info_prokat_am"
                 android:textColor="@color/maincolorblue"
                 android:textSize="18sp"
+                android:id="@+id/link"
                 android:textStyle="bold" />
         </LinearLayout>
 
