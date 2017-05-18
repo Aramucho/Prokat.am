@@ -53,5 +53,7 @@
     <string name="photo_button">...</string>
     <string name="transport_mark">Մակնիշ</string>
     <string name="transport_model">Մոդել</string>
-    <string name="lcoationadress">5 Martiros Saryan street</string>
+    <string name="photos_title">Նկարներ (800x600px -.jpg)</string>
+    <string name="choose_photo">Ընտրել նկարը</string>
+    <string name="photo_not_choose">Նկարը ընտրված չէ</string>
 </resources>
