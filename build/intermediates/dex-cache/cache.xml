@@ -16,8 +16,17 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="09f7d7cb8cd1f2cf655f87b45177980973efc062">
+        sha1="23693dd9d6b328db72cf662686de01f85937e3c1">
         <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_0a318f9088b9767a673b10ee66ecb168c98a17e0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.3.1_9e786fc0d70e08eb800fcd7c55cf99b9957ad161.jar" />
     </item>
     <item
         is-multidex="false"
@@ -48,129 +57,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\7.5.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-appinvite-7.5.0_990da9bc62bc566c9bc90cb802dda243af99a549.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.3.1_6c91e8cbb070f417293de855d74dce1fec6ec1f8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.5.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-safetynet-7.5.0_ce0e5de26ffbeb22327cebb1bf86f7c2ee14342d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.5.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a78183f30e769a98ab4820794f597763088d3065">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-7.5.0_b7058bc515f6193a52c4f616a44c5bf491410c50.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.5.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-cast-7.5.0_5c2d35920c22d6ee9fb6910e85ba5b9874e54ef1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.5.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-games-7.5.0_e8d5b7b90981990c27fd0c87f5020748bde1516f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.5.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-plus-7.5.0_cc6e30cf26975d3ae47312580da9edd2fa251f76.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.3.1_31a46777e61c26169ac14a32af981f2210c29bfe.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.5.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-wearable-7.5.0_947b4a274591da285dde025c3fd17320dee1b2a8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.3.1_1a77ef0ce73d97b16f228d844bebc4c236115c47.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.5.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-analytics-7.5.0_f89a46b827bc881365d2d687de5d8b55e6d4df87.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-mediarouter-v7-22.0.0_9829e454a25cba1122d1dfdb77df925749b7685c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\transition\25.3.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.3.1_9e786fc0d70e08eb800fcd7c55cf99b9957ad161.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.5.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="8d736fefa22d896e84a268354b3ed48a42663150">
         <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-gcm-7.5.0_56990d7ff71362af028f642ab620aa5770f1b471.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\7.5.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-appinvite-7.5.0_990da9bc62bc566c9bc90cb802dda243af99a549.jar" />
     </item>
     <item
         is-multidex="false"
@@ -192,6 +93,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.3.1_6c91e8cbb070f417293de855d74dce1fec6ec1f8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.5.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-safetynet-7.5.0_ce0e5de26ffbeb22327cebb1bf86f7c2ee14342d.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -207,6 +126,15 @@
         revision="25.0.2"
         sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
         <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_b63e249705fd622ca3bdc164686bd257bf85b67c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.5.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-7.5.0_b7058bc515f6193a52c4f616a44c5bf491410c50.jar" />
     </item>
     <item
         is-multidex="false"
@@ -237,6 +165,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.5.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-cast-7.5.0_5c2d35920c22d6ee9fb6910e85ba5b9874e54ef1.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.5.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -250,7 +187,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="a222cfb8ff3d808cb60a6a17a9ecb5ced8048d73">
+        sha1="559c97671b24e3359457e7d72acd7db435a2002a">
         <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\instant-run_339e5811769113aaf7f9e21834c8b0bfd41d0cb3.jar" />
     </item>
     <item
@@ -270,6 +207,15 @@
         revision="25.0.2"
         sha1="95519720620b553f63afc789beba9ad582807f7c">
         <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.3.1_918960d95c2860fa17a8b289dcbdb65ef594977d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.5.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-games-7.5.0_e8d5b7b90981990c27fd0c87f5020748bde1516f.jar" />
     </item>
     <item
         is-multidex="false"
@@ -300,6 +246,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.5.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-plus-7.5.0_cc6e30cf26975d3ae47312580da9edd2fa251f76.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.5.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -309,12 +264,57 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.3.1_31a46777e61c26169ac14a32af981f2210c29bfe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.5.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-wearable-7.5.0_947b4a274591da285dde025c3fd17320dee1b2a8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\design\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.3.1_1a77ef0ce73d97b16f228d844bebc4c236115c47.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.5.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="d405025c600055237c171a0bbabaa49d69696573">
         <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-identity-7.5.0_70f2c345b08701380ca1232b2ced18cd301c9eb5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.5.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-analytics-7.5.0_f89a46b827bc881365d2d687de5d8b55e6d4df87.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
+        <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\com.android.support-mediarouter-v7-22.0.0_9829e454a25cba1122d1dfdb77df925749b7685c.jar" />
     </item>
     <item
         is-multidex="false"
