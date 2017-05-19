@@ -1,82 +1,775 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/maincolorwhite">
-
-
-<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/maincolorwhite"
+    android:padding="10dp">
 
-    <RelativeLayout
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/section_layout"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/section"
+            <LinearLayout
+                android:id="@+id/transport_section_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/transport_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:gravity="center_vertical"
+                    android:minHeight="40dp"
+                    android:text="@string/section"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/transport_section_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:minHeight="40dp"
+
+
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transport_mark_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/transport_section_layout"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/transport_mark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:gravity="center_vertical"
+                    android:minHeight="40dp"
+                    android:text="@string/transport_mark"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/transport_mark_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@drawable/edit_text_drawable"
+                    android:minHeight="43dp"
+                    android:textColor="#000000" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transport_model_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/transport_mark_layout"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/transport_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:gravity="center_vertical"
+                    android:text="@string/transport_model"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/transport_model_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@drawable/edit_text_drawable"
+                    android:minHeight="43dp"
+                    android:textColor="#000000" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transport_engine_type_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/transport_model_layout"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/transport_engine_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:gravity="center_vertical"
+                    android:text="@string/engine_type"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/transport_fuel_type_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                     />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transport_engine_volume_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/transport_engine_type_layout"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/transport_engine_volume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:layout_weight="0.6"
+                    android:minHeight="50dp"
+                    android:text="@string/engine_volume"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/transport_engine_volume_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:gravity="fill"
+                    android:background="@drawable/edit_text_drawable"
+                    android:inputType="number"
+                    android:minHeight="43dp"
+                    android:textColor="#000000" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transport_box_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/transport_engine_volume_layout"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/transport_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:gravity="center_vertical"
+                    android:text="@string/box"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/transport_box_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                     />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transport_year_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/transport_box_layout"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/transport_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="@string/year"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/transport_year_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@drawable/edit_text_drawable"
+                    android:inputType="number"
+                    android:minHeight="43dp"
+                    android:textColor="#000000" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transport_price_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/transport_year_layout"
+                android:orientation="horizontal"
+android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/transport_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:gravity="center_vertical"
+                    android:text="@string/price"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/transport_price_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@drawable/edit_text_drawable"
+                    android:minHeight="43dp"
+                    android:textColor="#000000" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transport_time_period_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/transport_price_layout"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/transport_time_period"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:gravity="center_vertical"
+                    android:text="@string/time_period"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/transport_hour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/hour"
+                        android:textColor="#000000"
+                        android:theme="@style/RadioButtonTheme" />
+
+                    <RadioButton
+                        android:id="@+id/transport_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/day"
+                        android:textColor="#000000"
+                        android:theme="@style/RadioButtonTheme" />
+
+                    <RadioButton
+                        android:id="@+id/transport_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/month"
+                        android:textColor="#000000"
+                        android:theme="@style/RadioButtonTheme" />
+
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transport_description_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/transport_time_period_layout"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/transport_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="@string/description"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/transport_description_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@drawable/edit_text_drawable"
+                    android:minLines="4"
+                    android:textColor="#000000" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/transport_photos_title_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.6"
-                android:gravity="center_vertical"
-                android:minHeight="40dp"
-                android:text="@string/section"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:layout_below="@id/transport_description_layout"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal">
 
-            <Spinner
-                android:id="@+id/section_spinner"
+                <TextView
+                    android:id="@+id/transport_photos_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/photos_title"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/transport_choose_photo_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:minHeight="40dp"
+                android:layout_below="@id/transport_photos_title_layout"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/transport_photos_name_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="9dp"
+                    android:text="1"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/transport_choose_button_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toEndOf="@id/transport_photos_name_1"
+                    android:src="@drawable/add"
+                    app:fabSize="mini"
+
+                    />
+
+                <!--<android.support.design.widget.CoordinatorLayout-->
+                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                <!--xmlns:tools="http://schemas.android.com/tools"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:id="@+id/choose_button_1"-->
+                <!--android:layout_toEndOf="@id/photos_name_1"-->
+                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
+
+                <!--<android.support.design.widget.FloatingActionButton-->
+
+                <!--app:backgroundTint="@color/maincolorblue"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="bottom"-->
+                <!--android:clickable="true"-->
+                <!--app:fabSize="mini"-->
+                <!--android:src="@drawable/add"/>-->
+
+                <!--</android.support.design.widget.CoordinatorLayout>-->
+
+                <TextView
+                    android:id="@+id/transport_choose_photos_name_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_toEndOf="@id/transport_choose_button_1"
+                    android:text="@string/photo_not_choose"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
 
 
-                />
+            </RelativeLayout>
 
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/mark_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/section_layout"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/transport_mark"
+            <RelativeLayout
+                android:id="@+id/transport_choose_photo_layout_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.6"
-                android:gravity="center_vertical"
-                android:minHeight="40dp"
-                android:text="@string/transport_model"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:layout_below="@id/transport_choose_photo_layout"
+                android:layout_marginTop="10dp">
 
-            <EditText
-                android:id="@+id/transport_mark_text"
+                <TextView
+                    android:id="@+id/transport_photos_name_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="9dp"
+                    android:text="2"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/transport_choose_button_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toEndOf="@id/transport_photos_name_2"
+                    android:src="@drawable/add"
+                    app:fabSize="mini" />
+
+                <!--<android.support.design.widget.CoordinatorLayout-->
+                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                <!--xmlns:tools="http://schemas.android.com/tools"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:id="@+id/choose_button_2"-->
+                <!--android:layout_toEndOf="@id/photos_name_2"-->
+                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
+
+                <!--<android.support.design.widget.FloatingActionButton-->
+
+                <!--app:backgroundTint="@color/maincolorblue"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="bottom"-->
+                <!--android:clickable="true"-->
+                <!--app:fabSize="mini"-->
+                <!--android:src="@drawable/add"/>-->
+
+                <!--</android.support.design.widget.CoordinatorLayout>-->
+
+                <TextView
+                    android:id="@+id/transport_choose_photos_name_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_toEndOf="@id/transport_choose_button_2"
+                    android:text="@string/photo_not_choose"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/transport_choose_photo_layout_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:minHeight="40dp"
-                android:background="@drawable/edit_text_drawable"
-                android:textColor="#000000"/>
-        </LinearLayout>
+                android:layout_below="@id/transport_choose_photo_layout_2"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/transport_photos_name_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="9dp"
+                    android:text="3"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/transport_choose_button_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toEndOf="@id/transport_photos_name_3"
+                    android:src="@drawable/add"
+                    app:fabSize="mini" />
+
+                <!--<android.support.design.widget.CoordinatorLayout-->
+                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                <!--xmlns:tools="http://schemas.android.com/tools"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:id="@+id/choose_button_3"-->
+                <!--android:layout_toEndOf="@id/photos_name_3"-->
+                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
+
+                <!--<android.support.design.widget.FloatingActionButton-->
+
+                <!--app:backgroundTint="@color/maincolorblue"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="bottom"-->
+                <!--android:clickable="true"-->
+                <!--app:fabSize="mini"-->
+                <!--android:src="@drawable/add"/>-->
+
+                <!--</android.support.design.widget.CoordinatorLayout>-->
+
+                <TextView
+                    android:id="@+id/transport_choose_photos_name_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_toEndOf="@id/transport_choose_button_3"
+                    android:text="@string/photo_not_choose"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
 
 
+            </RelativeLayout>
 
-    </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/transport_choose_photo_layout_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/transport_choose_photo_layout_3"
+                android:layout_marginTop="10dp">
 
-</ScrollView>
+                <TextView
+                    android:id="@+id/transport_photos_name_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="9dp"
+                    android:text="4"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/transport_choose_button_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toEndOf="@id/transport_photos_name_4"
+                    android:src="@drawable/add"
+                    app:fabSize="mini" />
+
+                <!--<android.support.design.widget.CoordinatorLayout-->
+                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                <!--xmlns:tools="http://schemas.android.com/tools"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:id="@+id/choose_button_4"-->
+                <!--android:layout_toEndOf="@id/photos_name_4"-->
+                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
+
+                <!--<android.support.design.widget.FloatingActionButton-->
+
+                <!--app:backgroundTint="@color/maincolorblue"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="bottom"-->
+                <!--android:clickable="true"-->
+                <!--app:fabSize="mini"-->
+                <!--android:src="@drawable/add"/>-->
+
+                <!--</android.support.design.widget.CoordinatorLayout>-->
+
+                <TextView
+                    android:id="@+id/transport_choose_photos_name_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_toEndOf="@id/transport_choose_button_4"
+                    android:text="@string/photo_not_choose"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/transport_choose_photo_layout_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/transport_choose_photo_layout_4"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/transport_photos_name_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="9dp"
+                    android:text="5"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/transport_choose_button_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toEndOf="@id/transport_photos_name_5"
+                    android:src="@drawable/add"
+                    app:fabSize="mini" />
+
+                <!--<android.support.design.widget.CoordinatorLayout-->
+                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                <!--xmlns:tools="http://schemas.android.com/tools"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:id="@+id/choose_button_5"-->
+                <!--android:layout_toEndOf="@id/photos_name_5"-->
+                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
+
+                <!--<android.support.design.widget.FloatingActionButton-->
+
+                <!--app:backgroundTint="@color/maincolorblue"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="bottom"-->
+                <!--android:clickable="true"-->
+                <!--app:fabSize="mini"-->
+                <!--android:src="@drawable/add"/>-->
+
+                <!--</android.support.design.widget.CoordinatorLayout>-->
+
+                <TextView
+                    android:id="@+id/transport_choose_photos_name_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_toEndOf="@id/transport_choose_button_5"
+                    android:text="@string/photo_not_choose"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/transport_contacts_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/transport_choose_photo_layout_5"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/transport_contacts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:minHeight="40dp"
+                    android:text="@string/contacts"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:id="@+id/transport_contacts_edittext_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/transport_contacts"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/transport_contacts_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_text_drawable"
+                        android:hint="@string/namehint"
+                        android:minHeight="40dp"
+                        android:textColor="#000000"
+                        android:textColorHint="@color/hintcolor"
+                        android:paddingLeft="10dp"/>
+
+                    <EditText
+                        android:id="@+id/transport_contacts_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/edit_text_drawable"
+                        android:hint="@string/emaihint"
+                        android:minHeight="40dp"
+                        android:textColor="#000000"
+                        android:textColorHint="@color/hintcolor"
+                        android:paddingLeft="10dp"/>
+
+                    <EditText
+                        android:id="@+id/transport_contacts_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/edit_text_drawable"
+                        android:hint="@string/phonehint"
+                        android:minHeight="40dp"
+                        android:textColor="#000000"
+                        android:textColorHint="@color/hintcolor"
+                        android:paddingLeft="10dp"/>
+
+                    <EditText
+                        android:id="@+id/transport_contacts_notes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/edit_text_drawable"
+                        android:gravity="top"
+                        android:hint="@string/noteshint"
+                        android:minLines="4"
+                        android:textColor="#000000"
+                        android:textColorHint="@color/hintcolor"
+                        android:paddingLeft="10dp"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/transport_add_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/transport_contacts_edittext_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/maincolorblue"
+                    android:text="@string/add_button"
+                    android:textAllCaps="false"
+                    />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 
 </RelativeLayout>

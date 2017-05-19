@@ -1,7 +1,632 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#149541">
+    android:background="@color/maincolorwhite"
+    android:padding="10dp">
 
-</LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/service_section_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/service_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:gravity="center_vertical"
+                    android:minHeight="40dp"
+                    android:text="@string/section"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/service_section_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:minHeight="40dp"
+
+
+                    />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/service_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/service_section_layout"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/service_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:gravity="center_vertical"
+                    android:minHeight="40dp"
+                    android:text="@string/name"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/service_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@drawable/edit_text_drawable"
+                    android:minHeight="43dp"
+                    android:textColor="#000000" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/service_price_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/service_name_layout"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/service_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:gravity="center_vertical"
+                    android:minHeight="40dp"
+                    android:text="@string/price"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/service_price_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@drawable/edit_text_drawable"
+                    android:minHeight="43dp"
+                    android:textColor="#000000" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/service_description_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/service_price_layout"
+                android:orientation="horizontal"
+android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/service_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text="@string/description"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/service_description_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@drawable/edit_text_drawable"
+                    android:minLines="4"
+                    android:textColor="#000000" />
+
+
+            </LinearLayout>
+
+
+            <!--<LinearLayout-->
+            <!--android:id="@+id/time_period_layout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_below="@id/price_layout"-->
+            <!--android:orientation="horizontal"-->
+
+            <!--&gt;-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/time_period"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="0.6"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:minHeight="40dp"-->
+            <!--android:text="@string/time_period"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="20sp" />-->
+
+            <!--<RadioGroup-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<RadioButton-->
+            <!--android:id="@+id/hour"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:checked="true"-->
+            <!--android:text="@string/hour"-->
+            <!--android:textColor="#000000"-->
+            <!--android:theme="@style/RadioButtonTheme" />-->
+
+            <!--<RadioButton-->
+            <!--android:id="@+id/day"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/day"-->
+            <!--android:textColor="#000000"-->
+            <!--android:theme="@style/RadioButtonTheme" />-->
+
+            <!--<RadioButton-->
+            <!--android:id="@+id/month"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/month"-->
+            <!--android:textColor="#000000"-->
+            <!--android:theme="@style/RadioButtonTheme" />-->
+
+            <!--</RadioGroup>-->
+
+
+            <!--</LinearLayout>-->
+
+            <LinearLayout
+                android:id="@+id/service_photos_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/service_description_layout"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/service_photos_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/photos_title"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/service_choose_photo_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/service_photos_title_layout"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/service_photos_name_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="9dp"
+                    android:text="1"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/service_choose_button_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toEndOf="@id/service_photos_name_1"
+                    android:src="@drawable/add"
+                    app:fabSize="mini"
+
+                    />
+
+                <!--<android.support.design.widget.CoordinatorLayout-->
+                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                <!--xmlns:tools="http://schemas.android.com/tools"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:id="@+id/choose_button_1"-->
+                <!--android:layout_toEndOf="@id/photos_name_1"-->
+                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
+
+                <!--<android.support.design.widget.FloatingActionButton-->
+
+                <!--app:backgroundTint="@color/maincolorblue"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="bottom"-->
+                <!--android:clickable="true"-->
+                <!--app:fabSize="mini"-->
+                <!--android:src="@drawable/add"/>-->
+
+                <!--</android.support.design.widget.CoordinatorLayout>-->
+
+                <TextView
+                    android:id="@+id/service_choose_photos_name_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_toEndOf="@id/service_choose_button_1"
+                    android:text="@string/photo_not_choose"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/service_choose_photo_layout_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/service_choose_photo_layout"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/service_photos_name_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="9dp"
+                    android:text="2"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/service_choose_button_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toEndOf="@id/service_photos_name_2"
+                    android:src="@drawable/add"
+                    app:fabSize="mini" />
+
+                <!--<android.support.design.widget.CoordinatorLayout-->
+                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                <!--xmlns:tools="http://schemas.android.com/tools"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:id="@+id/choose_button_2"-->
+                <!--android:layout_toEndOf="@id/photos_name_2"-->
+                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
+
+                <!--<android.support.design.widget.FloatingActionButton-->
+
+                <!--app:backgroundTint="@color/maincolorblue"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="bottom"-->
+                <!--android:clickable="true"-->
+                <!--app:fabSize="mini"-->
+                <!--android:src="@drawable/add"/>-->
+
+                <!--</android.support.design.widget.CoordinatorLayout>-->
+
+                <TextView
+                    android:id="@+id/service_choose_photos_name_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_toEndOf="@id/service_choose_button_2"
+                    android:text="@string/photo_not_choose"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/service_choose_photo_layout_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/service_choose_photo_layout_2"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/service_photos_name_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="9dp"
+                    android:text="3"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/service_choose_button_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toEndOf="@id/service_photos_name_3"
+                    android:src="@drawable/add"
+                    app:fabSize="mini" />
+
+                <!--<android.support.design.widget.CoordinatorLayout-->
+                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                <!--xmlns:tools="http://schemas.android.com/tools"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:id="@+id/choose_button_3"-->
+                <!--android:layout_toEndOf="@id/photos_name_3"-->
+                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
+
+                <!--<android.support.design.widget.FloatingActionButton-->
+
+                <!--app:backgroundTint="@color/maincolorblue"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="bottom"-->
+                <!--android:clickable="true"-->
+                <!--app:fabSize="mini"-->
+                <!--android:src="@drawable/add"/>-->
+
+                <!--</android.support.design.widget.CoordinatorLayout>-->
+
+                <TextView
+                    android:id="@+id/service_choose_photos_name_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_toEndOf="@id/service_choose_button_3"
+                    android:text="@string/photo_not_choose"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/service_choose_photo_layout_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/service_choose_photo_layout_3"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/service_photos_name_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="9dp"
+                    android:text="4"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/service_choose_button_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toEndOf="@id/service_photos_name_4"
+                    android:src="@drawable/add"
+                    app:fabSize="mini" />
+
+                <!--<android.support.design.widget.CoordinatorLayout-->
+                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                <!--xmlns:tools="http://schemas.android.com/tools"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:id="@+id/choose_button_4"-->
+                <!--android:layout_toEndOf="@id/photos_name_4"-->
+                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
+
+                <!--<android.support.design.widget.FloatingActionButton-->
+
+                <!--app:backgroundTint="@color/maincolorblue"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="bottom"-->
+                <!--android:clickable="true"-->
+                <!--app:fabSize="mini"-->
+                <!--android:src="@drawable/add"/>-->
+
+                <!--</android.support.design.widget.CoordinatorLayout>-->
+
+                <TextView
+                    android:id="@+id/service_choose_photos_name_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_toEndOf="@id/service_choose_button_4"
+                    android:text="@string/photo_not_choose"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/service_choose_photo_layout_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/service_choose_photo_layout_4"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/service_photos_name_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="9dp"
+                    android:text="5"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/service_choose_button_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toEndOf="@id/service_photos_name_5"
+                    android:src="@drawable/add"
+                    app:fabSize="mini" />
+
+                <!--<android.support.design.widget.CoordinatorLayout-->
+                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                <!--xmlns:tools="http://schemas.android.com/tools"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="30dp"-->
+                <!--android:id="@+id/choose_button_5"-->
+                <!--android:layout_toEndOf="@id/photos_name_5"-->
+                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
+
+                <!--<android.support.design.widget.FloatingActionButton-->
+
+                <!--app:backgroundTint="@color/maincolorblue"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="bottom"-->
+                <!--android:clickable="true"-->
+                <!--app:fabSize="mini"-->
+                <!--android:src="@drawable/add"/>-->
+
+                <!--</android.support.design.widget.CoordinatorLayout>-->
+
+                <TextView
+                    android:id="@+id/service_choose_photos_name_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_toEndOf="@id/service_choose_button_5"
+                    android:text="@string/photo_not_choose"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/service_contacts_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/service_choose_photo_layout_5"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/service_contacts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:minHeight="40dp"
+                    android:text="@string/contacts"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:id="@+id/service_contacts_edittext_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/service_contacts"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <EditText
+                        android:id="@+id/service_contacts_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_text_drawable"
+                        android:hint="@string/namehint"
+                        android:minHeight="40dp"
+                        android:textColor="#000000"
+                        android:textColorHint="@color/hintcolor"
+                        android:paddingLeft="10dp"/>
+
+                    <EditText
+                        android:id="@+id/service_contacts_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/edit_text_drawable"
+                        android:hint="@string/emaihint"
+                        android:minHeight="40dp"
+                        android:textColor="#000000"
+                        android:textColorHint="@color/hintcolor"
+                        android:paddingLeft="10dp"/>
+
+                    <EditText
+                        android:id="@+id/service_contacts_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/edit_text_drawable"
+                        android:hint="@string/phonehint"
+                        android:inputType="number"
+                        android:minHeight="40dp"
+                        android:textColor="#000000"
+                        android:textColorHint="@color/hintcolor"
+                        android:paddingLeft="10dp"/>
+
+                    <EditText
+                        android:id="@+id/service_contacts_notes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/edit_text_drawable"
+                        android:gravity="top"
+                        android:hint="@string/noteshint"
+                        android:minLines="4"
+                        android:textColor="#000000"
+                        android:textColorHint="@color/hintcolor"
+                        android:paddingLeft="10dp"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/service_add_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/service_contacts_edittext_layout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/maincolorblue"
+                    android:text="@string/add_button"
+                    android:textAllCaps="false" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

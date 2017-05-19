@@ -21,13 +21,16 @@
     <string name="phone_land_3">+374 99 77 25 28</string>
     <string name="email">Էլ. փոստ՝    </string>
     <string name="info_prokat_am">info@prokat.am</string>
-    <string name="adress">Հասցե՝ Սարյան 5</string>
+    <string name="address">Հասցե՝ Սարյան 5</string>
+    <string name="address_title">Հասցե</string>
     <string name="namehint">Անուն *</string>
     <string name="emaihint">Էլ. փոստ *</string>
-    <string name="phonetint">Հեռախոս</string>
+    <string name="phonehint">Հեռախոս</string>
     <string name="submit">Ուղարկել</string>
-    <string name="hintmessage">Հաղորդագրություն *</string>
+    <string name="messagehint">Հաղորդագրություն *</string>
+    <string name="noteshint">Այլ նշումներ *</string>
     <string name="add_title">Ավելացնել առաջարկ</string>
+    <string name="add_button">Ավելացնել</string>
     <string name="intro">Այստեղ Դուք կարող եք ավելացնել ցանկացած տեսակի ապրանք վարձով տալու համար, որը կուսումնասիրվի ադմինիստրատորի կողմից և նպատակահարմար լինելու դեպքում կտեղադրվի կայքում: Հիշեցնենք, որ պատվերի դեպքում ապրանքի վարձակալությունից ստացված գումարի որոշակի տոկոսը պահվում է ընկերության կողմից:</string>
     <string name="goods">Ապրանքներ</string>
     <string name="transport">Տրանսպորտ</string>
@@ -56,4 +59,12 @@
     <string name="photos_title">Նկարներ (800x600px -.jpg)</string>
     <string name="choose_photo">Ընտրել նկարը</string>
     <string name="photo_not_choose">Նկարը ընտրված չէ</string>
+    <string name="contacts">Կոնտակտային տվյալներ</string>
+    <string name="name">Անվանում</string>
+    <string name="engine_type">Վառելիքի տեսակը</string>
+    <string name="engine_volume">Շարժիչի ծավալը</string>
+    <string name="box">Փոխանցման տուփ</string>
+    <string name="year">Տարեթիվ</string>
+    <string name="rooms">Սենյակներ</string>
+    <string name="floor">Հարկ</string>
 </resources>

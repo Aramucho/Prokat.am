@@ -71,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/adress"
+                android:text="@string/address"
                 android:textColor="#000000"
                 android:textSize="18sp" />
 
@@ -97,7 +97,7 @@
             android:minHeight="40dp"
             android:paddingLeft="10dp"
             android:textColor="#000000"
-            android:textColorHint="#e35c5a5a" />
+            android:textColorHint="@color/hintcolor" />
 
         <EditText
             android:id="@+id/email_feed"
@@ -111,7 +111,7 @@
             android:minHeight="40dp"
             android:paddingLeft="10dp"
             android:textColor="#000000"
-            android:textColorHint="#e35c5a5a" />
+            android:textColorHint="@color/hintcolor" />
 
         <EditText
             android:id="@+id/phone_feed"
@@ -120,13 +120,13 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/edit_text_drawable"
             android:ellipsize="end"
-            android:hint="@string/phonetint"
+            android:hint="@string/phonehint"
             android:inputType="number"
             android:lines="1"
             android:minHeight="40dp"
             android:paddingLeft="10dp"
             android:textColor="#000000"
-            android:textColorHint="#e35c5a5a" />
+            android:textColorHint="@color/hintcolor" />
     </LinearLayout>
 
     <Button
@@ -150,10 +150,10 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_drawable"
         android:gravity="top"
-        android:hint="@string/hintmessage"
+        android:hint="@string/messagehint"
         android:paddingLeft="10dp"
         android:textColor="#000000"
-        android:textColorHint="#e35c5a5a" />
+        android:textColorHint="@color/hintcolor" />
 
 
     <android.support.design.widget.CoordinatorLayout
