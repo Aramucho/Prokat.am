@@ -12,6 +12,7 @@ import com.realmucho.prokatproject.Fragments.GoodsFragment;
 import com.realmucho.prokatproject.Fragments.RealtyFragment;
 import com.realmucho.prokatproject.Fragments.ServiceFragment;
 import com.realmucho.prokatproject.Fragments.TransportFragment;
+import com.realmucho.prokatproject.R;
 
 import java.util.ArrayList;
 import java.util.List;

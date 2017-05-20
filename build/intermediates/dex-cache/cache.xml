@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="3ba11cc217fff9e309213df29c984d44478aa28c">
+        sha1="52acfb4ee2d9d54c93f5c896e84c601a8b45219d">
         <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_0a318f9088b9767a673b10ee66ecb168c98a17e0.jar" />
     </item>
     <item
@@ -250,7 +250,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="a8a9f97086222dd3a24b54322fabc4e862c2f3da">
+        sha1="0ee8814f007bc06ade4fb044246296b7794fc4e7">
         <dex dex="C:\Users\Mucho\Desktop\android\ProkatProject\app\build\intermediates\pre-dexed\debug\instant-run_339e5811769113aaf7f9e21834c8b0bfd41d0cb3.jar" />
     </item>
     <item

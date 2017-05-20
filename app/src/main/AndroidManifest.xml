@@ -4,10 +4,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_1"
@@ -16,17 +17,12 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-
-            android:value="AIzaSyCWS45I_UyMr4bIALlHsKWXawt9cdblLAQ"
-            />
-
+            android:value="AIzaSyCWS45I_UyMr4bIALlHsKWXawt9cdblLAQ" />
 
         <activity
             android:name=".MainActivity"
             android:configChanges="keyboardHidden|screenSize|navigation|orientation"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddActivity" />
         <activity android:name=".SplashScreen">
             <intent-filter>
@@ -35,6 +31,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CategoryActivity" />
+        <activity android:name=".DetailedActivity" />
+        <activity android:name=".DataActivity"></activity>
     </application>
 
 </manifest>
