@@ -21,7 +21,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:configChanges="keyboardHidden|screenSize|navigation|orientation"
+            android:configChanges="screenSize|orientation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddActivity" />
         <activity android:name=".SplashScreen">

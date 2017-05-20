@@ -9,9 +9,7 @@ import android.view.ViewGroup;
 
 import com.realmucho.prokatproject.R;
 
-/**
- * Created by Mucho on 20.05.2017.
- */
+
 
 public class RealtyCategoryFragment extends Fragment {
 

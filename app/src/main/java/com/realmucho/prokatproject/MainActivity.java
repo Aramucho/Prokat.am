@@ -34,10 +34,13 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Fragment mainFragment=new MainFragment();
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().add(R.id.root, mainFragment).commit();
         search = (SearchView) findViewById(R.id.search);
         add = (FloatingActionButton) findViewById(R.id.fab);
-        fragment = this.getSupportFragmentManager().findFragmentById(R.id.frag);
+        fragment = this.getSupportFragmentManager().findFragmentById(R.id.root);
         if (fragment instanceof MainFragment){
             add.setVisibility(View.VISIBLE);
         } else
@@ -144,7 +147,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.frag, fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.root, fragment).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -154,7 +157,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        fragment = this.getSupportFragmentManager().findFragmentById(R.id.frag);
+        fragment = this.getSupportFragmentManager().findFragmentById(R.id.root);
         if (fragment instanceof MainFragment){
             add.setVisibility(View.VISIBLE);
         }
