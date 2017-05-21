@@ -10,7 +10,6 @@ import com.realmucho.prokatproject.Fragments.GoodsCategoryFragment;
 import com.realmucho.prokatproject.Fragments.RealtyCategoryFragment;
 import com.realmucho.prokatproject.Fragments.ServiceCategoryFragment;
 import com.realmucho.prokatproject.Fragments.TransportCategoryFragment;
-import com.realmucho.prokatproject.Fragments.TransportFragment;
 
 public class CategoryActivity extends AppCompatActivity {
 
@@ -42,7 +41,7 @@ public class CategoryActivity extends AppCompatActivity {
 
         }
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.core, fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.category_activity, fragment).commit();
 
     }
 }

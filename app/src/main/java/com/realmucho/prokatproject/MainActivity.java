@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private SearchView search;
     private FloatingActionButton add;
-    private Fragment fragment;
+    private Fragment mainFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,33 +35,28 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Fragment mainFragment=new MainFragment();
+        mainFragment = new MainFragment();
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().add(R.id.root, mainFragment).commit();
         search = (SearchView) findViewById(R.id.search);
+
         add = (FloatingActionButton) findViewById(R.id.fab);
-        fragment = this.getSupportFragmentManager().findFragmentById(R.id.root);
-        if (fragment instanceof MainFragment){
-            add.setVisibility(View.VISIBLE);
-        } else
-        {
-            add.setVisibility(View.GONE);
-        }
 
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int id=v.getId();
+                int id = v.getId();
                 Intent intent;
-                switch (id){
-            case R.id.fab:
-                intent=new Intent(MainActivity.this, AddActivity.class);
-                startActivity(intent);
-                break;
+                switch (id) {
+                    case R.id.fab:
+                        intent = new Intent(MainActivity.this, AddActivity.class);
+                        startActivity(intent);
+                        break;
+                }
             }
-        }});
+        });
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -79,7 +75,7 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        }  else {
+        } else {
             super.onBackPressed();
 
         }
@@ -99,9 +95,8 @@ public class MainActivity extends AppCompatActivity
             case R.id.main:
                 fragment = new MainFragment();
                 search.setVisibility(View.VISIBLE);
-                search.setQuery("",false);
-                if(!search.isIconified())
-                {
+                search.setQuery("", false);
+                if (!search.isIconified()) {
                     search.setIconified(true);
                 }
                 add.setVisibility(View.VISIBLE);
@@ -110,20 +105,18 @@ public class MainActivity extends AppCompatActivity
             case R.id.topof:
                 fragment = new TopOfFragment();
                 search.setVisibility(View.VISIBLE);
-                search.setQuery("",false);
+                search.setQuery("", false);
                 add.setVisibility(View.GONE);
-                if(!search.isIconified())
-                {
+                if (!search.isIconified()) {
                     search.setIconified(true);
                 }
                 break;
             case R.id.newof:
                 fragment = new NewOfFragment();
                 search.setVisibility(View.VISIBLE);
-                search.setQuery("",false);
+                search.setQuery("", false);
                 add.setVisibility(View.GONE);
-                if(!search.isIconified())
-                {
+                if (!search.isIconified()) {
                     search.setIconified(true);
                 }
                 break;
@@ -154,16 +147,5 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        fragment = this.getSupportFragmentManager().findFragmentById(R.id.root);
-        if (fragment instanceof MainFragment){
-            add.setVisibility(View.VISIBLE);
-        }
-        else
-        {
-            add.setVisibility(View.GONE);
-        }
-    }
+
 }

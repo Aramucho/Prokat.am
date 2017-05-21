@@ -6,14 +6,5 @@
     android:layout_height="match_parent"
     tools:context="com.realmucho.prokatproject.CategoryActivity"
     >
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/core">
-    <fragment
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="com.realmucho.prokatproject.Fragments.GoodsCategoryFragment"
-        />
-    </RelativeLayout>
+
 </RelativeLayout>
