@@ -18,16 +18,24 @@ import android.widget.ImageView;
 import com.realmucho.prokatproject.CategoryActivity;
 import com.realmucho.prokatproject.R;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class MainFragment extends Fragment implements View.OnClickListener {
 
-    private ImageView goodsimage, transportimage, serviceimage, realtyimage;
-
+    private ImageView goodsimage, transportimage, serviceimage, realtyimage, roundcategory;
+    private View pizza;
+    private Intent intent;
+    private Handler handler;
+    private Map<String,Integer> imagesround;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_fragment, container, false);
+        pizza =  view.findViewById(R.id.pizza);
+        roundcategory = (ImageView) view.findViewById(R.id.roundcategory);
         goodsimage = (ImageView) view.findViewById(R.id.goods_image);
         transportimage = (ImageView) view.findViewById(R.id.transport_image);
         serviceimage = (ImageView) view.findViewById(R.id.service_image);
@@ -36,6 +44,12 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         transportimage.setOnClickListener(this);
         serviceimage.setOnClickListener(this);
         realtyimage.setOnClickListener(this);
+        imagesround=new HashMap<>();
+        imagesround.put("goods",R.drawable.goods_round);
+        imagesround.put("transport",R.drawable.transport_round);
+        imagesround.put("service",R.drawable.service_round);
+        imagesround.put("realty",R.drawable.realty_round);
+        roundcategory.setVisibility(View.GONE);
         return view;
     }
 
@@ -43,7 +57,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        Intent intent;
 
         final int REQ_GOODS = 1;
         final int REQ_TRANSPORT = 2;
@@ -53,30 +66,85 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         switch (id) {
 
             case R.id.goods_image:
+                roundcategory.setImageResource(imagesround.get("goods"));
+                roundcategory.setVisibility(View.VISIBLE);
+                animation(pizza, roundcategory);
+                handler = new Handler();
+                handler.postDelayed(new Runnable() {
 
 
-                intent = new Intent(getContext(), CategoryActivity.class);
-                intent.putExtra("code", REQ_GOODS);
-                startActivity(intent);
+                    @Override
+                    public void run() {
+                        pizza.setVisibility(View.GONE);
+                        intent = new Intent(getContext(), CategoryActivity.class);
+                        intent.putExtra("code", REQ_GOODS);
+                        startActivity(intent);
+                    }
+                }, 1000);
 
 
                 break;
             case R.id.transport_image:
-                intent = new Intent(getContext(), CategoryActivity.class);
-                intent.putExtra("code", REQ_TRANSPORT);
-                startActivity(intent);
+                roundcategory.setImageResource(imagesround.get("transport"));
+                roundcategory.setVisibility(View.VISIBLE);
+                animation(pizza, roundcategory);
+                handler = new Handler();
+
+                handler.postDelayed(new Runnable() {
+
+
+                    @Override
+                    public void run() {
+
+                        pizza.setVisibility(View.GONE);
+                        intent = new Intent(getContext(), CategoryActivity.class);
+                        intent.putExtra("code", REQ_TRANSPORT);
+                        startActivity(intent);
+                    }
+                }, 1000);
+
 
                 break;
             case R.id.service_image:
-                intent = new Intent(getContext(), CategoryActivity.class);
-                intent.putExtra("code", REQ_SERVICE);
-                startActivity(intent);
+                roundcategory.setImageResource(imagesround.get("service"));
+                roundcategory.setVisibility(View.VISIBLE);
+                animation(pizza, roundcategory);
+                handler = new Handler();
+
+                handler.postDelayed(new Runnable() {
+
+
+                    @Override
+                    public void run() {
+
+                        pizza.setVisibility(View.GONE);
+                        intent = new Intent(getContext(), CategoryActivity.class);
+                        intent.putExtra("code", REQ_SERVICE);
+                        startActivity(intent);
+                    }
+                }, 1000);
+
 
                 break;
             case R.id.realty_image:
-                intent = new Intent(getContext(), CategoryActivity.class);
-                intent.putExtra("code", REQ_REALTY);
-                startActivity(intent);
+                roundcategory.setImageResource(imagesround.get("realty"));
+                roundcategory.setVisibility(View.VISIBLE);
+                animation(pizza, roundcategory);
+                handler = new Handler();
+
+                handler.postDelayed(new Runnable() {
+
+
+                    @Override
+                    public void run() {
+
+                        pizza.setVisibility(View.GONE);
+                        intent = new Intent(getContext(), CategoryActivity.class);
+                        intent.putExtra("code", REQ_REALTY);
+                        startActivity(intent);
+                    }
+                }, 1000);
+
 
                 break;
 
@@ -87,17 +155,33 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     }
 
     public void animation(View view, ImageView imageView) {
+
         ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(view, "alpha", 0f);
-        alphaAnimator.setDuration(1500);
-        ObjectAnimator scaleAnimatorX = ObjectAnimator.ofFloat(imageView, "scaleX", 0f, (float) (imageView.getWidth() * 2));
-        scaleAnimatorX.setDuration(1500);
-        ObjectAnimator scaleAnimatorY = ObjectAnimator.ofFloat(imageView, "scaleY", 0f, (float) (imageView.getHeight() * 2));
-        scaleAnimatorX.setDuration(1500);
+        alphaAnimator.setDuration(300);
+        ObjectAnimator scaleAnimatorX = ObjectAnimator.ofFloat(imageView, "scaleX", (float) imageView.getScaleX(), imageView.getScaleX() * 300);
+        scaleAnimatorX.setDuration(500);
+        scaleAnimatorX.setStartDelay(500);
+        ObjectAnimator scaleAnimatorY = ObjectAnimator.ofFloat(imageView, "scaleY", imageView.getScaleY(), imageView.getScaleY() * 300);
+        scaleAnimatorY.setDuration(500);
+        scaleAnimatorY.setStartDelay(500);
         AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.play(scaleAnimatorX)
-                .with(scaleAnimatorY)
-                .after(alphaAnimator);
+        animatorSet.playTogether(alphaAnimator, scaleAnimatorX, scaleAnimatorY);
         animatorSet.start();
+
+
+    }
+
+
+    @Override
+    public void onResume() {
+
+
+        super.onResume();
+        pizza.setAlpha(1);
+        pizza.setVisibility(View.VISIBLE);
+        roundcategory.setScaleX(1);
+        roundcategory.setScaleY(1);
+        roundcategory.setVisibility(View.GONE);
 
     }
 }
