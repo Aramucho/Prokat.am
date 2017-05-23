@@ -67,5 +67,18 @@
     <string name="year">Տարեթիվ</string>
     <string name="rooms">Սենյակներ</string>
     <string name="floor">Հարկ</string>
+    <string-array name="goods_titles">
+        <item>Համակարգչային տեխնիկա</item>
+        <item>Ամենինչ միջոցառումների համար</item>
+        <item>Ձայնային լուսային տեխնիկա</item>
+        <item>Տեսախցիկներ</item>
+        <item>Գործիքներ</item>
+        <item>Տուրիզմ</item>
+        <item>Հագուստ</item>
+        <item>Կապի միջոցներ</item>
+        <item>Ժամանց</item>
+        <item>Սպասք</item>
+        <item>Այլ ապրանքներ</item>
 
+    </string-array>
 </resources>
