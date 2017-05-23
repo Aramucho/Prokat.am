@@ -141,60 +141,7 @@ android:layout_marginTop="10dp"
             </LinearLayout>
 
 
-            <!--<LinearLayout-->
-            <!--android:id="@+id/time_period_layout"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_below="@id/price_layout"-->
-            <!--android:orientation="horizontal"-->
 
-            <!--&gt;-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/time_period"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_weight="0.6"-->
-            <!--android:gravity="center_vertical"-->
-            <!--android:minHeight="40dp"-->
-            <!--android:text="@string/time_period"-->
-            <!--android:textColor="#000000"-->
-            <!--android:textSize="20sp" />-->
-
-            <!--<RadioGroup-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:orientation="horizontal">-->
-
-            <!--<RadioButton-->
-            <!--android:id="@+id/hour"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:checked="true"-->
-            <!--android:text="@string/hour"-->
-            <!--android:textColor="#000000"-->
-            <!--android:theme="@style/RadioButtonTheme" />-->
-
-            <!--<RadioButton-->
-            <!--android:id="@+id/day"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@string/day"-->
-            <!--android:textColor="#000000"-->
-            <!--android:theme="@style/RadioButtonTheme" />-->
-
-            <!--<RadioButton-->
-            <!--android:id="@+id/month"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@string/month"-->
-            <!--android:textColor="#000000"-->
-            <!--android:theme="@style/RadioButtonTheme" />-->
-
-            <!--</RadioGroup>-->
-
-
-            <!--</LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/service_photos_title_layout"
@@ -239,31 +186,12 @@ android:layout_marginTop="10dp"
                     android:layout_toEndOf="@id/service_photos_name_1"
                     android:src="@drawable/add"
                     app:fabSize="mini"
+                    android:backgroundTint="@color/maincolorblue"
+
 
                     />
 
-                <!--<android.support.design.widget.CoordinatorLayout-->
-                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
-                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-                <!--xmlns:tools="http://schemas.android.com/tools"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginLeft="30dp"-->
-                <!--android:id="@+id/choose_button_1"-->
-                <!--android:layout_toEndOf="@id/photos_name_1"-->
-                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
 
-                <!--<android.support.design.widget.FloatingActionButton-->
-
-                <!--app:backgroundTint="@color/maincolorblue"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="bottom"-->
-                <!--android:clickable="true"-->
-                <!--app:fabSize="mini"-->
-                <!--android:src="@drawable/add"/>-->
-
-                <!--</android.support.design.widget.CoordinatorLayout>-->
 
                 <TextView
                     android:id="@+id/service_choose_photos_name_1"
@@ -303,30 +231,11 @@ android:layout_marginTop="10dp"
                     android:layout_marginLeft="30dp"
                     android:layout_toEndOf="@id/service_photos_name_2"
                     android:src="@drawable/add"
-                    app:fabSize="mini" />
+                    app:fabSize="mini"
+                    android:backgroundTint="@color/maincolorblue"
+                    />
 
-                <!--<android.support.design.widget.CoordinatorLayout-->
-                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
-                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-                <!--xmlns:tools="http://schemas.android.com/tools"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginLeft="30dp"-->
-                <!--android:id="@+id/choose_button_2"-->
-                <!--android:layout_toEndOf="@id/photos_name_2"-->
-                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
-
-                <!--<android.support.design.widget.FloatingActionButton-->
-
-                <!--app:backgroundTint="@color/maincolorblue"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="bottom"-->
-                <!--android:clickable="true"-->
-                <!--app:fabSize="mini"-->
-                <!--android:src="@drawable/add"/>-->
-
-                <!--</android.support.design.widget.CoordinatorLayout>-->
+                -->
 
                 <TextView
                     android:id="@+id/service_choose_photos_name_2"
@@ -366,30 +275,11 @@ android:layout_marginTop="10dp"
                     android:layout_marginLeft="30dp"
                     android:layout_toEndOf="@id/service_photos_name_3"
                     android:src="@drawable/add"
-                    app:fabSize="mini" />
+                    app:fabSize="mini"
+                    android:backgroundTint="@color/maincolorblue"
+                    />
 
-                <!--<android.support.design.widget.CoordinatorLayout-->
-                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
-                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-                <!--xmlns:tools="http://schemas.android.com/tools"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginLeft="30dp"-->
-                <!--android:id="@+id/choose_button_3"-->
-                <!--android:layout_toEndOf="@id/photos_name_3"-->
-                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
 
-                <!--<android.support.design.widget.FloatingActionButton-->
-
-                <!--app:backgroundTint="@color/maincolorblue"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="bottom"-->
-                <!--android:clickable="true"-->
-                <!--app:fabSize="mini"-->
-                <!--android:src="@drawable/add"/>-->
-
-                <!--</android.support.design.widget.CoordinatorLayout>-->
 
                 <TextView
                     android:id="@+id/service_choose_photos_name_3"
@@ -429,30 +319,11 @@ android:layout_marginTop="10dp"
                     android:layout_marginLeft="30dp"
                     android:layout_toEndOf="@id/service_photos_name_4"
                     android:src="@drawable/add"
-                    app:fabSize="mini" />
+                    app:fabSize="mini"
+                    android:backgroundTint="@color/maincolorblue"
+                    />
 
-                <!--<android.support.design.widget.CoordinatorLayout-->
-                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
-                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-                <!--xmlns:tools="http://schemas.android.com/tools"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginLeft="30dp"-->
-                <!--android:id="@+id/choose_button_4"-->
-                <!--android:layout_toEndOf="@id/photos_name_4"-->
-                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
 
-                <!--<android.support.design.widget.FloatingActionButton-->
-
-                <!--app:backgroundTint="@color/maincolorblue"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="bottom"-->
-                <!--android:clickable="true"-->
-                <!--app:fabSize="mini"-->
-                <!--android:src="@drawable/add"/>-->
-
-                <!--</android.support.design.widget.CoordinatorLayout>-->
 
                 <TextView
                     android:id="@+id/service_choose_photos_name_4"
@@ -492,30 +363,11 @@ android:layout_marginTop="10dp"
                     android:layout_marginLeft="30dp"
                     android:layout_toEndOf="@id/service_photos_name_5"
                     android:src="@drawable/add"
-                    app:fabSize="mini" />
+                    app:fabSize="mini"
+                    android:backgroundTint="@color/maincolorblue"
+                    />
 
-                <!--<android.support.design.widget.CoordinatorLayout-->
-                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
-                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-                <!--xmlns:tools="http://schemas.android.com/tools"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginLeft="30dp"-->
-                <!--android:id="@+id/choose_button_5"-->
-                <!--android:layout_toEndOf="@id/photos_name_5"-->
-                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
 
-                <!--<android.support.design.widget.FloatingActionButton-->
-
-                <!--app:backgroundTint="@color/maincolorblue"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="bottom"-->
-                <!--android:clickable="true"-->
-                <!--app:fabSize="mini"-->
-                <!--android:src="@drawable/add"/>-->
-
-                <!--</android.support.design.widget.CoordinatorLayout>-->
 
                 <TextView
                     android:id="@+id/service_choose_photos_name_5"

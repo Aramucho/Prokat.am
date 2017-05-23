@@ -68,6 +68,7 @@
     <string name="rooms">Սենյակներ</string>
     <string name="floor">Հարկ</string>
     <string-array name="goods_titles">
+        <item></item>
         <item>Համակարգչային տեխնիկա</item>
         <item>Ամենինչ միջոցառումների համար</item>
         <item>Ձայնային լուսային տեխնիկա</item>
@@ -79,6 +80,35 @@
         <item>Ժամանց</item>
         <item>Սպասք</item>
         <item>Այլ ապրանքներ</item>
+    </string-array>
+    <string-array name="comp_equipment">
+        <item></item>
+        <item>Նոութբուքներ</item>
+        <item>Էկրաներ</item>
+        <item>LCD պրոյեկտորներ</item>
+        <item>Լազերային տպիչներ/Սկաներ</item>
+        <item>Բազմաֆունկցիոնալ սարքավորումներ</item>
 
+    </string-array>
+    <string-array name="ever_events">
+        <item></item>
+        <item>Սեղաններ</item>
+        <item>Աթոռններ</item>
+        <item>Վրաններ</item>
+        <item>Այլ</item>
+    </string-array>
+    <string-array name="sound_equipments">
+        <item></item>
+        <item>Ձայնային սարքեր</item>
+        <item>Լուսային էֆեկտներ</item>
+        <item>Երաժշտական սարքեր</item>
+    </string-array>
+    <string-array name="cameras">
+        <item></item>
+        <item>Ֆոտոխցիկ</item>
+        <item>Վիդեոխցիկ</item>
+        <item>Եռոտանիներ(շտատիվ)</item>
+        <item>Նկարահանման կռան</item>
+        <item>Օբյեկտիվ</item>
     </string-array>
 </resources>
