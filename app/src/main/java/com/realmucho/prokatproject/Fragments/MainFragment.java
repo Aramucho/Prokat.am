@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +16,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 
+import com.realmucho.prokatproject.AddActivity;
 import com.realmucho.prokatproject.CategoryActivity;
+import com.realmucho.prokatproject.MainActivity;
 import com.realmucho.prokatproject.R;
 
 import java.util.HashMap;
@@ -29,6 +32,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private Intent intent;
     private Handler handler;
     private Map<String,Integer> imagesround;
+    private FloatingActionButton add;
+
 
     @Nullable
     @Override
@@ -40,6 +45,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         transportimage = (ImageView) view.findViewById(R.id.transport_image);
         serviceimage = (ImageView) view.findViewById(R.id.service_image);
         realtyimage = (ImageView) view.findViewById(R.id.realty_image);
+        add = (FloatingActionButton)view.findViewById(R.id.fab);
+        add.setOnClickListener(this);
         goodsimage.setOnClickListener(this);
         transportimage.setOnClickListener(this);
         serviceimage.setOnClickListener(this);
@@ -146,6 +153,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 }, 1000);
 
 
+                break;
+            case R.id.fab:
+                intent = new Intent(getContext(), AddActivity.class);
+                startActivity(intent);
                 break;
 
 

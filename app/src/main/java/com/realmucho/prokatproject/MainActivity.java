@@ -25,7 +25,7 @@ import com.realmucho.prokatproject.Fragments.TopOfFragment;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private SearchView search;
-    private FloatingActionButton add;
+
     private Fragment mainFragment;
 
 
@@ -41,22 +41,10 @@ public class MainActivity extends AppCompatActivity
         fragmentManager.beginTransaction().add(R.id.root, mainFragment).commit();
         search = (SearchView) findViewById(R.id.search);
 
-        add = (FloatingActionButton) findViewById(R.id.fab);
 
 
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int id = v.getId();
-                Intent intent;
-                switch (id) {
-                    case R.id.fab:
-                        intent = new Intent(MainActivity.this, AddActivity.class);
-                        startActivity(intent);
-                        break;
-                }
-            }
-        });
+
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -99,14 +87,14 @@ public class MainActivity extends AppCompatActivity
                 if (!search.isIconified()) {
                     search.setIconified(true);
                 }
-                add.setVisibility(View.VISIBLE);
+
 
                 break;
             case R.id.topof:
                 fragment = new TopOfFragment();
                 search.setVisibility(View.VISIBLE);
                 search.setQuery("", false);
-                add.setVisibility(View.GONE);
+
                 if (!search.isIconified()) {
                     search.setIconified(true);
                 }
@@ -115,7 +103,6 @@ public class MainActivity extends AppCompatActivity
                 fragment = new NewOfFragment();
                 search.setVisibility(View.VISIBLE);
                 search.setQuery("", false);
-                add.setVisibility(View.GONE);
                 if (!search.isIconified()) {
                     search.setIconified(true);
                 }
@@ -123,18 +110,18 @@ public class MainActivity extends AppCompatActivity
             case R.id.about:
                 fragment = new AboutFragment();
                 search.setVisibility(View.GONE);
-                add.setVisibility(View.GONE);
+
 
                 break;
             case R.id.conditions:
                 fragment = new ConditionsFragment();
                 search.setVisibility(View.GONE);
-                add.setVisibility(View.GONE);
+
                 break;
             case R.id.feedback:
                 fragment = new FeedBackFragment();
                 search.setVisibility(View.GONE);
-                add.setVisibility(View.GONE);
+
                 break;
 
         }
