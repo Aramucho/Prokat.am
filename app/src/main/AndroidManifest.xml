@@ -25,7 +25,6 @@
             android:configChanges="screenSize|orientation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddActivity"
-            android:windowSoftInputMode="stateAlwaysVisible"
             />
         <activity android:name=".SplashScreen">
             <intent-filter>

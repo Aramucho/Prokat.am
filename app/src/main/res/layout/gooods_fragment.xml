@@ -43,7 +43,8 @@
                     android:layout_weight="0.4"
                     android:background="@drawable/spinner_selector"
                     android:minHeight="40dp"
-                    android:popupBackground="@color/maincolorblue" />
+                    android:popupBackground="@color/maincolorwhite"
+                    />
 
 
             </LinearLayout>
@@ -74,7 +75,7 @@
                     android:layout_weight="0.4"
                     android:background="@drawable/spinner_selector"
                     android:minHeight="40dp"
-                    android:popupBackground="@color/maincolorblue" />
+                    android:popupBackground="@color/maincolorwhite" />
 
 
             </LinearLayout>
@@ -103,7 +104,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:minHeight="40dp" />
+                    android:minHeight="40dp"
+                    android:popupBackground="@color/maincolorwhite"
+                    android:background="@drawable/spinner_selector"/>
 
 
             </LinearLayout>
@@ -299,7 +302,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_toEndOf="@id/goods_photos_name_1"
-                    android:backgroundTint="@color/maincolorblue"
                     android:src="@drawable/add"
                     app:fabSize="mini"
 
@@ -343,7 +345,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_toEndOf="@id/goods_photos_name_2"
-                    android:backgroundTint="@color/maincolorblue"
                     android:src="@drawable/add"
                     app:fabSize="mini" />
 
@@ -387,7 +388,6 @@
                     android:layout_toEndOf="@id/goods_photos_name_3"
                     android:src="@drawable/add"
                     app:fabSize="mini"
-                    android:backgroundTint="@color/maincolorblue"
                     />
 
 
@@ -430,7 +430,6 @@
                     android:layout_toEndOf="@id/goods_photos_name_4"
                     android:src="@drawable/add"
                     app:fabSize="mini"
-                    android:backgroundTint="@color/maincolorblue"
                     />
 
 
@@ -473,7 +472,6 @@
                     android:layout_toEndOf="@id/goods_photos_name_5"
                     android:src="@drawable/add"
                     app:fabSize="mini"
-                    android:backgroundTint="@color/maincolorblue"
                     />
 
 

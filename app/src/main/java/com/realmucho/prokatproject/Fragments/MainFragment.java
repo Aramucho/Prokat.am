@@ -167,16 +167,12 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     public void animation(View view, ImageView imageView) {
 
-        ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(view, "alpha", 0f);
-        alphaAnimator.setDuration(300);
-        ObjectAnimator scaleAnimatorX = ObjectAnimator.ofFloat(imageView, "scaleX", (float) imageView.getScaleX(), imageView.getScaleX() * 300);
-        scaleAnimatorX.setDuration(500);
-        scaleAnimatorX.setStartDelay(500);
-        ObjectAnimator scaleAnimatorY = ObjectAnimator.ofFloat(imageView, "scaleY", imageView.getScaleY(), imageView.getScaleY() * 300);
-        scaleAnimatorY.setDuration(500);
-        scaleAnimatorY.setStartDelay(500);
+        ObjectAnimator alphaAnimatorPizza = ObjectAnimator.ofFloat(view, "alpha", 0f);
+        alphaAnimatorPizza.setDuration(400);
+        ObjectAnimator alphaAnimatorRound = ObjectAnimator.ofFloat(imageView, "alpha",1f);
+        alphaAnimatorRound.setStartDelay(500);
         AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playTogether(alphaAnimator, scaleAnimatorX, scaleAnimatorY);
+        animatorSet.playTogether(alphaAnimatorPizza, alphaAnimatorRound);
         animatorSet.start();
 
 
@@ -190,8 +186,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         super.onResume();
         pizza.setAlpha(1);
         pizza.setVisibility(View.VISIBLE);
-        roundcategory.setScaleX(1);
-        roundcategory.setScaleY(1);
+        roundcategory.setAlpha(0f);
         roundcategory.setVisibility(View.GONE);
 
     }

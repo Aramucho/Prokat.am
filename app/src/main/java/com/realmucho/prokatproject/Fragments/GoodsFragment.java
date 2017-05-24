@@ -36,7 +36,7 @@ public class GoodsFragment extends Fragment {
         sectionspinner = (Spinner) view.findViewById(R.id.goods_section_spinner);
         goodssubsectionspinner = (Spinner) view.findViewById(R.id.goods_subsection_spinner);
         goodscitiesspinner = (Spinner) view.findViewById(R.id.goods_cities_spinner);
-        sectionspinner.setPrompt("aaaa");
+
         spinnersinit();
 
 
@@ -44,14 +44,11 @@ public class GoodsFragment extends Fragment {
     }
 
     private void spinnersinit() {
-        String[] sectiontitles = getResources().getStringArray(R.array.goods_titles);
-        final String[] compequipments = getResources().getStringArray(R.array.comp_equipment);
-        final String[] everevents = getResources().getStringArray(R.array.ever_events);
-        final String[] soundequip = getResources().getStringArray(R.array.sound_equipments);
-        final String[] cameras = getResources().getStringArray(R.array.cameras);
 
-        sectionadapter = new ArrayAdapter(getContext(), R.layout.support_simple_spinner_dropdown_item, sectiontitles);
+        sectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.goods_titles, R.layout.drop_down_spinner_item);
+        goodscitiesadapter=ArrayAdapter.createFromResource(getContext(),R.array.cities,R.layout.drop_down_spinner_item);
 
+        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.bydefualt, R.layout.drop_down_spinner_item);
         sectionspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -59,25 +56,62 @@ public class GoodsFragment extends Fragment {
 
 
                     case 1:
-                        goodsubsectionadapter = new ArrayAdapter(getContext(), R.layout.support_simple_spinner_dropdown_item, compequipments);
+                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.comp_equipment, R.layout.drop_down_spinner_item);
+                        ;
 
                         goodssubsectionspinner.setAdapter(goodsubsectionadapter);
                         break;
                     case 2:
-                        goodsubsectionadapter = new ArrayAdapter(getContext(), R.layout.support_simple_spinner_dropdown_item, everevents);
+                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.ever_events, R.layout.drop_down_spinner_item);
 
                         goodssubsectionspinner.setAdapter(goodsubsectionadapter);
                         break;
                     case 3:
-                        goodsubsectionadapter = new ArrayAdapter(getContext(), R.layout.support_simple_spinner_dropdown_item, soundequip);
+                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.sound_equipments, R.layout.drop_down_spinner_item);
 
                         goodssubsectionspinner.setAdapter(goodsubsectionadapter);
                         break;
                     case 4:
-                        goodsubsectionadapter = new ArrayAdapter(getContext(), R.layout.support_simple_spinner_dropdown_item, cameras);
+                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.cameras, R.layout.drop_down_spinner_item);
 
                         goodssubsectionspinner.setAdapter(goodsubsectionadapter);
                         break;
+                    case 5:
+                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.tools, R.layout.drop_down_spinner_item);
+
+                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        break;
+                    case 6:
+                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.tourism, R.layout.drop_down_spinner_item);
+
+                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        break;
+                    case 7:
+                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.clothing, R.layout.drop_down_spinner_item);
+
+                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        break;
+                    case 8:
+                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.communications, R.layout.drop_down_spinner_item);
+
+                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        break;
+                    case 9:
+                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.entertaiment, R.layout.drop_down_spinner_item);
+
+                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        break;
+                    case 10:
+                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.tableware, R.layout.drop_down_spinner_item);
+
+                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        break;
+                    case 11:
+                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.other_goods, R.layout.drop_down_spinner_item);
+
+                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        break;
+
 
                 }
             }
@@ -88,6 +122,8 @@ public class GoodsFragment extends Fragment {
             }
         });
         sectionspinner.setAdapter(sectionadapter);
+        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+        goodscitiesspinner.setAdapter(goodscitiesadapter);
 
 
     }

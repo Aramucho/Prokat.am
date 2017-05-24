@@ -38,6 +38,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:minHeight="40dp"
+                    android:background="@drawable/spinner_selector"
+                    android:popupBackground="@color/maincolorwhite"
 
 
                     />
@@ -129,6 +131,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
+                    android:background="@drawable/spinner_selector"
+                    android:popupBackground="@color/maincolorwhite"
                      />
 
 
@@ -191,6 +195,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
+                    android:background="@drawable/spinner_selector"
+                    android:popupBackground="@color/maincolorwhite"
                      />
 
 
@@ -383,7 +389,6 @@ android:layout_marginTop="10dp"
                     android:layout_toEndOf="@id/transport_photos_name_1"
                     android:src="@drawable/add"
                     app:fabSize="mini"
-                    android:backgroundTint="@color/maincolorblue"
 
 
                     />
@@ -429,31 +434,9 @@ android:layout_marginTop="10dp"
                     android:layout_toEndOf="@id/transport_photos_name_2"
                     android:src="@drawable/add"
                     app:fabSize="mini"
-                    android:backgroundTint="@color/maincolorblue"
                     />
 
-                <!--<android.support.design.widget.CoordinatorLayout-->
-                <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
-                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-                <!--xmlns:tools="http://schemas.android.com/tools"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginLeft="30dp"-->
-                <!--android:id="@+id/choose_button_2"-->
-                <!--android:layout_toEndOf="@id/photos_name_2"-->
-                <!--tools:context="com.realmucho.prokatproject.MainActivity">-->
 
-                <!--<android.support.design.widget.FloatingActionButton-->
-
-                <!--app:backgroundTint="@color/maincolorblue"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="bottom"-->
-                <!--android:clickable="true"-->
-                <!--app:fabSize="mini"-->
-                <!--android:src="@drawable/add"/>-->
-
-                <!--</android.support.design.widget.CoordinatorLayout>-->
 
                 <TextView
                     android:id="@+id/transport_choose_photos_name_2"
@@ -494,7 +477,6 @@ android:layout_marginTop="10dp"
                     android:layout_toEndOf="@id/transport_photos_name_3"
                     android:src="@drawable/add"
                     app:fabSize="mini"
-                    android:backgroundTint="@color/maincolorblue"
                     />
 
 
@@ -538,7 +520,6 @@ android:layout_marginTop="10dp"
                     android:layout_toEndOf="@id/transport_photos_name_4"
                     android:src="@drawable/add"
                     app:fabSize="mini"
-                    android:backgroundTint="@color/maincolorblue"
                     />
 
 
@@ -583,7 +564,6 @@ android:layout_marginTop="10dp"
                     android:layout_toEndOf="@id/transport_photos_name_5"
                     android:src="@drawable/add"
                     app:fabSize="mini"
-                    android:backgroundTint="@color/maincolorblue"
                     />
 
 

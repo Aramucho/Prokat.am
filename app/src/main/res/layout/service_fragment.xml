@@ -186,7 +186,6 @@ android:layout_marginTop="10dp"
                     android:layout_toEndOf="@id/service_photos_name_1"
                     android:src="@drawable/add"
                     app:fabSize="mini"
-                    android:backgroundTint="@color/maincolorblue"
 
 
                     />
@@ -232,10 +231,9 @@ android:layout_marginTop="10dp"
                     android:layout_toEndOf="@id/service_photos_name_2"
                     android:src="@drawable/add"
                     app:fabSize="mini"
-                    android:backgroundTint="@color/maincolorblue"
                     />
 
-                -->
+
 
                 <TextView
                     android:id="@+id/service_choose_photos_name_2"
@@ -276,7 +274,6 @@ android:layout_marginTop="10dp"
                     android:layout_toEndOf="@id/service_photos_name_3"
                     android:src="@drawable/add"
                     app:fabSize="mini"
-                    android:backgroundTint="@color/maincolorblue"
                     />
 
 
@@ -320,7 +317,6 @@ android:layout_marginTop="10dp"
                     android:layout_toEndOf="@id/service_photos_name_4"
                     android:src="@drawable/add"
                     app:fabSize="mini"
-                    android:backgroundTint="@color/maincolorblue"
                     />
 
 
@@ -364,7 +360,6 @@ android:layout_marginTop="10dp"
                     android:layout_toEndOf="@id/service_photos_name_5"
                     android:src="@drawable/add"
                     app:fabSize="mini"
-                    android:backgroundTint="@color/maincolorblue"
                     />
 
 

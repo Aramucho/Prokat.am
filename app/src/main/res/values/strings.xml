@@ -35,7 +35,7 @@
     <string name="goods">Ապրանքներ</string>
     <string name="transport">Տրանսպորտ</string>
     <string name="realty">Անշարժ գույք</string>
-<string name="about_all">\t«Prokat.am» կայքը սկսել է իր գործունեությունը 2012 թ-ի մայիսից մի խումբ երիտասարդ ընկերների նախաձեռնությամբ: Այն առաջին պաշտոնապես բացված կայքն է վարձույթով ապրանքներ տրամադրող ընկերությունների ցանկում, որն իր մեջ համալրեց գրեթե ամեն ոլորտ և լինելով առաջին startup-երից մեկը՝ հնարավորություն տվեց մեր հաճախորդներին պատվիրել ցանկացած ապրանք և ծառայություն online տարբերակով: Այս համակարգը նպաստեց նոր և հավատարիմ հաճախորդներ ունենալուն, ինչպես նաև ընկերության զարգացմանը:
+    <string name="about_all">\t«Prokat.am» կայքը սկսել է իր գործունեությունը 2012 թ-ի մայիսից մի խումբ երիտասարդ ընկերների նախաձեռնությամբ: Այն առաջին պաշտոնապես բացված կայքն է վարձույթով ապրանքներ տրամադրող ընկերությունների ցանկում, որն իր մեջ համալրեց գրեթե ամեն ոլորտ և լինելով առաջին startup-երից մեկը՝ հնարավորություն տվեց մեր հաճախորդներին պատվիրել ցանկացած ապրանք և ծառայություն online տարբերակով: Այս համակարգը նպաստեց նոր և հավատարիմ հաճախորդներ ունենալուն, ինչպես նաև ընկերության զարգացմանը:
 Այսօր ընկերությունը շարունակում է պահել իր առաջատարի վարկանիշը՝ առաջարկելով ապրանքների լայն շրջանակ, որն իր մեջ ներառում է հետևյալ բաժինները՝ համակարգչային, ձայնային և լուսային տեխնիկա, սպասք, գործիքներ, հագուստ, տրանսպորտային միջոցներ, տեսախցիկներ, վրաններ և այլ բազմազան տեսականի: Այս ամենին ներառյալ դուք կարող եք օգտվել ընկերության կողմից առաջարկվող մի շարք ծառայություններից: Դրանք են՝ հարսանիքների, ֆուրշետների և այլ միջոցառումների կազմակերպում, փուչիկների ձևավորում, համակարգչային սպասարկում, շինարարական աշխատանքներ, և այլն:
 Այս ամենից բացի, Prokat.am-ը հիանալի հարթակ է բոլոր նրանց համար, ովքեր ցանկանում են վարձույթով տրամադրել իրենց ապրանքները կամ մատուցել որևէ ծառայություն՝ դառնալով մեր գործընկերները:
 \n\tԱպրանքների բարձր որակը, ծառայությունների մատուցման բարձր մակարդակը, ինչպես նաև հաճախորդների պահանջներն ու ցանկությունները մշտապես մեր ուշադրության կենտրոնում են: Հաճախորդների հարմարավետության հետ կապված յուրաքանչյուր նոր գաղափար երկար քննարկումներից և վերլուծություններից հետո բերում է մի նոր գործառույթի, որն ավելի է հեշտացնում հաճախորդի համար՝ ստանալ այն, ինչ ցանկանում է՝ խնայելով թե՛ իր ժամանակը, և թե՛ գումարը:
@@ -67,8 +67,11 @@
     <string name="year">Տարեթիվ</string>
     <string name="rooms">Սենյակներ</string>
     <string name="floor">Հարկ</string>
+    <string-array name="bydefualt">
+        <item>---</item>
+    </string-array>
     <string-array name="goods_titles">
-        <item></item>
+        <item>---</item>
         <item>Համակարգչային տեխնիկա</item>
         <item>Ամենինչ միջոցառումների համար</item>
         <item>Ձայնային լուսային տեխնիկա</item>
@@ -82,7 +85,7 @@
         <item>Այլ ապրանքներ</item>
     </string-array>
     <string-array name="comp_equipment">
-        <item></item>
+        <item>---</item>
         <item>Նոութբուքներ</item>
         <item>Էկրաներ</item>
         <item>LCD պրոյեկտորներ</item>
@@ -91,24 +94,156 @@
 
     </string-array>
     <string-array name="ever_events">
-        <item></item>
+        <item>---</item>
         <item>Սեղաններ</item>
         <item>Աթոռններ</item>
         <item>Վրաններ</item>
         <item>Այլ</item>
     </string-array>
     <string-array name="sound_equipments">
-        <item></item>
+        <item>---</item>
         <item>Ձայնային սարքեր</item>
         <item>Լուսային էֆեկտներ</item>
         <item>Երաժշտական սարքեր</item>
     </string-array>
     <string-array name="cameras">
-        <item></item>
+        <item>---</item>
         <item>Ֆոտոխցիկ</item>
         <item>Վիդեոխցիկ</item>
         <item>Եռոտանիներ(շտատիվ)</item>
         <item>Նկարահանման կռան</item>
         <item>Օբյեկտիվ</item>
     </string-array>
+    <string-array name="tools">
+        <item>---</item>
+        <item>Խոտ հնձող սարք</item>
+        <item>Շարժական աստիճան</item>
+        <item>Պտուտակահան</item>
+        <item>Սղոցներ</item>
+        <item>Շաղափ(дрель)</item>
+        <item>Գեոդեզիական գօրծիքներ</item>
+        <item>Այլ</item>
+
+    </string-array>
+    <string-array name="tourism">
+        <item>---</item>
+        <item>Վրաններ</item>
+        <item>Քնապարկ</item>
+        <item>Հեծանիվ</item>
+        <item>Փչովի մակույկներ</item>
+        <item>Գամակներ</item>
+        <item>Ձկնորսական պարագաներ</item>
+
+
+    </string-array>
+    <string-array name="clothing">
+        <item>---</item>
+        <item>Հարսանեկան</item>
+        <item>Մուլտհերոսներ</item>
+        <item>Մանկական</item>
+
+
+    </string-array>
+    <string-array name="communications">
+        <item>---</item>
+        <item>Ռացիաներ</item>
+
+
+    </string-array>
+    <string-array name="entertaiment">
+        <item>---</item>
+        <item>Փչովի լողավազաներ</item>
+        <item>Փչովի խաղահրապարակ</item>
+        <item>Այլ</item>
+
+
+    </string-array>
+    <string-array name="tableware">
+        <item>---</item>
+        <item>Ֆուրշետի պարագաներ</item>
+        <item>Բաժականեր</item>
+        <item>Ափսեներ</item>
+        <item>Պատառաքաղ,Դանակ,Գդալ</item>
+        <item>Ուտեստների տակդիրներ</item>
+        <item>Այլ</item>
+
+
+    </string-array>
+    <string-array name="other_goods">
+        <item>---</item>
+        <item>Դրոշներ</item>
+        <item>Չհրկիզվող պահարաններ</item>
+        <item>Գեներատորներ</item>
+
+
+    </string-array>
+    <string-array name="cities">
+        <item>---</item>
+        <item>Երեւան</item>
+        <item>Աշտարակ</item>
+        <item>Արտաշատ</item>
+        <item>Արարատ</item>
+        <item>Մասիս</item>
+        <item>Վաղարշապատ</item>
+        <item>Արմավիր</item>
+        <item>Գավառ</item>
+        <item>Մարտունի</item>
+        <item>Սեւվան</item>
+        <item>Աբովյան</item>
+        <item>Հրազդան</item>
+        <item>Եղվարդ</item>
+        <item>Վանաձոր</item>
+        <item>Ալավերդի</item>
+        <item>Ստեփանավան</item>
+        <item>Գորիս</item>
+        <item>Կապան</item>
+        <item>Քաջարան</item>
+        <item>Մեղրի</item>
+        <item>Իջեւվան</item>
+        <item>Սիսիան</item>
+        <item>Դիլիջան</item>
+        <item>Նոյեմբերյան</item>
+        <item>Արթիկ</item>
+        <item>Մարալիկ</item>
+        <item>Ջերմուկ</item>
+        <item>Սաղմոսվան</item>
+
+
+
+
+
+    </string-array>
+    <string-array name="transport_titles">
+        <item>---</item>
+        <item>Էկոնոմ</item>
+        <item>Բիզնես</item>
+        <item>Ամենագնաց</item>
+        <item>Ներկայացուցչական</item>
+        <item>Լիմուզիններ</item>
+        <item>Կաբրիոլետներ</item>
+        <item>Ռետրո</item>
+        <item>Կառքեր</item>
+        <item>Այլ</item>
+
+    </string-array>
+    <string-array name="fuel_types">
+        <item>---</item>
+        <item>Բենզին</item>
+        <item>Դիզել</item>
+        <item>Գազ</item>
+        <item>Հիբրիդ</item>
+        <item>Այլ</item>
+
+
+    </string-array>
+    <string-array name="box_types">
+        <item>---</item>
+        <item>Ավտոմատ</item>
+        <item>Մեխանիկական</item>
+        <item>Կիսավտոմատ</item>
+        <item>Այլ</item>
+
+
+    </string-array>
+
 </resources>

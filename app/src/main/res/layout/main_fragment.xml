@@ -6,11 +6,12 @@
     android:background="@color/maincolorwhite">
 
     <ImageView
-        android:layout_width="1dp"
-        android:layout_height="1dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/roundcategory"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:alpha="0"
         />
 
     <RelativeLayout
