@@ -67,6 +67,7 @@
     <string name="year">Տարեթիվ</string>
     <string name="rooms">Սենյակներ</string>
     <string name="floor">Հարկ</string>
+    <string name="language">Լեզու</string>
     <string-array name="bydefualt">
         <item>---</item>
     </string-array>
@@ -209,9 +210,6 @@
         <item>Սաղմոսվան</item>
 
 
-
-
-
     </string-array>
     <string-array name="transport_titles">
         <item>---</item>
@@ -242,6 +240,41 @@
         <item>Մեխանիկական</item>
         <item>Կիսավտոմատ</item>
         <item>Այլ</item>
+
+
+    </string-array>
+    <string-array name="realty_items">
+        <item>---</item>
+        <item>Երկու սենյականոց</item>
+        <item>Մեկ սենյականոց</item>
+        <item>Երեք սենյականոց</item>
+        <item>Առանձնատուն</item>
+        <item>Կոմերցիոն սենյակներ</item>
+        <item>Քոթեջ</item>
+
+
+    </string-array>
+    <string-array name="service_items">
+        <item>---</item>
+        <item>Հարսանիքների կազմակերպում</item>
+        <item>հատու էֆեկտներ</item>
+        <item>Միջոցառումների կազմակերպում</item>
+        <item>Ֆուրշետների կազմակերպում</item>
+        <item>Մատուցողների ծառայություն</item>
+        <item>Փուչիկներով ձեւավորում</item>
+        <item>Մանկական</item>
+        <item>Համակարգչային սպասարկում</item>
+        <item>Շինարարական աշխատանքներ</item>
+        <item>Այլ</item>
+
+
+    </string-array>
+    <string-array name="langs">
+
+        <item>Հայերեն</item>
+        <item>Русский</item>
+        <item>English</item>
+
 
 
     </string-array>

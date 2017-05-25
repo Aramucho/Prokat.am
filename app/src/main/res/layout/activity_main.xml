@@ -27,7 +27,10 @@
         app:itemTextColor="@color/drawer_item"
         app:menu="@menu/activity_main_drawer"
         android:backgroundTintMode="@color/maincolorwhite"
-        />
+        >
+
+
+    </com.rom4ek.arcnavigationview.ArcNavigationView>
 
 
 </android.support.v4.widget.DrawerLayout>

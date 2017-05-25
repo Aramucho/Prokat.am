@@ -31,7 +31,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private View pizza;
     private Intent intent;
     private Handler handler;
-    private Map<String,Integer> imagesround;
+    private Map<String, Integer> imagesround;
     private FloatingActionButton add;
 
 
@@ -39,24 +39,26 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_fragment, container, false);
-        pizza =  view.findViewById(R.id.pizza);
+
+        pizza = view.findViewById(R.id.pizza);
         roundcategory = (ImageView) view.findViewById(R.id.roundcategory);
         goodsimage = (ImageView) view.findViewById(R.id.goods_image);
         transportimage = (ImageView) view.findViewById(R.id.transport_image);
         serviceimage = (ImageView) view.findViewById(R.id.service_image);
         realtyimage = (ImageView) view.findViewById(R.id.realty_image);
-        add = (FloatingActionButton)view.findViewById(R.id.fab);
+        add = (FloatingActionButton) view.findViewById(R.id.fab);
         add.setOnClickListener(this);
         goodsimage.setOnClickListener(this);
         transportimage.setOnClickListener(this);
         serviceimage.setOnClickListener(this);
         realtyimage.setOnClickListener(this);
-        imagesround=new HashMap<>();
-        imagesround.put("goods",R.drawable.goods_round);
-        imagesround.put("transport",R.drawable.transport_round);
-        imagesround.put("service",R.drawable.service_round);
-        imagesround.put("realty",R.drawable.realty_round);
+        imagesround = new HashMap<>();
+        imagesround.put("goods", R.drawable.goods_round);
+        imagesround.put("transport", R.drawable.transport_round);
+        imagesround.put("service", R.drawable.service_round);
+        imagesround.put("realty", R.drawable.realty_round);
         roundcategory.setVisibility(View.GONE);
+
         return view;
     }
 
@@ -87,7 +89,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                         intent.putExtra("code", REQ_GOODS);
                         startActivity(intent);
                     }
-                }, 1000);
+                }, 1200);
 
 
                 break;
@@ -108,7 +110,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                         intent.putExtra("code", REQ_TRANSPORT);
                         startActivity(intent);
                     }
-                }, 1000);
+                }, 1200);
 
 
                 break;
@@ -129,7 +131,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                         intent.putExtra("code", REQ_SERVICE);
                         startActivity(intent);
                     }
-                }, 1000);
+                }, 1200);
 
 
                 break;
@@ -150,7 +152,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                         intent.putExtra("code", REQ_REALTY);
                         startActivity(intent);
                     }
-                }, 1000);
+                }, 1200);
 
 
                 break;
@@ -168,9 +170,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     public void animation(View view, ImageView imageView) {
 
         ObjectAnimator alphaAnimatorPizza = ObjectAnimator.ofFloat(view, "alpha", 0f);
-        alphaAnimatorPizza.setDuration(400);
-        ObjectAnimator alphaAnimatorRound = ObjectAnimator.ofFloat(imageView, "alpha",1f);
-        alphaAnimatorRound.setStartDelay(500);
+        alphaAnimatorPizza.setDuration(500);
+        ObjectAnimator alphaAnimatorRound = ObjectAnimator.ofFloat(imageView, "alpha", 1f);
+        alphaAnimatorRound.setDuration(500);
+
+        alphaAnimatorRound.setStartDelay(600);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(alphaAnimatorPizza, alphaAnimatorRound);
         animatorSet.start();
@@ -190,5 +194,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         roundcategory.setVisibility(View.GONE);
 
     }
+
+
 }
 

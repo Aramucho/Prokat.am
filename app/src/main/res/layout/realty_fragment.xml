@@ -38,6 +38,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.4"
                 android:minHeight="40dp"
+                android:background="@drawable/spinner_selector"
+                android:popupBackground="@color/maincolorwhite"
 
 
                 />
