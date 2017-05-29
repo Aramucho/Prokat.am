@@ -7,20 +7,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
-
 import com.realmucho.prokatproject.AddActivity;
 import com.realmucho.prokatproject.CategoryActivity;
-import com.realmucho.prokatproject.MainActivity;
 import com.realmucho.prokatproject.R;
-
 import java.util.HashMap;
 import java.util.Map;
 
