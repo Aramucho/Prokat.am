@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
      android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/maincolorwhite">
+    android:background="@color/maincolorwhite"
+    android:id="@+id/item_layout">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -11,16 +12,7 @@
         android:layout_marginTop="5dp"
         android:id="@+id/category_photo"
         android:layout_alignParentLeft="true"/>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:background="@color/colorPrimary"
-        android:layout_marginTop="5dp"
-        android:id="@+id/category_photo_fake"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/ic_cast_dark"
-        android:visibility="gone"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,6 +20,8 @@
         android:layout_centerVertical="true"
         android:lines="1"
         android:ellipsize="end"
+        android:textSize="15sp"
+        android:layout_marginLeft="5dp"
         android:textColor="@color/maincolorblue"
         android:id="@+id/category_text"
         />

@@ -6,9 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.realmucho.prokatproject.Interfaces.IconChangeCallback;
 
 import java.util.ArrayList;
 
@@ -23,30 +24,19 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     }
 
 
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements IconChangeCallback  {
-
-        private ImageView categoryphoto,categoryphoto_fake;
+        private ImageView categoryphoto;
         private TextView categoryname;
+        private RelativeLayout relativeLayout;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            categoryphoto=(ImageView)itemView.findViewById(R.id.category_photo);
-            categoryname=(TextView)itemView.findViewById(R.id.category_text);
-            categoryphoto_fake=(ImageView)itemView.findViewById(R.id.category_photo_fake);
-        }
-        @Override
-        public void changeIcon(int i) {
-            if(i==1){
-                categoryphoto.setVisibility(View.GONE);
-                categoryphoto_fake.setVisibility(View.VISIBLE);
-            }
-            else{
-                categoryphoto.setVisibility(View.VISIBLE);
-                categoryphoto_fake.setVisibility(View.GONE);
-            }
-        }
+            categoryphoto = (ImageView) itemView.findViewById(R.id.category_photo);
+            categoryname = (TextView) itemView.findViewById(R.id.category_text);
+            relativeLayout = (RelativeLayout) itemView.findViewById(R.id.item_layout);
 
+        }
 
 
     }
@@ -54,7 +44,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
     @Override
     public CategoryAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(context).inflate(R.layout.category_item_view,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.category_item_view, parent, false);
 
         return new MyViewHolder(view);
 
@@ -62,10 +52,50 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
 
     @Override
-    public void onBindViewHolder(CategoryAdapter.MyViewHolder holder, int position) {
-                  CategoryData categoryData=dataArrayList.get(position);
-                  holder.categoryname.setText(categoryData.getName());
-                  holder.categoryphoto.setImageResource(categoryData.getPhoto());
+    public void onBindViewHolder(CategoryAdapter.MyViewHolder holder, final int position) {
+        CategoryData categoryData = dataArrayList.get(position);
+        holder.categoryname.setText(categoryData.getName());
+        holder.categoryphoto.setImageResource(categoryData.getPhoto());
+        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (position)
+                {
+                    case 0:
+                        Toast.makeText(context,"Click1",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 1:
+                        Toast.makeText(context,"Click2",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 2:
+                        Toast.makeText(context,"Click3",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 3:
+                        Toast.makeText(context,"Click4",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 4:
+                        Toast.makeText(context,"Click4",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 5:
+                        Toast.makeText(context,"Click4",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 6:
+                        Toast.makeText(context,"Click4",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 7:
+                        Toast.makeText(context,"Click4",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 8:
+                        Toast.makeText(context,"Click4",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 9:
+                        Toast.makeText(context,"Click4",Toast.LENGTH_SHORT).show();
+                        break;
+
+                }
+            }
+        });
+
     }
 
     @Override
