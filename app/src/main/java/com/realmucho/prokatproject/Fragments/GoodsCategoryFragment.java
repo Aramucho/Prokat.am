@@ -41,11 +41,12 @@ public class GoodsCategoryFragment extends Fragment {
 
     private ArrayList<CategoryData> setData(){
         ArrayList<CategoryData> arrayList=new ArrayList<>();
-        int[] imagelist=new int[]{R.drawable.pc_chacked_icon,R.drawable.birthday_cake_chacked_icon,R.drawable.dinamik_chacked_icon,R.drawable.camera_chacked_icon,R.drawable.build_chacked_icon,R.drawable.travel_chacked_icon,R.drawable.clothing_hanger_chacked_icon,R.drawable.heraxos_chacked_icon,R.drawable.ultimate_chacked_icon,R.drawable.aman_chaman_chacked_icon,R.drawable.goods_chacked_icon};
+        int[] checked=new int[]{R.drawable.pc_icon,R.drawable.birthday_cake_icon,R.drawable.dinamik_icon,R.drawable.camera_icon,R.drawable.build_icon,R.drawable.travel_icon,R.drawable.clothing_hanger_icon,R.drawable.heraxos_icon,R.drawable.ultimate_icon,R.drawable.aman_chaman_icon,R.drawable.goods_icon};
+        int[] unchecked=new int[]{R.drawable.pc_chacked_icon,R.drawable.birthday_cake_chacked_icon,R.drawable.dinamik_chacked_icon,R.drawable.camera_chacked_icon,R.drawable.build_chacked_icon,R.drawable.travel_chacked_icon,R.drawable.clothing_hanger_chacked_icon,R.drawable.heraxos_chacked_icon,R.drawable.ultimate_chacked_icon,R.drawable.aman_chaman_chacked_icon,R.drawable.goods_chacked_icon};
         String[] names=getResources().getStringArray(R.array.goods_titles);
 
         for (int i = 0; i <11 ; i++) {
-           arrayList.add(new CategoryData(imagelist[i],names[i+1]));
+           arrayList.add(new CategoryData(unchecked[i],names[i+1],checked[i]));
             
         }
 

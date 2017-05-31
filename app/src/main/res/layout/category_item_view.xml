@@ -1,37 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-     android:layout_width="match_parent"
+    android:id="@+id/item_layout"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/maincolorwhite"
-    android:id="@+id/item_layout">
+    android:background="@color/maincolorwhite">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
         android:id="@+id/category_photo"
-        android:layout_alignParentLeft="true"/>
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/category_photo"
-        android:layout_centerVertical="true"
-        android:lines="1"
-        android:ellipsize="end"
-        android:textSize="15sp"
+        android:layout_alignParentLeft="true"
         android:layout_marginLeft="5dp"
-        android:textColor="@color/maincolorblue"
-        android:id="@+id/category_text"
-        />
+        android:layout_marginTop="5dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toEndOf="@id/category_photo"
+        android:id="@+id/text_layout"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            android:id="@+id/category_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/maincolorblue"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_below="@id/category_photo"
-        android:background="@color/maincolorblue"/>
-
-
+        android:background="@color/maincolorblue" />
 
 
 </RelativeLayout>

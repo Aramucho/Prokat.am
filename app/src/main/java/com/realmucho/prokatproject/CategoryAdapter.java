@@ -30,11 +30,13 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         private TextView categoryname;
         private RelativeLayout relativeLayout;
 
+
         public MyViewHolder(View itemView) {
             super(itemView);
             categoryphoto = (ImageView) itemView.findViewById(R.id.category_photo);
             categoryname = (TextView) itemView.findViewById(R.id.category_text);
             relativeLayout = (RelativeLayout) itemView.findViewById(R.id.item_layout);
+
 
         }
 
@@ -52,47 +54,50 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
 
     @Override
-    public void onBindViewHolder(CategoryAdapter.MyViewHolder holder, final int position) {
-        CategoryData categoryData = dataArrayList.get(position);
+    public void onBindViewHolder(final CategoryAdapter.MyViewHolder holder, final int position) {
+        final CategoryData categoryData = dataArrayList.get(position);
         holder.categoryname.setText(categoryData.getName());
-        holder.categoryphoto.setImageResource(categoryData.getPhoto());
+        holder.categoryphoto.setImageResource(categoryData.getUncheckedphote());
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (position)
-                {
+
+
+                categoryData.clearall();
+
+                holder.categoryphoto.setImageResource(categoryData.getCheckedphoto());
+                holder.relativeLayout.setBackgroundResource(R.color.maincolorblue);
+                holder.categoryname.setTextColor(context.getResources().getColor(R.color.maincolorwhite));
+                switch (position) {
                     case 0:
-                        Toast.makeText(context,"Click1",Toast.LENGTH_SHORT).show();
+
+
                         break;
                     case 1:
-                        Toast.makeText(context,"Click2",Toast.LENGTH_SHORT).show();
+
                         break;
                     case 2:
-                        Toast.makeText(context,"Click3",Toast.LENGTH_SHORT).show();
                         break;
                     case 3:
-                        Toast.makeText(context,"Click4",Toast.LENGTH_SHORT).show();
                         break;
                     case 4:
-                        Toast.makeText(context,"Click4",Toast.LENGTH_SHORT).show();
                         break;
                     case 5:
-                        Toast.makeText(context,"Click4",Toast.LENGTH_SHORT).show();
                         break;
                     case 6:
-                        Toast.makeText(context,"Click4",Toast.LENGTH_SHORT).show();
                         break;
                     case 7:
-                        Toast.makeText(context,"Click4",Toast.LENGTH_SHORT).show();
                         break;
                     case 8:
-                        Toast.makeText(context,"Click4",Toast.LENGTH_SHORT).show();
                         break;
                     case 9:
-                        Toast.makeText(context,"Click4",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 10:
                         break;
 
                 }
+
+
             }
         });
 
