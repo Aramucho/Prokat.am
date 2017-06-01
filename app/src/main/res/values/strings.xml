@@ -68,13 +68,14 @@
     <string name="rooms">Սենյակներ</string>
     <string name="floor">Հարկ</string>
     <string name="language">Լեզու</string>
+    <string name="please">Խնդրում ենք ընտրել բաժինը</string>
     <string-array name="bydefualt">
         <item>---</item>
     </string-array>
     <string-array name="goods_titles">
         <item>---</item>
         <item>Համակարգչային տեխնիկա</item>
-        <item>Ամենինչ միջոցառումների համար</item>
+        <item>Ամեն ինչ միջոցառումների համար</item>
         <item>Ձայնային լուսային տեխնիկա</item>
         <item>Տեսախցիկներ</item>
         <item>Գործիքներ</item>
@@ -121,7 +122,7 @@
         <item>Շարժական աստիճան</item>
         <item>Պտուտակահան</item>
         <item>Սղոցներ</item>
-        <item>Շաղափ(дрель)</item>
+        <item>Շաղափ (дрель)</item>
         <item>Գեոդեզիական գօրծիքներ</item>
         <item>Այլ</item>
 
@@ -277,6 +278,97 @@
 
 
 
+    </string-array>
+    <string-array name="comp_equipment_1">
+
+        <item>Նոութբուքներ</item>
+        <item>Էկրաներ</item>
+        <item>LCD պրոյեկտորներ</item>
+        <item>Լազերային տպիչներ/Սկաներ</item>
+        <item>Բազմաֆունկցիոնալ սարքավորումներ</item>
+
+    </string-array>
+    <string-array name="ever_events_1">
+
+        <item>Սեղաններ</item>
+        <item>Աթոռններ</item>
+        <item>Վրաններ</item>
+        <item>Այլ</item>
+    </string-array>
+    <string-array name="sound_equipments_1">
+
+        <item>Ձայնային սարքեր</item>
+        <item>Լուսային էֆեկտներ</item>
+        <item>Երաժշտական սարքեր</item>
+    </string-array>
+    <string-array name="cameras_1">
+
+        <item>Ֆոտոխցիկ</item>
+        <item>Վիդեոխցիկ</item>
+        <item>Եռոտանիներ(շտատիվ)</item>
+        <item>Նկարահանման կռան</item>
+        <item>Օբյեկտիվ</item>
+    </string-array>
+    <string-array name="tools_1">
+
+        <item>Խոտ հնձող սարք</item>
+        <item>Շարժական աստիճան</item>
+        <item>Պտուտակահան</item>
+        <item>Սղոցներ</item>
+        <item>Շաղափ (дрель)</item>
+        <item>Գեոդեզիական գօրծիքներ</item>
+        <item>Այլ</item>
+
+    </string-array>
+    <string-array name="tourism_1">
+
+        <item>Վրաններ</item>
+        <item>Քնապարկ</item>
+        <item>Հեծանիվ</item>
+        <item>Փչովի մակույկներ</item>
+        <item>Գամակներ</item>
+        <item>Ձկնորսական պարագաներ</item>
+
+
+    </string-array>
+    <string-array name="clothing_1">
+
+        <item>Հարսանեկան</item>
+        <item>Մուլտհերոսներ</item>
+        <item>Մանկական</item>
+
+
+    </string-array>
+    <string-array name="communications_1">
+
+        <item>Ռացիաներ</item>
+
+
+    </string-array>
+    <string-array name="entertaiment_1">
+
+        <item>Փչովի լողավազաներ</item>
+        <item>Փչովի խաղահրապարակ</item>
+        <item>Այլ</item>
+
+
+    </string-array>
+    <string-array name="tableware_1">
+
+        <item>Ֆուրշետի պարագաներ</item>
+        <item>Բաժականեր</item>
+        <item>Ափսեներ</item>
+        <item>Պատառաքաղ,Դանակ,Գդալ</item>
+        <item>Ուտեստների տակդիրներ</item>
+        <item>Այլ</item>
+
+
+    </string-array>
+    <string-array name="other_goods_1">
+
+    <item>Դրոշներ</item>
+    <item>Չհրկիզվող պահարաններ</item>
+    <item>Գեներատորներ</item>
     </string-array>
 
 </resources>

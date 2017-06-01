@@ -9,33 +9,46 @@
     tools:context="com.realmucho.prokatproject.CategoryActivity">
 
 
-
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/pane_parrent_layout"
         android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:id="@+id/pane_parrent_layout"
-        android:orientation="vertical"
-        android:background="#34ff0c"
+        android:background="@color/maincolorblue"
         android:layoutDirection="ltr">
 
-    </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/please"
+            android:textColor="@color/maincolorwhite"
+            android:textSize="20sp"
+            android:id="@+id/please"/>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:id="@+id/subtitle_list">
+
+        </ListView>
+    </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/pane_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#263172"
         android:layoutDirection="ltr">
+
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/category_rw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/category_rw"
             android:scrollbars="vertical">
 
         </android.support.v7.widget.RecyclerView>
 
     </RelativeLayout>
-
-
 
 
 </android.support.v4.widget.SlidingPaneLayout>
