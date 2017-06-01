@@ -3,21 +3,30 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Free User\Desktop\prokatProject\ProkatProject\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\Free User\AndroidStudioProjects\ProkatProject\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d62c841ac389793ce3c2ce99dec84498deb48678">
+        <dex dex="C:\Users\Free User\AndroidStudioProjects\ProkatProject\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_762cde99b7ad346d3e139c17dee378fde329fb79\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Free User\AndroidStudioProjects\ProkatProject\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
-        <dex dex="C:\Users\Free User\Desktop\prokatProject\ProkatProject\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_3e0c73a9f242858c1bc934407fe1aa320df34e55\classes.dex" />
+        <dex dex="C:\Users\Free User\AndroidStudioProjects\ProkatProject\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_be28a459399031a0d9de3509b011abc2f16b290f\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Free User\Desktop\prokatProject\ProkatProject\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\Free User\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.3.3\1262995965440e28ba5c4d480c9c9ab4ccce84cc\picasso-2.3.3.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="8a587795d0bb22c6f05f5bcfb8f44dfa45f1190d">
-        <dex dex="C:\Users\Free User\Desktop\prokatProject\ProkatProject\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_ab27f66fce20d38e609c13f98d33acee2c1353df\classes.dex" />
+        sha1="1262995965440e28ba5c4d480c9c9ab4ccce84cc">
+        <dex dex="C:\Users\Free User\AndroidStudioProjects\ProkatProject\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.3.3_6e0870948eeec415378b090daa9e554af3cadceb\classes.dex" />
     </item>
 
 </items>

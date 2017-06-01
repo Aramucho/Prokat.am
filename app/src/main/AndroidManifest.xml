@@ -34,8 +34,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CategoryActivity"  android:configChanges="screenSize|orientation"/>
-        <activity android:name=".DetailedActivity" />
-        <activity android:name=".DataActivity"></activity>
+        <activity android:name=".PostsActivity"></activity>
     </application>
 
 </manifest>

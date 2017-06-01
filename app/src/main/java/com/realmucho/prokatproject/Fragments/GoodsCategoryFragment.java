@@ -2,6 +2,7 @@ package com.realmucho.prokatproject.Fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -19,7 +21,9 @@ import android.widget.TextView;
 import com.realmucho.prokatproject.CategoryAdapter;
 import com.realmucho.prokatproject.CategoryData;
 import com.realmucho.prokatproject.Interfaces.PaneCallBack;
+import com.realmucho.prokatproject.PostsActivity;
 import com.realmucho.prokatproject.R;
+import com.realmucho.prokatproject.SplashScreen;
 
 import java.util.ArrayList;
 
@@ -72,6 +76,13 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack {
         goodssubtitle.setAdapter(subtitles);
 
         slidingPaneLayout.openPane();
+        goodssubtitle.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(getActivity(), PostsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private ArrayList<String[]> getsubtitles() {
