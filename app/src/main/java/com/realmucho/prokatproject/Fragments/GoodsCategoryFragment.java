@@ -44,7 +44,7 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack {
         slidingPaneLayout.setSliderFadeColor(Color.TRANSPARENT);
         goodssubtitle = (ListView) view.findViewById(R.id.subtitle_list);
         please = (TextView) view.findViewById(R.id.please);
-        categoryrw = (RecyclerView) view.findViewById(R.id.category_rw);
+        categoryrw = (RecyclerView) view.findViewById(R.id.goods_category_rw);
         categoryrw.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new CategoryAdapter(setData(), getContext(), this);
         categoryrw.setAdapter(adapter);
@@ -53,8 +53,8 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack {
 
     private ArrayList<CategoryData> setData() {
         ArrayList<CategoryData> arrayList = new ArrayList<>();
-        int[] checked = new int[]{R.drawable.pc_icon, R.drawable.birthday_cake_icon, R.drawable.dinamik_icon, R.drawable.camera_icon, R.drawable.build_icon, R.drawable.travel_icon, R.drawable.clothing_hanger_icon, R.drawable.heraxos_icon, R.drawable.ultimate_icon, R.drawable.aman_chaman_icon, R.drawable.goods_icon};
-        int[] unchecked = new int[]{R.drawable.pc_chacked_icon, R.drawable.birthday_cake_chacked_icon, R.drawable.dinamik_chacked_icon, R.drawable.camera_chacked_icon, R.drawable.build_chacked_icon, R.drawable.travel_chacked_icon, R.drawable.clothing_hanger_chacked_icon, R.drawable.heraxos_chacked_icon, R.drawable.ultimate_chacked_icon, R.drawable.aman_chaman_chacked_icon, R.drawable.goods_chacked_icon};
+        int[] checked = new int[]{R.drawable.pc_icon, R.drawable.birthday_cake_icon, R.drawable.dinamik_icon, R.drawable.camera_icon, R.drawable.build_icon, R.drawable.travel_icon, R.drawable.clothing_hanger_icon, R.drawable.heraxos_icon, R.drawable.ultimate_icon, R.drawable.aman_chaman_icon, R.drawable.tochki_icon};
+        int[] unchecked = new int[]{R.drawable.pc_chacked_icon, R.drawable.birthday_cake_chacked_icon, R.drawable.dinamik_chacked_icon, R.drawable.camera_chacked_icon, R.drawable.build_chacked_icon, R.drawable.travel_chacked_icon, R.drawable.clothing_hanger_chacked_icon, R.drawable.heraxos_chacked_icon, R.drawable.ultimate_chacked_icon, R.drawable.aman_chaman_chacked_icon, R.drawable.tochki_checked_icon};
         String[] names = getResources().getStringArray(R.array.goods_titles);
 
         for (int i = 0; i < 11; i++) {

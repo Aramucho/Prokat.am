@@ -41,7 +41,7 @@
         android:layoutDirection="ltr">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/category_rw"
+            android:id="@+id/goods_category_rw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scrollbars="vertical">

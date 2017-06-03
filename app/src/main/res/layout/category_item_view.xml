@@ -19,7 +19,8 @@
         android:layout_toEndOf="@id/category_photo"
         android:id="@+id/text_layout"
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp">
+        android:layout_marginLeft="5dp"
+        android:layout_centerInParent="true">
 
         <TextView
             android:id="@+id/category_text"
