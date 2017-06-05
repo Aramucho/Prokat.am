@@ -6,4 +6,8 @@
     <color name="maincolorblue">#0571f5</color>
     <color name="maincolorwhite">#FFFFFF</color>
     <color name="hintcolor">#e35c5a5a</color>
+    <array name="progress">
+        <item>#0571f5</item>
+        <item>#0571f5</item>
+    </array>
 </resources>

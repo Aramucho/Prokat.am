@@ -38,7 +38,7 @@ public class TransportCategoryFragment extends Fragment implements PaneCallBack 
         ArrayList<CategoryData> arrayList = new ArrayList<>();
         int[] checked = new int[]{R.drawable.econom_icon, R.drawable.biznes_icon, R.drawable.jeep_icon, R.drawable.nerka_icon, R.drawable.limuzin_icon, R.drawable.cabriolet_icon, R.drawable.miniven_icon, R.drawable.retro_icon, R.drawable.karq_icon, R.drawable.tochki_icon};
         int[] unchecked = new int[]{R.drawable.econom_checked_icon, R.drawable.biznes_checked_icon, R.drawable.jeep_checked_icon, R.drawable.nerka_checked_icon, R.drawable.limuzin_checked_icon, R.drawable.cabriolet_checked_icon, R.drawable.miniven_checked_icon, R.drawable.retro_checked_icon, R.drawable.karq_checked_icon, R.drawable.tochki_checked_icon};
-        String[] names = getResources().getStringArray(R.array.goods_titles);
+        String[] names = getResources().getStringArray(R.array.transport_titles);
 
         for (int i = 0; i < 10; i++) {
             arrayList.add(new CategoryData(unchecked[i], names[i + 1], checked[i]));
