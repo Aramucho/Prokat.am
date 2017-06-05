@@ -43,14 +43,16 @@
                android:layout_height="match_parent"
                android:id="@+id/itemList">
            </android.support.v7.widget.RecyclerView>
-           <Button
+           <ImageButton
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:id="@+id/scroll_up"
                android:layout_gravity="bottom|center"
                android:layout_marginBottom="5dp"
-               android:text="Scroll"
+               android:layout_marginRight="5dp"
                android:visibility="gone"
+               android:src="@drawable/top_scroll_icon"
+               android:background="#00000000"
                />
        </com.cjj.MaterialRefreshLayout>
 

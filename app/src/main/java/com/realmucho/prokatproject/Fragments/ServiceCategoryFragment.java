@@ -34,12 +34,12 @@ public class ServiceCategoryFragment extends Fragment implements PaneCallBack {
     }
     private ArrayList<CategoryData> setData() {
         ArrayList<CategoryData> arrayList = new ArrayList<>();
-        int[] checked = new int[]{R.drawable.pc_icon, R.drawable.birthday_cake_icon, R.drawable.dinamik_icon, R.drawable.camera_icon, R.drawable.build_icon, R.drawable.travel_icon, R.drawable.clothing_hanger_icon, R.drawable.heraxos_icon, R.drawable.ultimate_icon, R.drawable.aman_chaman_icon, R.drawable.goods_icon};
-        int[] unchecked = new int[]{R.drawable.pc_chacked_icon, R.drawable.birthday_cake_chacked_icon, R.drawable.dinamik_chacked_icon, R.drawable.camera_chacked_icon, R.drawable.build_chacked_icon, R.drawable.travel_chacked_icon, R.drawable.clothing_hanger_chacked_icon, R.drawable.heraxos_chacked_icon, R.drawable.ultimate_chacked_icon, R.drawable.aman_chaman_chacked_icon, R.drawable.goods_chacked_icon};
-        String[] names = getResources().getStringArray(R.array.goods_titles);
+        int[] checked = new int[]{R.drawable.hars_pesa_chacked_icon, R.drawable.vfx_chacked_icon, R.drawable.celebration_chacked_icon,  R.drawable.furshet_chacked_icon, R.drawable.aficant_chacked_icon, R.drawable.balloons_chacked_icon, R.drawable.kids_chacked_icon, R.drawable.pcservice_chacked_icon, R.drawable.shinarar_chacked_icon, R.drawable.tochki_checked_icon};
+        int[] unchecked = new int[]{R.drawable.hars_pesa_icon, R.drawable.vfx_icon, R.drawable.celebration_icon,  R.drawable.furshet_icon, R.drawable.aficant_icon, R.drawable.balloons_icon, R.drawable.kids_icon, R.drawable.pcservice_icon, R.drawable.shinarar_icon, R.drawable.tochki_icon};
+        String[] names = getResources().getStringArray(R.array.service_items);
 
-        for (int i = 0; i < 11; i++) {
-            arrayList.add(new CategoryData(unchecked[i], names[i + 1], checked[i]));
+        for (int i = 0; i < 10; i++) {
+            arrayList.add(new CategoryData(checked[i], names[i + 1], unchecked[i]));
 
         }
 

@@ -2,6 +2,7 @@ package com.realmucho.prokatproject;
 
 import android.graphics.Color;
 import android.os.Handler;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
@@ -28,14 +30,14 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack {
     private GridLayoutManager layoutManager;
     private ViewPager viewPager;
     private ItemPagerAdapter pageradapter;
-    private Button scroll;
+    private ImageButton scroll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.posts_activity);
         viewPager = (ViewPager) findViewById(R.id.detailed_pager);
-        scroll = (Button) findViewById(R.id.scroll_up);
+        scroll = (ImageButton) findViewById(R.id.scroll_up);
         pageradapter = new ItemPagerAdapter(this);
         viewPager.setAdapter(pageradapter);
         refreshLayout = (MaterialRefreshLayout) findViewById(R.id.refreshlayout);
@@ -63,7 +65,6 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack {
 
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                GridLayoutManager layoutManager=(GridLayoutManager)recyclerView.getLayoutManager();
                 int firstposition=layoutManager.findFirstVisibleItemPosition();
                 if(firstposition!=0)
                 {
@@ -106,6 +107,16 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack {
         });
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(slidingPaneLayout.isOpen())
+        {
+            slidingPaneLayout.closePane();
+        }else if(!slidingPaneLayout.isOpen()){
+            super.onBackPressed();
+        }
     }
 
     @Override

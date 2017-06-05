@@ -7,9 +7,11 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,7 +81,7 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack {
         goodssubtitle.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent=new Intent(getActivity(), PostsActivity.class);
+                Intent intent = new Intent(getActivity(), PostsActivity.class);
                 startActivity(intent);
             }
         });
@@ -102,5 +104,6 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack {
 
         return arrayList;
     }
+
 
 }

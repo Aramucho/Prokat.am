@@ -22,24 +22,26 @@ import java.util.ArrayList;
 public class RealtyCategoryFragment extends Fragment implements PaneCallBack {
     private RecyclerView categoryrw;
     private CategoryAdapter adapter;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.realty_category_fragment,container,false);
+        View view = inflater.inflate(R.layout.realty_category_fragment, container, false);
         categoryrw = (RecyclerView) view.findViewById(R.id.realty_category_rw);
         categoryrw.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new CategoryAdapter(setData(), getContext(), this);
         categoryrw.setAdapter(adapter);
         return view;
     }
+
     private ArrayList<CategoryData> setData() {
         ArrayList<CategoryData> arrayList = new ArrayList<>();
-        int[] checked = new int[]{R.drawable.pc_icon, R.drawable.birthday_cake_icon, R.drawable.dinamik_icon, R.drawable.camera_icon, R.drawable.build_icon, R.drawable.travel_icon, R.drawable.clothing_hanger_icon, R.drawable.heraxos_icon, R.drawable.ultimate_icon, R.drawable.aman_chaman_icon, R.drawable.goods_icon};
-        int[] unchecked = new int[]{R.drawable.pc_chacked_icon, R.drawable.birthday_cake_chacked_icon, R.drawable.dinamik_chacked_icon, R.drawable.camera_chacked_icon, R.drawable.build_chacked_icon, R.drawable.travel_chacked_icon, R.drawable.clothing_hanger_chacked_icon, R.drawable.heraxos_chacked_icon, R.drawable.ultimate_chacked_icon, R.drawable.aman_chaman_chacked_icon, R.drawable.goods_chacked_icon};
-        String[] names = getResources().getStringArray(R.array.goods_titles);
+        int[] checked = new int[]{R.drawable.tun_mek_checked_icon, R.drawable.tun_erku_checked_icon, R.drawable.tun_ereq_checked_icon, R.drawable.arandznatun_checked_icon, R.drawable.shop_checked_icon, R.drawable.cottage_checked_icon};
+        int[] unchecked = new int[]{R.drawable.tun_mek_icon, R.drawable.tun_erku_icon, R.drawable.tun_ereq_icon, R.drawable.arandznatun_icon, R.drawable.shop_icon, R.drawable.cottage_icon};
+        String[] names = getResources().getStringArray(R.array.realty_items);
 
-        for (int i = 0; i < 11; i++) {
-            arrayList.add(new CategoryData(unchecked[i], names[i + 1], checked[i]));
+        for (int i = 0; i < 5; i++) {
+            arrayList.add(new CategoryData(checked[i], names[i + 1], unchecked[i]));
 
         }
 
@@ -49,7 +51,7 @@ public class RealtyCategoryFragment extends Fragment implements PaneCallBack {
 
     @Override
     public void paneopen(int position) {
-        Intent intent=new Intent(getContext(), PostsActivity.class);
+        Intent intent = new Intent(getContext(), PostsActivity.class);
         startActivity(intent);
     }
 }
