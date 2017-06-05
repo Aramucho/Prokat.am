@@ -20,10 +20,7 @@ public class ItemPagerAdapter extends PagerAdapter {
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    @Override
-    public int getCount() {
-        return array.length;
-    }
+
 
 
 
@@ -32,12 +29,13 @@ public class ItemPagerAdapter extends PagerAdapter {
         return view==((LinearLayout)object);
     }
 
-    int[] array = {R.drawable.bad, R.drawable.bird, R.drawable.bird2, R.drawable.katil};
+    int[] array = {R.drawable.tochki_checked_icon, R.drawable.retro_checked_icon, R.drawable.aman_chaman_chacked_icon, R.drawable.karq_checked_icon};
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         View itemView=layoutInflater.inflate(R.layout.pager_item,container,false);
         ImageView imageView=(ImageView) itemView.findViewById(R.id.item_image);
+        imageView.setImageResource(array[position]);
         container.addView(itemView);
 
         return itemView;
@@ -46,5 +44,9 @@ public class ItemPagerAdapter extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((LinearLayout)object);
+    }
+    @Override
+    public int getCount() {
+        return array.length;
     }
 }
