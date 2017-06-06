@@ -15,10 +15,29 @@
         android:id="@+id/list_pane"
         android:background="@color/maincolorblue"
         >
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2.5dp"
+            app:cardBackgroundColor="@color/maincolorwhite"
+            >
             <android.support.v4.view.ViewPager
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/detailed_pager"></android.support.v4.view.ViewPager>
+                android:layout_height="250dp"
+                android:id="@+id/detailed_pager"
+                >
+
+            </android.support.v4.view.ViewPager>
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/indicator"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                app:ci_orientation="horizontal"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                />
+        </android.support.v7.widget.CardView>
+
     </RelativeLayout>
     <RelativeLayout
 

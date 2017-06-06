@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.realmucho.prokatproject.Interfaces.PaneCallBack;
 import com.squareup.picasso.Picasso;
 
@@ -38,7 +39,7 @@ public class PostsListAdapter extends RecyclerView.Adapter<PostsListAdapter.Item
     @Override
     public void onBindViewHolder(ItemListHolder holder,final int position) {
         ItemData itemData=dataArrayList.get(position);
-        Picasso.with(context).load(itemData.getMainImage()).fit().into(holder.mainImage);
+        Glide.with(context).load(itemData.getMainImage()).centerCrop().into(holder.mainImage);
         holder.itemName.setText(itemData.getItemName());
         holder.price.setText(itemData.getPrice());
         if (curPosition != -1 && position == curPosition) {

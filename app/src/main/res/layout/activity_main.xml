@@ -21,7 +21,7 @@
         android:background="#0571f5"
         android:fitsSystemWindows="true"
         app:arc_cropDirection="cropOutside"
-        app:arc_width="96dp"
+        app:arc_width="40dp"
         app:headerLayout="@layout/nav_header_main"
         app:itemIconTint="@color/drawer_item"
         app:itemTextColor="@color/drawer_item"

@@ -2,24 +2,21 @@ package com.realmucho.prokatproject;
 
 import android.graphics.Color;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.realmucho.prokatproject.Interfaces.PaneCallBack;
-
 import java.util.ArrayList;
+
+import me.relex.circleindicator.CircleIndicator;
 
 public class PostsActivity extends AppCompatActivity implements PaneCallBack {
 
@@ -31,15 +28,20 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack {
     private ViewPager viewPager;
     private ItemPagerAdapter pageradapter;
     private ImageButton scroll;
+    private CircleIndicator indicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.posts_activity);
         viewPager = (ViewPager) findViewById(R.id.detailed_pager);
+        indicator=(CircleIndicator)findViewById(R.id.indicator);
         scroll = (ImageButton) findViewById(R.id.scroll_up);
         pageradapter = new ItemPagerAdapter(this);
         viewPager.setAdapter(pageradapter);
+        indicator.setViewPager(viewPager);
+        indicator.animate().rotation(180);
+        pageradapter.registerDataSetObserver(indicator.getDataSetObserver());
         refreshLayout = (MaterialRefreshLayout) findViewById(R.id.refreshlayout);
         slidingPaneLayout = (SlidingPaneLayout) findViewById(R.id.posts_sliding_pane);
         slidingPaneLayout.setSliderFadeColor(Color.TRANSPARENT);
@@ -123,4 +125,6 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack {
     public void paneopen(int position) {
         slidingPaneLayout.openPane();
     }
+
+
 }

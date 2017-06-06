@@ -1,8 +1,11 @@
-<Spinner
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:background="@drawable/lang_spinner_selector"
-    android:popupBackground="@drawable/lang_spinner_selector"
-    android:layout_height="wrap_content"
-    />
+
+
+    <Spinner xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/lang_spinner_selector"
+        android:maxWidth="20dp"
+        android:popupBackground="@drawable/lang_spinner_selector" />
+
+
 
