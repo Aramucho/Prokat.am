@@ -19,15 +19,14 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="#0571f5"
+        android:backgroundTintMode="@color/maincolorwhite"
         android:fitsSystemWindows="true"
         app:arc_cropDirection="cropOutside"
         app:arc_width="40dp"
         app:headerLayout="@layout/nav_header_main"
         app:itemIconTint="@color/drawer_item"
         app:itemTextColor="@color/drawer_item"
-        app:menu="@menu/activity_main_drawer"
-        android:backgroundTintMode="@color/maincolorwhite"
-        >
+        app:menu="@menu/activity_main_drawer">
 
 
     </com.rom4ek.arcnavigationview.ArcNavigationView>

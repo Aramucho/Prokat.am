@@ -3,19 +3,19 @@ package com.realmucho.prokatproject;
 import android.graphics.Color;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.animation.OvershootInterpolator;
 import android.widget.ImageButton;
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.realmucho.prokatproject.Interfaces.PaneCallBack;
 import java.util.ArrayList;
-
+import jp.wasabeef.recyclerview.animators.SlideInDownAnimator;
 import me.relex.circleindicator.CircleIndicator;
 
 public class PostsActivity extends AppCompatActivity implements PaneCallBack {
@@ -29,6 +29,7 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack {
     private ItemPagerAdapter pageradapter;
     private ImageButton scroll;
     private CircleIndicator indicator;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,32 +52,37 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack {
         recyclerView.setLayoutManager(layoutManager);
         adapter = new PostsListAdapter(setItemData(), this, this);
         recyclerView.setAdapter(adapter);
-        scroll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GridLayoutManager layoutManager=(GridLayoutManager)recyclerView.getLayoutManager();
-                layoutManager.scrollToPositionWithOffset(0,0);
-            }
-        });
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                        super.onScrollStateChanged(recyclerView,newState);
+        scrollinit();
 
-            }
-
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                int firstposition=layoutManager.findFirstVisibleItemPosition();
-                if(firstposition!=0)
-                {
-                    scroll.setVisibility(View.VISIBLE);
-                }else{
-                    scroll.setVisibility(View.GONE);
-                }
-            }
-        });
     }
+     private void scrollinit(){
+         scroll.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 GridLayoutManager layoutManager=(GridLayoutManager)recyclerView.getLayoutManager();
+                 layoutManager.scrollToPositionWithOffset(0,0);
+             }
+         });
+         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+             @Override
+             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                 super.onScrollStateChanged(recyclerView,newState);
+
+             }
+
+             @Override
+             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                 int firstposition=layoutManager.findFirstVisibleItemPosition();
+                 if(firstposition!=0)
+                 {
+                     scroll.setVisibility(View.VISIBLE);
+                 }else{
+                     scroll.setVisibility(View.GONE);
+                 }
+             }
+         });
+     }
+
 
     private ArrayList<ItemData> setItemData() {
         ArrayList<ItemData> arrayList = new ArrayList<>();

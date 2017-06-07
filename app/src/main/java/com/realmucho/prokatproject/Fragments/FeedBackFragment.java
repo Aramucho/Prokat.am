@@ -70,6 +70,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
             case R.id.map_watch:
 
                 bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                submit.setVisibility(View.GONE);
                 break;
             case R.id.submitbutton:
 
@@ -121,6 +122,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
                 if (newState == BottomSheetBehavior.STATE_COLLAPSED) {
                     bottomSheetBehavior.setPeekHeight(0);
+                    submit.setVisibility(View.VISIBLE);
                 }
             }
 

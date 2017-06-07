@@ -55,6 +55,7 @@ public class PostsListAdapter extends RecyclerView.Adapter<PostsListAdapter.Item
             holder.price.setTextColor(context.getResources().getColor(R.color.maincolorwhite));
 
         }
+
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +66,7 @@ public class PostsListAdapter extends RecyclerView.Adapter<PostsListAdapter.Item
         });
 
     }
+
 
     @Override
     public int getItemCount() {

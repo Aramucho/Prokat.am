@@ -22,19 +22,27 @@
 
         <activity
             android:name=".MainActivity"
-            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddActivity"
-            />
-        <activity android:name=".SplashScreen">
+        <activity
+            android:name=".AddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".CategoryActivity"  android:configChanges="screenSize|orientation"/>
-        <activity android:name=".PostsActivity"></activity>
+        <activity
+            android:name=".CategoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PostsActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.SearchView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -16,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.realmucho.prokatproject.Fragments.AboutFragment;
 import com.realmucho.prokatproject.Fragments.ConditionsFragment;
@@ -27,9 +29,7 @@ import com.realmucho.prokatproject.Fragments.TopOfFragment;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private SearchView search;
-    private Spinner langspinner;
     private Fragment mainFragment;
-    private ArrayAdapter langadapter;
 
 
     @Override
@@ -54,9 +54,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.getMenu().getItem(0).setChecked(true);
-        langspinner = (Spinner) navigationView.getMenu().findItem(R.id.language).getActionView();
-        langadapter = ArrayAdapter.createFromResource(MainActivity.this, R.array.langs, R.layout.lang_spinner_drop_down_item);
-        langspinner.setAdapter(langadapter);
     }
 
     @Override
@@ -78,6 +75,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         Fragment fragment = null;
         int id = item.getItemId();
+
 
         switch (id) {
 
@@ -125,6 +123,8 @@ public class MainActivity extends AppCompatActivity
 
                 break;
 
+            case R.id.language:
+                break;
 
         }
 
