@@ -75,6 +75,7 @@
     <string name="relatives">Նմանատիպ առաջարկներ</string>
     <string name="order">Պատվիրել</string>
     <string name="checkout">Պատվերի ձևակերպում</string>
+    <string name="changelang">Փոխել լեզուն</string>
     <string-array name="bydefualt">
         <item>---</item>
     </string-array>

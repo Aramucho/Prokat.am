@@ -1,184 +1,269 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/posts_sliding_pane"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:padding="10dp">
-
-    <TextView
-        android:id="@+id/feedbacktitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/feedback"
-        android:textColor="#000000"
-        android:textSize="30sp" />
+    android:layoutDirection="rtl"
+    tools:context="com.realmucho.prokatproject.PostsActivity">
 
     <LinearLayout
-        android:id="@+id/feedback_info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/feedbacktitle"
-        android:layout_marginTop="15dp"
-        android:orientation="vertical">
+        android:id="@+id/list_pane"
+        android:layout_width="64dp"
+        android:layout_height="match_parent"
+        android:background="@color/maincolorblue"
+        android:orientation="vertical"
+        android:gravity="center">
 
-        <TextView
+        <ImageButton
+            android:id="@+id/fb_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/phone"
-            android:textColor="#000000"
-            android:textSize="18sp" />
+            android:layout_weight="1"
+            android:src="@drawable/facebook_icon"
+            android:background="@color/maincolorblue"
+            />
 
-        <LinearLayout
+        <ImageButton
+            android:id="@+id/vk_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:src="@drawable/vk_icon"
+            android:background="@color/maincolorblue"
+            />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingRight="10dp"
-                android:text="@string/email"
-                android:textColor="#000000"
-                android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingLeft="10dp"
-                android:text="@string/info_prokat_am"
-                android:textColor="@color/maincolorblue"
-                android:textSize="18sp"
-                android:id="@+id/link"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/youtube_icon"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="10dp">
+            android:layout_weight="1"
+            android:src="@drawable/youtube_icon"
+            android:background="@color/maincolorblue"
+            />
 
-            <TextView
-                android:id="@+id/location_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/address"
-                android:textColor="#000000"
-                android:textSize="18sp" />
-
-            <ImageButton
-                android:id="@+id/map_watch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/maincolorwhite"
-                android:clickable="true"
-                android:src="@drawable/location_icon"
-                android:layout_marginLeft="7dp"/>
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/name_feed"
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/ok_icon"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/edit_text_drawable"
-            android:ellipsize="end"
-            android:hint="@string/namehint"
-            android:lines="1"
-            android:minHeight="40dp"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textColorHint="@color/hintcolor" />
+            android:layout_weight="1"
+            android:src="@drawable/ok_icon"
+            android:background="@color/maincolorblue"
+            />
 
-        <EditText
-            android:id="@+id/email_feed"
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/insta_icon"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/edit_text_drawable"
-            android:ellipsize="end"
-            android:hint="@string/emaihint"
-            android:lines="1"
-            android:minHeight="40dp"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textColorHint="@color/hintcolor" />
+            android:layout_weight="1"
+            android:src="@drawable/instagram_icon"
+            android:background="@color/maincolorblue"
+            />
 
-        <EditText
-            android:id="@+id/phone_feed"
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/skype_icon"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/edit_text_drawable"
-            android:ellipsize="end"
-            android:hint="@string/phonehint"
-            android:inputType="number"
-            android:lines="1"
-            android:minHeight="40dp"
-            android:paddingLeft="10dp"
-            android:textColor="#000000"
-            android:textColorHint="@color/hintcolor" />
+            android:layout_weight="1"
+            android:src="@drawable/facebook_icon"
+            android:background="@color/maincolorblue"
+            />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/submitbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:background="@color/maincolorblue"
-        android:text="@string/submit"
-        android:textAllCaps="false" />
+    <RelativeLayout
 
-    <EditText
-        android:id="@+id/message"
+        android:id="@+id/detailed_pane"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/submitbutton"
-        android:layout_below="@id/feedback_info"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/edit_text_drawable"
-        android:gravity="top"
-        android:hint="@string/messagehint"
-        android:paddingLeft="10dp"
-        android:textColor="#000000"
-        android:textColorHint="@color/hintcolor" />
+        android:background="@color/maincolorwhite"
+        android:layoutDirection="ltr">
 
-
-    <android.support.design.widget.CoordinatorLayout
-
-        android:id="@+id/main_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <android.support.v4.widget.NestedScrollView
-            android:id="@+id/bottom_sheet"
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+            android:background="#ffffff"
+            android:padding="10dp">
 
-            <RelativeLayout
+            <TextView
+                android:id="@+id/feedbacktitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/feedback"
+                android:textColor="#000000"
+                android:textSize="30sp" />
+
+            <LinearLayout
+                android:id="@+id/feedback_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/feedbacktitle"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/phone"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:paddingRight="10dp"
+                        android:text="@string/email"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:paddingLeft="10dp"
+                        android:text="@string/info_prokat_am"
+                        android:textColor="@color/maincolorblue"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/location_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/address"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <ImageButton
+                        android:id="@+id/map_watch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:background="@color/maincolorwhite"
+                        android:clickable="true"
+                        android:src="@drawable/location_icon" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/name_feed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edit_text_drawable"
+                    android:ellipsize="end"
+                    android:hint="@string/namehint"
+                    android:lines="1"
+                    android:minHeight="40dp"
+                    android:paddingLeft="10dp"
+                    android:textColor="#000000"
+                    android:textColorHint="@color/hintcolor" />
+
+                <EditText
+                    android:id="@+id/email_feed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit_text_drawable"
+                    android:ellipsize="end"
+                    android:hint="@string/emaihint"
+                    android:lines="1"
+                    android:minHeight="40dp"
+                    android:paddingLeft="10dp"
+                    android:textColor="#000000"
+                    android:textColorHint="@color/hintcolor" />
+
+                <EditText
+                    android:id="@+id/phone_feed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit_text_drawable"
+                    android:ellipsize="end"
+                    android:hint="@string/phonehint"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:minHeight="40dp"
+                    android:paddingLeft="10dp"
+                    android:textColor="#000000"
+                    android:textColorHint="@color/hintcolor" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/submitbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:background="@color/maincolorblue"
+                android:text="@string/submit"
+                android:textAllCaps="false" />
+
+            <EditText
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/submitbutton"
+                android:layout_below="@id/feedback_info"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_text_drawable"
+                android:gravity="top"
+                android:hint="@string/messagehint"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/hintcolor" />
+
+
+            <android.support.design.widget.CoordinatorLayout
+
+                android:id="@+id/main_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <com.google.android.gms.maps.MapView
-                    android:id="@+id/map_view"
+                <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/bottom_sheet"
                     android:layout_width="match_parent"
-                    android:layout_height="1000dp" />
-            </RelativeLayout>
+                    android:layout_height="match_parent"
+                    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
 
-        </android.support.v4.widget.NestedScrollView>
-    </android.support.design.widget.CoordinatorLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-</RelativeLayout>
+                        <com.google.android.gms.maps.MapView
+                            android:id="@+id/map_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="1000dp" />
+                    </RelativeLayout>
+
+                </android.support.v4.widget.NestedScrollView>
+            </android.support.design.widget.CoordinatorLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</android.support.v4.widget.SlidingPaneLayout>

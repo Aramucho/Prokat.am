@@ -1,7 +1,9 @@
 package com.realmucho.prokatproject.Fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -32,7 +34,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
     private BottomSheetBehavior bottomSheetBehavior;
     private Button submit;
-    private ImageButton mapwatch;
+    private ImageButton mapwatch, fb, vk, ok, yotube, insta, skype;
     private MapView mMapView;
     private GoogleMap googleMap;
     private TextView link;
@@ -48,11 +50,18 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume();
         mapwatch = (ImageButton) view.findViewById(R.id.map_watch);
+        fb = (ImageButton) view.findViewById(R.id.fb_icon);
+        vk = (ImageButton) view.findViewById(R.id.vk_icon);
+        yotube = (ImageButton) view.findViewById(R.id.youtube_icon);
+        ok = (ImageButton) view.findViewById(R.id.ok_icon);
+        insta = (ImageButton) view.findViewById(R.id.insta_icon);
+        skype = (ImageButton) view.findViewById(R.id.skype_icon);
         submit = (Button) view.findViewById(R.id.submitbutton);
         link = (TextView) view.findViewById(R.id.link);
         link.setOnClickListener(this);
         mapwatch.setOnClickListener(this);
         submit.setOnClickListener(this);
+        fb.setOnClickListener(this);
         bottominit();
         mapinit();
 
@@ -63,7 +72,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-
+        Intent intent;
         int id = v.getId();
 
         switch (id) {
@@ -76,10 +85,46 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
                 break;
             case R.id.link:
-                String email = "mailto:"+getActivity().getResources().getString(R.string.info_prokat_am);
-                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                String email = "mailto:" + getActivity().getResources().getString(R.string.info_prokat_am);
+                intent = new Intent(Intent.ACTION_SENDTO);
                 intent.setData(Uri.parse(email));
                 startActivity(intent);
+                break;
+
+            case R.id.fb_icon:
+                try {
+                    intent = new Intent(Intent.ACTION_VIEW);
+                    String facebookUrl = getFacebookPageURL(getContext());
+                    intent.setData(Uri.parse(facebookUrl));
+                    startActivity(intent);
+                }catch(Exception e)
+                {
+                    intent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/Prakatam"));
+                    startActivity(intent);
+
+                }
+
+                break;
+            case R.id.vk_icon:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://vk.com/id250024962"));
+                startActivity(intent);
+                break;
+            case R.id.youtube_icon:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCXUA6v5FfPSFo596ReOqqRw"));
+                startActivity(intent);
+                break;
+            case R.id.ok_icon:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://ok.ru/profile/562361186775"));
+                startActivity(intent);
+                break;
+            case R.id.insta_icon:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/prokat.am/"));
+                startActivity(intent);
+                break;
+            case R.id.skype_icon:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Prakatam"));
+                startActivity(intent);
+                break;
 
 
         }
@@ -157,5 +202,18 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         mMapView.onLowMemory();
     }
 
-
+    public String getFacebookPageURL(Context context) {
+        String url = "https://www.facebook.com/Prakatam";
+        PackageManager packageManager = context.getPackageManager();
+        try {
+            int versionCode = packageManager.getPackageInfo("com.facebook.katana", 0).versionCode;
+            if (versionCode >= 3002850) { //newer versions of fb app
+                return "fb://facewebmodal/f?href=" + url;
+            } else { //older versions of fb app
+                return "fb://page/" + "Prakat.am";
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            return url;
+        }
+    }
 }
