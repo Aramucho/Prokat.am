@@ -52,4 +52,6 @@ public class ServiceCategoryFragment extends Fragment implements PaneCallBack {
         Intent intent=new Intent(getContext(), PostsActivity.class);
         startActivity(intent);
     }
+
+
 }

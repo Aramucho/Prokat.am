@@ -54,4 +54,6 @@ public class RealtyCategoryFragment extends Fragment implements PaneCallBack {
         Intent intent = new Intent(getContext(), PostsActivity.class);
         startActivity(intent);
     }
+
+
 }

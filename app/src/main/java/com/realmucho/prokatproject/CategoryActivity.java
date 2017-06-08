@@ -1,20 +1,24 @@
 package com.realmucho.prokatproject;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.realmucho.prokatproject.Fragments.GoodsCategoryFragment;
 import com.realmucho.prokatproject.Fragments.RealtyCategoryFragment;
 import com.realmucho.prokatproject.Fragments.ServiceCategoryFragment;
 import com.realmucho.prokatproject.Fragments.TransportCategoryFragment;
+import com.realmucho.prokatproject.Interfaces.FragmentBackPressed;
+import com.realmucho.prokatproject.Interfaces.PaneCallBack;
 
 public class CategoryActivity extends AppCompatActivity {
 
 
-
+ private FragmentBackPressed fragmentBackPressed;
 
 
     @Override
@@ -41,7 +45,25 @@ public class CategoryActivity extends AppCompatActivity {
 
         }
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.category_activity, fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.category_activity, fragment).addToBackStack("tag").commit();
 
     }
+
+    @Override
+    public void onBackPressed() {
+        int count=getFragmentManager().getBackStackEntryCount();
+        if(count==0){
+            fragmentBackPressed.closePane();
+
+
+        }else{
+            super.onBackPressed();
+
+        }
+    }
+
+    public void setFragmentBackPressed(FragmentBackPressed fragmentBackPressed){
+        this.fragmentBackPressed=fragmentBackPressed;
+    }
+
 }

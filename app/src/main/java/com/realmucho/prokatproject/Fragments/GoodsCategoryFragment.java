@@ -20,8 +20,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.realmucho.prokatproject.CategoryActivity;
 import com.realmucho.prokatproject.CategoryAdapter;
 import com.realmucho.prokatproject.CategoryData;
+import com.realmucho.prokatproject.Interfaces.FragmentBackPressed;
 import com.realmucho.prokatproject.Interfaces.PaneCallBack;
 import com.realmucho.prokatproject.PostsActivity;
 import com.realmucho.prokatproject.R;
@@ -29,7 +31,7 @@ import com.realmucho.prokatproject.SplashScreen;
 
 import java.util.ArrayList;
 
-public class GoodsCategoryFragment extends Fragment implements PaneCallBack {
+public class GoodsCategoryFragment extends Fragment implements PaneCallBack,FragmentBackPressed {
 
     private SlidingPaneLayout slidingPaneLayout;
     private RecyclerView categoryrw;
@@ -37,6 +39,10 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack {
     private ArrayAdapter<String> subtitles;
     private ListView goodssubtitle;
     private TextView please;
+    private CategoryActivity categoryActivity;
+
+
+
 
     @Nullable
     @Override
@@ -50,6 +56,10 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack {
         categoryrw.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new CategoryAdapter(setData(), getContext(), this);
         categoryrw.setAdapter(adapter);
+        categoryActivity=new CategoryActivity();
+        categoryActivity.setFragmentBackPressed(this);
+
+
         return view;
     }
 
@@ -73,10 +83,8 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack {
     public void paneopen(int position) {
         please.setVisibility(View.GONE);
         goodssubtitle.setVisibility(View.VISIBLE);
-
         subtitles = new ArrayAdapter(getContext(), R.layout.support_simple_spinner_dropdown_item, getsubtitles().get(position));
         goodssubtitle.setAdapter(subtitles);
-
         slidingPaneLayout.openPane();
         goodssubtitle.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -86,6 +94,8 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack {
             }
         });
     }
+
+
 
     private ArrayList<String[]> getsubtitles() {
         ArrayList<String[]> arrayList = new ArrayList<>();
@@ -106,4 +116,8 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack {
     }
 
 
+    @Override
+    public void closePane() {
+        slidingPaneLayout.closePane();
+    }
 }

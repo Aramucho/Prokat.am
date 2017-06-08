@@ -69,6 +69,12 @@
     <string name="floor">Հարկ</string>
     <string name="language">Լեզու</string>
     <string name="please">Խնդրում ենք ընտրել բաժինը</string>
+    <string name="transport_year">Տարեթիվ</string>
+    <string name="transport_engine">Փոխանցման տուփ</string>
+    <string name="transport_volume">Շարժիչի ծավալ</string>
+    <string name="relatives">Նմանատիպ առաջարկներ</string>
+    <string name="order">Պատվիրել</string>
+    <string name="checkout">Պատվերի ձևակերպում</string>
     <string-array name="bydefualt">
         <item>---</item>
     </string-array>

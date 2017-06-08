@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/maincolorwhite"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/order_layout">
+
+        <EditText
+            android:id="@+id/order_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/namehint"
+            android:textColorHint="@color/hintcolor"
+            android:background="@drawable/edit_text_drawable"
+            android:minHeight="40dp"
+            android:paddingLeft="10dp"
+            />
+
+        <EditText
+            android:id="@+id/order_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/emaihint"
+            android:textColorHint="@color/hintcolor"
+            android:minHeight="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_drawable"
+            android:paddingLeft="10dp"/>
+
+        <EditText
+            android:id="@+id/order_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/phonehint"
+            android:textColorHint="@color/hintcolor"
+            android:inputType="number"
+            android:layout_marginTop="5dp"
+            android:minHeight="40dp"
+            android:background="@drawable/edit_text_drawable"
+            android:paddingLeft="10dp"/>
+        <EditText
+            android:id="@+id/order_notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/noteshint"
+            android:textColorHint="@color/hintcolor"
+            android:lines="5"
+            android:gravity="top"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_drawable"
+            android:paddingLeft="10dp"/>
+
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog_order"
+        android:text="@string/order"
+        android:background="@color/maincolorblue"
+        android:layout_below="@id/order_layout"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

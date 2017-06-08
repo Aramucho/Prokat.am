@@ -1,7 +1,9 @@
 package com.realmucho.prokatproject;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -9,16 +11,15 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.animation.OvershootInterpolator;
+import android.widget.Button;
 import android.widget.ImageButton;
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.realmucho.prokatproject.Interfaces.PaneCallBack;
 import java.util.ArrayList;
-import jp.wasabeef.recyclerview.animators.SlideInDownAnimator;
 import me.relex.circleindicator.CircleIndicator;
 
-public class PostsActivity extends AppCompatActivity implements PaneCallBack {
+public class PostsActivity extends AppCompatActivity implements PaneCallBack,View.OnClickListener {
 
     private SlidingPaneLayout slidingPaneLayout;
     private RecyclerView recyclerView;
@@ -29,6 +30,7 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack {
     private ItemPagerAdapter pageradapter;
     private ImageButton scroll;
     private CircleIndicator indicator;
+    private Button order,relatives;
 
 
     @Override
@@ -42,6 +44,10 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack {
         viewPager.setAdapter(pageradapter);
         indicator.setViewPager(viewPager);
         indicator.animate().rotation(180);
+        order=(Button) findViewById(R.id.order);
+        relatives=(Button)findViewById(R.id.relatives);
+        order.setOnClickListener(this);
+        relatives.setOnClickListener(this);
         pageradapter.registerDataSetObserver(indicator.getDataSetObserver());
         refreshLayout = (MaterialRefreshLayout) findViewById(R.id.refreshlayout);
         slidingPaneLayout = (SlidingPaneLayout) findViewById(R.id.posts_sliding_pane);
@@ -133,4 +139,20 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        int id=v.getId();
+        switch(id){
+            case R.id.order:
+                FragmentManager fragmentManager=getSupportFragmentManager();
+                OrderDialogFragment dialogFragment=new OrderDialogFragment();
+                dialogFragment.show(fragmentManager,"Sample Fragment");
+                break;
+            case R.id.relatives:
+                Intent intent=new Intent(PostsActivity.this,PostsActivity.class);
+                startActivity(intent);
+                break;
+        }
+
+    }
 }
