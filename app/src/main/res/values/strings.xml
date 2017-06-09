@@ -74,9 +74,12 @@
     <string name="transport_volume">Շարժիչի ծավալ</string>
     <string name="relatives">Նմանատիպ առաջարկներ</string>
     <string name="order">Պատվիրել</string>
+    <string name="social">Սոցցանցեր</string>
+    <string name="ok">Հաստատել</string>
+    <string name="cancel">Չեղարկել</string>
+    <string name="upload_type">Ընտրեք ներբեռնման ձևը</string>
     <string name="checkout">Պատվերի ձևակերպում</string>
     <string name="changelang">Փոխել լեզուն</string>
-    <string name="social">Սոցցանցեր</string>
     <string-array name="bydefualt">
         <item>---</item>
     </string-array>

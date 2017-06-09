@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,22 +20,23 @@ import android.widget.Toast;
 import com.realmucho.prokatproject.R;
 
 
-public class GoodsFragment extends Fragment {
+public class GoodsFragment extends Fragment implements View.OnClickListener {
 
     private TextView section;
 
 
     private Spinner sectionspinner, goodssubsectionspinner, goodscitiesspinner;
     private ArrayAdapter sectionadapter, goodsubsectionadapter, goodscitiesadapter;
+    private FloatingActionButton fab1,fab2,fab3,fab4,fab5;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.gooods_fragment, container, false);
-//        section = (TextView) view.findViewById(R.id.goods_section);
-//        section.setFocusableInTouchMode(true);
-//        section.requestFocus();
+        fab1=(FloatingActionButton)view.findViewById(R.id.goods_choose_button_1);
+        fab1.setOnClickListener(this);
+
 
         sectionspinner = (Spinner) view.findViewById(R.id.goods_section_spinner);
         goodssubsectionspinner = (Spinner) view.findViewById(R.id.goods_subsection_spinner);
@@ -132,4 +134,16 @@ public class GoodsFragment extends Fragment {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        int id=v.getId();
+        FragmentManager fragmentManager=getChildFragmentManager();
+        UploadDialogFragment dialogFragment=new UploadDialogFragment();
+
+        switch (id){
+            case R.id.goods_choose_button_1:
+                dialogFragment.show(fragmentManager,"Fragment");
+                break;
+        }
+    }
 }

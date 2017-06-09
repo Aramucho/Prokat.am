@@ -12,6 +12,7 @@ import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SlidingPaneLayout;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.realmucho.prokatproject.MainActivity;
 import com.realmucho.prokatproject.R;
 
 
@@ -201,6 +203,35 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
     public void onResume() {
         super.onResume();
         mMapView.onResume();
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+
+                    if(paneLayout.isOpen())
+                    {
+                        paneLayout.closePane();
+                    }
+                    else if(bottomSheetBehavior.getPeekHeight()==bottomSheetBehavior.STATE_COLLAPSED){
+                        bottomSheetBehavior.setPeekHeight(0);
+                        submit.setVisibility(View.VISIBLE);
+                    }
+
+                    else if(!paneLayout.isOpen()&&bottomSheetBehavior.getPeekHeight()==0){
+                        Intent intent=new Intent(getActivity(), MainActivity.class);
+                        startActivity(intent);
+                    }
+
+                    return true;
+
+                }
+
+                return false;
+            }
+        });
     }
 
     @Override
@@ -240,5 +271,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(intent);
     }
+
+
 
 }
