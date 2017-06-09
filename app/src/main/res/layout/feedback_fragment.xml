@@ -2,78 +2,72 @@
 <android.support.v4.widget.SlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/posts_sliding_pane"
+    android:id="@+id/feed_sliding_pane"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layoutDirection="rtl"
-    tools:context="com.realmucho.prokatproject.PostsActivity">
+    tools:context="com.realmucho.prokatproject.MainActivity">
 
     <LinearLayout
         android:id="@+id/list_pane"
         android:layout_width="64dp"
         android:layout_height="match_parent"
         android:background="@color/maincolorblue"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <ImageButton
             android:id="@+id/fb_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/facebook_icon"
             android:background="@color/maincolorblue"
-            />
+            android:src="@drawable/facebook_icon" />
 
         <ImageButton
             android:id="@+id/vk_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/vk_icon"
             android:background="@color/maincolorblue"
-            />
+            android:src="@drawable/vk_icon" />
 
         <ImageButton
             android:id="@+id/youtube_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/youtube_icon"
             android:background="@color/maincolorblue"
-            />
+            android:src="@drawable/youtube_icon" />
 
         <ImageButton
             android:id="@+id/ok_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/ok_icon"
             android:background="@color/maincolorblue"
-            />
+            android:src="@drawable/ok_icon" />
 
         <ImageButton
             android:id="@+id/insta_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/instagram_icon"
             android:background="@color/maincolorblue"
-            />
+            android:src="@drawable/instagram_icon" />
 
         <ImageButton
             android:id="@+id/skype_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/facebook_icon"
             android:background="@color/maincolorblue"
-            />
+            android:src="@drawable/skype_icon" />
     </LinearLayout>
 
     <RelativeLayout
 
-        android:id="@+id/detailed_pane"
+        android:id="@+id/feed_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/maincolorwhite"
@@ -92,8 +86,9 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:text="@string/feedback"
-                android:textColor="#000000"
-                android:textSize="30sp" />
+                android:textColor="@color/maincolorblue"
+                android:textSize="30sp"
+                />
 
             <LinearLayout
                 android:id="@+id/feedback_info"
@@ -108,13 +103,13 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/phone"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="18sp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_marginLeft="19dp"
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
@@ -124,7 +119,7 @@
                         android:layout_gravity="center"
                         android:paddingRight="10dp"
                         android:text="@string/email"
-                        android:textColor="#000000"
+                        android:textColor="@color/maincolorblue"
                         android:textSize="18sp" />
 
                     <TextView
@@ -140,10 +135,35 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/social"
+                        android:textColor="@color/maincolorblue"
+                        android:textSize="18sp"
+                        android:layout_marginLeft="19dp"/>
+
+                    <ImageButton
+                        android:id="@+id/share"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/maincolorwhite"
+                        android:clickable="true"
+                        android:src="@drawable/ic_share_black_24dp"
+                        android:layout_marginLeft="7dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -152,7 +172,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="@string/address"
-                        android:textColor="#000000"
+                        android:textColor="@color/maincolorblue"
                         android:textSize="18sp" />
 
                     <ImageButton
@@ -163,7 +183,9 @@
                         android:background="@color/maincolorwhite"
                         android:clickable="true"
                         android:src="@drawable/location_icon" />
+
                 </LinearLayout>
+
 
                 <EditText
                     android:id="@+id/name_feed"

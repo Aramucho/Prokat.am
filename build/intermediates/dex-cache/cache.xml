@@ -3,39 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="D:\Programing\MyApplication\Prokat.am\ProkatProject\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\Free User\Desktop\prokatProject\Prokat.am\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="065de147c83063b9ba17029ab55267de307bbf09">
-        <dex dex="D:\Programing\MyApplication\Prokat.am\ProkatProject\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_d36d1d1fe7ba8c668ea0d9cb1ba762b60fa90e6e\classes.dex" />
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\Users\Free User\Desktop\prokatProject\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_a82b015b0fa691f1d2314da88e444a7d5a7e91b4\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Admin\.android\build-cache\7bf42ee22aa74077936235804ce868b07aad2e4a\output\jars\classes.jar"
+        jar="C:\Users\Free User\Desktop\prokatProject\Prokat.am\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="df9383b9739db8fafe3a673f8083ccad27a95c4f">
-        <dex dex="D:\Programing\MyApplication\Prokat.am\ProkatProject\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8a6c5f6417f8e142d009f06d815199f578b99f23\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Admin\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.5.2\ecf534dba3a8446ce84cbb797d314763be212a68\glide-3.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ecf534dba3a8446ce84cbb797d314763be212a68">
-        <dex dex="D:\Programing\MyApplication\Prokat.am\ProkatProject\app\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.5.2_5d3705c3ae3cfb05b6f2da5d4d44cc86ccabac25\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Admin\.android\build-cache\e450da1c05121448666db03a503e9ac272796c1d\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1db6784d006818fee2591f13b0bf09ac31a3d49a">
-        <dex dex="D:\Programing\MyApplication\Prokat.am\ProkatProject\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_22321c90c9fe6610b5e2e05ac3c4ca394b9d0160\classes.dex" />
+        sha1="ccd4a0894ec0a5c266bbe29b15f755f4fff2ec3b">
+        <dex dex="C:\Users\Free User\Desktop\prokatProject\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_153aa58e69ca18d6be6c27f875233160f70b2c77\classes.dex" />
     </item>
 
 </items>

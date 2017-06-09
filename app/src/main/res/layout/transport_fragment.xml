@@ -29,7 +29,7 @@
                     android:gravity="center_vertical"
                     android:minHeight="40dp"
                     android:text="@string/section"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <Spinner
@@ -37,8 +37,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
-                    android:minHeight="40dp"
                     android:background="@drawable/spinner_selector"
+                    android:minHeight="40dp"
                     android:popupBackground="@color/maincolorwhite"
 
 
@@ -63,7 +63,7 @@
                     android:gravity="center_vertical"
                     android:minHeight="40dp"
                     android:text="@string/transport_mark"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <EditText
@@ -93,7 +93,7 @@
                     android:layout_weight="0.6"
                     android:gravity="center_vertical"
                     android:text="@string/transport_model"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <EditText
@@ -123,7 +123,7 @@
                     android:layout_weight="0.6"
                     android:gravity="center_vertical"
                     android:text="@string/engine_type"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <Spinner
@@ -132,8 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:background="@drawable/spinner_selector"
-                    android:popupBackground="@color/maincolorwhite"
-                     />
+                    android:popupBackground="@color/maincolorwhite" />
 
 
             </LinearLayout>
@@ -143,8 +142,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/transport_engine_type_layout"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/transport_engine_volume"
@@ -154,17 +153,17 @@
                     android:layout_weight="0.6"
                     android:minHeight="50dp"
                     android:text="@string/engine_volume"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <EditText
-                    android:layout_marginTop="5dp"
                     android:id="@+id/transport_engine_volume_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:layout_weight="0.4"
-                    android:gravity="fill"
                     android:background="@drawable/edit_text_drawable"
+                    android:gravity="fill"
                     android:inputType="number"
                     android:minHeight="43dp"
                     android:textColor="#000000" />
@@ -187,7 +186,7 @@
                     android:layout_weight="0.6"
                     android:gravity="center_vertical"
                     android:text="@string/box"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <Spinner
@@ -196,8 +195,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
                     android:background="@drawable/spinner_selector"
-                    android:popupBackground="@color/maincolorwhite"
-                     />
+                    android:popupBackground="@color/maincolorwhite" />
 
 
             </LinearLayout>
@@ -216,7 +214,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
                     android:text="@string/year"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <EditText
@@ -237,9 +235,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/transport_year_layout"
-                android:orientation="horizontal"
-android:layout_marginTop="10dp"
-                >
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/transport_price"
@@ -248,7 +245,7 @@ android:layout_marginTop="10dp"
                     android:layout_weight="0.6"
                     android:gravity="center_vertical"
                     android:text="@string/price"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <EditText
@@ -278,7 +275,7 @@ android:layout_marginTop="10dp"
                     android:layout_weight="0.6"
                     android:gravity="center_vertical"
                     android:text="@string/time_period"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <RadioGroup
@@ -292,7 +289,7 @@ android:layout_marginTop="10dp"
                         android:layout_height="wrap_content"
                         android:checked="true"
                         android:text="@string/hour"
-                        android:textColor="#000000"
+                        android:textColor="@color/maincolorblue"
                         android:theme="@style/RadioButtonTheme" />
 
                     <RadioButton
@@ -300,7 +297,7 @@ android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/day"
-                        android:textColor="#000000"
+                        android:textColor="@color/maincolorblue"
                         android:theme="@style/RadioButtonTheme" />
 
                     <RadioButton
@@ -308,7 +305,7 @@ android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/month"
-                        android:textColor="#000000"
+                        android:textColor="@color/maincolorblue"
                         android:theme="@style/RadioButtonTheme" />
 
                 </RadioGroup>
@@ -330,7 +327,7 @@ android:layout_marginTop="10dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
                     android:text="@string/description"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <EditText
@@ -359,7 +356,7 @@ android:layout_marginTop="10dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/photos_title"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
             </LinearLayout>
@@ -378,7 +375,7 @@ android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="9dp"
                     android:text="1"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
                 <android.support.design.widget.FloatingActionButton
@@ -394,7 +391,6 @@ android:layout_marginTop="10dp"
                     />
 
 
-
                 <TextView
                     android:id="@+id/transport_choose_photos_name_1"
                     android:layout_width="wrap_content"
@@ -403,7 +399,7 @@ android:layout_marginTop="10dp"
                     android:layout_marginTop="9dp"
                     android:layout_toEndOf="@id/transport_choose_button_1"
                     android:text="@string/photo_not_choose"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
 
@@ -423,7 +419,7 @@ android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="9dp"
                     android:text="2"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
                 <android.support.design.widget.FloatingActionButton
@@ -433,9 +429,7 @@ android:layout_marginTop="10dp"
                     android:layout_marginLeft="30dp"
                     android:layout_toEndOf="@id/transport_photos_name_2"
                     android:src="@drawable/add"
-                    app:fabSize="mini"
-                    />
-
+                    app:fabSize="mini" />
 
 
                 <TextView
@@ -446,7 +440,7 @@ android:layout_marginTop="10dp"
                     android:layout_marginTop="9dp"
                     android:layout_toEndOf="@id/transport_choose_button_2"
                     android:text="@string/photo_not_choose"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
 
@@ -466,7 +460,7 @@ android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="9dp"
                     android:text="3"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
                 <android.support.design.widget.FloatingActionButton
@@ -476,9 +470,7 @@ android:layout_marginTop="10dp"
                     android:layout_marginLeft="30dp"
                     android:layout_toEndOf="@id/transport_photos_name_3"
                     android:src="@drawable/add"
-                    app:fabSize="mini"
-                    />
-
+                    app:fabSize="mini" />
 
 
                 <TextView
@@ -489,7 +481,7 @@ android:layout_marginTop="10dp"
                     android:layout_marginTop="9dp"
                     android:layout_toEndOf="@id/transport_choose_button_3"
                     android:text="@string/photo_not_choose"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
 
@@ -509,7 +501,7 @@ android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="9dp"
                     android:text="4"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
                 <android.support.design.widget.FloatingActionButton
@@ -519,9 +511,7 @@ android:layout_marginTop="10dp"
                     android:layout_marginLeft="30dp"
                     android:layout_toEndOf="@id/transport_photos_name_4"
                     android:src="@drawable/add"
-                    app:fabSize="mini"
-                    />
-
+                    app:fabSize="mini" />
 
 
                 <TextView
@@ -532,7 +522,7 @@ android:layout_marginTop="10dp"
                     android:layout_marginTop="9dp"
                     android:layout_toEndOf="@id/transport_choose_button_4"
                     android:text="@string/photo_not_choose"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
 
@@ -542,9 +532,9 @@ android:layout_marginTop="10dp"
                 android:id="@+id/transport_choose_photo_layout_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_alignParentStart="true"
                 android:layout_below="@+id/transport_choose_photo_layout_4"
-                android:layout_alignParentStart="true">
+                android:layout_marginTop="11dp">
 
                 <TextView
                     android:id="@+id/transport_photos_name_5"
@@ -553,7 +543,7 @@ android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="9dp"
                     android:text="5"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
                 <android.support.design.widget.FloatingActionButton
@@ -563,9 +553,7 @@ android:layout_marginTop="10dp"
                     android:layout_marginLeft="30dp"
                     android:layout_toEndOf="@id/transport_photos_name_5"
                     android:src="@drawable/add"
-                    app:fabSize="mini"
-                    />
-
+                    app:fabSize="mini" />
 
 
                 <TextView
@@ -576,7 +564,7 @@ android:layout_marginTop="10dp"
                     android:layout_marginTop="9dp"
                     android:layout_toEndOf="@id/transport_choose_button_5"
                     android:text="@string/photo_not_choose"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
 
@@ -596,7 +584,7 @@ android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:minHeight="40dp"
                     android:text="@string/contacts"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <LinearLayout
@@ -614,9 +602,9 @@ android:layout_marginTop="10dp"
                         android:background="@drawable/edit_text_drawable"
                         android:hint="@string/namehint"
                         android:minHeight="40dp"
+                        android:paddingLeft="10dp"
                         android:textColor="#000000"
-                        android:textColorHint="@color/hintcolor"
-                        android:paddingLeft="10dp"/>
+                        android:textColorHint="@color/hintcolor" />
 
                     <EditText
                         android:id="@+id/transport_contacts_email"
@@ -626,9 +614,9 @@ android:layout_marginTop="10dp"
                         android:background="@drawable/edit_text_drawable"
                         android:hint="@string/emaihint"
                         android:minHeight="40dp"
+                        android:paddingLeft="10dp"
                         android:textColor="#000000"
-                        android:textColorHint="@color/hintcolor"
-                        android:paddingLeft="10dp"/>
+                        android:textColorHint="@color/hintcolor" />
 
                     <EditText
                         android:id="@+id/transport_contacts_phone"
@@ -638,9 +626,9 @@ android:layout_marginTop="10dp"
                         android:background="@drawable/edit_text_drawable"
                         android:hint="@string/phonehint"
                         android:minHeight="40dp"
+                        android:paddingLeft="10dp"
                         android:textColor="#000000"
-                        android:textColorHint="@color/hintcolor"
-                        android:paddingLeft="10dp"/>
+                        android:textColorHint="@color/hintcolor" />
 
                     <EditText
                         android:id="@+id/transport_contacts_notes"
@@ -652,9 +640,9 @@ android:layout_marginTop="10dp"
                         android:gravity="top"
                         android:hint="@string/noteshint"
                         android:minLines="4"
+                        android:paddingLeft="10dp"
                         android:textColor="#000000"
-                        android:textColorHint="@color/hintcolor"
-                        android:paddingLeft="10dp"/>
+                        android:textColorHint="@color/hintcolor" />
 
                 </LinearLayout>
 
@@ -667,8 +655,7 @@ android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:background="@color/maincolorblue"
                     android:text="@string/add_button"
-                    android:textAllCaps="false"
-                    />
+                    android:textAllCaps="false" />
 
 
             </RelativeLayout>

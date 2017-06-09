@@ -32,7 +32,7 @@
                     android:gravity="center_vertical"
                     android:minHeight="40dp"
                     android:text="@string/section"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp"
                     android:focusableInTouchMode="true"/>
 
@@ -65,7 +65,7 @@
                     android:gravity="center_vertical"
                     android:minHeight="40dp"
                     android:text="@string/subsection"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <Spinner
@@ -96,7 +96,7 @@
                     android:gravity="center_vertical"
                     android:minHeight="40dp"
                     android:text="@string/city"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <Spinner
@@ -128,8 +128,8 @@
                     android:gravity="center_vertical"
                     android:minHeight="40dp"
                     android:text="@string/name"
-                    android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:textColor="@color/maincolorblue"
+                    android:textSize="20sp"/>
 
                 <EditText
                     android:id="@+id/goods_name_edit"
@@ -157,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
                     android:text="@string/description"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <EditText
@@ -167,7 +167,7 @@
                     android:layout_weight="0.4"
                     android:background="@drawable/edit_text_drawable"
                     android:minLines="4"
-                    android:textColor="#000000" />
+                    android:textColor="@color/maincolorblue" />
 
 
             </LinearLayout>
@@ -188,7 +188,7 @@
                     android:gravity="center_vertical"
                     android:minHeight="42dp"
                     android:text="@string/price"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <EditText
@@ -221,7 +221,7 @@
                     android:gravity="center_vertical"
                     android:minHeight="40dp"
                     android:text="@string/time_period"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <RadioGroup
@@ -236,7 +236,7 @@
                         android:layout_height="wrap_content"
                         android:checked="true"
                         android:text="@string/hour"
-                        android:textColor="#000000"
+                        android:textColor="@color/maincolorblue"
                         android:theme="@style/RadioButtonTheme" />
 
                     <RadioButton
@@ -244,7 +244,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/day"
-                        android:textColor="#000000"
+                        android:textColor="@color/maincolorblue"
                         android:theme="@style/RadioButtonTheme" />
 
                     <RadioButton
@@ -252,7 +252,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/month"
-                        android:textColor="#000000"
+                        android:textColor="@color/maincolorblue"
                         android:theme="@style/RadioButtonTheme" />
 
                 </RadioGroup>
@@ -274,7 +274,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/photos_title"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
             </LinearLayout>
@@ -293,7 +293,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="9dp"
                     android:text="1"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
                 <android.support.design.widget.FloatingActionButton
@@ -316,7 +316,7 @@
                     android:layout_marginTop="9dp"
                     android:layout_toEndOf="@id/goods_choose_button_1"
                     android:text="@string/photo_not_choose"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
 
@@ -336,7 +336,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="9dp"
                     android:text="2"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
                 <android.support.design.widget.FloatingActionButton
@@ -357,7 +357,7 @@
                     android:layout_marginTop="9dp"
                     android:layout_toEndOf="@id/goods_choose_button_2"
                     android:text="@string/photo_not_choose"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
 
@@ -377,7 +377,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="9dp"
                     android:text="3"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
                 <android.support.design.widget.FloatingActionButton
@@ -399,7 +399,7 @@
                     android:layout_marginTop="9dp"
                     android:layout_toEndOf="@id/goods_choose_button_3"
                     android:text="@string/photo_not_choose"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
 
@@ -441,7 +441,7 @@
                     android:layout_marginTop="9dp"
                     android:layout_toEndOf="@id/goods_choose_button_4"
                     android:text="@string/photo_not_choose"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
 
@@ -461,7 +461,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="9dp"
                     android:text="5"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
                 <android.support.design.widget.FloatingActionButton
@@ -483,7 +483,7 @@
                     android:layout_marginTop="9dp"
                     android:layout_toEndOf="@id/goods_choose_button_5"
                     android:text="@string/photo_not_choose"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="15sp" />
 
 
@@ -502,7 +502,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/contacts"
-                    android:textColor="#000000"
+                    android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 
                 <LinearLayout

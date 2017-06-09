@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 import com.realmucho.prokatproject.Fragments.GoodsFragment;
 import com.realmucho.prokatproject.Fragments.RealtyFragment;
@@ -31,6 +33,8 @@ public class AddActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
+
+
     }
 
     private void setupTabIcons() {
@@ -76,5 +80,6 @@ public class AddActivity extends AppCompatActivity {
 
 
     }
+
 
 }

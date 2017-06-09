@@ -11,11 +11,14 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
+import android.support.v4.widget.SlidingPaneLayout;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -27,6 +30,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.realmucho.prokatproject.MainActivity;
 import com.realmucho.prokatproject.R;
 
 
@@ -34,10 +38,12 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
     private BottomSheetBehavior bottomSheetBehavior;
     private Button submit;
-    private ImageButton mapwatch, fb, vk, ok, yotube, insta, skype;
+    private ImageButton mapwatch, fb, vk, ok, yotube, insta, skype, share;
     private MapView mMapView;
     private GoogleMap googleMap;
     private TextView link;
+    private SlidingPaneLayout paneLayout;
+    private RelativeLayout feedlayout;
 
 
     @Nullable
@@ -49,6 +55,10 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         mMapView = (MapView) view.findViewById(R.id.map_view);
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume();
+        paneLayout = (SlidingPaneLayout) view.findViewById(R.id.feed_sliding_pane);
+        feedlayout = (RelativeLayout) view.findViewById(R.id.feed_layout);
+        feedlayout.setOnClickListener(this);
+        share = (ImageButton) view.findViewById(R.id.share);
         mapwatch = (ImageButton) view.findViewById(R.id.map_watch);
         fb = (ImageButton) view.findViewById(R.id.fb_icon);
         vk = (ImageButton) view.findViewById(R.id.vk_icon);
@@ -62,6 +72,13 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         mapwatch.setOnClickListener(this);
         submit.setOnClickListener(this);
         fb.setOnClickListener(this);
+        share.setOnClickListener(this);
+        vk.setOnClickListener(this);
+        yotube.setOnClickListener(this);
+        ok.setOnClickListener(this);
+        insta.setOnClickListener(this);
+        skype.setOnClickListener(this);
+
         bottominit();
         mapinit();
 
@@ -97,34 +114,38 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
                     String facebookUrl = getFacebookPageURL(getContext());
                     intent.setData(Uri.parse(facebookUrl));
                     startActivity(intent);
-                }catch(Exception e)
-                {
-                    intent = new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/Prakatam"));
+                } catch (Exception e) {
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Prakatam"));
                     startActivity(intent);
 
                 }
 
                 break;
             case R.id.vk_icon:
-                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://vk.com/id250024962"));
-                startActivity(intent);
+                urlIntent("https://vk.com/id250024962");
                 break;
             case R.id.youtube_icon:
-                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCXUA6v5FfPSFo596ReOqqRw"));
-                startActivity(intent);
+                urlIntent("https://www.youtube.com/channel/UCXUA6v5FfPSFo596ReOqqRw");
                 break;
             case R.id.ok_icon:
-                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://ok.ru/profile/562361186775"));
-                startActivity(intent);
+                urlIntent("https://ok.ru/profile/562361186775");
+
                 break;
             case R.id.insta_icon:
-                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/prokat.am/"));
-                startActivity(intent);
+                urlIntent("https://www.instagram.com/prokat.am/");
+
                 break;
             case R.id.skype_icon:
-                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Prakatam"));
-                startActivity(intent);
+                urlIntent("https://www.facebook.com/Prakatam");
                 break;
+            case R.id.share:
+                paneLayout.openPane();
+                break;
+
+            case R.id.feed_layout:
+                if (paneLayout.isOpen()) {
+                    paneLayout.closePane();
+                }
 
 
         }
@@ -182,6 +203,35 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
     public void onResume() {
         super.onResume();
         mMapView.onResume();
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+
+                    if(paneLayout.isOpen())
+                    {
+                        paneLayout.closePane();
+                    }
+                    else if(bottomSheetBehavior.getPeekHeight()==bottomSheetBehavior.STATE_COLLAPSED){
+                        bottomSheetBehavior.setPeekHeight(0);
+                        submit.setVisibility(View.VISIBLE);
+                    }
+
+                    else if(!paneLayout.isOpen()&&bottomSheetBehavior.getPeekHeight()==0){
+                        Intent intent=new Intent(getActivity(), MainActivity.class);
+                        startActivity(intent);
+                    }
+
+                    return true;
+
+                }
+
+                return false;
+            }
+        });
     }
 
     @Override
@@ -202,7 +252,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         mMapView.onLowMemory();
     }
 
-    public String getFacebookPageURL(Context context) {
+    private String getFacebookPageURL(Context context) {
         String url = "https://www.facebook.com/Prakatam";
         PackageManager packageManager = context.getPackageManager();
         try {
@@ -216,4 +266,12 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
             return url;
         }
     }
+
+    private void urlIntent(String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(intent);
+    }
+
+
+
 }

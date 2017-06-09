@@ -39,7 +39,7 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack,Frag
     private ArrayAdapter<String> subtitles;
     private ListView goodssubtitle;
     private TextView please;
-    private CategoryActivity categoryActivity;
+
 
 
 
@@ -56,8 +56,7 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack,Frag
         categoryrw.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new CategoryAdapter(setData(), getContext(), this);
         categoryrw.setAdapter(adapter);
-        categoryActivity=new CategoryActivity();
-        categoryActivity.setFragmentBackPressed(this);
+
 
 
         return view;
@@ -119,5 +118,32 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack,Frag
     @Override
     public void closePane() {
         slidingPaneLayout.closePane();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+
+                    if(slidingPaneLayout.isOpen())
+                    {
+                        slidingPaneLayout.closePane();
+                    }else if(!slidingPaneLayout.isOpen()){
+                        getActivity().finish();
+                    }
+
+                    return true;
+
+                }
+
+                return false;
+            }
+        });
     }
 }
