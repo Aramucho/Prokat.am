@@ -76,6 +76,7 @@
     <string name="order">Պատվիրել</string>
     <string name="checkout">Պատվերի ձևակերպում</string>
     <string name="changelang">Փոխել լեզուն</string>
+    <string name="social">Սոցցանցեր</string>
     <string-array name="bydefualt">
         <item>---</item>
     </string-array>
