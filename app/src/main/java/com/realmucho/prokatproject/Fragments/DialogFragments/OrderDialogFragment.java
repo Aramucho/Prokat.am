@@ -25,7 +25,6 @@ public class OrderDialogFragment extends android.support.v4.app.DialogFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         View view=inflater.inflate(R.layout.order_dialog,container,false);
-        getDialog().setTitle(R.string.checkout);
         orderName=(EditText) view.findViewById(R.id.order_name);
         orderEmail=(EditText) view.findViewById(R.id.order_email);
         orderPhone=(EditText) view.findViewById(R.id.order_phone);

@@ -3,408 +3,57 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\68c1b6eed7f0823a3f9358e76b8b767a44b34196\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0bf733f067b38282b219572711c6ba3c14232b8e">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_98b36eadfb7b255a3ea37bbb54931608a91eb330.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\4674369ddbc79f3a16cf876c38a6b80bf8f16dbd\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8a372c4191f80489770a231f7be4820b204b886a">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_027f724c15ac205cac8dbb8fbe9b2d2100ff63ec.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\ca043d6253bfde7eb3e995baf41134dbcd0b5c0b\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_e146590a04cac26e2055b3e37d31a709cacacbf4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\bc5290289f5bc63b537d0cdce8c034658a1e9f26\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_5eb4e0f06e5959f887ce2e5228017496d61c3207.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.5.2\ecf534dba3a8446ce84cbb797d314763be212a68\glide-3.5.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ecf534dba3a8446ce84cbb797d314763be212a68">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\glide-3.5.2_44b212dc299e6a81239217d312df912f21438932.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_11bf5dfa4803f80d481cb6efc83a3a4f48c446ac\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\7f31592b670427822ff2778859581e891b6301ae\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_593f7c14d4cd4bd0b2208fa4558a98d6712c68c3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\54a374ee3e975e4fac3469c147f60851066d3c3d\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a78183f30e769a98ab4820794f597763088d3065">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_78672f7aaa8c01d05b6c45c7c8534109c1436878.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\562593a35e5b2b78fa6d7cfe10a0e4fa308ae449\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_45d6a19bfaa7dc3d2d107601dbce98cae02d74f1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\cbfa4535975d06b43afbd40150c0414bff1d04a9\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_9a45f84bf5e0aa6d1afbf0ebef5fb76d930e1fe6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\094e287ccbed32e913772456e264cfc8eac72305\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_c901c61660d30a64d973157147dbebafff02d7ef.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\fe49201cb785fca0fd55d991692c37c5a1328fdd\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="69ee8c3f146ba6b2ead91fea61a283b19cfbf387">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_a947e8181e5c7e3d37dee899aff8e27dd33375ac.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\682d3cdb4f801bbe02adc8b37929e147cc794807\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_c0b6e65a39c637b5a0c9a0d03c86a4836b818d09.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\eb1b3f039199efa5ba71aa4ee1f686c2e3ce4788\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d405025c600055237c171a0bbabaa49d69696573">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_1b8d7c682562a1996afe04ed45461698badd3d4d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\afe77826c65b511697010d94f0c67e5d12ce69b9\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_563ed8f42f75d765afdaed613e4ace7fc2a478be.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\2327169a6f99165d7fe03fd70f749cb6d97b0a33\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1db6784d006818fee2591f13b0bf09ac31a3d49a">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_c1c9127ce969b0038454e75660a2df5ed6ff8d89.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\bf79924a00126480c178cb3e3c791ac4300fd852\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_b1cbdd08889dca7c925d6dc45b2a2711cd2ac013.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\008c5aaf8ac115ccd9533e9eb9e60cc40827911c\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_fa7accbd9f4d9575fe6e19e032e78dd8c0c7ac84.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\9c2e0f431212942042fcf2223550557a14434323\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_b37435f93c84be0bb8f19d92c97d79fd7538402f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\60d3e4d8b3c66a179b6b7001444b4665b505d1fd\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_d3f87c93ee63aab01600dd769eb6a147e4f6226b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\854acb7c1167f8ace6d310e5197872c7ea3b3dae\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_4a5c5e9bc1d979ada50ba9a25c73c62204beee00.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\3a2ed30bcefcfeff67809ced7823dda964d53042\output\jars\libs\internal_impl-22.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0_56c38dcd07dbcfa2e76e44dcadbec6200ff688f7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\d295a8d6426cfec68d9791d0478ef9b046e1da81\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_49ba14358200d2527c7d19ed6b0d4f0752d6146d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\b7d6121c95020e950d3a06c5f4be34659dddc2ee\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_81a0de148df8b925cf10aaa172450c330f3a1bda.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\358228816be093aa75762fdbfbfb8e440a6eb15d\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_b3a51e1237f94f0208d2db80bf5fd215dbbaff01.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\0b571b4d579a921d9c4626afe34fd808b822b322\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_069668c74e0840abda6f19051c8caac0c7015072.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\1e78cc5ce8d42c472f13725aa4489f471c892291\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_27efa0c3bba5ce9741094f745a6ea9e547ba4de1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\3b4169ef6b133c9884090bb80d6937bb45760253\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_6cdcedc960091e764498a9b9edaaa9fe60d1f860.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\35204acc603e213b5aeb301ae5c070bbd73c4be9\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_287177689a0f9e2fe25b6b703d24b5ce7359ea22.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\d9867bc4740ae2acd371525ef017ddfa76395418\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_d9b70627d377fa3ee40700b587c885112f69d4ed.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.3.3\1262995965440e28ba5c4d480c9c9ab4ccce84cc\picasso-2.3.3.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1262995965440e28ba5c4d480c9c9ab4ccce84cc">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\picasso-2.3.3_6e0870948eeec415378b090daa9e554af3cadceb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\3a2ed30bcefcfeff67809ced7823dda964d53042\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_865f1e4eb906cc8b52f935e4919b85c5ce2a4f30.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\ba26741764922189f437ab3be280499a21ff6507\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_194bc9137b590cf50ecceb216b3fe1f40c41e9f2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\03bf542eacef65d6f840f73085c4533cb14bad2d\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_5f8e7b264d8a0ab8f0f8171adf493572245d8044.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b0a11cc79a627d8195172e8b5d517f6b14078b3f">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_d9562e9c0dff14910fa3ecc78763e059c88d73ec\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_e3356172502c79a0e579f4ad6159dc5aa5195e7c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\a42b77b036e0a4f693f1311d4d74adc11846bd49\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_38ae6dcc955bbd5162d3b12f5d023d6a11e7e76b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\85f869bcca8915f305ed374d482ad4ea1fa461fb\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_5549d0332d5bf8ce9bd441c6b092c95edc164177.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\7801d1226166a41975fbc357ee7843540eb63e0f\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_04052abb3bc687b766e2e4ebba645fe4d9a2b8e4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\b514a2e974d01b6e5ab9fb384ef1d40aa705f9b3\output\jars\classes.jar"
+        jar="C:\Users\Mucho\.android\build-cache\b512398eb37c4fb360404d02882274fac66546c6\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="597d857fe9b090c4582f0855a2c6d6cc45fec544">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_8937ab07d365453e9d11284e508adb705c394075.jar" />
+        <dex dex="C:\Users\Mucho\Desktop\android\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_71385b95a55c4f0f38b9ac55e3b1e1bafc3657d0.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\d2f7b12c8ddf17c9308f6e0a446d0427ce77a113\output\jars\classes.jar"
+        jar="C:\Users\Mucho\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.5.2\ecf534dba3a8446ce84cbb797d314763be212a68\glide-3.5.2.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_b01b5a340f9c56734d99bb4d7d03280dfe89ac2b.jar" />
+        sha1="ecf534dba3a8446ce84cbb797d314763be212a68">
+        <dex dex="C:\Users\Mucho\Desktop\android\Prokat.am\app\build\intermediates\pre-dexed\debug\glide-3.5.2_9f67a432fed696c20b1fd09247dea7db6833d74a.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\2370595103dabc899d6f8fdfbf134031d3c04e15\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_8168bf20bb92156077eebc2893d1761567cc1dd2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\3489cacb131beb6aa86f9aa9055c56870c74d20c\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_62af066cf751870b93e00b62bb3335de1a62afe7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\f2dc774c4cd39ba826a0ed6891904db37be6850c\output\jars\classes.jar"
+        jar="C:\Users\Mucho\.android\build-cache\409abf36d4e28bb28f47750ac4feadd63b96b49a\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="df9383b9739db8fafe3a673f8083ccad27a95c4f">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_57d1444a78d44d2c22f5f48a7e5e0e65b5ace59d.jar" />
+        <dex dex="C:\Users\Mucho\Desktop\android\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_90e3784ef654cfb032ca8b1e20abd9e70c5a5757.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Free User\.android\build-cache\6fb9b6295acf3f6f83d315b404392cc139ac29af\output\jars\classes.jar"
+        jar="C:\Users\Mucho\.android\build-cache\d9b3b1dcc2eef41bf12968f258d48ed4cee1b143\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_014b461d465968d9c7d4bed42125e94538c0f9f7.jar" />
+        sha1="1db6784d006818fee2591f13b0bf09ac31a3d49a">
+        <dex dex="C:\Users\Mucho\Desktop\android\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_51ba4be5847542832868e98f4a189cc3f23d6550.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.3.3\1262995965440e28ba5c4d480c9c9ab4ccce84cc\picasso-2.3.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1262995965440e28ba5c4d480c9c9ab4ccce84cc">
+        <dex dex="C:\Users\Mucho\Desktop\android\Prokat.am\app\build\intermediates\pre-dexed\debug\picasso-2.3.3_0f48da6a69c2819aa3020a361155954a3ccee742.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mucho\.android\build-cache\780b7b65c36588acf95f2b36ea7928e9533e952c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8a372c4191f80489770a231f7be4820b204b886a">
+        <dex dex="C:\Users\Mucho\Desktop\android\Prokat.am\app\build\intermediates\pre-dexed\debug\classes_ca0149380c3dd2a3c4f24e5aa8c98f3cddd747ba.jar" />
     </item>
 
 </items>
