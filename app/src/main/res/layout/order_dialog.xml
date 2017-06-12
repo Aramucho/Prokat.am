@@ -10,6 +10,21 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/order_layout">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/maincolorblue"
+            android:id="@+id/order_dialog_title_layout"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/checkout"
+                android:textColor="@color/maincolorwhite"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
 
         <EditText
             android:id="@+id/order_name"
@@ -19,6 +34,7 @@
             android:textColorHint="@color/hintcolor"
             android:background="@drawable/edit_text_drawable"
             android:minHeight="40dp"
+            android:layout_marginTop="5dp"
             android:paddingLeft="10dp"
             />
 
