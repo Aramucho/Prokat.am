@@ -23,10 +23,10 @@
     </style>
     <style name="ThemeOverlay.AppCompat.navTheme">
 
-        <!-- Color of text and icon when SELECTED -->
+
         <item name="colorPrimary">@color/maincolorblue </item>
 
-        <!-- Background color when SELECTED -->
+
         <item name="colorControlHighlight">@color/maincolorwhite</item>
 
     </style>

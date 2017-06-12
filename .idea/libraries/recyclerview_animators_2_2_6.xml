@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="recyclerview-animators-2.2.6">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/409abf36d4e28bb28f47750ac4feadd63b96b49a/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/409abf36d4e28bb28f47750ac4feadd63b96b49a/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/7bf42ee22aa74077936235804ce868b07aad2e4a/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/7bf42ee22aa74077936235804ce868b07aad2e4a/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

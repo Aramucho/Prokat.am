@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="play-services-wallet-7.5.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/947cc7cd55293e455477e46744ffa7602289f172/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/947cc7cd55293e455477e46744ffa7602289f172/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/bb860b5883034c47d401d07eabccbacadf864422/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/bb860b5883034c47d401d07eabccbacadf864422/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
