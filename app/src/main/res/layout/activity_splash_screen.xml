@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    android:background="@color/maincolorwhite"
-    tools:context="com.realmucho.prokatproject.SplashScreen"
+    tools:context="com.realmucho.prokatproject.Activities.SplashScreen"
     >
 <ImageView
     android:layout_width="match_parent"
