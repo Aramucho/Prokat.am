@@ -94,9 +94,9 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
         switch (id) {
             case R.id.map_watch:
-
                 bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                 submit.setVisibility(View.GONE);
+
                 break;
             case R.id.submitbutton:
 
@@ -136,7 +136,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
                 break;
             case R.id.skype_icon:
-                urlIntent("https://www.facebook.com/Prakatam");
+                urlIntent("https://www.skype.com");
                 break;
             case R.id.share:
                 paneLayout.openPane();
@@ -214,14 +214,17 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
                     if(paneLayout.isOpen())
                     {
                         paneLayout.closePane();
+
                     }
-                    else if(bottomSheetBehavior.getPeekHeight()==bottomSheetBehavior.STATE_COLLAPSED){
-                        bottomSheetBehavior.setPeekHeight(0);
-                        submit.setVisibility(View.VISIBLE);
+                    else if(bottomSheetBehavior.getState() != BottomSheetBehavior.STATE_HIDDEN){
+
+                       submit.setVisibility(View.VISIBLE);
+
                     }
 
+
                     else if(!paneLayout.isOpen()&&bottomSheetBehavior.getPeekHeight()==0){
-                        Intent intent=new Intent(getActivity(), MainActivity.class);
+                        Intent intent=new Intent(getContext(), MainActivity.class);
                         startActivity(intent);
                     }
 
