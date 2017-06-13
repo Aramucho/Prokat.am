@@ -3,12 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="D:\Programing\MyApplication\Prokat.am\ProkatProject\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\Free User\Desktop\prokatProject\Prokat.am\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="e7a631c8346e4095524471bfd4c7c231b4ef23b6">
-        <dex dex="D:\Programing\MyApplication\Prokat.am\ProkatProject\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_d36d1d1fe7ba8c668ea0d9cb1ba762b60fa90e6e\classes.dex" />
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\Users\Free User\Desktop\prokatProject\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_a82b015b0fa691f1d2314da88e444a7d5a7e91b4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Free User\Desktop\prokatProject\Prokat.am\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="195e46ed3bd1a76913b70653bea677770bd5843d">
+        <dex dex="C:\Users\Free User\Desktop\prokatProject\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_153aa58e69ca18d6be6c27f875233160f70b2c77\classes.dex" />
     </item>
 
 </items>

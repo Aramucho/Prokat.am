@@ -13,8 +13,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
 import com.realmucho.prokatproject.Activities.AddActivity;
 import com.realmucho.prokatproject.Activities.CategoryActivity;
+import com.realmucho.prokatproject.Interfaces.DisableOnClick;
 import com.realmucho.prokatproject.R;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +31,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private Handler handler;
     private Map<String, Integer> imagesround;
     private FloatingActionButton add;
+    private RelativeLayout mainlayout;
+
 
 
     @Nullable
@@ -36,6 +41,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.main_fragment, container, false);
 
         pizza = view.findViewById(R.id.pizza);
+        mainlayout=(RelativeLayout)view.findViewById(R.id.main_fragment_layout);
         roundcategory = (ImageView) view.findViewById(R.id.roundcategory);
         goodsimage = (ImageView) view.findViewById(R.id.goods_image);
         transportimage = (ImageView) view.findViewById(R.id.transport_image);
@@ -53,7 +59,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         imagesround.put("service", R.drawable.service_round);
         imagesround.put("realty", R.drawable.realty_round);
         roundcategory.setVisibility(View.GONE);
-
         return view;
     }
 
@@ -189,6 +194,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         roundcategory.setVisibility(View.GONE);
 
     }
+
+    public void disableClicks(){
+        mainlayout.setClickable(false);
+    }
+
 
 
 }
