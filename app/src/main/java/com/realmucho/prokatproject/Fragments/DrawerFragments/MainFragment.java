@@ -3,6 +3,7 @@ package com.realmucho.prokatproject.Fragments.DrawerFragments;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,7 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class MainFragment extends Fragment implements View.OnClickListener {
+public class MainFragment extends Fragment implements View.OnClickListener,DisableOnClick {
 
     private ImageView goodsimage, transportimage, serviceimage, realtyimage, roundcategory;
     private View pizza;
@@ -32,6 +33,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private Map<String, Integer> imagesround;
     private FloatingActionButton add;
     private RelativeLayout mainlayout;
+
 
 
 
@@ -59,8 +61,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         imagesround.put("service", R.drawable.service_round);
         imagesround.put("realty", R.drawable.realty_round);
         roundcategory.setVisibility(View.GONE);
+
         return view;
     }
+
+
 
 
     @Override
@@ -195,11 +200,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    public void disableClicks(){
-        mainlayout.setClickable(false);
+
+    @Override
+    public void disableclick() {
+
     }
-
-
-
 }
 

@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -209,30 +210,28 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
-                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
 
-                    if(paneLayout.isOpen())
-                    {
+                    if (paneLayout.isOpen()) {
                         paneLayout.closePane();
 
+                    } else if (!bottomSheetBehavior.isHideable()) {
+                        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                        submit.setVisibility(View.VISIBLE);
+
                     }
-                    else if(bottomSheetBehavior.getState() != BottomSheetBehavior.STATE_HIDDEN){
 
-                       submit.setVisibility(View.VISIBLE);
-
-                    }
-
-
-                    else if(!paneLayout.isOpen()&&bottomSheetBehavior.getPeekHeight()==0){
-                        Intent intent=new Intent(getContext(), MainActivity.class);
+                    if (!paneLayout.isOpen()&& bottomSheetBehavior.getState()==BottomSheetBehavior.STATE_COLLAPSED ) {
+                        Intent intent = new Intent(getContext(), MainActivity.class);
                         startActivity(intent);
                     }
 
-                    return true;
+
+
 
                 }
 
-                return false;
+                return true;
             }
         });
     }
@@ -274,7 +273,6 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(intent);
     }
-
 
 
 }

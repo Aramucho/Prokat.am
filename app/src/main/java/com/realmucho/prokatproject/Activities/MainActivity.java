@@ -1,5 +1,6 @@
 package com.realmucho.prokatproject.Activities;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,7 +16,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.RelativeLayout;
 
 
 import com.realmucho.prokatproject.Fragments.DrawerFragments.AboutFragment;
@@ -23,8 +23,7 @@ import com.realmucho.prokatproject.Fragments.DrawerFragments.ConditionsFragment;
 import com.realmucho.prokatproject.Fragments.DrawerFragments.FeedBackFragment;
 import com.realmucho.prokatproject.Fragments.DrawerFragments.MainFragment;
 
-import com.realmucho.prokatproject.Fragments.DrawerFragments.NewOfFragment;
-import com.realmucho.prokatproject.Fragments.DrawerFragments.TopOfFragment;
+
 import com.realmucho.prokatproject.Interfaces.DisableOnClick;
 import com.realmucho.prokatproject.R;
 
@@ -32,8 +31,6 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private SearchView search;
     private Fragment mainFragment;
-    private RelativeLayout mainfraglayout;
-    private DisableOnClick disableOnClick;
 
 
     @Override
@@ -47,8 +44,6 @@ public class MainActivity extends AppCompatActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().add(R.id.root, mainFragment).commit();
         search = (SearchView) findViewById(R.id.search);
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -108,16 +103,14 @@ public class MainActivity extends AppCompatActivity
                     }
                 }, 3000);
 
-
                 fragment = new MainFragment();
+
                 search.setVisibility(View.VISIBLE);
                 search.setQuery("", false);
 
                 if (!search.isIconified()) {
                     search.setIconified(true);
                 }
-
-                disableOnClick.disableclick();
 
 
                 break;
@@ -127,13 +120,13 @@ public class MainActivity extends AppCompatActivity
                 intent.putExtra("req_new", reqcode);
                 startActivity(intent);
                 fragment = new MainFragment();
+
                 search.setVisibility(View.VISIBLE);
                 search.setQuery("", false);
                 if (!search.isIconified()) {
                     search.setIconified(true);
                 }
-                mainfraglayout.setClickable(false);
-                disableOnClick.disableclick();
+
                 break;
             case R.id.about:
                 intent = new Intent(MainActivity.this, PostsActivity.class);
@@ -167,11 +160,6 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-
-    void setDisableClickListner(DisableOnClick disableClickListner) {
-        this.disableOnClick = disableClickListner;
     }
 
 
