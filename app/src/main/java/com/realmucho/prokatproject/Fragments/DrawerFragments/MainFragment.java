@@ -8,8 +8,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,13 +20,14 @@ import android.widget.RelativeLayout;
 
 import com.realmucho.prokatproject.Activities.AddActivity;
 import com.realmucho.prokatproject.Activities.CategoryActivity;
+import com.realmucho.prokatproject.Activities.MainActivity;
 import com.realmucho.prokatproject.Interfaces.DisableOnClick;
 import com.realmucho.prokatproject.R;
 import java.util.HashMap;
 import java.util.Map;
 
 
-public class MainFragment extends Fragment implements View.OnClickListener,DisableOnClick {
+public class MainFragment extends Fragment implements View.OnClickListener {
 
     private ImageView goodsimage, transportimage, serviceimage, realtyimage, roundcategory;
     private View pizza;
@@ -197,13 +200,28 @@ public class MainFragment extends Fragment implements View.OnClickListener,Disab
         pizza.setVisibility(View.VISIBLE);
         roundcategory.setAlpha(0f);
         roundcategory.setVisibility(View.GONE);
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+
+                    getActivity().onBackPressed();
+
+
+
+
+                }
+
+                return true;
+            }
+        });
 
     }
 
 
-    @Override
-    public void disableclick() {
 
-    }
 }
 

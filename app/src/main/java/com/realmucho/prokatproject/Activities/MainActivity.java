@@ -61,7 +61,10 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+            homeIntent.addCategory( Intent.CATEGORY_HOME );
+            homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(homeIntent);
 
         }
 
@@ -92,17 +95,11 @@ public class MainActivity extends AppCompatActivity
 
                 break;
             case R.id.topof:
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        int reqcod = 0;
-                        Intent intent = new Intent(MainActivity.this, PostsActivity.class);
-                        intent.putExtra("req_top", reqcod);
-                        startActivity(intent);
-                    }
-                }, 3000);
 
+                reqcode = 0;
+                intent = new Intent(MainActivity.this, PostsActivity.class);
+                intent.putExtra("req_top", reqcode);
+                startActivity(intent);
                 fragment = new MainFragment();
 
                 search.setVisibility(View.VISIBLE);
@@ -129,8 +126,7 @@ public class MainActivity extends AppCompatActivity
 
                 break;
             case R.id.about:
-                intent = new Intent(MainActivity.this, PostsActivity.class);
-                startActivity(intent);
+
                 fragment = new AboutFragment();
                 search.setVisibility(View.GONE);
 
@@ -161,6 +157,8 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 
 
 }

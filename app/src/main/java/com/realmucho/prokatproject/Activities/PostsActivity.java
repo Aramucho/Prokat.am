@@ -141,14 +141,17 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
             slidingPaneLayout.closePane();
         } else if (!slidingPaneLayout.isOpen()) {
             if (reqintent.getIntExtra("req_top", 5) == 0) {
-                intent = new Intent(this, MainActivity.class);
+                intent=new Intent(this,MainActivity.class);
                 startActivity(intent);
             } else if (reqintent.getIntExtra("req_new", 5) == 1) {
                 intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
             }
-        } else {
-            super.onBackPressed();
+            else {
+
+                super.onBackPressed();
+
+            }
         }
 
     }

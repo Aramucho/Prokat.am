@@ -212,7 +212,7 @@
 
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/relatives"
                 android:text="@string/relatives"
                 android:textColor="@color/maincolorblue"
@@ -222,7 +222,7 @@
                 />
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/order"
                 android:text="@string/order"
                 android:textColor="@color/maincolorblue"
