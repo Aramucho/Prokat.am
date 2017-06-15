@@ -140,6 +140,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.feedback:
                 fragment = new FeedBackFragment();
                 search.setVisibility(View.GONE);
+//                search.setVisibility(View.VISIBLE);
 
                 break;
 
