@@ -34,11 +34,7 @@
             android:icon="@drawable/feedback"
             android:title="@string/feedback" />
 
-        <item
-            android:id="@+id/langch"
-            android:enabled="false"
-            android:icon="@drawable/language_icon"
-            android:title="@string/changelang"></item>
+
 
     </group>
 

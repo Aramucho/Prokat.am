@@ -76,161 +76,166 @@
                 android:textColor="@color/maincolorwhite"
                 android:textSize="25sp" />
         </LinearLayout>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/detailed_scroll_view"
-    android:layout_below="@id/name_price_layout"
-    android:layout_above="@+id/detailed_buttons"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/detailed_discrition"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layoutDirection="ltr"
-            android:gravity="start"
-            android:text="@string/about_all"
-            android:textColor="@color/maincolorwhite" />
-        <View
+
+        <ScrollView
+            android:id="@+id/detailed_scroll_view"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/maincolorwhite"
-            android:layout_below="@id/detailed_discrition"
-            android:layout_marginTop="8dp"
-            android:id="@+id/disc_seperator"
-            />
+            android:layout_height="match_parent"
+            android:layout_above="@+id/detailed_buttons"
+            android:layout_below="@id/name_price_layout"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/detailed_discrition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="start"
+                    android:layoutDirection="ltr"
+                    android:text="@string/about_all"
+                    android:textColor="@color/maincolorwhite" />
+
+                <View
+                    android:id="@+id/disc_seperator"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@id/detailed_discrition"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/maincolorwhite" />
+
+                <LinearLayout
+                    android:id="@+id/detailed_transport_params_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/disc_seperator"
+                    android:layout_marginTop="20dp"
+                    android:layoutDirection="ltr"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/trasnport_year"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/trasnport_year_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:text="@string/transport_year"
+                            android:textColor="@color/maincolorwhite"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/trasnport_year_data"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:gravity="end"
+                            android:text="1993year"
+                            android:textColor="@color/maincolorwhite"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/trasnport_box"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/trasnport_box_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:text="@string/box"
+                            android:textColor="@color/maincolorwhite"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/trasnport_box_data"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:gravity="end"
+                            android:text="automatic"
+                            android:textColor="@color/maincolorwhite"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/trasnport_volume"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="ltr"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/trasnport_volume_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.4"
+                            android:text="@string/engine_volume"
+                            android:textColor="@color/maincolorwhite"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/trasnport_volume_data"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6"
+                            android:gravity="end"
+                            android:text="1.8l"
+                            android:textColor="@color/maincolorwhite"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </ScrollView>
 
         <LinearLayout
-            android:id="@+id/detailed_transport_params_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/disc_seperator"
-            android:layoutDirection="ltr"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
-            >
-
-            <LinearLayout
-            android:id="@+id/trasnport_year"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/trasnport_year_name"
-                android:layout_weight="0.4"
-                android:text="@string/transport_year"
-                android:textColor="@color/maincolorwhite"
-                android:textSize="15sp" />
-            <TextView
-                android:id="@+id/trasnport_year_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.6"
-                android:text="1993year"
-                android:gravity="end"
-                android:textColor="@color/maincolorwhite"
-                android:textSize="15sp" />
-
-        </LinearLayout>
-            <LinearLayout
-                android:id="@+id/trasnport_box"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/trasnport_box_name"
-                    android:layout_weight="0.4"
-                    android:text="@string/box"
-                    android:textColor="@color/maincolorwhite"
-                    android:textSize="15sp" />
-                <TextView
-                    android:id="@+id/trasnport_box_data"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
-                    android:text="automatic"
-                    android:gravity="end"
-                    android:textColor="@color/maincolorwhite"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/trasnport_volume"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layoutDirection="ltr">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/trasnport_volume_name"
-                    android:layout_weight="0.4"
-                    android:text="@string/engine_volume"
-                    android:textColor="@color/maincolorwhite"
-                    android:textSize="15sp" />
-                <TextView
-                    android:id="@+id/trasnport_volume_data"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.6"
-                    android:text="1.8l"
-                    android:gravity="end"
-                    android:textColor="@color/maincolorwhite"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
-
-
-
-        </LinearLayout>
-    </RelativeLayout>
-
-</ScrollView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:id="@+id/detailed_buttons"
-            android:layoutDirection="ltr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:background="@color/maincolorblue"
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
             android:padding="5dp"
-            android:weightSum="2.25"
-            android:background="@color/maincolorblue">
+            android:weightSum="2.25">
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
                 android:id="@+id/relatives"
-                android:text="@string/relatives"
-                android:textColor="@color/maincolorblue"
-                android:background="@color/maincolorwhite"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                />
-            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/order"
-                android:text="@string/order"
-                android:textColor="@color/maincolorblue"
-                android:background="@color/maincolorwhite"
-                android:textAllCaps="false"
                 android:layout_weight="1"
+                android:background="@color/maincolorwhite"
+                android:text="@string/relatives"
+                android:textAllCaps="false"
+                android:textColor="@color/maincolorblue" />
+
+            <Button
+                android:id="@+id/order"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="5dp"
-                />
+                android:layout_weight="1"
+                android:background="@color/maincolorwhite"
+                android:text="@string/order"
+                android:textAllCaps="false"
+                android:textColor="@color/maincolorblue" />
         </LinearLayout>
     </RelativeLayout>
 
@@ -243,33 +248,33 @@
         android:layoutDirection="ltr">
 
         <com.cjj.MaterialRefreshLayout
-            android:id="@+id/refreshlayout"
+        android:id="@+id/refreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:overlay="true"
+        app:progress_backgroud_color="@color/maincolorwhite"
+        app:progress_colors="@array/progress"
+        app:wave_height_type="normal"
+        app:wave_show="true">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/itemList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:overlay="true"
-            app:progress_backgroud_color="@color/maincolorwhite"
-            app:progress_colors="@array/progress"
-            app:wave_height_type="normal"
-            app:wave_show="true">
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
-            <ImageButton
-                android:id="@+id/scroll_up"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
-                android:layout_marginBottom="5dp"
-                android:layout_marginRight="5dp"
-                android:background="#00000000"
-                android:src="@drawable/top_scroll_icon"
-                android:visibility="gone" />
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/itemList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
         </com.cjj.MaterialRefreshLayout>
 
-
+        <ImageButton
+            android:id="@+id/scroll_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="#00000000"
+            android:src="@drawable/top_scroll_icon"
+            android:visibility="gone" />
     </RelativeLayout>
 
 </android.support.v4.widget.SlidingPaneLayout>

@@ -1,6 +1,8 @@
 package com.realmucho.prokatproject.Fragments.DrawerFragments;
 
 
+import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -20,7 +22,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -132,12 +133,13 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
                 urlIntent("https://ok.ru/profile/562361186775");
 
                 break;
-            case R.id.insta_icon:
-                urlIntent("https://www.instagram.com/prokat.am/");
 
+            case R.id.insta_icon:
+                getInstagramPageUrl("https://www.instagram.com/prokat.am/");
+                //                getInstagramPageUrl("https://www.instagram.com/prokat.am");
                 break;
             case R.id.skype_icon:
-                urlIntent("https://www.skype.com");
+                getSkypePageUrl(getContext(), "www.skype.com");
                 break;
             case R.id.share:
                 paneLayout.openPane();
@@ -221,12 +223,10 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
                     }
 
-                    if (!paneLayout.isOpen()&& bottomSheetBehavior.getState()==BottomSheetBehavior.STATE_COLLAPSED ) {
+                    if (!paneLayout.isOpen() && bottomSheetBehavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
                         Intent intent = new Intent(getContext(), MainActivity.class);
                         startActivity(intent);
                     }
-
-
 
 
                 }
@@ -272,6 +272,53 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
     private void urlIntent(String url) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(intent);
+    }
+
+    private void getSkypePageUrl(Context myContext, String url) {
+
+        if (isSkypeClientInstalled(myContext)) {
+            Uri skypeUri = Uri.parse(url);
+            Intent intent = new Intent(Intent.ACTION_VIEW, skypeUri);
+
+            intent.setComponent(new ComponentName("com.skype.raider", "com.skype.raider.Main"));
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+
+            myContext.startActivity(intent);
+        } else
+
+            urlIntent("https://play.google.com/store/apps/details?id=com.skype.raider&hl=ru");
+
+    }
+
+
+    private boolean isSkypeClientInstalled(Context myContext) {
+        PackageManager myPackageMgr = myContext.getPackageManager();
+        try {
+            myPackageMgr.getPackageInfo("com.skype.raider", PackageManager.GET_ACTIVITIES);
+        } catch (PackageManager.NameNotFoundException e) {
+            return (false);
+        }
+        return (true);
+    }
+
+
+    private void getInstagramPageUrl(String url) {
+
+
+
+
+        Intent intent = getContext().getPackageManager().getLaunchIntentForPackage("com.instagram.android");
+        intent.setData(Uri.parse(url));
+        if (intent != null) {
+            try {
+                startActivity(intent);
+            } catch (ActivityNotFoundException ex) {
+                urlIntent("https://www.instagram.com/prokat.am/");
+                ex.printStackTrace();
+            }
+        }
+
     }
 
 
