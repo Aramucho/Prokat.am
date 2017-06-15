@@ -19,6 +19,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.realmucho.prokatproject.Adapters.CategoryAdapter;
+import com.realmucho.prokatproject.Adapters.CategoryTitleAdapter;
 import com.realmucho.prokatproject.Models.CategoryData;
 import com.realmucho.prokatproject.Interfaces.FragmentBackPressed;
 import com.realmucho.prokatproject.Interfaces.PaneCallBack;
@@ -27,17 +28,14 @@ import com.realmucho.prokatproject.R;
 
 import java.util.ArrayList;
 
-public class GoodsCategoryFragment extends Fragment implements PaneCallBack,FragmentBackPressed {
+public class GoodsCategoryFragment extends Fragment implements PaneCallBack, FragmentBackPressed {
 
     private SlidingPaneLayout slidingPaneLayout;
     private RecyclerView categoryrw;
+    private RecyclerView categoryTitlerw;
     private CategoryAdapter adapter;
-    private ArrayAdapter<String> subtitles;
-    private ListView goodssubtitle;
+    private CategoryTitleAdapter titleAdapter;
     private TextView please;
-
-
-
 
 
     @Nullable
@@ -46,13 +44,16 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack,Frag
         View view = inflater.inflate(R.layout.goods_category_fragment, container, false);
         slidingPaneLayout = (SlidingPaneLayout) view.findViewById(R.id.slidingPane);
         slidingPaneLayout.setSliderFadeColor(Color.TRANSPARENT);
-        goodssubtitle = (ListView) view.findViewById(R.id.subtitle_list);
+
+
         please = (TextView) view.findViewById(R.id.please);
         categoryrw = (RecyclerView) view.findViewById(R.id.goods_category_rw);
         categoryrw.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        categoryTitlerw = (RecyclerView) view.findViewById(R.id.subtitle_list);
+        categoryTitlerw.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new CategoryAdapter(setData(), getContext(), this);
         categoryrw.setAdapter(adapter);
-
 
 
         return view;
@@ -77,19 +78,12 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack,Frag
     @Override
     public void paneopen(int position) {
         please.setVisibility(View.GONE);
-        goodssubtitle.setVisibility(View.VISIBLE);
-        subtitles = new ArrayAdapter(getContext(), R.layout.support_simple_spinner_dropdown_item, getsubtitles().get(position));
-        goodssubtitle.setAdapter(subtitles);
+        categoryTitlerw.setVisibility(View.VISIBLE);
+        titleAdapter = new CategoryTitleAdapter(getContext(), getsubtitles().get(position));
+        categoryTitlerw.setAdapter(titleAdapter);
         slidingPaneLayout.openPane();
-        goodssubtitle.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), PostsActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
 
+    }
 
 
     private ArrayList<String[]> getsubtitles() {
@@ -125,12 +119,11 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack,Frag
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
-                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
 
-                    if(slidingPaneLayout.isOpen())
-                    {
+                    if (slidingPaneLayout.isOpen()) {
                         slidingPaneLayout.closePane();
-                    }else if(!slidingPaneLayout.isOpen()){
+                    } else if (!slidingPaneLayout.isOpen()) {
                         getActivity().finish();
                     }
 

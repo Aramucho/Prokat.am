@@ -24,13 +24,13 @@
             android:textColor="@color/maincolorwhite"
             android:textSize="20sp"
             android:id="@+id/please"/>
-        <ListView
+        <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"
-            android:id="@+id/subtitle_list">
+            android:layout_height="wrap_content"
+            android:id="@+id/subtitle_list"
+            android:visibility="gone">
 
-        </ListView>
+        </android.support.v7.widget.RecyclerView>
     </RelativeLayout>
 
     <RelativeLayout
