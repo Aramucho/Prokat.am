@@ -80,6 +80,9 @@
     <string name="upload_type">Ընտրեք ներբեռնման ձևը</string>
     <string name="checkout">Պատվերի ձևակերպում</string>
     <string name="changelang">Փոխել լեզուն</string>
+    <string name="arm">Հայերեն</string>
+    <string name="rus">Русский</string>
+    <string name="eng">English</string>
     <string-array name="bydefualt">
         <item>---</item>
     </string-array>

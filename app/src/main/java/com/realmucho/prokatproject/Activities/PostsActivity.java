@@ -10,6 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -38,6 +43,8 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
     private ImageButton scroll;
     private CircleIndicator indicator;
     private Button order, relatives;
+    private Toolbar toolbar;
+    private SearchView searchView;
 
 
     @Override
@@ -50,6 +57,8 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
         pageradapter = new ItemPagerAdapter(this);
         viewPager.setAdapter(pageradapter);
         indicator.setViewPager(viewPager);
+        toolbar=(Toolbar)findViewById(R.id.posts_toolbar);
+        setSupportActionBar(toolbar);
         indicator.animate().rotation(180);
         order = (Button) findViewById(R.id.order);
         relatives = (Button) findViewById(R.id.relatives);
@@ -65,8 +74,43 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
         recyclerView.setLayoutManager(layoutManager);
         adapter = new PostsListAdapter(setItemData(), this, this);
         recyclerView.setAdapter(adapter);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         scrollinit();
+        searchView=(SearchView)findViewById(R.id.posts_search);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Intent intent=new Intent(PostsActivity.this,PostsActivity.class);
+                startActivity(intent);
+                return false;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.language_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.arm:
+                return true;
+            case R.id.rus:
+                return true;
+            case R.id.eng:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void scrollinit() {

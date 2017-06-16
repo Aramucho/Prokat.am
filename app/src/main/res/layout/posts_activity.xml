@@ -9,11 +9,14 @@
     android:layoutDirection="rtl"
     tools:context="com.realmucho.prokatproject.Activities.PostsActivity">
 
+
     <RelativeLayout
         android:id="@+id/list_pane"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:background="@color/maincolorblue">
+
 
         <android.support.v7.widget.CardView
             android:id="@+id/pager_cardview"
@@ -247,21 +250,41 @@
         android:background="@color/maincolorwhite"
         android:layoutDirection="ltr">
 
-        <com.cjj.MaterialRefreshLayout
-        android:id="@+id/refreshlayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:overlay="true"
-        app:progress_backgroud_color="@color/maincolorwhite"
-        app:progress_colors="@array/progress"
-        app:wave_height_type="normal"
-        app:wave_show="true">
-
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/itemList"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/posts_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/maincolorblue"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <android.support.v7.widget.SearchView
+                android:id="@+id/posts_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="4dp"
+                android:clickable="true" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <com.cjj.MaterialRefreshLayout
+            android:id="@+id/refreshlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/posts_toolbar"
+            app:overlay="true"
+            app:progress_backgroud_color="@color/maincolorwhite"
+            app:progress_colors="@array/progress"
+            app:wave_height_type="normal"
+            app:wave_show="true">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/itemList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
 
         </com.cjj.MaterialRefreshLayout>
