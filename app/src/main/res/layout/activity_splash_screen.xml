@@ -4,12 +4,14 @@
     android:id="@+id/activity_splash_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   android:background="@color/maincolorwhite"
-    tools:context="com.realmucho.prokatproject.Activities.SplashScreen"
-    >
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:src="@drawable/logo"
-    android:layout_marginLeft="23dp"/>
+    android:background="@color/maincolorwhite"
+    tools:context="com.realmucho.prokatproject.Activities.SplashScreen">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="23dp"
+        android:id="@+id/logo"
+        android:src="@drawable/logo"
+        />
 </RelativeLayout>

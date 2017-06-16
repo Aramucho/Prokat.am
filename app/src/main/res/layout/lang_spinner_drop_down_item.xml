@@ -1,8 +1,0 @@
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/drop_down_spinner_item"
-    style="?attr/spinnerDropDownItemStyle"
-    android:lines="1"
-    android:layout_width="match_parent"
-    android:textColor="@color/maincolorwhite"
-    android:layout_height="?attr/dropdownListPreferredItemHeight"
-    android:ellipsize="end"/>

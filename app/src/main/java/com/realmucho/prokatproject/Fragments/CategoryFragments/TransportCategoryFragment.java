@@ -53,6 +53,7 @@ public class TransportCategoryFragment extends Fragment implements PaneCallBack 
     @Override
     public void paneopen(int position) {
         Intent intent = new Intent(getContext(), PostsActivity.class);
+        intent.putExtra("request",position);
         startActivity(intent);
     }
     @Override
