@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/maincolorwhite"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/connect_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/no_network_logo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/connect_logo"
+        android:gravity="center"
+        android:text="@string/pleaseconnect"
+        android:textColor="@color/maincolorblue"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/connect_text"
+        android:layout_marginBottom="15dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/btn_layouts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_below="@id/connect_text"
+        >
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/maincolorblue"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:id="@+id/cancel_btn"/>
+
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/maincolorblue"
+            android:text="@string/retry"
+            android:textAllCaps="false"
+            android:textColor="@color/maincolorwhite"
+            android:id="@+id/retry_btn"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

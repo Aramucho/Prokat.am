@@ -83,6 +83,8 @@
     <string name="arm">Հայերեն</string>
     <string name="rus">Русский</string>
     <string name="eng">English</string>
+    <string name="retry">Retry</string>
+    <string name="pleaseconnect">Խնդրում ենք միանալ ինտերնետին</string>
     <string-array name="bydefualt">
         <item>---</item>
     </string-array>

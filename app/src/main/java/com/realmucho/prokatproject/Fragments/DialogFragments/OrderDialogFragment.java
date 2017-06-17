@@ -11,9 +11,7 @@ import android.widget.EditText;
 
 import com.realmucho.prokatproject.R;
 
-/**
- * Created by Free User on 6/8/2017.
- */
+
 
 public class OrderDialogFragment extends android.support.v4.app.DialogFragment {
 
