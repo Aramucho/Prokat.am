@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:background="@color/maincolorblue"
         android:id="@+id/upload_dialog_title">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/upload_type"
             android:textColor="@color/maincolorwhite"
             android:textSize="20sp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:gravity="center"
 
             />
     </RelativeLayout>
@@ -28,15 +27,15 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/camera_image"
-            android:src="@drawable/camera_icon"
+            android:src="@drawable/upload_camera_unchecked"
             android:layout_weight="1"/>
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/gallery_image"
-            android:src="@drawable/gallery"
+            android:src="@drawable/upload_gallery_unchecked"
             android:layout_weight="1"/>
     </LinearLayout>
     <LinearLayout
