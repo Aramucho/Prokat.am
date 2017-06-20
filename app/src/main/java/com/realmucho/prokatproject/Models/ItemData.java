@@ -23,6 +23,8 @@ public class ItemData {
         this.price = price;
     }
 
+
+
     public int getMainImage() {
         return mainImage;
     }
@@ -101,6 +103,7 @@ public class ItemData {
 
     public void setBm1(Bitmap bm1) {
         this.bm1 = bm1;
+
     }
 
     public Bitmap getBm2() {
