@@ -137,6 +137,7 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
         switch (id){
             case R.id.goods_choose_button_1:
                 UploadDialogFragment dialogFragment=UploadDialogFragment.newInstance(REQ_CODE1);
+                dialogFragment.setTargetFragment(this, 1);
                 dialogFragment.show(fragmentManager,"Fragment1");
                 break;
             case R.id.goods_choose_button_2:
@@ -158,9 +159,7 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
         switch (requestCode){
             case REQ_CODE1:
                 if(resultCode==RESULT_OK){
-
-                    Bundle bundle=data.getExtras();
-                    byte[]byteArray=bundle.getByteArray("bitmap");
+                    byte[]byteArray=data.getByteArrayExtra("bitmap");
                     Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                     bm1=bitmap;
                 }

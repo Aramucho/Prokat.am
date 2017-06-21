@@ -55,7 +55,9 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         NestedScrollView bottomsheet = (NestedScrollView) view.findViewById(R.id.bottom_sheet);
         bottomSheetBehavior = BottomSheetBehavior.from(bottomsheet);
         mMapView = (MapView) view.findViewById(R.id.map_view);
-        mMapView.onCreate(savedInstanceState);
+        Bundle mapState = (savedInstanceState != null)
+                ? savedInstanceState.getBundle("mapState"): null;
+        mMapView.onCreate(mapState);
         mMapView.onResume();
         paneLayout = (SlidingPaneLayout) view.findViewById(R.id.feed_sliding_pane);
         feedlayout = (RelativeLayout) view.findViewById(R.id.feed_layout);
@@ -86,6 +88,14 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
 
         return view;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Bundle mapState = new Bundle();
+        mMapView.onSaveInstanceState(mapState);
+        outState.putBundle("mapState", mapState);
     }
 
 

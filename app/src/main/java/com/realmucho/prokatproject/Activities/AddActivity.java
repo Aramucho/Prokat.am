@@ -1,5 +1,9 @@
 package com.realmucho.prokatproject.Activities;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -7,6 +11,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.realmucho.prokatproject.Fragments.AddFragments.GoodsFragment;
 import com.realmucho.prokatproject.Fragments.AddFragments.RealtyFragment;
@@ -78,6 +83,27 @@ public class AddActivity extends AppCompatActivity {
 
 
     }
+
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//
+//        switch (requestCode) {
+//
+//            case 888: {
+//                if (grantResults.length > 0
+//                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                    startActivityForResult(intent, 1);
+//
+//                } else {
+//                    Toast.makeText(this, "I have no permission for opening your camera(((", Toast.LENGTH_SHORT).show();
+//                }
+//
+//                return;
+//            }
+//        }
+//    }
 
 
 }
