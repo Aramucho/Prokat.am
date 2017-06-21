@@ -51,24 +51,16 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.posts_activity);
-        viewPager = (ViewPager) findViewById(R.id.detailed_pager);
-        indicator = (CircleIndicator) findViewById(R.id.indicator);
-        scroll = (ImageButton) findViewById(R.id.scroll_up);
+        init();
         pageradapter = new ItemPagerAdapter(this);
         viewPager.setAdapter(pageradapter);
         indicator.setViewPager(viewPager);
-        toolbar=(Toolbar)findViewById(R.id.posts_toolbar);
         setSupportActionBar(toolbar);
         indicator.animate().rotation(180);
-        order = (Button) findViewById(R.id.order);
-        relatives = (Button) findViewById(R.id.relatives);
         order.setOnClickListener(this);
         relatives.setOnClickListener(this);
         pageradapter.registerDataSetObserver(indicator.getDataSetObserver());
-        refreshLayout = (MaterialRefreshLayout) findViewById(R.id.refreshlayout);
-        slidingPaneLayout = (SlidingPaneLayout) findViewById(R.id.posts_sliding_pane);
         slidingPaneLayout.setSliderFadeColor(Color.TRANSPARENT);
-        recyclerView = (RecyclerView) findViewById(R.id.itemList);
         layoutManager = new GridLayoutManager(this, 2);
         layoutManager.scrollToPositionWithOffset(2, 20);
         recyclerView.setLayoutManager(layoutManager);
@@ -76,7 +68,7 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
         recyclerView.setAdapter(adapter);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         scrollinit();
-        searchView=(SearchView)findViewById(R.id.posts_search);
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -90,6 +82,20 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
                 return false;
             }
         });
+    }
+
+    private void init(){
+        viewPager = (ViewPager) findViewById(R.id.detailed_pager);
+        indicator = (CircleIndicator) findViewById(R.id.indicator);
+        scroll = (ImageButton) findViewById(R.id.scroll_up);
+        toolbar=(Toolbar)findViewById(R.id.posts_toolbar);
+        order = (Button) findViewById(R.id.order);
+        relatives = (Button) findViewById(R.id.relatives);
+        refreshLayout = (MaterialRefreshLayout) findViewById(R.id.refreshlayout);
+        slidingPaneLayout = (SlidingPaneLayout) findViewById(R.id.posts_sliding_pane);
+        recyclerView = (RecyclerView) findViewById(R.id.itemList);
+        searchView=(SearchView)findViewById(R.id.posts_search);
+
     }
 
     @Override

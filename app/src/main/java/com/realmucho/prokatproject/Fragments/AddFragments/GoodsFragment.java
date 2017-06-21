@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -31,6 +32,7 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
     private Spinner sectionspinner, goodssubsectionspinner, goodscitiesspinner;
     private ArrayAdapter sectionadapter, goodsubsectionadapter, goodscitiesadapter;
     private Intent intent;
+    private EditText goods_name,goods_discript,goods_price,goods_contacts_name,goods_contacts_email,goods_contacts_phone,goods_notes;
     private FloatingActionButton fab1,fab2,fab3,fab4,fab5;
     private Bitmap bm1,bm2,bm3,bm4,bm5;
     private final int REQ_CODE1=1,REQ_CODE2=2,REQ_CODE3=3,REQ_CODE4=4,REQ_CODE5=5;
@@ -40,20 +42,41 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.gooods_fragment, container, false);
-        fab1=(FloatingActionButton)view.findViewById(R.id.goods_choose_button_1);
-        fab1.setOnClickListener(this);
+        init(view);
+        setupClicks();
         intent=getActivity().getIntent();
-        sectionspinner = (Spinner) view.findViewById(R.id.goods_section_spinner);
-        goodssubsectionspinner = (Spinner) view.findViewById(R.id.goods_subsection_spinner);
-        goodscitiesspinner = (Spinner) view.findViewById(R.id.goods_cities_spinner);
-
-        spinnersinit();
-
-
+        spinnersInit();
         return view;
     }
 
-    private void spinnersinit() {
+    private void init(View view){
+        fab1=(FloatingActionButton)view.findViewById(R.id.goods_choose_button_1);
+        fab2=(FloatingActionButton)view.findViewById(R.id.goods_choose_button_2);
+        fab3=(FloatingActionButton)view.findViewById(R.id.goods_choose_button_3);
+        fab4=(FloatingActionButton)view.findViewById(R.id.goods_choose_button_4);
+        fab5=(FloatingActionButton)view.findViewById(R.id.goods_choose_button_5);
+        sectionspinner = (Spinner) view.findViewById(R.id.goods_section_spinner);
+        goodssubsectionspinner = (Spinner) view.findViewById(R.id.goods_subsection_spinner);
+        goodscitiesspinner = (Spinner) view.findViewById(R.id.goods_cities_spinner);
+        goods_name=(EditText)view.findViewById(R.id.goods_name_edit);
+        goods_discript=(EditText) view.findViewById(R.id.goods_description_edit);
+        goods_price=(EditText)view.findViewById(R.id.goods_price_edit);
+        goods_contacts_name=(EditText)view.findViewById(R.id.goods_contacts_name);
+        goods_contacts_email=(EditText)view.findViewById(R.id.goods_contacts_email);
+        goods_contacts_phone=(EditText)view.findViewById(R.id.goods_contacts_phone);
+        goods_notes=(EditText)view.findViewById(R.id.goods_contacts_notes);
+
+    }
+    private void setupClicks(){
+        fab1.setOnClickListener(this);
+        fab2.setOnClickListener(this);
+        fab3.setOnClickListener(this);
+        fab4.setOnClickListener(this);
+        fab5.setOnClickListener(this);
+
+    }
+
+    private void spinnersInit() {
 
         sectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.goods_titles, R.layout.drop_down_spinner_item);
         goodscitiesadapter=ArrayAdapter.createFromResource(getContext(),R.array.cities,R.layout.drop_down_spinner_item);

@@ -2,38 +2,77 @@ package com.realmucho.prokatproject.Fragments.AddFragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.realmucho.prokatproject.R;
 
 
-public class RealtyFragment extends Fragment {
+public class RealtyFragment extends Fragment implements View.OnClickListener {
 
     private TextView section;
     private Spinner realtyspinner;
     private ArrayAdapter realtyspinneradpater;
+    private EditText realty_name, realty_rooms, realty_floor, realty_adress, realty_price, realty_description, realty_contacts_name, realty_contacts_email, realty_contacts_phone, realty_contacts_notes;
+    private FloatingActionButton fab1, fab2, fab3, fab4, fab5;
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.realty_fragment, container, false);
-        section = (TextView) view.findViewById(R.id.realty_section);
+        init(view);
+        setupClicks();
+        spinnerInit();
         section.setFocusableInTouchMode(true);
         section.requestFocus();
-        realtyspinner = (Spinner) view.findViewById(R.id.realty_section_spinner);
-        spinnerinit();
         return view;
     }
 
-    private void spinnerinit() {
+    private void init(View view) {
+        section = (TextView) view.findViewById(R.id.realty_section);
+        realtyspinner = (Spinner) view.findViewById(R.id.realty_section_spinner);
+        realty_name = (EditText) view.findViewById(R.id.realty_name_edit);
+        realty_rooms = (EditText) view.findViewById(R.id.realty_rooms_edit);
+        realty_floor = (EditText) view.findViewById(R.id.realty_floor_edit);
+        realty_adress = (EditText) view.findViewById(R.id.realty_adress_edit);
+        realty_price = (EditText) view.findViewById(R.id.realty_price_edit);
+        realty_description = (EditText) view.findViewById(R.id.realty_description_edit);
+        realty_contacts_name = (EditText) view.findViewById(R.id.realty_contacts_name);
+        realty_contacts_email = (EditText) view.findViewById(R.id.realty_contacts_email);
+        realty_contacts_phone = (EditText) view.findViewById(R.id.realty_contacts_phone);
+        realty_contacts_notes = (EditText) view.findViewById(R.id.realty_contacts_notes);
+        fab1=(FloatingActionButton)view.findViewById(R.id.realty_choose_button_1);
+        fab2=(FloatingActionButton)view.findViewById(R.id.realty_choose_button_2);
+        fab3=(FloatingActionButton)view.findViewById(R.id.realty_choose_button_3);
+        fab4=(FloatingActionButton)view.findViewById(R.id.realty_choose_button_4);
+        fab5=(FloatingActionButton)view.findViewById(R.id.realty_choose_button_5);
+    }
+
+    private void setupClicks(){
+        fab1.setOnClickListener(this);
+        fab2.setOnClickListener(this);
+        fab3.setOnClickListener(this);
+        fab4.setOnClickListener(this);
+        fab5.setOnClickListener(this);
+
+    }
+
+    private void spinnerInit() {
 
         realtyspinneradpater = ArrayAdapter.createFromResource(getContext(), R.array.realty_items, R.layout.drop_down_spinner_item);
         realtyspinner.setAdapter(realtyspinneradpater);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

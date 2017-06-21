@@ -30,14 +30,18 @@ public class AddActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        init();
         setContentView(R.layout.activity_add);
-        viewPager = (ViewPager) findViewById(R.id.add_view_pager);
         setupViewPager(viewPager);
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
 
+    }
+
+    private void init(){
+        viewPager = (ViewPager) findViewById(R.id.add_view_pager);
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
     }
 
     private void setupTabIcons() {
