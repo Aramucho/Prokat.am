@@ -55,10 +55,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         NestedScrollView bottomsheet = (NestedScrollView) view.findViewById(R.id.bottom_sheet);
         bottomSheetBehavior = BottomSheetBehavior.from(bottomsheet);
         mMapView = (MapView) view.findViewById(R.id.map_view);
-        Bundle mapState = (savedInstanceState != null)
-                ? savedInstanceState.getBundle("mapState"): null;
-        mMapView.onCreate(mapState);
-        mMapView.onResume();
+        mMapView.onCreate(savedInstanceState != null ? savedInstanceState.getBundle("map") : savedInstanceState);
         paneLayout = (SlidingPaneLayout) view.findViewById(R.id.feed_sliding_pane);
         feedlayout = (RelativeLayout) view.findViewById(R.id.feed_layout);
         feedlayout.setOnClickListener(this);
@@ -90,13 +87,6 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        Bundle mapState = new Bundle();
-        mMapView.onSaveInstanceState(mapState);
-        outState.putBundle("mapState", mapState);
-    }
 
 
     @Override
@@ -277,6 +267,14 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         } catch (PackageManager.NameNotFoundException e) {
             return url;
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        Bundle mapViewstate = new Bundle(outState);
+        mMapView.onSaveInstanceState(mapViewstate);
+        outState.putBundle("map",mapViewstate);
+        super.onSaveInstanceState(outState);
     }
 
     private void urlIntent(String url) {

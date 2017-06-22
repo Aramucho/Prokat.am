@@ -9,7 +9,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -19,22 +21,21 @@
                 android:id="@+id/goods_section_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:focusableInTouchMode="true"
                 android:descendantFocusability="beforeDescendants"
-                >
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/goods_section"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"
+                    android:focusableInTouchMode="true"
                     android:gravity="center_vertical"
                     android:minHeight="40dp"
                     android:text="@string/section"
                     android:textColor="@color/maincolorblue"
-                    android:textSize="20sp"
-                    android:focusableInTouchMode="true"/>
+                    android:textSize="20sp" />
 
                 <Spinner
                     android:id="@+id/goods_section_spinner"
@@ -43,8 +44,7 @@
                     android:layout_weight="0.4"
                     android:background="@drawable/spinner_selector"
                     android:minHeight="40dp"
-                    android:popupBackground="@color/maincolorwhite"
-                    />
+                    android:popupBackground="@color/maincolorwhite" />
 
 
             </LinearLayout>
@@ -104,9 +104,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.4"
+                    android:background="@drawable/spinner_selector"
                     android:minHeight="40dp"
-                    android:popupBackground="@color/maincolorwhite"
-                    android:background="@drawable/spinner_selector"/>
+                    android:popupBackground="@color/maincolorwhite" />
 
 
             </LinearLayout>
@@ -117,8 +117,7 @@
                 android:layout_height="match_parent"
                 android:layout_below="@id/goods_cities_layout"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/goods_name"
@@ -129,7 +128,7 @@
                     android:minHeight="40dp"
                     android:text="@string/name"
                     android:textColor="@color/maincolorblue"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/goods_name_edit"
@@ -387,8 +386,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_toEndOf="@id/goods_photos_name_3"
                     android:src="@drawable/add"
-                    app:fabSize="mini"
-                    />
+                    app:fabSize="mini" />
 
 
                 <TextView
@@ -429,8 +427,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_toEndOf="@id/goods_photos_name_4"
                     android:src="@drawable/add"
-                    app:fabSize="mini"
-                    />
+                    app:fabSize="mini" />
 
 
                 <TextView
@@ -471,8 +468,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_toEndOf="@id/goods_photos_name_5"
                     android:src="@drawable/add"
-                    app:fabSize="mini"
-                    />
+                    app:fabSize="mini" />
 
 
                 <TextView

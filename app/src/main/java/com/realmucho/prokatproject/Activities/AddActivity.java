@@ -30,35 +30,39 @@ public class AddActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        init();
         setContentView(R.layout.activity_add);
+//        setupTabIcons();
+        init();
         setupViewPager(viewPager);
-        tabLayout.setupWithViewPager(viewPager);
-        setupTabIcons();
+
+
+
 
 
     }
+//    private void setupTabIcons() {
+//        tabLayout.getTabAt(0).setIcon(R.drawable.goods_icon_change);
+//        tabLayout.getTabAt(1).setIcon(R.drawable.transport_icon_change);
+//        tabLayout.getTabAt(2).setIcon(R.drawable.realty_icon_change);
+//        tabLayout.getTabAt(3).setIcon(R.drawable.service_icon_change);
+//
+//
+//    }
 
-    private void init(){
-        viewPager = (ViewPager) findViewById(R.id.add_view_pager);
+    private void init() {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
-    }
-
-    private void setupTabIcons() {
-        tabLayout.getTabAt(0).setIcon(R.drawable.goods_icon_change);
-        tabLayout.getTabAt(1).setIcon(R.drawable.transport_icon_change);
-        tabLayout.getTabAt(2).setIcon(R.drawable.realty_icon_change);
-        tabLayout.getTabAt(3).setIcon(R.drawable.service_icon_change);
+        viewPager = (ViewPager) findViewById(R.id.add_view_pager);
 
 
     }
+
 
     private void setupViewPager(ViewPager viewPager) {
         AddPagerAdapter adapter = new AddPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new GoodsFragment(), getString(R.string.goods));
-        adapter.addFragment(new TransportFragment(), getString(R.string.transport));
-        adapter.addFragment(new RealtyFragment(), getString(R.string.realty));
-        adapter.addFragment(new ServiceFragment(), getString(R.string.service));
+        adapter.addFragment(new GoodsFragment());
+        adapter.addFragment(new TransportFragment());
+        adapter.addFragment(new RealtyFragment());
+        adapter.addFragment(new ServiceFragment());
         viewPager.setAdapter(adapter);
     }
 
@@ -75,7 +79,7 @@ public class AddActivity extends AppCompatActivity {
             return mFragmentList.get(position);
         }
 
-        public void addFragment(Fragment fragment, String title) {
+        public void addFragment(Fragment fragment) {
             mFragmentList.add(fragment);
 
         }
@@ -87,27 +91,6 @@ public class AddActivity extends AppCompatActivity {
 
 
     }
-
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//
-//        switch (requestCode) {
-//
-//            case 888: {
-//                if (grantResults.length > 0
-//                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//                    startActivityForResult(intent, 1);
-//
-//                } else {
-//                    Toast.makeText(this, "I have no permission for opening your camera(((", Toast.LENGTH_SHORT).show();
-//                }
-//
-//                return;
-//            }
-//        }
-//    }
 
 
 }

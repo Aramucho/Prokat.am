@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class MainFragment extends Fragment implements View.OnClickListener {
+public class LandMainFragment extends Fragment implements View.OnClickListener {
 
     private ImageView goodsimage, transportimage, serviceimage, realtyimage, roundcategory;
     private View pizza;
@@ -39,9 +39,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
 
 
-public MainFragment(){
 
-}
 
 
 
@@ -49,7 +47,7 @@ public MainFragment(){
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.main_fragment, container, false);
+        View view = inflater.inflate(R.layout.main_fragment_land, container, false);
 
         pizza = view.findViewById(R.id.pizza);
         mainlayout=(RelativeLayout)view.findViewById(R.id.main_fragment_layout);

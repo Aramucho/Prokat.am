@@ -13,11 +13,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.realmucho.prokatproject.Activities.SplashScreen;
+import com.realmucho.prokatproject.Interfaces.ConnectionCallback;
 import com.realmucho.prokatproject.R;
 
 
 public class ConnectionFragment extends DialogFragment implements View.OnClickListener {
     private Button cancelbtn, retrybtn;
+    private ConnectionCallback connectionCallback;
 
     @Nullable
     @Override
@@ -48,12 +50,16 @@ public class ConnectionFragment extends DialogFragment implements View.OnClickLi
                 NetworkInfo networkInfo = ConnectionManager.getActiveNetworkInfo();
                 if(networkInfo != null && networkInfo.isConnected() == true){
                     getDialog().dismiss();
-                    Intent intent=new Intent(getContext(), SplashScreen.class);
-                    intent.putExtra("connect",1);
-                    startActivity(intent);
+                    connectionCallback.conncallback();
+
                 }
                 break;
         }
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.connectionCallback=(ConnectionCallback)context;
+    }
 }

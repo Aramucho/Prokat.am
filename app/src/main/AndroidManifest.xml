@@ -22,18 +22,18 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCWS45I_UyMr4bIALlHsKWXawt9cdblLAQ" />
+            android:value="AIzaSyDNliUsGNtOJS9VYXt4khmU-Y2hHlpd5ro" />
 
         <activity
             android:name=".Activities.MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation|screenSize|keyboardHidden"/>
         <activity
             android:name=".Activities.AddActivity"
-            android:screenOrientation="portrait" />
+            />
         <activity
             android:name=".Activities.SplashScreen"
-            android:screenOrientation="portrait">
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,10 +43,10 @@
         </activity>
         <activity
             android:name=".Activities.CategoryActivity"
-            android:screenOrientation="portrait" />
+             />
         <activity
             android:name=".Activities.PostsActivity"
-            android:screenOrientation="portrait"></activity>
+            ></activity>
     </application>
 
 </manifest>

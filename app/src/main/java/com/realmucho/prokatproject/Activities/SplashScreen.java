@@ -13,9 +13,10 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.realmucho.prokatproject.Fragments.DialogFragments.ConnectionFragment;
+import com.realmucho.prokatproject.Interfaces.ConnectionCallback;
 import com.realmucho.prokatproject.R;
 
-public class SplashScreen extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity  implements ConnectionCallback{
 
 
     private ImageView logo;
@@ -46,20 +47,20 @@ public class SplashScreen extends AppCompatActivity {
             connectionFragment.show(fragmentManager, "Connection Fragment");
 
         }
-        Intent intent=getIntent();
-        if(intent.getIntExtra("connect",0)==1){
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
-            }, 2500);
+
         }
 
+
+    @Override
+    public void conncallback() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }, 2500);
     }
-
-
 }
