@@ -72,8 +72,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/maincolorwhite"
-        android:clickable="true"
-        android:layoutDirection="ltr">
+        android:layoutDirection="ltr"
+        android:clickable="true">
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -291,7 +291,7 @@
                         <com.google.android.gms.maps.MapView
                             android:id="@+id/map_view"
                             android:layout_width="match_parent"
-                            android:layout_height="1000dp" />
+                            android:layout_height="999dp" />
                     </RelativeLayout>
 
                 </android.support.v4.widget.NestedScrollView>

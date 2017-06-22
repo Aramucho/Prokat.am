@@ -31,27 +31,26 @@ public class AddActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
-//        setupTabIcons();
         init();
         setupViewPager(viewPager);
-
-
-
+        tabLayout.setupWithViewPager(viewPager);
+        setupTabIcons();
 
 
     }
-//    private void setupTabIcons() {
-//        tabLayout.getTabAt(0).setIcon(R.drawable.goods_icon_change);
-//        tabLayout.getTabAt(1).setIcon(R.drawable.transport_icon_change);
-//        tabLayout.getTabAt(2).setIcon(R.drawable.realty_icon_change);
-//        tabLayout.getTabAt(3).setIcon(R.drawable.service_icon_change);
-//
-//
-//    }
+
+    private void setupTabIcons() {
+        tabLayout.getTabAt(0).setIcon(R.drawable.goods_icon_change);
+        tabLayout.getTabAt(1).setIcon(R.drawable.transport_icon_change);
+        tabLayout.getTabAt(2).setIcon(R.drawable.realty_icon_change);
+        tabLayout.getTabAt(3).setIcon(R.drawable.service_icon_change);
+
+
+    }
 
     private void init() {
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
         viewPager = (ViewPager) findViewById(R.id.add_view_pager);
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
 
 
     }

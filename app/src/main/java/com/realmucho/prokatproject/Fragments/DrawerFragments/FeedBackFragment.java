@@ -136,7 +136,6 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
             case R.id.insta_icon:
                 getInstagramPageUrl("https://www.instagram.com/prokat.am/");
-                //                getInstagramPageUrl("https://www.instagram.com/prokat.am");
                 break;
             case R.id.skype_icon:
                 getSkypePageUrl(getContext(), "www.skype.com");
@@ -169,14 +168,15 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
             public void onMapReady(GoogleMap mMap) {
                 googleMap = mMap;
 
-                googleMap.setMyLocationEnabled(true);
-
+                mMap.setMyLocationEnabled(true);
                 LatLng location = new LatLng(40.18659663201023, 44.5089211251659);
 
                 googleMap.addMarker(new MarkerOptions().position(location));
 
                 CameraPosition cameraPosition = new CameraPosition.Builder().target(location).zoom(17).build();
+
                 googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
 
             }
         });

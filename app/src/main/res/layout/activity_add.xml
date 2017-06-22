@@ -24,6 +24,13 @@
             android:textSize="25sp" />
     </android.support.v7.widget.Toolbar>
 
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabs"
+        android:id="@+id/add_view_pager"></android.support.v4.view.ViewPager>
+
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
@@ -35,12 +42,5 @@
 
         app:tabMode="fixed"
         android:background="@color/maincolorblue"/>
-
-    <android.support.v4.view.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/tabs"
-        android:id="@+id/add_view_pager"></android.support.v4.view.ViewPager>
-
 
 </RelativeLayout>
