@@ -42,22 +42,24 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack, Fra
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.goods_category_fragment, container, false);
-        slidingPaneLayout = (SlidingPaneLayout) view.findViewById(R.id.slidingPane);
+        init(view);
         slidingPaneLayout.setSliderFadeColor(Color.TRANSPARENT);
-
-
-        please = (TextView) view.findViewById(R.id.please);
-        categoryrw = (RecyclerView) view.findViewById(R.id.goods_category_rw);
         categoryrw.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        categoryTitlerw = (RecyclerView) view.findViewById(R.id.subtitle_list);
         categoryTitlerw.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new CategoryAdapter(setData(), getContext(), this);
         categoryrw.setAdapter(adapter);
-
-
         return view;
     }
+
+    private void init(View view){
+
+        slidingPaneLayout = (SlidingPaneLayout) view.findViewById(R.id.slidingPane);
+        please = (TextView) view.findViewById(R.id.please);
+        categoryrw = (RecyclerView) view.findViewById(R.id.goods_category_rw);
+        categoryTitlerw = (RecyclerView) view.findViewById(R.id.subtitle_list);
+
+    }
+
 
     private ArrayList<CategoryData> setData() {
         ArrayList<CategoryData> arrayList = new ArrayList<>();

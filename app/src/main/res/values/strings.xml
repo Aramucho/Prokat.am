@@ -86,6 +86,7 @@
     <string name="eng">English</string>
     <string name="retry">Retry</string>
     <string name="pleaseconnect">Խնդրում ենք միանալ ինտերնետին</string>
+    <string name="image_uploaded">Նկարը ներբեռնված է</string>
     <string-array name="bydefualt">
         <item>---</item>
     </string-array>

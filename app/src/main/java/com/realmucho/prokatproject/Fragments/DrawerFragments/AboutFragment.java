@@ -18,7 +18,9 @@ public class AboutFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.about_fragment,container,false);
+        View view= inflater.inflate(R.layout.about_fragment,container,false);
+        return view;
+
     }
 
     @Override
@@ -31,13 +33,8 @@ public class AboutFragment extends Fragment {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
                 if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
-
                     Intent intent = new Intent(getContext(), MainActivity.class);
                     startActivity(intent);
-
-
-
-
                 }
 
                 return true;

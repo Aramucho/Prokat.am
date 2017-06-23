@@ -23,6 +23,7 @@ import com.realmucho.prokatproject.Activities.CategoryActivity;
 import com.realmucho.prokatproject.Activities.MainActivity;
 import com.realmucho.prokatproject.Interfaces.DisableOnClick;
 import com.realmucho.prokatproject.R;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,32 +39,12 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private RelativeLayout mainlayout;
 
 
-
-public MainFragment(){
-
-}
-
-
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_fragment, container, false);
-
-        pizza = view.findViewById(R.id.pizza);
-        mainlayout=(RelativeLayout)view.findViewById(R.id.main_fragment_layout);
-        roundcategory = (ImageView) view.findViewById(R.id.roundcategory);
-        goodsimage = (ImageView) view.findViewById(R.id.goods_image);
-        transportimage = (ImageView) view.findViewById(R.id.transport_image);
-        serviceimage = (ImageView) view.findViewById(R.id.service_image);
-        realtyimage = (ImageView) view.findViewById(R.id.realty_image);
-        add = (FloatingActionButton) view.findViewById(R.id.fab);
-        add.setOnClickListener(this);
-        goodsimage.setOnClickListener(this);
-        transportimage.setOnClickListener(this);
-        serviceimage.setOnClickListener(this);
-        realtyimage.setOnClickListener(this);
+        init(view);
+        setupClicks();
         imagesround = new HashMap<>();
         imagesround.put("goods", R.drawable.goods_round);
         imagesround.put("transport", R.drawable.transport_round);
@@ -74,7 +55,26 @@ public MainFragment(){
         return view;
     }
 
+    private void init(View view) {
 
+        pizza = view.findViewById(R.id.pizza);
+        mainlayout = (RelativeLayout) view.findViewById(R.id.main_fragment_layout);
+        roundcategory = (ImageView) view.findViewById(R.id.roundcategory);
+        goodsimage = (ImageView) view.findViewById(R.id.goods_image);
+        transportimage = (ImageView) view.findViewById(R.id.transport_image);
+        serviceimage = (ImageView) view.findViewById(R.id.service_image);
+        realtyimage = (ImageView) view.findViewById(R.id.realty_image);
+        add = (FloatingActionButton) view.findViewById(R.id.fab);
+
+    }
+
+    private void setupClicks(){
+        add.setOnClickListener(this);
+        goodsimage.setOnClickListener(this);
+        transportimage.setOnClickListener(this);
+        serviceimage.setOnClickListener(this);
+        realtyimage.setOnClickListener(this);
+    }
 
 
     @Override
@@ -217,8 +217,6 @@ public MainFragment(){
                     getActivity().onBackPressed();
 
 
-
-
                 }
 
                 return true;
@@ -226,7 +224,6 @@ public MainFragment(){
         });
 
     }
-
 
 
 }

@@ -47,18 +47,27 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
     private SlidingPaneLayout paneLayout;
     private RelativeLayout feedlayout;
 
+    private NestedScrollView bottomsheet;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.feedback_fragment, container, false);
-        NestedScrollView bottomsheet = (NestedScrollView) view.findViewById(R.id.bottom_sheet);
+        init(view);
+        setupClicks();
         bottomSheetBehavior = BottomSheetBehavior.from(bottomsheet);
-        mMapView = (MapView) view.findViewById(R.id.map_view);
         mMapView.onCreate(savedInstanceState != null ? savedInstanceState.getBundle("map") : savedInstanceState);
+        bottomInit();
+        mapInit();
+        return view;
+    }
+
+    private void init(View view){
+
+        bottomsheet = (NestedScrollView) view.findViewById(R.id.bottom_sheet);
+        mMapView = (MapView) view.findViewById(R.id.map_view);
         paneLayout = (SlidingPaneLayout) view.findViewById(R.id.feed_sliding_pane);
         feedlayout = (RelativeLayout) view.findViewById(R.id.feed_layout);
-        feedlayout.setOnClickListener(this);
         share = (ImageButton) view.findViewById(R.id.share);
         mapwatch = (ImageButton) view.findViewById(R.id.map_watch);
         fb = (ImageButton) view.findViewById(R.id.fb_icon);
@@ -69,6 +78,11 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         skype = (ImageButton) view.findViewById(R.id.skype_icon);
         submit = (Button) view.findViewById(R.id.submitbutton);
         link = (TextView) view.findViewById(R.id.link);
+
+    }
+
+    private void setupClicks(){
+        feedlayout.setOnClickListener(this);
         link.setOnClickListener(this);
         mapwatch.setOnClickListener(this);
         submit.setOnClickListener(this);
@@ -79,12 +93,6 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         ok.setOnClickListener(this);
         insta.setOnClickListener(this);
         skype.setOnClickListener(this);
-
-        bottominit();
-        mapinit();
-
-
-        return view;
     }
 
 
@@ -155,7 +163,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    private void mapinit() {
+    private void mapInit() {
 
 
         try {
@@ -182,7 +190,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         });
     }
 
-    private void bottominit() {
+    private void bottomInit() {
         bottomSheetBehavior.setPeekHeight(0);
 
 
