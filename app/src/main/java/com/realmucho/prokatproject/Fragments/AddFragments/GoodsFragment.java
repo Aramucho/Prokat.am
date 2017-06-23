@@ -36,7 +36,7 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
     private FloatingActionButton fab1, fab2, fab3, fab4, fab5;
     private Bitmap bm1, bm2, bm3, bm4, bm5;
     private TextView imageText1,imageText2,imageText3,imageText4,imageText5;
-    private final int REQ_CODE1 = 1, REQ_CODE2 = 2, REQ_CODE3 = 3, REQ_CODE4 = 4, REQ_CODE5 = 5, GOODS_DIALOG=10;
+    private final int REQ_CODE1 = 1, REQ_CODE2 = 2, REQ_CODE3 = 3, REQ_CODE4 = 4, REQ_CODE5 = 5, GOODS_DIALOG=11;
 //    private final int REQ_GAL1=21,REQ_GAL2=22,REQ_GAL3=23,REQ_GAL4=24,REQ_GAL5=25;
 
     @Nullable
@@ -165,28 +165,28 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
 
         switch (id) {
             case R.id.goods_choose_button_1:
-                dialogFragment = UploadDialogFragment.newInstance(REQ_CODE1);
-                dialogFragment.setTargetFragment(this, GOODS_DIALOG);
+                dialogFragment = UploadDialogFragment.newInstance(GOODS_DIALOG);
+                dialogFragment.setTargetFragment(this, REQ_CODE1);
                 dialogFragment.show(fragmentManager, "Fragment1");
                 break;
             case R.id.goods_choose_button_2:
-                dialogFragment = UploadDialogFragment.newInstance(REQ_CODE2);
-                dialogFragment.setTargetFragment(this, GOODS_DIALOG);
+                dialogFragment = UploadDialogFragment.newInstance(GOODS_DIALOG);
+                dialogFragment.setTargetFragment(this, REQ_CODE2);
                 dialogFragment.show(fragmentManager, "Fragment2");
                 break;
             case R.id.goods_choose_button_3:
-                dialogFragment = UploadDialogFragment.newInstance(REQ_CODE3);
-                dialogFragment.setTargetFragment(this, GOODS_DIALOG);
+                dialogFragment = UploadDialogFragment.newInstance(GOODS_DIALOG);
+                dialogFragment.setTargetFragment(this, REQ_CODE3);
                 dialogFragment.show(fragmentManager, "Fragment3");
                 break;
             case R.id.goods_choose_button_4:
-                dialogFragment = UploadDialogFragment.newInstance(REQ_CODE4);
-                dialogFragment.setTargetFragment(this, GOODS_DIALOG);
+                dialogFragment = UploadDialogFragment.newInstance(GOODS_DIALOG);
+                dialogFragment.setTargetFragment(this, REQ_CODE4);
                 dialogFragment.show(fragmentManager, "Fragment4");
                 break;
             case R.id.goods_choose_button_5:
-                dialogFragment = UploadDialogFragment.newInstance(REQ_CODE5);
-                dialogFragment.setTargetFragment(this, GOODS_DIALOG);
+                dialogFragment = UploadDialogFragment.newInstance(GOODS_DIALOG);
+                dialogFragment.setTargetFragment(this, REQ_CODE5);
                 dialogFragment.show(fragmentManager, "Fragment5");
                 break;
         }

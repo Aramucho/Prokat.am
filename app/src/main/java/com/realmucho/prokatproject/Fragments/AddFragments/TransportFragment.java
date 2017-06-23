@@ -48,16 +48,16 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
         transportsectionspinner=(Spinner)view.findViewById(R.id.transport_section_spinner);
         fueltypespinner=(Spinner)view.findViewById(R.id.transport_fuel_type_spinner);
         boxspinner=(Spinner)view.findViewById(R.id.transport_box_spinner);
-        fab1 = (FloatingActionButton) view.findViewById(R.id.goods_choose_button_1);
-        fab2 = (FloatingActionButton) view.findViewById(R.id.goods_choose_button_2);
-        fab3 = (FloatingActionButton) view.findViewById(R.id.goods_choose_button_3);
-        fab4 = (FloatingActionButton) view.findViewById(R.id.goods_choose_button_4);
-        fab5 = (FloatingActionButton) view.findViewById(R.id.goods_choose_button_5);
-        imageText1=(TextView)view.findViewById(R.id.goods_choose_photos_name_1);
-        imageText2=(TextView)view.findViewById(R.id.goods_choose_photos_name_2);
-        imageText3=(TextView)view.findViewById(R.id.goods_choose_photos_name_3);
-        imageText4=(TextView)view.findViewById(R.id.goods_choose_photos_name_4);
-        imageText5=(TextView)view.findViewById(R.id.goods_choose_photos_name_5);
+        fab1 = (FloatingActionButton) view.findViewById(R.id.transport_choose_button_1);
+        fab2 = (FloatingActionButton) view.findViewById(R.id.transport_choose_button_2);
+        fab3 = (FloatingActionButton) view.findViewById(R.id.transport_choose_button_3);
+        fab4 = (FloatingActionButton) view.findViewById(R.id.transport_choose_button_4);
+        fab5 = (FloatingActionButton) view.findViewById(R.id.transport_choose_button_5);
+        imageText1=(TextView)view.findViewById(R.id.transport_choose_photos_name_1);
+        imageText2=(TextView)view.findViewById(R.id.transport_choose_photos_name_2);
+        imageText3=(TextView)view.findViewById(R.id.transport_choose_photos_name_3);
+        imageText4=(TextView)view.findViewById(R.id.transport_choose_photos_name_4);
+        imageText5=(TextView)view.findViewById(R.id.transport_choose_photos_name_5);
         transport_name=(EditText)view.findViewById(R.id.transport_mark_edit);
         transport_model=(EditText)view.findViewById(R.id.transport_model_edit);
         transport_engine_volume=(EditText)view.findViewById(R.id.transport_engine_volume_edit);
@@ -94,28 +94,28 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
 
         switch (id) {
             case R.id.transport_choose_button_1:
-                dialogFragment = UploadDialogFragment.newInstance(REQ_CODE1);
-                dialogFragment.setTargetFragment(this, TRANSPORT_DIALOG);
+                dialogFragment = UploadDialogFragment.newInstance(TRANSPORT_DIALOG);
+                dialogFragment.setTargetFragment(this, REQ_CODE1);
                 dialogFragment.show(fragmentManager, "Fragment1");
                 break;
             case R.id.transport_choose_button_2:
-                dialogFragment = UploadDialogFragment.newInstance(REQ_CODE2);
-                dialogFragment.setTargetFragment(this, TRANSPORT_DIALOG);
+                dialogFragment = UploadDialogFragment.newInstance(TRANSPORT_DIALOG);
+                dialogFragment.setTargetFragment(this, REQ_CODE2);
                 dialogFragment.show(fragmentManager, "Fragment2");
                 break;
             case R.id.transport_choose_button_3:
-                dialogFragment = UploadDialogFragment.newInstance(REQ_CODE3);
-                dialogFragment.setTargetFragment(this, TRANSPORT_DIALOG);
+                dialogFragment = UploadDialogFragment.newInstance(TRANSPORT_DIALOG);
+                dialogFragment.setTargetFragment(this, REQ_CODE3);
                 dialogFragment.show(fragmentManager, "Fragment3");
                 break;
             case R.id.transport_choose_button_4:
-                dialogFragment = UploadDialogFragment.newInstance(REQ_CODE4);
-                dialogFragment.setTargetFragment(this, TRANSPORT_DIALOG);
+                dialogFragment = UploadDialogFragment.newInstance(TRANSPORT_DIALOG);
+                dialogFragment.setTargetFragment(this, REQ_CODE4);
                 dialogFragment.show(fragmentManager, "Fragment4");
                 break;
             case R.id.transport_choose_button_5:
-                dialogFragment = UploadDialogFragment.newInstance(REQ_CODE5);
-                dialogFragment.setTargetFragment(this, TRANSPORT_DIALOG);
+                dialogFragment = UploadDialogFragment.newInstance(TRANSPORT_DIALOG);
+                dialogFragment.setTargetFragment(this, REQ_CODE5);
                 dialogFragment.show(fragmentManager, "Fragment5");
                 break;
         }
