@@ -1,0 +1,395 @@
+<resources>
+    <string name="app_name">ProkatProject</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="MapKey">AIzaSyDNliUsGNtOJS9VYXt4khmU-Y2hHlpd5ro</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="main">Главная</string>
+    <string name="topof">Топ предложения</string>
+    <string name="newof">Новые предложения</string>
+    <string name="about">О нас</string>
+    <string name="conditions">Условия</string>
+    <string name="feedback">Обратная связь</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="spinner_default">---</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="phone">Тел.: +374 94 77 25 28, +374 99 77 25 28</string>
+    <string name="phone_land_1">Тел.:  </string>
+    <string name="phone_land_2">+374 94 77 25 28</string>
+    <string name="phone_land_3">+374 99 77 25 28</string>
+    <string name="email">Эл. почта:    </string>
+    <string name="info_prokat_am">info@prokat.am</string>
+    <string name="address">Адрес: Сарян 5
+</string>
+    <string name="address_title">Адрес</string>
+    <string name="namehint">Имя *</string>
+    <string name="emaihint">Эл. почта *</string>
+    <string name="phonehint">Телефон *</string>
+    <string name="submit">Отправить</string>
+    <string name="messagehint">Письмо *</string>
+    <string name="noteshint">Другие примечания *</string>
+    <string name="add_title">Добавить предложение
+</string>
+    <string name="add_button">Добавить</string>
+    <string name="goods">Товары</string>
+    <string name="transport">Транспорт</string>
+    <string name="realty">Недвижимость</string>
+    <string name="about_all">\tСайт Prokat.am Начал свою деятельность с мая 2012 -ого года по инициативе группы молодых друзей. Он был первым официальным сайтом среди фирм, предоставляющих товары по прокату, который заключил в себе почти все сферы и стал одним из первых стартапов, тем самым предоставив возможность нашим клиентам заказывать любой товар или услугу в режиме онлайн. Эта система способствовала приобретению новых и верных клиентов, а так же развитию компании.
+
+Сегодня компания продолжает держать свою лидирующую позицию, предлагая самый широкий спектр товаров, заключающий в себе следующие разделы: компьютерная, звуковая и световая техника, посуда, инструменты, одежда, транспортные средства, палатки и многое другое. А так же вы можете воспользоваться и другими услугами предоставляемыми нами. К ним относятся : организация мероприятий, свадеб, фотосессий, украшение воздушных шариков, компьютерные услуги, строительские работы и т.д..
+
+Кроме вышеперечисленного, Prokat.am платформа для всех тех, которые желают стать нашими партнерами, то есть, предоставлять по прокату ваши личные вещи или предоставлять какую либо услугу.
+\n\tВысокое качество товаров, услуг, высокий уровень обслуживания, а так же желания и требования наших клиентов, всегда в центре нашего внимания. Каждая новая идея, связанная с удобством клиентов, после долгих обсуждений и анализов, приводит к новой функции, которая помогает клиенту получить то, что он желает, при этом экономя и его время, и его деньги.
+\n\tКомпания движется в ногу со временем: постоянно добавляет, усовершенствует все товары и услуги, разрабатывает более быстрый и продуктивный способ обслуживания, который позволяет нам быть требованными, интересными и удовлетворять наших клиентов.
+\n\n\tП.С. Основатели:
+\n\t“Так как в быту существуют такие товары, которые редко используются, а при надобности стоят дорого, чтобы их покупать, мы подумали, что многие нуждаются в сайте Prokat.am. Зачем покупать если можно взять на прокат”.</string>
+    <string name="service">Услуга</string>
+    <string name="conditions_all">- Վարձակալի և վարձատուի հարաբերությունները կարգավորվում են պայմանագրով\t\n - Վարձակալը պատվերը տալիս է նախապես` 2 օր առաջ\t\n - Գործարքը իրականացվում է 50% կանխավճարով\t\n - Ժամկետը երկարացնելու համար անհրաժեշտ է նախապես վճարել ավելացված օրերի վարձավճարն ամբողջությամբ\t\n - Անհրաժեշտ փաստաթղթեր` անձը հաստատող փաստաթուղթ և վարորդական իրավունք (մեքենայի վարձակալության դեպքում)\t\n - Պայմանագրին ավելի մանրամասն ծանոթանալու համար սեղմեք\n</string>
+    <string name="section">Раздел</string>
+    <string name="subsection">Подраздел</string>
+    <string name="city">Город</string>
+    <string name="description">Описание</string>
+    <string name="price">Цена</string>
+    <string name="time_period">Срок</string>
+    <string name="hour">Час</string>
+    <string name="day">День</string>
+    <string name="month">Месяц</string>
+    <string name="photo_button">...</string>
+    <string name="transport_mark">Марка</string>
+    <string name="transport_model">Модель</string>
+    <string name="photos_title">Изображения (800x600px -.jpg)</string>
+    <string name="choose_photo">Выбрать изображение</string>
+    <string name="photo_not_choose">Изображение не выбрано</string>
+    <string name="contacts">Контактные данные</string>
+    <string name="name">Имя</string>
+    <string name="engine_type">Вид топлива</string>
+    <string name="engine_volume">Объем двигателя</string>
+    <string name="box">Коробка передач</string>
+    <string name="year">Год</string>
+    <string name="rooms">Комнаты</string>
+    <string name="floor">Этаж</string>
+    <string name="language">Язык</string>
+    <string name="please">Пожалуйста выберите раздел</string>
+    <string name="transport_year">Год</string>
+    <string name="transport_engine">Коробка передач</string>
+    <string name="transport_volume">Объём двигателя</string>
+    <string name="relatives">Похожие предложения</string>
+    <string name="order">Заказать</string>
+    <string name="social">Cоциальные сети</string>
+    <string name="ok">Подтвердить</string>
+    <string name="cancel">Oтменить</string>
+    <string name="upload_type">Выбрите способ загрузки</string>
+    <string name="checkout">Оформление заказа</string>
+    <string name="changelang">Изменить язык</string>
+    <string name="arm">Հայերեն</string>
+    <string name="rus">Русский</string>
+    <string name="eng">English</string>
+    <string name="retry">Заново</string>
+    <string name="pleaseconnect">Пожалуйста подключитесь к сети</string>
+    <string name="image_uploaded">Изображение загружено</string>
+    <string-array name="bydefualt">
+        <item>---</item>
+    </string-array>
+    <string-array name="goods_titles">
+        <item>---</item>
+        <item>Компьютерное оборудование</item>
+        <item>Всё для мероприятий</item>
+        <item>Звуковое, световое оборудование</item>
+        <item>Видеокамеры</item>
+        <item>Инструменты</item>
+        <item>Туризм</item>
+        <item>Одежда</item>
+        <item>Средства связи</item>
+        <item>Развлечения</item>
+        <item>Посуда</item>
+        <item>Другие товары</item>
+    </string-array>
+    <string-array name="comp_equipment">
+        <item>---</item>
+        <item>Ноутбуки</item>
+        <item>Экраны</item>
+        <item>LCD проекторы</item>
+        <item>Лазерные принтеры/сканеры</item>
+        <item>Многофункциональные устройства</item>
+
+    </string-array>
+    <string-array name="ever_events">
+        <item>---</item>
+        <item>Столы</item>
+        <item>Стулья</item>
+        <item>Палатки</item>
+        <item>Другое</item>
+    </string-array>
+    <string-array name="sound_equipments">
+        <item>---</item>
+        <item>Звуковое оборудование</item>
+        <item>Световые эффекты</item>
+        <item>Музыкальные инструменты</item>
+    </string-array>
+    <string-array name="cameras">
+        <item>---</item>
+        <item>Фотокамера</item>
+        <item>Видеокамера</item>
+        <item>Штатив</item>
+        <item>Съемочный кран</item>
+        <item>Объектив</item>
+    </string-array>
+    <string-array name="tools">
+        <item>---</item>
+        <item>Газонокосилка</item>
+        <item>Выдвижная лестница</item>
+        <item>Электрическая отвертка</item>
+        <item>Пилы</item>
+        <item>Дрель</item>
+        <item>Геодезические приборы</item>
+        <item>Другое</item>
+
+    </string-array>
+    <string-array name="tourism">
+        <item>---</item>
+        <item>Палатки</item>
+        <item>Спальные мешки</item>
+        <item>Велосипеды</item>
+        <item>Надувные матрасы</item>
+        <item>Гамаки</item>
+        <item>Рыбаловные аксесуары</item>
+
+
+    </string-array>
+    <string-array name="clothing">
+        <item>---</item>
+        <item>Свадебная</item>
+        <item>Герои мультфильмов</item>
+        <item>Детская</item>
+
+
+    </string-array>
+    <string-array name="communications">
+        <item>---</item>
+        <item>Радиооборудование</item>
+
+
+    </string-array>
+    <string-array name="entertaiment">
+        <item>---</item>
+        <item>Надувные бассейны</item>
+        <item>Надувные игровые площадки</item>
+        <item>Այլ</item>
+
+
+    </string-array>
+    <string-array name="tableware">
+        <item>---</item>
+        <item>Аксесуары для фуршетов</item>
+        <item>Стаканы</item>
+        <item>Тарелки</item>
+        <item>Вилки, Ножи, Ложки</item>
+        <item>Подставки для блюд</item>
+        <item>Другое</item>
+
+
+    </string-array>
+    <string-array name="other_goods">
+        <item>---</item>
+        <item>Флаги</item>
+        <item>Сейфы</item>
+        <item>Генераторы</item>
+
+
+    </string-array>
+    <string-array name="cities">
+        <item>---</item>
+        <item>Ереван</item>
+        <item>Аштарак</item>
+        <item>Арташат</item>
+        <item>Арарат</item>
+        <item>Масис</item>
+        <item>Вагаршапат</item>
+        <item>Армавир</item>
+        <item>Гавар</item>
+        <item>Мартуни</item>
+        <item>Севан</item>
+        <item>Абовян</item>
+        <item>Раздан</item>
+        <item>Егвард</item>
+        <item>Ванадзор</item>
+        <item>Алаверди</item>
+        <item>Степанаван</item>
+        <item>Горис</item>
+        <item>Капан</item>
+        <item>Каджаран</item>
+        <item>Мегри</item>
+        <item>Иджеван</item>
+        <item>Сисиан</item>
+        <item>Дилижан</item>
+        <item>Ноемберян</item>
+        <item>Артик</item>
+        <item>Маралик</item>
+        <item>Джермук</item>
+        <item>Сагмосаван</item>
+
+
+    </string-array>
+    <string-array name="transport_titles">
+        <item>---</item>
+        <item>Эконом</item>
+        <item>Бизнес</item>
+        <item>Внедорожники</item>
+        <item>Представительские</item>
+        <item>Лимузины</item>
+        <item>Кабриолеты</item>
+        <item>Минивены/Микроавтобусы</item>
+        <item>Ретро</item>
+        <item>Кареты</item>
+        <item>Другое</item>
+
+    </string-array>
+    <string-array name="fuel_types">
+        <item>---</item>
+        <item>Бензин</item>
+        <item>Дизель</item>
+        <item>Газ</item>
+        <item>Гибрид</item>
+        <item>Другое</item>
+
+
+    </string-array>
+    <string-array name="box_types">
+        <item>---</item>
+        <item>Автомат</item>
+        <item>Механика</item>
+        <item>Вариатор</item>
+        <item>Другое</item>
+
+
+    </string-array>
+    <string-array name="realty_items">
+        <item>---</item>
+        <item>Двухкомнатная</item>
+        <item>Однакомнатная</item>
+        <item>Трехкомнатная</item>
+        <item>Частный дом</item>
+        <item>комерческая</item>
+        <item>Коттедж</item>
+
+
+    </string-array>
+    <string-array name="service_items">
+        <item>---</item>
+        <item>Организация свадеб</item>
+        <item>Спецэффекты</item>
+        <item>Организация мероприятий</item>
+        <item>Организация фуршетов</item>
+        <item>Услуги официантов</item>
+        <item>Украшения воздушными шарами</item>
+        <item>Детсие</item>
+        <item>Компютерные услуги</item>
+        <item>Строительные работы</item>
+        <item>Другое</item>
+
+
+    </string-array>
+    <string-array name="langs">
+
+        <item>Հայերեն</item>
+        <item>Русский</item>
+        <item>English</item>
+
+
+    </string-array>
+    <string-array name="comp_equipment_1">
+
+        <item>Ноутбуки</item>
+        <item>Экраны</item>
+        <item>LCD проекторы</item>
+        <item>Лазерные принтеры/сканеры</item>
+        <item>Многофункциональные устройства</item>
+
+    </string-array>
+    <string-array name="ever_events_1">
+
+        <item>Столы</item>
+        <item>Стулья</item>
+        <item>Палатки</item>
+        <item>Другое</item>
+    </string-array>
+    <string-array name="sound_equipments_1">
+
+        <item>Звуковое оборудование</item>
+        <item>Световые эффекты</item>
+        <item>Музыкальные инструменты</item>
+    </string-array>
+    <string-array name="cameras_1">
+
+        <item>Фотокамера</item>
+        <item>Видеокамера</item>
+        <item>Штатив</item>
+        <item>Съемочный кран</item>
+        <item>Объектив</item>
+    </string-array>
+    <string-array name="tools_1">
+
+        <item>Газонокосилка</item>
+        <item>Выдвижная лестница</item>
+        <item>Электрическая отвертка</item>
+        <item>Пилы</item>
+        <item>Дрель</item>
+        <item>Геодезические приборы</item>
+        <item>Другое</item>
+
+    </string-array>
+    <string-array name="tourism_1">
+
+        <item>Палатки</item>
+        <item>Спальные мешки</item>
+        <item>Велосипеды</item>
+        <item>Надувные матрасы</item>
+        <item>Гамаки</item>
+        <item>Рыбаловные аксесуары</item>
+
+
+    </string-array>
+    <string-array name="clothing_1">
+
+        <item>Свадебная</item>
+        <item>Герои мультфильмов</item>
+        <item>Детская</item>
+
+
+    </string-array>
+    <string-array name="communications_1">
+
+        <item>Радиооборудование</item>
+
+
+    </string-array>
+    <string-array name="entertaiment_1">
+
+        <item>Надувные бассейны</item>
+        <item>Надувные игровые площадки</item>
+        <item>Այլ</item>
+
+
+    </string-array>
+    <string-array name="tableware_1">
+
+        <item>Аксесуары для фуршетов</item>
+        <item>Стаканы</item>
+        <item>Тарелки</item>
+        <item>Вилки, Ножи, Ложки</item>
+        <item>Подставки для блюд</item>
+        <item>Другое</item>
+
+
+    </string-array>
+    <string-array name="other_goods_1">
+
+        <item>Флаги</item>
+        <item>Сейфы</item>
+        <item>Генераторы</item>
+    </string-array>
+
+</resources>
