@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\User\Desktop\ProkatProject\Prokat.am\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="36626007cf4668daf3d03c3e7f7bed21cda5b74c">
+        <dex dex="C:\Users\User\Desktop\ProkatProject\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_ec00ee526805dbc4293fdccd3f8a2fa4c18c3840\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\ProkatProject\Prokat.am\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_11bf5dfa4803f80d481cb6efc83a3a4f48c446ac\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="5e56db7260c9958b92f6c9faa81a67f045a9913f">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_d9562e9c0dff14910fa3ecc78763e059c88d73ec\classes.dex" />
+        <dex dex="C:\Users\User\Desktop\ProkatProject\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_658f35592afd0bd62dbcd3943f826b7bcf48e830\classes.dex" />
     </item>
 
 </items>

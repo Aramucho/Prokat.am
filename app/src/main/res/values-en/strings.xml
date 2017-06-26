@@ -1,0 +1,392 @@
+<resources>
+    <string name="app_name">ProkatProject</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="MapKey">AIzaSyDNliUsGNtOJS9VYXt4khmU-Y2hHlpd5ro</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="main">Home</string>
+    <string name="topof">Top offers</string>
+    <string name="newof">New offers</string>
+    <string name="about">About</string>
+    <string name="conditions">Terms</string>
+    <string name="feedback">Feedback</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="spinner_default">---</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="phone">Tel.: +374 94 77 25 28, +374 99 77 25 28</string>
+    <string name="phone_land_1">Tel.:  </string>
+    <string name="phone_land_2">+374 94 77 25 28</string>
+    <string name="phone_land_3">+374 99 77 25 28</string>
+    <string name="email">Email:    </string>
+    <string name="info_prokat_am">info@prokat.am</string>
+    <string name="address">Address:	Saryan 5</string>
+    <string name="address_title">Address</string>
+    <string name="namehint">Name *</string>
+    <string name="emaihint">Email *</string>
+    <string name="phonehint">Phone *</string>
+    <string name="submit">Send</string>
+    <string name="messagehint">Message *</string>
+    <string name="noteshint">Notes *</string>
+    <string name="add_title">Add an offer</string>
+    <string name="add_button">Add</string>
+    <string name="goods">Goods</string>
+    <string name="transport">Transport</string>
+    <string name="realty">Realty</string>
+    <string name="about_all">\t The website "Prokat.am" has been operating on the initiative of a group of young friends since May 2012. It was the first official website on the list of the companies offering rental services, which completed almost all the spheres, and being one of the first startup companies, enabled its customers to order any product or service online. This system contributed to the acquisition of new, faithful customers, as well as to the development of the company.
+\n\t Today, the company continues to keep its rating of being a leading company, offering a wide range of products, including computer, sound and lighting equipment, tableware, tools, clothes, vehicles, cameras, tents and other diverse products. In addition, you can use a variety of services offered by the company, such as the organization of wedding ceremonies, stand-up banquets and other events, decorations with balloons, computer services, construction works, etc.
+\n\t Beides all this,, "Prokat.am" is a perfect platform for all those people who would like to provide rental or other services and give their products on rent, becoming our partners.
+\n\t We always keep the high quality of our products and services, as well as the wishes and requirements of our customers at the centre of our attention, providing a high level of services. After long discussions and analyses every new idea related to the convenience of our customers brings a new function, which makes it easier for our customers to get what they want, saving both time and money.
+\n\t "Our company keeps up with the times. We constantly add new products to our catalogue, improve all our products and services and keep them updated, developing faster and more efficient service levels, which allows us to be interesting and required, and satisfy the needs of our customers."
+\n\n\t P.S.
+\n\t "As there are a lot of household products which are not very often used but are expensive to buy, we thought that many people would need the services of "Prokat.am." Indeed, why should people buy things, if they can rent them?" (The founders of the company).</string>
+    <string name="service">Service</string>
+    <string name="conditions_all">- The relations of leaseholder and lesee are regulated by contract \t\n- The leasholder places his order beforehand(2days)\t\n- The transaction is carried out by 50% advance payment\t\n- To extent the term of the rent one must pay the whole rent of extra days in advance\t\n- The required documnets: Passport and drivin license (in case of car renting)\t\n- For more information click here</string>
+    <string name="section">Section</string>
+    <string name="subsection">Subsection</string>
+    <string name="city">City</string>
+    <string name="description">Description</string>
+    <string name="price">Price</string>
+    <string name="time_period">Time</string>
+    <string name="hour">Hour</string>
+    <string name="day">Day</string>
+    <string name="month">Month</string>
+    <string name="photo_button">...</string>
+    <string name="transport_mark">Mark</string>
+    <string name="transport_model">Model</string>
+    <string name="photos_title">Photos (800x600px -.jpg)</string>
+    <string name="choose_photo">Choose photo</string>
+    <string name="photo_not_choose">Photo is not selected</string>
+    <string name="contacts">Contacts</string>
+    <string name="name">Name</string>
+    <string name="engine_type">Engine type</string>
+    <string name="engine_volume">Engine volume</string>
+    <string name="box">Box</string>
+    <string name="year">Year</string>
+    <string name="rooms">Rooms</string>
+    <string name="floor">Floor</string>
+    <string name="language">Language</string>
+    <string name="please">Please choose a section</string>
+    <string name="transport_year">Year</string>
+    <string name="transport_engine">Box</string>
+    <string name="transport_volume">Engine volume</string>
+    <string name="relatives">Related offers</string>
+    <string name="order">Order</string>
+    <string name="social">Social network</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="upload_type">Choose way of upload</string>
+    <string name="checkout">Checkout</string>
+    <string name="changelang">Change language</string>
+    <string name="arm">Հայերեն</string>
+    <string name="rus">Русский</string>
+    <string name="eng">English</string>
+    <string name="retry">Retry</string>
+    <string name="pleaseconnect">Please connect to internet</string>
+    <string name="image_uploaded">Photo is uploaded</string>
+    <string-array name="bydefualt">
+        <item>---</item>
+    </string-array>
+    <string-array name="goods_titles">
+        <item>---</item>
+        <item>Computer equipment</item>
+        <item>Everything for events</item>
+        <item>Sound and lighting equipment</item>
+        <item>Cameras</item>
+        <item>Tools</item>
+        <item>Tourism</item>
+        <item>Clothing</item>
+        <item>Communication</item>
+        <item>Entertainment</item>
+        <item>Tableware</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="comp_equipment">
+        <item>---</item>
+        <item>Notebooks</item>
+        <item>Screens</item>
+        <item>LCD projectors</item>
+        <item>Laser printers/Scanners</item>
+        <item>Multifunctional equipment</item>
+
+    </string-array>
+    <string-array name="ever_events">
+        <item>---</item>
+        <item>Tables</item>
+        <item>Chairs</item>
+        <item>Tents</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="sound_equipments">
+        <item>---</item>
+        <item>Sound equipment</item>
+        <item>Light effects</item>
+        <item>Musical instruments</item>
+    </string-array>
+    <string-array name="cameras">
+        <item>---</item>
+        <item>Photo cameras</item>
+        <item>Video cameras</item>
+        <item>Tripods</item>
+        <item>Shooting crane</item>
+        <item>Lens</item>
+    </string-array>
+    <string-array name="tools">
+        <item>---</item>
+        <item>Lawn mowers</item>
+        <item>Retractable ladders</item>
+        <item>Electric screwdrivers</item>
+        <item>Saws</item>
+        <item>Drill</item>
+        <item>Surveying instruments</item>
+        <item>Other</item>
+
+    </string-array>
+    <string-array name="tourism">
+        <item>---</item>
+        <item>Tents</item>
+        <item>Sleeping bags</item>
+        <item>Bicycles</item>
+        <item>Inflatable mattresses</item>
+        <item>Hammocks</item>
+        <item>Fishing accessories</item>
+
+
+    </string-array>
+    <string-array name="clothing">
+        <item>---</item>
+        <item>Wedding</item>
+        <item>Cartoon heroes</item>
+        <item>Childrens</item>
+
+
+    </string-array>
+    <string-array name="communications">
+        <item>---</item>
+        <item>Radio equipment</item>
+
+
+    </string-array>
+    <string-array name="entertaiment">
+        <item>---</item>
+        <item>Inflatable pools</item>
+        <item>Inflatable playground</item>
+        <item>Other</item>
+
+
+    </string-array>
+    <string-array name="tableware">
+        <item>---</item>
+        <item>Accessories for banquet</item>
+        <item>Glasses</item>
+        <item>Plates</item>
+        <item>Fork,Knife,Spoon</item>
+        <item>Stands for dishes</item>
+        <item>Other</item>
+
+
+    </string-array>
+    <string-array name="other_goods">
+        <item>---</item>
+        <item>Flags</item>
+        <item>Safes</item>
+        <item>Generators</item>
+
+
+    </string-array>
+    <string-array name="cities">
+        <item>---</item>
+        <item>Yerevan</item>
+        <item>Ashtarak</item>
+        <item>Artashat</item>
+        <item>Ararat</item>
+        <item>Masis</item>
+        <item>Vagharshapat</item>
+        <item>Armavir</item>
+        <item>Gavar</item>
+        <item>Martuni</item>
+        <item>Sevan</item>
+        <item>Abovyan</item>
+        <item>Hrazdan</item>
+        <item>Yeghvard</item>
+        <item>Vanadzor</item>
+        <item>Alaverdi</item>
+        <item>Stepanavan</item>
+        <item>Goris</item>
+        <item>Kapan</item>
+        <item>Qajaran</item>
+        <item>Meghri</item>
+        <item>Ijevan</item>
+        <item>Sisian</item>
+        <item>Dilijan</item>
+        <item>Noemberyan</item>
+        <item>Artik</item>
+        <item>Maralik</item>
+        <item>Jermuk</item>
+        <item>Saghmosavan</item>
+
+
+    </string-array>
+    <string-array name="transport_titles">
+        <item>---</item>
+        <item>Econom</item>
+        <item>Business</item>
+        <item>SUV</item>
+        <item>Continentals</item>
+        <item>Limousines</item>
+        <item>Cabriolets</item>
+        <item>Minivan/Minibus</item>
+        <item>Retro</item>
+        <item>Brougham</item>
+        <item>Other</item>
+
+    </string-array>
+    <string-array name="fuel_types">
+        <item>---</item>
+        <item>Petrol</item>
+        <item>Diesel</item>
+        <item>Gas</item>
+        <item>Hybrid</item>
+        <item>Other</item>
+
+
+    </string-array>
+    <string-array name="box_types">
+        <item>---</item>
+        <item>Automatic</item>
+        <item>Manual</item>
+        <item>Automanual</item>
+        <item>Other</item>
+
+
+    </string-array>
+    <string-array name="realty_items">
+        <item>---</item>
+        <item>Double room</item>
+        <item>Singles</item>
+        <item>Triple</item>
+        <item>Private house</item>
+        <item>Commercials</item>
+        <item>Cottage</item>
+
+
+    </string-array>
+    <string-array name="service_items">
+        <item>---</item>
+        <item>Organization of weddings</item>
+        <item>Special effects</item>
+        <item>Event management</item>
+        <item>Banquet organization</item>
+        <item>Waiters service</item>
+        <item>Balloon decoration</item>
+        <item>Childrens</item>
+        <item>Computer service</item>
+        <item>construction work</item>
+        <item>Other </item>
+
+
+    </string-array>
+    <string-array name="langs">
+
+        <item>Հայերեն</item>
+        <item>Русский</item>
+        <item>English</item>
+
+
+
+    </string-array>
+    <string-array name="comp_equipment_1">
+
+        <item>Notebooks</item>
+        <item>Screens</item>
+        <item>LCD projects</item>
+        <item>Laser printers/Scanners</item>
+        <item>Multifunctional equipment</item>
+
+    </string-array>
+    <string-array name="ever_events_1">
+
+        <item>Tables</item>
+        <item>Chairs</item>
+        <item>Tents</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="sound_equipments_1">
+
+        <item>Sound equipment</item>
+        <item>Light effects</item>
+        <item>Musical instruments</item>
+    </string-array>
+    <string-array name="cameras_1">
+
+        <item>Photo cameras</item>
+        <item>Video cameras</item>
+        <item>Tripods</item>
+        <item>Shooting crane</item>
+        <item>Lens</item>
+    </string-array>
+    <string-array name="tools_1">
+
+        <item>Lawn mowers</item>
+        <item>Retractable ladders</item>
+        <item>Electric screwdrivers</item>
+        <item>Saws</item>
+        <item>Drill</item>
+        <item>Surveying instruments</item>
+        <item>Other</item>
+
+    </string-array>
+    <string-array name="tourism_1">
+
+        <item>Tents</item>
+        <item>Sleeping bags</item>
+        <item>Bicycles</item>
+        <item>Inflatable mattresses</item>
+        <item>Hammocks</item>
+        <item>Fishing accessories</item>
+
+
+    </string-array>
+    <string-array name="clothing_1">
+
+        <item>Wedding</item>
+        <item>Cartoon heroes</item>
+        <item>Children</item>
+
+
+    </string-array>
+    <string-array name="communications_1">
+
+        <item>Radio equipment</item>
+
+
+    </string-array>
+    <string-array name="entertaiment_1">
+
+        <item>Inflatable pools</item>
+        <item>Inflatable playground</item>
+        <item>Other</item>
+
+
+    </string-array>
+    <string-array name="tableware_1">
+
+        <item>Accessories for banquet</item>
+        <item>Glasses</item>
+        <item>Plates</item>
+        <item>Fork,Knife,Spoon</item>
+        <item>Stands for dishes</item>
+        <item>Other</item>
+
+
+    </string-array>
+    <string-array name="other_goods_1">
+
+        <item>Flags</item>
+        <item>Safes</item>
+        <item>Generators</item>
+    </string-array>
+
+</resources>
