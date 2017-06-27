@@ -2,6 +2,7 @@ package com.realmucho.prokatproject.activities;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -39,13 +40,17 @@ public class MainActivity extends AppCompatActivity
     private FragmentManager fragmentManager;
     private ActionBarDrawerToggle toggle;
     private Fragment fragment = null;
+    private SharedPreferences sharedPreferences;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         init();
+
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         fragmentManager = getSupportFragmentManager();
@@ -100,6 +105,7 @@ public class MainActivity extends AppCompatActivity
         search = (SearchView) findViewById(R.id.search);
         mainFragment = new MainFragment();
         landmainFragment = new LandMainFragment();
+
     }
 
     @Override
@@ -114,12 +120,18 @@ public class MainActivity extends AppCompatActivity
         switch (item.getItemId()) {
             case R.id.arm:
                 setLocale("hy");
+
+
                 return true;
             case R.id.rus:
                 setLocale("ru");
+
+
                 return true;
             case R.id.eng:
                 setLocale("en");
+
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -242,14 +254,36 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
     private void setLocale(String lang) {
         Locale myLocale = new Locale(lang);
         Resources res = getResources();
         DisplayMetrics dm = res.getDisplayMetrics();
         Configuration conf = res.getConfiguration();
         conf.locale = myLocale;
-        res.updateConfiguration(conf,dm);
+        res.updateConfiguration(conf, dm);
+        saveLocale(lang);
         recreate();
+
+    }
+
+    private void saveLocale(String lang) {
+        String langPref = "Language";
+        sharedPreferences = getSharedPreferences("LangSave", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(langPref, lang);
+        editor.commit();
+
+    }
+
+
+    private String loadLocale() {
+        String langPref = "Language";
+        SharedPreferences preferences = getSharedPreferences("LangSave", MODE_PRIVATE);
+        String lang = preferences.getString(langPref, "");
+
+
+        return lang;
     }
 
 
