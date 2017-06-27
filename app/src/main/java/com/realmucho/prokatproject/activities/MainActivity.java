@@ -46,13 +46,13 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loadLocale();
         setContentView(R.layout.activity_main);
-
         init();
-
-
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+
         fragmentManager = getSupportFragmentManager();
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             fragmentManager.beginTransaction().add(R.id.root, mainFragment, "Main").commit();
@@ -81,6 +81,8 @@ public class MainActivity extends AppCompatActivity
                 return false;
             }
         });
+
+
     }
 
     @Override
@@ -120,16 +122,16 @@ public class MainActivity extends AppCompatActivity
         switch (item.getItemId()) {
             case R.id.arm:
                 setLocale("hy");
-
-
+                recreate();
                 return true;
             case R.id.rus:
                 setLocale("ru");
-
+                recreate();
 
                 return true;
             case R.id.eng:
                 setLocale("en");
+                recreate();
 
 
                 return true;
@@ -256,14 +258,20 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void setLocale(String lang) {
+        if (lang.equalsIgnoreCase("")){
+            return;}
         Locale myLocale = new Locale(lang);
-        Resources res = getResources();
-        DisplayMetrics dm = res.getDisplayMetrics();
-        Configuration conf = res.getConfiguration();
-        conf.locale = myLocale;
-        res.updateConfiguration(conf, dm);
         saveLocale(lang);
-        recreate();
+        Locale.setDefault(myLocale);
+        android.content.res.Configuration config = new android.content.res.Configuration();
+        config.locale = myLocale;
+        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+//        Resources res = getResources();
+//        DisplayMetrics dm = res.getDisplayMetrics();
+//        Configuration conf = res.getConfiguration();
+//        conf.locale = myLocale;
+//        res.updateConfiguration(conf, dm);
+//        recreate();
 
     }
 
@@ -277,13 +285,11 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    private String loadLocale() {
+    private void loadLocale() {
         String langPref = "Language";
         SharedPreferences preferences = getSharedPreferences("LangSave", MODE_PRIVATE);
         String lang = preferences.getString(langPref, "");
-
-
-        return lang;
+        setLocale(lang);
     }
 
 
