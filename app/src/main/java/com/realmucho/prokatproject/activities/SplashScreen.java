@@ -36,7 +36,7 @@ public class SplashScreen extends AppCompatActivity  implements ConnectionCallba
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent intent = new Intent(SplashScreen.this, com.realmucho.prokatproject.Activities.MainActivity.class);
+                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 }
