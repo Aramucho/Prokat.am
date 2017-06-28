@@ -1,4 +1,4 @@
-package com.realmucho.prokatproject.Activities;
+package com.realmucho.prokatproject.activities;
 
 
 import android.content.Intent;

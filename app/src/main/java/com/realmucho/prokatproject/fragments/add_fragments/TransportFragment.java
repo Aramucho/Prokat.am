@@ -24,8 +24,7 @@ import static android.app.Activity.RESULT_OK;
 
 
 public class TransportFragment extends Fragment implements View.OnClickListener {
-
-    private TextView section;
+    
     private Spinner transportsectionspinner,fueltypespinner,boxspinner;
     private ArrayAdapter tranportsectionadapter,fueltypeadapter,boxadapter;
     private TextView imageText1,imageText2,imageText3,imageText4,imageText5;
@@ -39,7 +38,7 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.transport_fragment,container,false);
         init(view);
-
+        setupClicks();
         spinInit();
         return  view;
     }
