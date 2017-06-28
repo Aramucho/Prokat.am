@@ -142,15 +142,7 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
             } catch (IOException e) {
                 e.printStackTrace();
             }
-//            String[] filePath = {MediaStore.Images.Media.DATA};
-//            Cursor cursor = getContext().getContentResolver().query(pickedImage, filePath, null, null, null);
-//            cursor.moveToFirst();
-//            String imagePath = cursor.getString(cursor.getColumnIndex(filePath[0]));
-//
-//            BitmapFactory.Options options = new BitmapFactory.Options();
-//            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-//            Bitmap bitmap = BitmapFactory.decodeFile(imagePath, options);
-//            cursor.close();//karoxa petq lini verjum pakel
+
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
             byte[] byteArray = outputStream.toByteArray();

@@ -88,6 +88,7 @@
 
 
             <RelativeLayout
+                android:id="@+id/detaile_disctription_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/name_price_layout">
@@ -214,6 +215,7 @@
             android:layout_alignParentBottom="true"
             android:background="@color/maincolorblue"
             android:layoutDirection="ltr"
+            android:layout_below="@id/detaile_disctription_layout"
             android:orientation="horizontal"
             android:padding="5dp"
             android:weightSum="2.25">
