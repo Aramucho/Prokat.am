@@ -1,15 +1,12 @@
-package com.realmucho.prokatproject.activities;
+package com.realmucho.prokatproject.Activities;
 
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.SearchView;
-import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -21,14 +18,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+
+import com.realmucho.prokatproject.R;
+import com.realmucho.prokatproject.activities.PostsActivity;
 import com.realmucho.prokatproject.fragments.drawer_fragments.AboutFragment;
 import com.realmucho.prokatproject.fragments.drawer_fragments.ConditionsFragment;
 import com.realmucho.prokatproject.fragments.drawer_fragments.FeedBackFragment;
 import com.realmucho.prokatproject.fragments.drawer_fragments.LandMainFragment;
 import com.realmucho.prokatproject.fragments.drawer_fragments.MainFragment;
-import com.realmucho.prokatproject.R;
-
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,19 +37,15 @@ public class MainActivity extends AppCompatActivity
     private FragmentManager fragmentManager;
     private ActionBarDrawerToggle toggle;
     private Fragment fragment = null;
-    private SharedPreferences sharedPreferences;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loadLocale();
         setContentView(R.layout.activity_main);
         init();
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-
         fragmentManager = getSupportFragmentManager();
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             fragmentManager.beginTransaction().add(R.id.root, mainFragment, "Main").commit();
@@ -72,6 +65,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Intent intent = new Intent(MainActivity.this, PostsActivity.class);
+
                 startActivity(intent);
                 return false;
             }
@@ -81,8 +75,6 @@ public class MainActivity extends AppCompatActivity
                 return false;
             }
         });
-
-
     }
 
     @Override
@@ -107,7 +99,6 @@ public class MainActivity extends AppCompatActivity
         search = (SearchView) findViewById(R.id.search);
         mainFragment = new MainFragment();
         landmainFragment = new LandMainFragment();
-
     }
 
     @Override
@@ -121,19 +112,10 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.arm:
-                setLocale("hy");
-                recreate();
                 return true;
             case R.id.rus:
-                setLocale("ru");
-                recreate();
-
                 return true;
             case R.id.eng:
-                setLocale("en");
-                recreate();
-
-
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -255,41 +237,6 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    private void setLocale(String lang) {
-        if (lang.equalsIgnoreCase("")){
-            return;}
-        Locale myLocale = new Locale(lang);
-        saveLocale(lang);
-        Locale.setDefault(myLocale);
-        android.content.res.Configuration config = new android.content.res.Configuration();
-        config.locale = myLocale;
-        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
-//        Resources res = getResources();
-//        DisplayMetrics dm = res.getDisplayMetrics();
-//        Configuration conf = res.getConfiguration();
-//        conf.locale = myLocale;
-//        res.updateConfiguration(conf, dm);
-//        recreate();
-
-    }
-
-    private void saveLocale(String lang) {
-        String langPref = "Language";
-        sharedPreferences = getSharedPreferences("LangSave", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(langPref, lang);
-        editor.commit();
-
-    }
-
-
-    private void loadLocale() {
-        String langPref = "Language";
-        SharedPreferences preferences = getSharedPreferences("LangSave", MODE_PRIVATE);
-        String lang = preferences.getString(langPref, "");
-        setLocale(lang);
     }
 
 

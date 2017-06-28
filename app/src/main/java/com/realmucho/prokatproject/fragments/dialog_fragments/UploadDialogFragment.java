@@ -27,7 +27,6 @@ import java.io.IOException;
 import static android.app.Activity.RESULT_OK;
 
 
-
 public class UploadDialogFragment extends DialogFragment implements View.OnClickListener {
 
     private ImageView camera_image, gallery_image;
@@ -35,8 +34,8 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
     private int chacked_status = -1;
     private Bitmap bitmap;
     private int reqCode;
-    private final int CAMERA_ON = 888;
-    private boolean dism=false;
+    private final int CAMERA_ON = 888, GALLERY_ON = 999;
+    private boolean dism = false;
 
     public static UploadDialogFragment newInstance(int code) {
         UploadDialogFragment dialogFragment = new UploadDialogFragment();
@@ -90,7 +89,7 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
                             Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
 //                        if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
 //                                Manifest.permission.CAMERA)) {
-                            requestPermissions( new String[]{Manifest.permission.CAMERA}, CAMERA_ON);
+                        requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_ON);
 //                        }
                     } else {
                         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -98,9 +97,15 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
                     }
 
                 } else if (chacked_status == 2) {
-                    Intent intent = new Intent(Intent.ACTION_PICK);
-                    intent.setType("image/*");
-                    startActivityForResult(intent, chacked_status);
+                    if (ContextCompat.checkSelfPermission(getActivity(),
+                            Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+
+                        requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, GALLERY_ON);
+                    } else {
+                        Intent intent = new Intent(Intent.ACTION_PICK);
+                        intent.setType("image/*");
+                        startActivityForResult(intent, chacked_status);
+                    }
                 }
                 break;
         }
@@ -110,8 +115,8 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
     @Override
     public void onResume() {
         super.onResume();
-        if(dism){
-            dism=false;
+        if (dism) {
+            dism = false;
             dismiss();
         }
 
@@ -128,7 +133,7 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
             Intent intent = new Intent()
                     .putExtra("bitmap", byteArray);
             getTargetFragment().onActivityResult(getTargetRequestCode(), RESULT_OK, intent);
-            dism=true;
+            dism = true;
         } else if (requestCode == 2 && resultCode == RESULT_OK) {
             Uri pickedImage = data.getData();
             Bitmap bitmap = null;
@@ -151,8 +156,7 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
             byte[] byteArray = outputStream.toByteArray();
             Intent intent = new Intent().putExtra("bitmap", byteArray);
             getTargetFragment().onActivityResult(getTargetRequestCode(), RESULT_OK, intent);
-            dism=true;
-
+            dism = true;
 
 
         }
@@ -176,6 +180,24 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
 
                 return;
             }
+
+
+            case GALLERY_ON: {
+
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Intent intent = new Intent(Intent.ACTION_PICK);
+                    intent.setType("image/*");
+                    startActivityForResult(intent, chacked_status);
+
+                } else {
+                    Toast.makeText(getContext(), "I have no permission for opening your gallery(((", Toast.LENGTH_SHORT).show();
+                }
+                return;
+
+
+            }
+
         }
     }
 }

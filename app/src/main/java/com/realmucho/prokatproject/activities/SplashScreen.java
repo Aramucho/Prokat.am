@@ -1,11 +1,14 @@
 package com.realmucho.prokatproject.activities;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -33,7 +36,7 @@ public class SplashScreen extends AppCompatActivity  implements ConnectionCallba
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                    Intent intent = new Intent(SplashScreen.this, com.realmucho.prokatproject.Activities.MainActivity.class);
                     startActivity(intent);
                     finish();
                 }
