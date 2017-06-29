@@ -3,57 +3,57 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="89448614b6870bbd8e8f4db43a7e484ceba5dfc1">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_d9562e9c0dff14910fa3ecc78763e059c88d73ec\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Free User\.android\build-cache\ce5cf8110bdc7dc806a3b7e4a8d55fcbde0ff463\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="900a290779cdb4eb2e63b6f7806fd9f30ce4f60d">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_708f7fef1f796829bb6bbe0b3b3f049d3a3b908f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_11bf5dfa4803f80d481cb6efc83a3a4f48c446ac\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Free User\.android\build-cache\830892bf81a6a2895ce8c31252f0ec4798b8d2c1\output\jars\classes.jar"
+        jar="C:\Users\Lenovo\.android\build-cache\3972c26c4e4638373984d064eaee76c24dfb1cf5\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="3f0a85e6000998ac322ddd50750e8cf91601a84b">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ce85e60d4ba591ac80d1b5153cbf045bc90bdeb4\classes.dex" />
+        <dex dex="C:\Users\Lenovo\StudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_eae3b7f150b4ebf2f89b96339810a0f85055ddeb\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Free User\.android\build-cache\1794b84839ef3a673ed522c19517678d9ceea357\output\jars\classes.jar"
+        jar="C:\Users\Lenovo\StudioProjects\Prokat.am\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="0c6924cbba8248329a8c58ead6a380efe7eee76e">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5a50a331aa6fdcd85a88822500cdcce21a8d1cc3\classes.dex" />
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\Users\Lenovo\StudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_ccb7f723c47d9020a8ac5c9591a4536b1f1c9f1e\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Free User\.android\build-cache\a22e27aa2a0e86ce642c74d0862106ef1c9e312c\output\jars\classes.jar"
+        jar="C:\Users\Lenovo\.android\build-cache\2ea1adffabaf0a5c5824fa2feef2757884d60131\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="900a290779cdb4eb2e63b6f7806fd9f30ce4f60d">
+        <dex dex="C:\Users\Lenovo\StudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_12e6f5ec3e62ab2276228fb22b1682a93817f254\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Lenovo\StudioProjects\Prokat.am\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ef5bed51a61dbec4aefaab946598868c4556e6a3">
+        <dex dex="C:\Users\Lenovo\StudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_463829ede9ac9bcbac1e855f27da83f9d238b926\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Lenovo\.android\build-cache\5bca7af4726dae5384dfe7dfcda65e4ecf9cd3cb\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="69e74a8b1cbf5b8ee0fc0cca6bab1ac6c45efef8">
-        <dex dex="C:\Users\Free User\AndroidStudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_db08a0c9e54555f5557dc9e05efb32e2bbe5c2b6\classes.dex" />
+        <dex dex="C:\Users\Lenovo\StudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2c9773a104805f310774ea86026e3a2dc2eb1caa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Lenovo\.android\build-cache\9eeb4e21ffba53de887efb56ae346fed2648cc08\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0c6924cbba8248329a8c58ead6a380efe7eee76e">
+        <dex dex="C:\Users\Lenovo\StudioProjects\Prokat.am\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4adc2eee406a9367f4d66b14f6fe070911e9d01e\classes.dex" />
     </item>
 
 </items>

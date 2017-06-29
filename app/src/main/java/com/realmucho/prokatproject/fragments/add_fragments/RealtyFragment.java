@@ -28,11 +28,13 @@ public class RealtyFragment extends Fragment implements View.OnClickListener {
     private TextView section;
     private Spinner realtyspinner;
     private ArrayAdapter realtyspinneradpater;
-    private TextView imageText1,imageText2,imageText3,imageText4,imageText5;
+    private TextView imageText1, imageText2, imageText3, imageText4, imageText5;
     private EditText realty_name, realty_rooms, realty_floor, realty_adress, realty_price, realty_description, realty_contacts_name, realty_contacts_email, realty_contacts_phone, realty_contacts_notes;
     private FloatingActionButton fab1, fab2, fab3, fab4, fab5;
     private Bitmap bm1, bm2, bm3, bm4, bm5;
-    private final int REQ_CODE1 = 1, REQ_CODE2 = 2, REQ_CODE3 = 3, REQ_CODE4 = 4, REQ_CODE5 = 5, REALTY_DIALOG=20;
+    private final int REQ_CODE1 = 1, REQ_CODE2 = 2, REQ_CODE3 = 3, REQ_CODE4 = 4, REQ_CODE5 = 5, REALTY_DIALOG = 20;
+    private boolean boolmageText1, boolmageText2, boolmageText3, boolmageText4, boolmageText5;
+    private String[] bundlesstates = {"key1", "key2", "key3", "key4", "key5"};
 
 
     @Nullable
@@ -44,7 +46,89 @@ public class RealtyFragment extends Fragment implements View.OnClickListener {
         spinnerInit();
         section.setFocusableInTouchMode(true);
         section.requestFocus();
+        if (savedInstanceState != null) {
+
+
+            if (savedInstanceState.getString("keyState1") != null) {
+                if (savedInstanceState.getString("keyState1").equals(bundlesstates[0])) {
+
+                    imageText1.setText(savedInstanceState.getString("key1"));
+                    boolmageText1 = true;
+
+                }
+            }
+            if (savedInstanceState.getString("keyState2") != null) {
+                if (savedInstanceState.getString("keyState2").equals(bundlesstates[1])) {
+
+                    imageText2.setText(savedInstanceState.getString("key2"));
+                    boolmageText2 = true;
+
+                }
+            }
+            if (savedInstanceState.getString("keyState3") != null) {
+                if (savedInstanceState.getString("keyState3").equals(bundlesstates[2])) {
+
+                    imageText3.setText(savedInstanceState.getString("key3"));
+                    boolmageText3 = true;
+
+                }
+            }
+            if (savedInstanceState.getString("keyState4") != null) {
+                if (savedInstanceState.getString("keyState4").equals(bundlesstates[3])) {
+
+                    imageText4.setText(savedInstanceState.getString("key4"));
+                    boolmageText4 = true;
+
+                }
+            }
+            if (savedInstanceState.getString("keyState5") != null) {
+                if (savedInstanceState.getString("keyState5").equals(bundlesstates[4])) {
+
+                    imageText5.setText(savedInstanceState.getString("key5"));
+                    boolmageText5 = true;
+
+                }
+            }
+
+
+        }
         return view;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        if (boolmageText1) {
+            outState.putString("key1", imageText1.getText().toString());
+            outState.putString("keyState1", bundlesstates[0]);
+
+        }
+        if (boolmageText2) {
+            outState.putString("key2", imageText2.getText().toString());
+            outState.putString("keyState2", bundlesstates[1]);
+
+
+        }
+        if (boolmageText3) {
+            outState.putString("key3", imageText3.getText().toString());
+            outState.putString("keyState3", bundlesstates[2]);
+
+
+        }
+        if (boolmageText4) {
+            outState.putString("key4", imageText4.getText().toString());
+            outState.putString("keyState4", bundlesstates[3]);
+
+
+        }
+        if (boolmageText5) {
+            outState.putString("key5", imageText5.getText().toString());
+            outState.putString("keyState5", bundlesstates[4]);
+
+        }
+
+
     }
 
     private void init(View view) {
@@ -60,19 +144,19 @@ public class RealtyFragment extends Fragment implements View.OnClickListener {
         realty_contacts_email = (EditText) view.findViewById(R.id.realty_contacts_email);
         realty_contacts_phone = (EditText) view.findViewById(R.id.realty_contacts_phone);
         realty_contacts_notes = (EditText) view.findViewById(R.id.realty_contacts_notes);
-        fab1=(FloatingActionButton)view.findViewById(R.id.realty_choose_button_1);
-        fab2=(FloatingActionButton)view.findViewById(R.id.realty_choose_button_2);
-        fab3=(FloatingActionButton)view.findViewById(R.id.realty_choose_button_3);
-        fab4=(FloatingActionButton)view.findViewById(R.id.realty_choose_button_4);
-        fab5=(FloatingActionButton)view.findViewById(R.id.realty_choose_button_5);
-        imageText1=(TextView)view.findViewById(R.id.realty_choose_photos_name_1);
-        imageText2=(TextView)view.findViewById(R.id.realty_choose_photos_name_2);
-        imageText3=(TextView)view.findViewById(R.id.realty_choose_photos_name_3);
-        imageText4=(TextView)view.findViewById(R.id.realty_choose_photos_name_4);
-        imageText5=(TextView)view.findViewById(R.id.realty_choose_photos_name_5);
+        fab1 = (FloatingActionButton) view.findViewById(R.id.realty_choose_button_1);
+        fab2 = (FloatingActionButton) view.findViewById(R.id.realty_choose_button_2);
+        fab3 = (FloatingActionButton) view.findViewById(R.id.realty_choose_button_3);
+        fab4 = (FloatingActionButton) view.findViewById(R.id.realty_choose_button_4);
+        fab5 = (FloatingActionButton) view.findViewById(R.id.realty_choose_button_5);
+        imageText1 = (TextView) view.findViewById(R.id.realty_choose_photos_name_1);
+        imageText2 = (TextView) view.findViewById(R.id.realty_choose_photos_name_2);
+        imageText3 = (TextView) view.findViewById(R.id.realty_choose_photos_name_3);
+        imageText4 = (TextView) view.findViewById(R.id.realty_choose_photos_name_4);
+        imageText5 = (TextView) view.findViewById(R.id.realty_choose_photos_name_5);
     }
 
-    private void setupClicks(){
+    private void setupClicks() {
         fab1.setOnClickListener(this);
         fab2.setOnClickListener(this);
         fab3.setOnClickListener(this);
@@ -130,9 +214,10 @@ public class RealtyFragment extends Fragment implements View.OnClickListener {
                     byte[] byteArray = data.getByteArrayExtra("bitmap");
                     bm1 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                     imageText1.setText(R.string.image_uploaded);
-                }
-                else{
-                    Toast.makeText(getContext(),"Cancelled",Toast.LENGTH_SHORT).show();
+                    boolmageText1 = true;
+
+                } else {
+                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE2:
@@ -140,9 +225,10 @@ public class RealtyFragment extends Fragment implements View.OnClickListener {
                     byte[] byteArray = data.getByteArrayExtra("bitmap");
                     bm2 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                     imageText2.setText(R.string.image_uploaded);
-                }
-                else{
-                    Toast.makeText(getContext(),"Cancelled",Toast.LENGTH_SHORT).show();
+                    boolmageText2 = true;
+
+                } else {
+                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE3:
@@ -150,9 +236,10 @@ public class RealtyFragment extends Fragment implements View.OnClickListener {
                     byte[] byteArray = data.getByteArrayExtra("bitmap");
                     bm3 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                     imageText3.setText(R.string.image_uploaded);
-                }
-                else{
-                    Toast.makeText(getContext(),"Cancelled",Toast.LENGTH_SHORT).show();
+                    boolmageText3 = true;
+
+                } else {
+                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE4:
@@ -160,9 +247,10 @@ public class RealtyFragment extends Fragment implements View.OnClickListener {
                     byte[] byteArray = data.getByteArrayExtra("bitmap");
                     bm4 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                     imageText4.setText(R.string.image_uploaded);
-                }
-                else{
-                    Toast.makeText(getContext(),"Cancelled",Toast.LENGTH_SHORT).show();
+                    boolmageText4 = true;
+
+                } else {
+                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE5:
@@ -170,12 +258,13 @@ public class RealtyFragment extends Fragment implements View.OnClickListener {
                     byte[] byteArray = data.getByteArrayExtra("bitmap");
                     bm5 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                     imageText5.setText(R.string.image_uploaded);
-                }
-                else{
-                    Toast.makeText(getContext(),"Cancelled",Toast.LENGTH_SHORT).show();
+                    boolmageText5 = true;
+
+                } else {
+                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
     }
-    }
+}
 

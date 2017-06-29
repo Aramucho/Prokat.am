@@ -31,7 +31,8 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
     private Bitmap bm1, bm2, bm3, bm4, bm5;
     private FloatingActionButton fab1, fab2, fab3, fab4, fab5;
     private EditText service_name, service_discript, service_price, service_contacts_name, service_contacts_email, service_contacts_phone, service_notes;
-
+    private boolean boolmageText1, boolmageText2, boolmageText3, boolmageText4, boolmageText5;
+    private String[] bundlesstates = {"key1", "key2", "key3", "key4", "key5"};
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,8 +40,55 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
         init(view);
         setupClicks();
         spinnerInit();
+        if (savedInstanceState != null) {
+
+
+            if (savedInstanceState.getString("keyState1") != null) {
+                if (savedInstanceState.getString("keyState1").equals(bundlesstates[0])) {
+
+                    imageText1.setText(savedInstanceState.getString("key1"));
+                    boolmageText1 = true;
+
+                }
+            }
+            if (savedInstanceState.getString("keyState2") != null) {
+                if (savedInstanceState.getString("keyState2").equals(bundlesstates[1])) {
+
+                    imageText2.setText(savedInstanceState.getString("key2"));
+                    boolmageText2 = true;
+
+                }
+            }
+            if (savedInstanceState.getString("keyState3") != null) {
+                if (savedInstanceState.getString("keyState3").equals(bundlesstates[2])) {
+
+                    imageText3.setText(savedInstanceState.getString("key3"));
+                    boolmageText3 = true;
+
+                }
+            }
+            if (savedInstanceState.getString("keyState4") != null) {
+                if (savedInstanceState.getString("keyState4").equals(bundlesstates[3])) {
+
+                    imageText4.setText(savedInstanceState.getString("key4"));
+                    boolmageText4 = true;
+
+                }
+            }
+            if (savedInstanceState.getString("keyState5") != null) {
+                if (savedInstanceState.getString("keyState5").equals(bundlesstates[4])) {
+
+                    imageText5.setText(savedInstanceState.getString("key5"));
+                    boolmageText5 = true;
+
+                }
+            }
+
+
+        }
         return view;
     }
+
 
     private void init(View view){
         servicesectionspinner = (Spinner) view.findViewById(R.id.service_section_spinner);
@@ -76,6 +124,41 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
 
         servicespinneradapter = ArrayAdapter.createFromResource(getContext(), R.array.service_items, R.layout.drop_down_spinner_item);
         servicesectionspinner.setAdapter(servicespinneradapter);
+
+    }
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        if (boolmageText1) {
+            outState.putString("key1", imageText1.getText().toString());
+            outState.putString("keyState1", bundlesstates[0]);
+
+        }
+        if (boolmageText2) {
+            outState.putString("key2", imageText2.getText().toString());
+            outState.putString("keyState2", bundlesstates[1]);
+
+
+        }
+        if (boolmageText3) {
+            outState.putString("key3", imageText3.getText().toString());
+            outState.putString("keyState3", bundlesstates[2]);
+
+
+        }
+        if (boolmageText4) {
+            outState.putString("key4", imageText4.getText().toString());
+            outState.putString("keyState4", bundlesstates[3]);
+
+
+        }
+        if (boolmageText5) {
+            outState.putString("key5", imageText5.getText().toString());
+            outState.putString("keyState5", bundlesstates[4]);
+
+        }
+
 
     }
 
@@ -122,6 +205,7 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
                     byte[] byteArray = data.getByteArrayExtra("bitmap");
                     bm1 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                     imageText1.setText(R.string.image_uploaded);
+                    boolmageText1=true;
                 }
                 else{
                     Toast.makeText(getContext(),"Cancelled",Toast.LENGTH_SHORT).show();
@@ -132,6 +216,7 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
                     byte[] byteArray = data.getByteArrayExtra("bitmap");
                     bm2 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                     imageText2.setText(R.string.image_uploaded);
+                    boolmageText2=true;
                 }
                 else{
                     Toast.makeText(getContext(),"Cancelled",Toast.LENGTH_SHORT).show();
@@ -142,6 +227,7 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
                     byte[] byteArray = data.getByteArrayExtra("bitmap");
                     bm3 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                     imageText3.setText(R.string.image_uploaded);
+                    boolmageText3=true;
                 }
                 else{
                     Toast.makeText(getContext(),"Cancelled",Toast.LENGTH_SHORT).show();
@@ -152,6 +238,7 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
                     byte[] byteArray = data.getByteArrayExtra("bitmap");
                     bm4 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                     imageText4.setText(R.string.image_uploaded);
+                    boolmageText4=true;
                 }
                 else{
                     Toast.makeText(getContext(),"Cancelled",Toast.LENGTH_SHORT).show();
@@ -162,6 +249,7 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
                     byte[] byteArray = data.getByteArrayExtra("bitmap");
                     bm5 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
                     imageText5.setText(R.string.image_uploaded);
+                    boolmageText5=true;
                 }
                 else{
                     Toast.makeText(getContext(),"Cancelled",Toast.LENGTH_SHORT).show();
