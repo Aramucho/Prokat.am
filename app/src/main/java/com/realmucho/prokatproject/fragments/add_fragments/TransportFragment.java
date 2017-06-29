@@ -37,6 +37,8 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
     private boolean boolmageText1, boolmageText2, boolmageText3, boolmageText4, boolmageText5;
     private String[] bundlesstates = {"key1", "key2", "key3", "key4", "key5"};
     private Button addButton;
+    byte[] byteArray1, byteArray2, byteArray3, byteArray4, byteArray5;
+
 
     @Nullable
     @Override
@@ -45,52 +47,7 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
         init(view);
         setupClicks();
         spinInit();
-        if (savedInstanceState != null) {
-
-
-            if (savedInstanceState.getString("keyState1") != null) {
-                if (savedInstanceState.getString("keyState1").equals(bundlesstates[0])) {
-
-                    imageText1.setText(savedInstanceState.getString("key1"));
-                    boolmageText1 = true;
-
-                }
-            }
-            if (savedInstanceState.getString("keyState2") != null) {
-                if (savedInstanceState.getString("keyState2").equals(bundlesstates[1])) {
-
-                    imageText2.setText(savedInstanceState.getString("key2"));
-                    boolmageText2 = true;
-
-                }
-            }
-            if (savedInstanceState.getString("keyState3") != null) {
-                if (savedInstanceState.getString("keyState3").equals(bundlesstates[2])) {
-
-                    imageText3.setText(savedInstanceState.getString("key3"));
-                    boolmageText3 = true;
-
-                }
-            }
-            if (savedInstanceState.getString("keyState4") != null) {
-                if (savedInstanceState.getString("keyState4").equals(bundlesstates[3])) {
-
-                    imageText4.setText(savedInstanceState.getString("key4"));
-                    boolmageText4 = true;
-
-                }
-            }
-            if (savedInstanceState.getString("keyState5") != null) {
-                if (savedInstanceState.getString("keyState5").equals(bundlesstates[4])) {
-
-                    imageText5.setText(savedInstanceState.getString("key5"));
-                    boolmageText5 = true;
-
-                }
-            }
-
-
-        }
+        savedState(savedInstanceState);
         return view;
     }
 
@@ -101,29 +58,36 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
         if (boolmageText1) {
             outState.putString("key1", imageText1.getText().toString());
             outState.putString("keyState1", bundlesstates[0]);
+            outState.putByteArray("byte1", byteArray1);
+
 
         }
         if (boolmageText2) {
             outState.putString("key2", imageText2.getText().toString());
             outState.putString("keyState2", bundlesstates[1]);
+            outState.putByteArray("byte2", byteArray2);
 
 
         }
         if (boolmageText3) {
             outState.putString("key3", imageText3.getText().toString());
             outState.putString("keyState3", bundlesstates[2]);
+            outState.putByteArray("byte3", byteArray3);
 
 
         }
         if (boolmageText4) {
             outState.putString("key4", imageText4.getText().toString());
             outState.putString("keyState4", bundlesstates[3]);
+            outState.putByteArray("byte4", byteArray4);
 
 
         }
         if (boolmageText5) {
             outState.putString("key5", imageText5.getText().toString());
             outState.putString("keyState5", bundlesstates[4]);
+            outState.putByteArray("byte5", byteArray5);
+
 
         }
 
@@ -175,6 +139,66 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
         boxspinner.setAdapter(boxadapter);
     }
 
+    private void savedState(Bundle savedInstanceState) {
+
+        if (savedInstanceState != null) {
+
+
+            if (savedInstanceState.getString("keyState1") != null) {
+                if (savedInstanceState.getString("keyState1").equals(bundlesstates[0])) {
+
+                    imageText1.setText(savedInstanceState.getString("key1"));
+                    byteArray1 = savedInstanceState.getByteArray("byte1");
+                    bm1 = BitmapFactory.decodeByteArray(byteArray1, 0, byteArray1.length);
+                    boolmageText1 = true;
+
+                }
+            }
+            if (savedInstanceState.getString("keyState2") != null) {
+                if (savedInstanceState.getString("keyState2").equals(bundlesstates[1])) {
+
+                    imageText2.setText(savedInstanceState.getString("key2"));
+                    byteArray2 = savedInstanceState.getByteArray("byte2");
+                    bm2 = BitmapFactory.decodeByteArray(byteArray2, 0, byteArray2.length);
+                    boolmageText2 = true;
+
+                }
+            }
+            if (savedInstanceState.getString("keyState3") != null) {
+                if (savedInstanceState.getString("keyState3").equals(bundlesstates[2])) {
+
+                    imageText3.setText(savedInstanceState.getString("key3"));
+                    byteArray3 = savedInstanceState.getByteArray("byte3");
+                    bm3 = BitmapFactory.decodeByteArray(byteArray3, 0, byteArray2.length);
+                    boolmageText3 = true;
+
+                }
+            }
+            if (savedInstanceState.getString("keyState4") != null) {
+                if (savedInstanceState.getString("keyState4").equals(bundlesstates[3])) {
+
+                    imageText4.setText(savedInstanceState.getString("key4"));
+                    byteArray4 = savedInstanceState.getByteArray("byte4");
+                    bm4 = BitmapFactory.decodeByteArray(byteArray4, 0, byteArray4.length);
+                    boolmageText4 = true;
+
+                }
+            }
+            if (savedInstanceState.getString("keyState5") != null) {
+                if (savedInstanceState.getString("keyState5").equals(bundlesstates[4])) {
+
+                    imageText5.setText(savedInstanceState.getString("key5"));
+                    byteArray5 = savedInstanceState.getByteArray("byte5");
+                    bm5 = BitmapFactory.decodeByteArray(byteArray5, 0, byteArray5.length);
+                    boolmageText5 = true;
+
+                }
+            }
+
+
+        }
+    }
+
     @Override
     public void onClick(View v) {
         int id = v.getId();
@@ -218,50 +242,50 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
         switch (requestCode) {
             case REQ_CODE1:
                 if (resultCode == RESULT_OK) {
-                    byte[] byteArray = data.getByteArrayExtra("bitmap");
-                    bm1 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+                    byteArray1 = data.getByteArrayExtra("bitmap");
+                    bm1 = BitmapFactory.decodeByteArray(byteArray1, 0, byteArray1.length);
                     imageText1.setText(R.string.image_uploaded);
-                    boolmageText1=true;
+                    boolmageText1 = true;
                 } else {
                     Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE2:
                 if (resultCode == RESULT_OK) {
-                    byte[] byteArray = data.getByteArrayExtra("bitmap");
-                    bm2 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+                    byteArray2 = data.getByteArrayExtra("bitmap");
+                    bm2 = BitmapFactory.decodeByteArray(byteArray2, 0, byteArray2.length);
                     imageText2.setText(R.string.image_uploaded);
-                    boolmageText2=true;
+                    boolmageText2 = true;
                 } else {
                     Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE3:
                 if (resultCode == RESULT_OK) {
-                    byte[] byteArray = data.getByteArrayExtra("bitmap");
-                    bm3 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+                    byteArray3 = data.getByteArrayExtra("bitmap");
+                    bm3 = BitmapFactory.decodeByteArray(byteArray3, 0, byteArray3.length);
                     imageText3.setText(R.string.image_uploaded);
-                    boolmageText3=true;
+                    boolmageText3 = true;
                 } else {
                     Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE4:
                 if (resultCode == RESULT_OK) {
-                    byte[] byteArray = data.getByteArrayExtra("bitmap");
-                    bm4 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+                    byteArray4 = data.getByteArrayExtra("bitmap");
+                    bm4 = BitmapFactory.decodeByteArray(byteArray4, 0, byteArray4.length);
                     imageText4.setText(R.string.image_uploaded);
-                    boolmageText4=true;
+                    boolmageText4 = true;
                 } else {
                     Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE5:
                 if (resultCode == RESULT_OK) {
-                    byte[] byteArray = data.getByteArrayExtra("bitmap");
-                    bm5 = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+                    byteArray5 = data.getByteArrayExtra("bitmap");
+                    bm5 = BitmapFactory.decodeByteArray(byteArray5, 0, byteArray5.length);
                     imageText5.setText(R.string.image_uploaded);
-                    boolmageText5=true;
+                    boolmageText5 = true;
                 } else {
                     Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                 }

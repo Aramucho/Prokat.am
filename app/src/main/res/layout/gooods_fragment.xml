@@ -9,8 +9,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -44,7 +43,6 @@
                     android:background="@drawable/spinner_selector"
                     android:minHeight="40dp"
                     android:popupBackground="@color/maincolorwhite" />
-
 
 
             </LinearLayout>
@@ -580,10 +578,6 @@
 
 
         </RelativeLayout>
-
-
-
-
 
 
     </ScrollView>
