@@ -1,6 +1,7 @@
 package com.realmucho.prokatproject.fragments.drawer_fragments;
 
 
+import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
@@ -12,6 +13,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SlidingPaneLayout;
 import android.view.KeyEvent;
@@ -45,7 +47,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
     private GoogleMap googleMap;
     private TextView link;
     private SlidingPaneLayout paneLayout;
-    private RelativeLayout feedlayout;
+    private RelativeLayout feedlayout,messageLayout;
 
     private NestedScrollView bottomsheet;
 
@@ -62,7 +64,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
-    private void init(View view){
+    private void init(View view) {
 
         bottomsheet = (NestedScrollView) view.findViewById(R.id.bottom_sheet);
         mMapView = (MapView) view.findViewById(R.id.map_view);
@@ -78,10 +80,11 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         skype = (ImageButton) view.findViewById(R.id.skype_icon);
         submit = (Button) view.findViewById(R.id.submitbutton);
         link = (TextView) view.findViewById(R.id.link);
+        messageLayout=(RelativeLayout)view.findViewById(R.id.map_permission_layout);
 
     }
 
-    private void setupClicks(){
+    private void setupClicks() {
         feedlayout.setOnClickListener(this);
         link.setOnClickListener(this);
         mapwatch.setOnClickListener(this);
@@ -94,7 +97,6 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         insta.setOnClickListener(this);
         skype.setOnClickListener(this);
     }
-
 
 
     @Override
@@ -174,16 +176,27 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         mMapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(GoogleMap mMap) {
-                googleMap = mMap;
+                if (ContextCompat.checkSelfPermission(getContext(),
+                        Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    googleMap = mMap;
 
-                mMap.setMyLocationEnabled(true);
-                LatLng location = new LatLng(40.18659663201023, 44.5089211251659);
+                    mMap.setMyLocationEnabled(true);
 
-                googleMap.addMarker(new MarkerOptions().position(location));
+                    LatLng location = new LatLng(40.18659663201023, 44.5089211251659);
 
-                CameraPosition cameraPosition = new CameraPosition.Builder().target(location).zoom(17).build();
+                    googleMap.addMarker(new MarkerOptions().position(location));
 
-                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                    CameraPosition cameraPosition = new CameraPosition.Builder().target(location).zoom(17).build();
+
+                    googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                }
+                else{
+                    mMapView.setVisibility(View.GONE);
+                    messageLayout.setVisibility(View.VISIBLE);
+
+
+                }
+
 
 
             }
@@ -281,7 +294,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
     public void onSaveInstanceState(Bundle outState) {
         Bundle mapViewstate = new Bundle(outState);
         mMapView.onSaveInstanceState(mapViewstate);
-        outState.putBundle("map",mapViewstate);
+        outState.putBundle("map", mapViewstate);
         super.onSaveInstanceState(outState);
     }
 
@@ -320,8 +333,6 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
 
     private void getInstagramPageUrl(String url) {
-
-
 
 
         Intent intent = getContext().getPackageManager().getLaunchIntentForPackage("com.instagram.android");

@@ -6,51 +6,98 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.realmucho.prokatproject.fragments.dialog_fragments.ConnectionFragment;
 import com.realmucho.prokatproject.interfaces.ConnectionCallback;
 import com.realmucho.prokatproject.R;
 
-public class SplashScreen extends AppCompatActivity  implements ConnectionCallback{
+public class SplashScreen extends AppCompatActivity implements ConnectionCallback {
 
 
     private ImageView logo;
-
+    private final int LOCATION_ON = 111;
+    private ConnectivityManager connectionManager;
+    private NetworkInfo networkInfo;
+    private boolean aBoolean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         logo = (ImageView) findViewById(R.id.logo);
-        ConnectivityManager ConnectionManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = ConnectionManager.getActiveNetworkInfo();
+        connectionManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        networkInfo = connectionManager.getActiveNetworkInfo();
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (ContextCompat.checkSelfPermission(this,
+                    Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_ON);
+            } else {
+                if (networkInfo != null && networkInfo.isConnected() == true) {
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }, 2500);
 
-        if (networkInfo != null && networkInfo.isConnected() == true) {
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                } else {
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    ConnectionFragment connectionFragment = new ConnectionFragment();
+                    connectionFragment.show(fragmentManager, "Connection Fragment");
+
                 }
-            }, 2500);
 
+            }
         } else {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            ConnectionFragment connectionFragment = new ConnectionFragment();
-            connectionFragment.show(fragmentManager, "Connection Fragment");
+
+            if (networkInfo != null && networkInfo.isConnected() == true) {
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }, 2500);
+
+            } else {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                ConnectionFragment connectionFragment = new ConnectionFragment();
+                connectionFragment.show(fragmentManager, "Connection Fragment");
+
+            }
 
         }
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+
+        if (hasFocus) {
+            if(aBoolean){
+                Intent closeDialog = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
+                sendBroadcast(closeDialog);
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                ConnectionFragment connectionFragment = new ConnectionFragment();
+                connectionFragment.show(fragmentManager, "Connection Fragment");
+            }
 
         }
-
+    }
 
     @Override
     public void conncallback() {
@@ -63,5 +110,43 @@ public class SplashScreen extends AppCompatActivity  implements ConnectionCallba
                 finish();
             }
         }, 2500);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        switch (requestCode) {
+
+            case LOCATION_ON: {
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    recreate();
+
+                } else {
+                    Toast.makeText(this, R.string.maps_permission_deny, Toast.LENGTH_SHORT).show();
+                    if (networkInfo != null && networkInfo.isConnected() == true) {
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }, 2500);
+
+                    } else {
+                        aBoolean = true;
+
+                    }
+
+                }
+
+
+            }
+        }
+
+
     }
 }

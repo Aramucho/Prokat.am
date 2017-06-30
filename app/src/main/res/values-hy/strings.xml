@@ -83,9 +83,13 @@
     <string name="arm">Հայերեն</string>
     <string name="rus">Русский</string>
     <string name="eng">English</string>
-    <string name="retry">Retry</string>
+    <string name="retry">Կրկնել</string>
+    <string name="camera_permission_deny">Չհաջողվեց միանալ տեսախցիկից, խնդրում ենք ստացեք թույլտվություն</string>
+    <string name="gallery_permission_deny">Չհաջողվեց միանալ հեռախոսի ներքին հիշողությանը, խնդրում ենք ստանալ թույլտվություն</string>
     <string name="pleaseconnect">Խնդրում ենք միանալ ինտերնետին</string>
     <string name="image_uploaded">Նկարը ներբեռնված է</string>
+    <string name="map_permission">Տեղադրության թույլատվությունը բացակայում է։ Խնդրում ենք թույլ տալ հավելվածին տեղեկություններ ստանալ Ձեր տեղադրության մասին և վերագործարկել հավելվածը։</string>
+    <string name="maps_permission_deny">«Google Maps»-ը կարող է աշխատել ոչ կոռեկտ</string>
     <string-array name="bydefualt">
         <item>---</item>
     </string-array>
@@ -264,8 +268,9 @@
     </string-array>
     <string-array name="realty_items">
         <item>---</item>
-        <item>Երկու սենյականոց</item>
+
         <item>Մեկ սենյականոց</item>
+        <item>Երկու սենյականոց</item>
         <item>Երեք սենյականոց</item>
         <item>Առանձնատուն</item>
         <item>Կոմերցիոն սենյակներ</item>

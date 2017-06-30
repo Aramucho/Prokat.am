@@ -84,8 +84,12 @@
     <string name="rus">Русский</string>
     <string name="eng">English</string>
     <string name="retry">Retry</string>
+    <string name="camera_permission_deny">Cannot connect to camera. Please set camera permission for application</string>
+    <string name="gallery_permission_deny">Cannot connect to external storage. Please set memory permission for application</string>
     <string name="pleaseconnect">Please connect to internet</string>
     <string name="image_uploaded">Photo is uploaded</string>
+    <string name="map_permission">Missing location permissions for application. Please allow permission and restart the application.</string>
+    <string name="maps_permission_deny">Google maps can work not correctly</string>
     <string-array name="bydefualt">
         <item>---</item>
     </string-array>
@@ -264,8 +268,9 @@
     </string-array>
     <string-array name="realty_items">
         <item>---</item>
-        <item>Double room</item>
-        <item>Singles</item>
+
+        <item>Single</item>
+        <item>Double</item>
         <item>Triple</item>
         <item>Private house</item>
         <item>Commercials</item>

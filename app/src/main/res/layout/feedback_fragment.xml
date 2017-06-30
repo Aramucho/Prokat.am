@@ -72,8 +72,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/maincolorwhite"
-        android:layoutDirection="ltr"
-        android:clickable="true">
+        android:clickable="true"
+        android:layoutDirection="ltr">
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -281,6 +281,7 @@
                     android:id="@+id/bottom_sheet"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/maincolorwhite"
                     app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
 
                     <RelativeLayout
@@ -288,10 +289,37 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
+                        <RelativeLayout
+                            android:id="@+id/map_permission_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/maincolorwhite"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/location_image"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/location_icon"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/map_permission_message"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/location_image"
+                                android:text="@string/map_permission"
+                                android:textColor="@color/maincolorblue"
+                                android:textSize="20sp" />
+
+                        </RelativeLayout>
+
                         <com.google.android.gms.maps.MapView
                             android:id="@+id/map_view"
                             android:layout_width="match_parent"
-                            android:layout_height="999dp" />
+                            android:layout_height="match_parent" />
                     </RelativeLayout>
 
                 </android.support.v4.widget.NestedScrollView>

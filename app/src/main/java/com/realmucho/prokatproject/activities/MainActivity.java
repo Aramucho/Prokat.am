@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity
     private ActionBarDrawerToggle toggle;
     private Fragment fragment = null;
     private final int LOCATION_ON = 111;
-    private boolean CHECKED = false;
 
 
     @Override
@@ -245,22 +244,8 @@ public class MainActivity extends AppCompatActivity
 
                 break;
             case R.id.feedback: {
-                if (Build.VERSION.SDK_INT >= 23) {
-                    if (ContextCompat.checkSelfPermission(this,
-                            Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                        requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, LOCATION_ON);
-                        for (; ; ) {
-                            if (CHECKED) {
-                                break;
-                            }
-                        }
-                    }
-
-
-                } else {
-                    fragment = new FeedBackFragment();
-                    search.setVisibility(View.GONE);
-                }
+                fragment = new FeedBackFragment();
+                search.setVisibility(View.GONE);
                 break;
             }
 
@@ -269,6 +254,7 @@ public class MainActivity extends AppCompatActivity
 
         fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.root, fragment).commit();
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -305,25 +291,5 @@ public class MainActivity extends AppCompatActivity
         setLocale(language);
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        switch (requestCode) {
-
-            case LOCATION_ON: {
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    CHECKED = true;
-                } else {
-                    Toast.makeText(this, "Google map can work not properly", Toast.LENGTH_SHORT).show();
-                    CHECKED = true;
-                }
-
-                return;
-            }
-
-
-        }
-    }
 }

@@ -167,7 +167,7 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
                     startActivityForResult(intent, chacked_status);
 
                 } else {
-                    Toast.makeText(getContext(), "I have no permission for opening your camera(((", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.camera_permission_deny, Toast.LENGTH_SHORT).show();
                 }
 
                 return;
@@ -183,7 +183,7 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
                     startActivityForResult(intent, chacked_status);
 
                 } else {
-                    Toast.makeText(getContext(), "I have no permission for opening your gallery(((", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.gallery_permission_deny, Toast.LENGTH_SHORT).show();
                 }
                 return;
 
