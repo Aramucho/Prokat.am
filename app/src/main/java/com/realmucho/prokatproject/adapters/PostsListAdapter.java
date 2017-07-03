@@ -41,8 +41,8 @@ public class PostsListAdapter extends RecyclerView.Adapter<PostsListAdapter.Item
     public void onBindViewHolder(ItemListHolder holder,final int position) {
         ItemData itemData=dataArrayList.get(position);
         Glide.with(context).load(itemData.getMainImage()).centerCrop().into(holder.mainImage);
-        holder.itemName.setText(itemData.getItemName());
-        holder.price.setText(itemData.getPrice());
+        holder.itemName.setText(itemData.getName());
+        holder.price.setText(itemData.getmPrice());
         if (curPosition != -1 && position == curPosition) {
             holder.cardView.setCardBackgroundColor(context.getResources().getColor(R.color.maincolorblue));
             holder.linear.setBackgroundColor(context.getResources().getColor(R.color.maincolorwhite));
@@ -86,8 +86,8 @@ public class PostsListAdapter extends RecyclerView.Adapter<PostsListAdapter.Item
         public ItemListHolder(View itemView) {
             super(itemView);
             mainImage=(ImageView) itemView.findViewById(R.id.mainImage);
-            itemName=(TextView)itemView.findViewById(R.id.itemName);
-            price=(TextView)itemView.findViewById(R.id.price);
+            itemName=(TextView)itemView.findViewById(R.id.name);
+            price=(TextView)itemView.findViewById(R.id.mPrice);
             cardView=(CardView)itemView.findViewById(R.id.card_view);
             linear=(LinearLayout)itemView.findViewById(R.id.linear);
         }

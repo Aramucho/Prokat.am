@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,11 +26,11 @@ import static android.app.Activity.RESULT_OK;
 
 public class TransportFragment extends Fragment implements View.OnClickListener {
 
-    private Spinner transportsectionspinner, fueltypespinner, boxspinner;
-    private ArrayAdapter tranportsectionadapter, fueltypeadapter, boxadapter;
-    private TextView imageText1, imageText2, imageText3, imageText4, imageText5;
-    private FloatingActionButton fab1, fab2, fab3, fab4, fab5;
-    private Bitmap bm1, bm2, bm3, bm4, bm5;
+    private Spinner mTransportSectionSpinner, mFuelTypeSpinner, mBoxSpinner;
+    private ArrayAdapter mTranportSectionAdapter, mFuelTypeAdapter, mBoxAdapter;
+    private TextView mImageText1, mImageText2, mImageText3, mImageText4, mImageText5;
+    private FloatingActionButton mFab1, mFab2, mFab3, mFab4, mFab5;
+    private Bitmap mBm1, mBm2, mBm3, mBm4, mBm5;
     private final int REQ_CODE1 = 1, REQ_CODE2 = 2, REQ_CODE3 = 3, REQ_CODE4 = 4, REQ_CODE5 = 5, TRANSPORT_DIALOG = 40;
     private EditText transport_name, transport_model, transport_engine_volume, transport_year, transport_discript, transport_price, transport_contacts_name, transport_contacts_email, transport_contacts_phone, transport_notes;
     private boolean boolmageText1, boolmageText2, boolmageText3, boolmageText4, boolmageText5;
@@ -56,35 +55,35 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
         super.onSaveInstanceState(outState);
 
         if (boolmageText1) {
-            outState.putString("key1", imageText1.getText().toString());
+            outState.putString("key1", mImageText1.getText().toString());
             outState.putString("keyState1", bundlesstates[0]);
             outState.putByteArray("byte1", byteArray1);
 
 
         }
         if (boolmageText2) {
-            outState.putString("key2", imageText2.getText().toString());
+            outState.putString("key2", mImageText2.getText().toString());
             outState.putString("keyState2", bundlesstates[1]);
             outState.putByteArray("byte2", byteArray2);
 
 
         }
         if (boolmageText3) {
-            outState.putString("key3", imageText3.getText().toString());
+            outState.putString("key3", mImageText3.getText().toString());
             outState.putString("keyState3", bundlesstates[2]);
             outState.putByteArray("byte3", byteArray3);
 
 
         }
         if (boolmageText4) {
-            outState.putString("key4", imageText4.getText().toString());
+            outState.putString("key4", mImageText4.getText().toString());
             outState.putString("keyState4", bundlesstates[3]);
             outState.putByteArray("byte4", byteArray4);
 
 
         }
         if (boolmageText5) {
-            outState.putString("key5", imageText5.getText().toString());
+            outState.putString("key5", mImageText5.getText().toString());
             outState.putString("keyState5", bundlesstates[4]);
             outState.putByteArray("byte5", byteArray5);
 
@@ -95,20 +94,20 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
     }
 
     private void init(View view) {
-        transportsectionspinner = (Spinner) view.findViewById(R.id.transport_section_spinner);
-        fueltypespinner = (Spinner) view.findViewById(R.id.transport_fuel_type_spinner);
-        boxspinner = (Spinner) view.findViewById(R.id.transport_box_spinner);
-        fab1 = (FloatingActionButton) view.findViewById(R.id.transport_choose_button_1);
-        fab2 = (FloatingActionButton) view.findViewById(R.id.transport_choose_button_2);
-        fab3 = (FloatingActionButton) view.findViewById(R.id.transport_choose_button_3);
-        fab4 = (FloatingActionButton) view.findViewById(R.id.transport_choose_button_4);
-        fab5 = (FloatingActionButton) view.findViewById(R.id.transport_choose_button_5);
+        mTransportSectionSpinner = (Spinner) view.findViewById(R.id.transport_section_spinner);
+        mFuelTypeSpinner = (Spinner) view.findViewById(R.id.transport_fuel_type_spinner);
+        mBoxSpinner = (Spinner) view.findViewById(R.id.transport_box_spinner);
+        mFab1 = (FloatingActionButton) view.findViewById(R.id.transport_choose_button_1);
+        mFab2 = (FloatingActionButton) view.findViewById(R.id.transport_choose_button_2);
+        mFab3 = (FloatingActionButton) view.findViewById(R.id.transport_choose_button_3);
+        mFab4 = (FloatingActionButton) view.findViewById(R.id.transport_choose_button_4);
+        mFab5 = (FloatingActionButton) view.findViewById(R.id.transport_choose_button_5);
         addButton = (Button) view.findViewById(R.id.transport_add_button);
-        imageText1 = (TextView) view.findViewById(R.id.transport_choose_photos_name_1);
-        imageText2 = (TextView) view.findViewById(R.id.transport_choose_photos_name_2);
-        imageText3 = (TextView) view.findViewById(R.id.transport_choose_photos_name_3);
-        imageText4 = (TextView) view.findViewById(R.id.transport_choose_photos_name_4);
-        imageText5 = (TextView) view.findViewById(R.id.transport_choose_photos_name_5);
+        mImageText1 = (TextView) view.findViewById(R.id.transport_choose_photos_name_1);
+        mImageText2 = (TextView) view.findViewById(R.id.transport_choose_photos_name_2);
+        mImageText3 = (TextView) view.findViewById(R.id.transport_choose_photos_name_3);
+        mImageText4 = (TextView) view.findViewById(R.id.transport_choose_photos_name_4);
+        mImageText5 = (TextView) view.findViewById(R.id.transport_choose_photos_name_5);
         transport_name = (EditText) view.findViewById(R.id.transport_mark_edit);
         transport_model = (EditText) view.findViewById(R.id.transport_model_edit);
         transport_engine_volume = (EditText) view.findViewById(R.id.transport_engine_volume_edit);
@@ -121,22 +120,22 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
     }
 
     private void setupClicks() {
-        fab1.setOnClickListener(this);
-        fab2.setOnClickListener(this);
-        fab3.setOnClickListener(this);
-        fab4.setOnClickListener(this);
-        fab5.setOnClickListener(this);
+        mFab1.setOnClickListener(this);
+        mFab2.setOnClickListener(this);
+        mFab3.setOnClickListener(this);
+        mFab4.setOnClickListener(this);
+        mFab5.setOnClickListener(this);
         addButton.setOnClickListener(this);
 
     }
 
     private void spinInit() {
-        tranportsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.transport_titles, R.layout.drop_down_spinner_item);
-        transportsectionspinner.setAdapter(tranportsectionadapter);
-        fueltypeadapter = ArrayAdapter.createFromResource(getContext(), R.array.fuel_types, R.layout.drop_down_spinner_item);
-        fueltypespinner.setAdapter(fueltypeadapter);
-        boxadapter = ArrayAdapter.createFromResource(getContext(), R.array.box_types, R.layout.drop_down_spinner_item);
-        boxspinner.setAdapter(boxadapter);
+        mTranportSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.transport_titles, R.layout.drop_down_spinner_item);
+        mTransportSectionSpinner.setAdapter(mTranportSectionAdapter);
+        mFuelTypeAdapter = ArrayAdapter.createFromResource(getContext(), R.array.fuel_types, R.layout.drop_down_spinner_item);
+        mFuelTypeSpinner.setAdapter(mFuelTypeAdapter);
+        mBoxAdapter = ArrayAdapter.createFromResource(getContext(), R.array.box_types, R.layout.drop_down_spinner_item);
+        mBoxSpinner.setAdapter(mBoxAdapter);
     }
 
     private void savedState(Bundle savedInstanceState) {
@@ -147,9 +146,9 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
             if (savedInstanceState.getString("keyState1") != null) {
                 if (savedInstanceState.getString("keyState1").equals(bundlesstates[0])) {
 
-                    imageText1.setText(savedInstanceState.getString("key1"));
+                    mImageText1.setText(savedInstanceState.getString("key1"));
                     byteArray1 = savedInstanceState.getByteArray("byte1");
-                    bm1 = BitmapFactory.decodeByteArray(byteArray1, 0, byteArray1.length);
+                    mBm1 = BitmapFactory.decodeByteArray(byteArray1, 0, byteArray1.length);
                     boolmageText1 = true;
 
                 }
@@ -157,9 +156,9 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
             if (savedInstanceState.getString("keyState2") != null) {
                 if (savedInstanceState.getString("keyState2").equals(bundlesstates[1])) {
 
-                    imageText2.setText(savedInstanceState.getString("key2"));
+                    mImageText2.setText(savedInstanceState.getString("key2"));
                     byteArray2 = savedInstanceState.getByteArray("byte2");
-                    bm2 = BitmapFactory.decodeByteArray(byteArray2, 0, byteArray2.length);
+                    mBm2 = BitmapFactory.decodeByteArray(byteArray2, 0, byteArray2.length);
                     boolmageText2 = true;
 
                 }
@@ -167,9 +166,9 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
             if (savedInstanceState.getString("keyState3") != null) {
                 if (savedInstanceState.getString("keyState3").equals(bundlesstates[2])) {
 
-                    imageText3.setText(savedInstanceState.getString("key3"));
+                    mImageText3.setText(savedInstanceState.getString("key3"));
                     byteArray3 = savedInstanceState.getByteArray("byte3");
-                    bm3 = BitmapFactory.decodeByteArray(byteArray3, 0, byteArray2.length);
+                    mBm3 = BitmapFactory.decodeByteArray(byteArray3, 0, byteArray2.length);
                     boolmageText3 = true;
 
                 }
@@ -177,9 +176,9 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
             if (savedInstanceState.getString("keyState4") != null) {
                 if (savedInstanceState.getString("keyState4").equals(bundlesstates[3])) {
 
-                    imageText4.setText(savedInstanceState.getString("key4"));
+                    mImageText4.setText(savedInstanceState.getString("key4"));
                     byteArray4 = savedInstanceState.getByteArray("byte4");
-                    bm4 = BitmapFactory.decodeByteArray(byteArray4, 0, byteArray4.length);
+                    mBm4 = BitmapFactory.decodeByteArray(byteArray4, 0, byteArray4.length);
                     boolmageText4 = true;
 
                 }
@@ -187,9 +186,9 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
             if (savedInstanceState.getString("keyState5") != null) {
                 if (savedInstanceState.getString("keyState5").equals(bundlesstates[4])) {
 
-                    imageText5.setText(savedInstanceState.getString("key5"));
+                    mImageText5.setText(savedInstanceState.getString("key5"));
                     byteArray5 = savedInstanceState.getByteArray("byte5");
-                    bm5 = BitmapFactory.decodeByteArray(byteArray5, 0, byteArray5.length);
+                    mBm5 = BitmapFactory.decodeByteArray(byteArray5, 0, byteArray5.length);
                     boolmageText5 = true;
 
                 }
@@ -243,8 +242,8 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
             case REQ_CODE1:
                 if (resultCode == RESULT_OK) {
                     byteArray1 = data.getByteArrayExtra("bitmap");
-                    bm1 = BitmapFactory.decodeByteArray(byteArray1, 0, byteArray1.length);
-                    imageText1.setText(R.string.image_uploaded);
+                    mBm1 = BitmapFactory.decodeByteArray(byteArray1, 0, byteArray1.length);
+                    mImageText1.setText(R.string.image_uploaded);
                     boolmageText1 = true;
                 } else {
                     Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
@@ -253,8 +252,8 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
             case REQ_CODE2:
                 if (resultCode == RESULT_OK) {
                     byteArray2 = data.getByteArrayExtra("bitmap");
-                    bm2 = BitmapFactory.decodeByteArray(byteArray2, 0, byteArray2.length);
-                    imageText2.setText(R.string.image_uploaded);
+                    mBm2 = BitmapFactory.decodeByteArray(byteArray2, 0, byteArray2.length);
+                    mImageText2.setText(R.string.image_uploaded);
                     boolmageText2 = true;
                 } else {
                     Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
@@ -263,8 +262,8 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
             case REQ_CODE3:
                 if (resultCode == RESULT_OK) {
                     byteArray3 = data.getByteArrayExtra("bitmap");
-                    bm3 = BitmapFactory.decodeByteArray(byteArray3, 0, byteArray3.length);
-                    imageText3.setText(R.string.image_uploaded);
+                    mBm3 = BitmapFactory.decodeByteArray(byteArray3, 0, byteArray3.length);
+                    mImageText3.setText(R.string.image_uploaded);
                     boolmageText3 = true;
                 } else {
                     Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
@@ -273,8 +272,8 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
             case REQ_CODE4:
                 if (resultCode == RESULT_OK) {
                     byteArray4 = data.getByteArrayExtra("bitmap");
-                    bm4 = BitmapFactory.decodeByteArray(byteArray4, 0, byteArray4.length);
-                    imageText4.setText(R.string.image_uploaded);
+                    mBm4 = BitmapFactory.decodeByteArray(byteArray4, 0, byteArray4.length);
+                    mImageText4.setText(R.string.image_uploaded);
                     boolmageText4 = true;
                 } else {
                     Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
@@ -283,8 +282,8 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
             case REQ_CODE5:
                 if (resultCode == RESULT_OK) {
                     byteArray5 = data.getByteArrayExtra("bitmap");
-                    bm5 = BitmapFactory.decodeByteArray(byteArray5, 0, byteArray5.length);
-                    imageText5.setText(R.string.image_uploaded);
+                    mBm5 = BitmapFactory.decodeByteArray(byteArray5, 0, byteArray5.length);
+                    mImageText5.setText(R.string.image_uploaded);
                     boolmageText5 = true;
                 } else {
                     Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();

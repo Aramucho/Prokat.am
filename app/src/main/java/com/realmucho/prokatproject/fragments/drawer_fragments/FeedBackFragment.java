@@ -40,16 +40,15 @@ import com.realmucho.prokatproject.R;
 
 public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
-    private BottomSheetBehavior bottomSheetBehavior;
-    private Button submit;
-    private ImageButton mapwatch, fb, vk, ok, yotube, insta, skype, share;
+    private BottomSheetBehavior mBottomSheetBehavior;
+    private Button mSubmitBtn;
+    private ImageButton mMapShow, mFbBtn, mVkBtn, mOkBtn, mYoutubeBtn, mInstaBtn, mSkypeBtn, mShareBtn;
     private MapView mMapView;
-    private GoogleMap googleMap;
-    private TextView link;
-    private SlidingPaneLayout paneLayout;
-    private RelativeLayout feedlayout,messageLayout;
-
-    private NestedScrollView bottomsheet;
+    private GoogleMap mGoogleMap;
+    private TextView mLink;
+    private SlidingPaneLayout mPaneLayout;
+    private RelativeLayout mFeedLayout, mMessageLayout;
+    private NestedScrollView mBottomsheet;
 
     @Nullable
     @Override
@@ -57,7 +56,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.feedback_fragment, container, false);
         init(view);
         setupClicks();
-        bottomSheetBehavior = BottomSheetBehavior.from(bottomsheet);
+        mBottomSheetBehavior = BottomSheetBehavior.from(mBottomsheet);
         mMapView.onCreate(savedInstanceState != null ? savedInstanceState.getBundle("map") : savedInstanceState);
         bottomInit();
         mapInit();
@@ -66,36 +65,36 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
     private void init(View view) {
 
-        bottomsheet = (NestedScrollView) view.findViewById(R.id.bottom_sheet);
+        mBottomsheet = (NestedScrollView) view.findViewById(R.id.bottom_sheet);
         mMapView = (MapView) view.findViewById(R.id.map_view);
-        paneLayout = (SlidingPaneLayout) view.findViewById(R.id.feed_sliding_pane);
-        feedlayout = (RelativeLayout) view.findViewById(R.id.feed_layout);
-        share = (ImageButton) view.findViewById(R.id.share);
-        mapwatch = (ImageButton) view.findViewById(R.id.map_watch);
-        fb = (ImageButton) view.findViewById(R.id.fb_icon);
-        vk = (ImageButton) view.findViewById(R.id.vk_icon);
-        yotube = (ImageButton) view.findViewById(R.id.youtube_icon);
-        ok = (ImageButton) view.findViewById(R.id.ok_icon);
-        insta = (ImageButton) view.findViewById(R.id.insta_icon);
-        skype = (ImageButton) view.findViewById(R.id.skype_icon);
-        submit = (Button) view.findViewById(R.id.submitbutton);
-        link = (TextView) view.findViewById(R.id.link);
-        messageLayout=(RelativeLayout)view.findViewById(R.id.map_permission_layout);
+        mPaneLayout = (SlidingPaneLayout) view.findViewById(R.id.feed_sliding_pane);
+        mFeedLayout = (RelativeLayout) view.findViewById(R.id.feed_layout);
+        mShareBtn = (ImageButton) view.findViewById(R.id.share);
+        mMapShow = (ImageButton) view.findViewById(R.id.map_watch);
+        mFbBtn = (ImageButton) view.findViewById(R.id.fb_icon);
+        mVkBtn = (ImageButton) view.findViewById(R.id.vk_icon);
+        mYoutubeBtn = (ImageButton) view.findViewById(R.id.youtube_icon);
+        mOkBtn = (ImageButton) view.findViewById(R.id.ok_icon);
+        mInstaBtn = (ImageButton) view.findViewById(R.id.insta_icon);
+        mSkypeBtn = (ImageButton) view.findViewById(R.id.skype_icon);
+        mSubmitBtn = (Button) view.findViewById(R.id.submitbutton);
+        mLink = (TextView) view.findViewById(R.id.link);
+        mMessageLayout = (RelativeLayout) view.findViewById(R.id.map_permission_layout);
 
     }
 
     private void setupClicks() {
-        feedlayout.setOnClickListener(this);
-        link.setOnClickListener(this);
-        mapwatch.setOnClickListener(this);
-        submit.setOnClickListener(this);
-        fb.setOnClickListener(this);
-        share.setOnClickListener(this);
-        vk.setOnClickListener(this);
-        yotube.setOnClickListener(this);
-        ok.setOnClickListener(this);
-        insta.setOnClickListener(this);
-        skype.setOnClickListener(this);
+        mFeedLayout.setOnClickListener(this);
+        mLink.setOnClickListener(this);
+        mMapShow.setOnClickListener(this);
+        mSubmitBtn.setOnClickListener(this);
+        mFbBtn.setOnClickListener(this);
+        mShareBtn.setOnClickListener(this);
+        mVkBtn.setOnClickListener(this);
+        mYoutubeBtn.setOnClickListener(this);
+        mOkBtn.setOnClickListener(this);
+        mInstaBtn.setOnClickListener(this);
+        mSkypeBtn.setOnClickListener(this);
     }
 
 
@@ -106,8 +105,8 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
         switch (id) {
             case R.id.map_watch:
-                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-                submit.setVisibility(View.GONE);
+                mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                mSubmitBtn.setVisibility(View.GONE);
 
                 break;
             case R.id.submitbutton:
@@ -134,13 +133,13 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
                 break;
             case R.id.vk_icon:
-                urlIntent("https://vk.com/id250024962");
+                urlIntent("https://mVkBtn.com/id250024962");
                 break;
             case R.id.youtube_icon:
                 urlIntent("https://www.youtube.com/channel/UCXUA6v5FfPSFo596ReOqqRw");
                 break;
             case R.id.ok_icon:
-                urlIntent("https://ok.ru/profile/562361186775");
+                urlIntent("https://mOkBtn.ru/profile/562361186775");
 
                 break;
 
@@ -148,15 +147,15 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
                 getInstagramPageUrl("https://www.instagram.com/prokat.am/");
                 break;
             case R.id.skype_icon:
-                getSkypePageUrl(getContext(), "www.skype.com");
+                getSkypePageUrl(getContext(), "www.mSkypeBtn.com");
                 break;
             case R.id.share:
-                paneLayout.openPane();
+                mPaneLayout.openPane();
                 break;
 
             case R.id.feed_layout:
-                if (paneLayout.isOpen()) {
-                    paneLayout.closePane();
+                if (mPaneLayout.isOpen()) {
+                    mPaneLayout.closePane();
                 }
 
 
@@ -178,25 +177,23 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
             public void onMapReady(GoogleMap mMap) {
                 if (ContextCompat.checkSelfPermission(getContext(),
                         Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                    googleMap = mMap;
+                    mGoogleMap = mMap;
 
                     mMap.setMyLocationEnabled(true);
 
                     LatLng location = new LatLng(40.18659663201023, 44.5089211251659);
 
-                    googleMap.addMarker(new MarkerOptions().position(location));
+                    mGoogleMap.addMarker(new MarkerOptions().position(location));
 
                     CameraPosition cameraPosition = new CameraPosition.Builder().target(location).zoom(17).build();
 
-                    googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-                }
-                else{
+                    mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                } else {
                     mMapView.setVisibility(View.GONE);
-                    messageLayout.setVisibility(View.VISIBLE);
+                    mMessageLayout.setVisibility(View.VISIBLE);
 
 
                 }
-
 
 
             }
@@ -204,15 +201,15 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
     }
 
     private void bottomInit() {
-        bottomSheetBehavior.setPeekHeight(0);
+        mBottomSheetBehavior.setPeekHeight(0);
 
 
-        bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+        mBottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
                 if (newState == BottomSheetBehavior.STATE_COLLAPSED) {
-                    bottomSheetBehavior.setPeekHeight(0);
-                    submit.setVisibility(View.VISIBLE);
+                    mBottomSheetBehavior.setPeekHeight(0);
+                    mSubmitBtn.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -235,16 +232,16 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
                 if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
 
-                    if (paneLayout.isOpen()) {
-                        paneLayout.closePane();
+                    if (mPaneLayout.isOpen()) {
+                        mPaneLayout.closePane();
 
-                    } else if (!bottomSheetBehavior.isHideable()) {
-                        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                        submit.setVisibility(View.VISIBLE);
+                    } else if (!mBottomSheetBehavior.isHideable()) {
+                        mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                        mSubmitBtn.setVisibility(View.VISIBLE);
 
                     }
 
-                    if (!paneLayout.isOpen() && bottomSheetBehavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
+                    if (!mPaneLayout.isOpen() && mBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
                         Intent intent = new Intent(getContext(), MainActivity.class);
                         startActivity(intent);
                     }
@@ -281,9 +278,9 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         try {
             int versionCode = packageManager.getPackageInfo("com.facebook.katana", 0).versionCode;
             if (versionCode >= 3002850) {
-                return "fb://facewebmodal/f?href=" + url;
+                return "mFbBtn://facewebmodal/f?href=" + url;
             } else {
-                return "fb://page/" + "Prakat.am";
+                return "mFbBtn://page/" + "Prakat.am";
             }
         } catch (PackageManager.NameNotFoundException e) {
             return url;
@@ -309,14 +306,14 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
             Uri skypeUri = Uri.parse(url);
             Intent intent = new Intent(Intent.ACTION_VIEW, skypeUri);
 
-            intent.setComponent(new ComponentName("com.skype.raider", "com.skype.raider.Main"));
+            intent.setComponent(new ComponentName("com.mSkypeBtn.raider", "com.mSkypeBtn.raider.Main"));
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
 
             myContext.startActivity(intent);
         } else
 
-            urlIntent("https://play.google.com/store/apps/details?id=com.skype.raider&hl=ru");
+            urlIntent("https://play.google.com/store/apps/details?id=com.mSkypeBtn.raider&hl=ru");
 
     }
 
@@ -324,7 +321,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
     private boolean isSkypeClientInstalled(Context myContext) {
         PackageManager myPackageMgr = myContext.getPackageManager();
         try {
-            myPackageMgr.getPackageInfo("com.skype.raider", PackageManager.GET_ACTIVITIES);
+            myPackageMgr.getPackageInfo("com.mSkypeBtn.raider", PackageManager.GET_ACTIVITIES);
         } catch (PackageManager.NameNotFoundException e) {
             return (false);
         }

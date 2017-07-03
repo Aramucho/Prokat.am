@@ -15,7 +15,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,19 +28,18 @@ import static android.app.Activity.RESULT_OK;
 public class GoodsFragment extends Fragment implements View.OnClickListener {
 
 
-
-    private Spinner sectionspinner, goodssubsectionspinner, goodscitiesspinner;
-    private ArrayAdapter sectionadapter, goodsubsectionadapter, goodscitiesadapter;
-    private Intent intent;
-    private EditText goods_name, goods_discript, goods_price, goods_contacts_name, goods_contacts_email, goods_contacts_phone, goods_notes;
-    private FloatingActionButton fab1, fab2, fab3, fab4, fab5;
-    private Bitmap bm1, bm2, bm3, bm4, bm5;
-    private TextView imageText1, imageText2, imageText3, imageText4, imageText5;
-    private final int REQ_CODE1 = 1, REQ_CODE2 = 2, REQ_CODE3 = 3, REQ_CODE4 = 4, REQ_CODE5 = 5, GOODS_DIALOG = 11;
-    private boolean boolmageText1, boolmageText2, boolmageText3, boolmageText4, boolmageText5;
-    private String[] bundlesstates = {"key1", "key2", "key3", "key4", "key5"};
-    private Button addbtn;
-    byte[] byteArray1, byteArray2, byteArray3, byteArray4, byteArray5;
+    private Spinner mSectionSpinner, mGoodsSubSectionSpinner, mGoodsCitiesSpinner;
+    private ArrayAdapter mSectionAdapter, mGoodsSubSectionAdapter, mGoodsCitiesAdapter;
+    private Intent mIntent;
+    private EditText mGoodsName, mGoodsDescript, mGoodsPrice, mGoodsContactsName, mGoodsContactsEmail, mGoodsContactsPhone, mGoodsNotes;
+    private FloatingActionButton mFab1, mFab2, mFab3, mFab4, mFab5;
+    private Bitmap mBm1, mBm2, mBm3, mBm4, mBm5;
+    private TextView mImageText1, mImageText2, mImageText3, mImageText4, mImageText5;
+    private final static int REQ_CODE1 = 1, REQ_CODE2 = 2, REQ_CODE3 = 3, REQ_CODE4 = 4, REQ_CODE5 = 5, GOODS_DIALOG = 11;
+    private boolean mBoolImageText1, mBoolImageText2, mBoolImageText3, mBoolImageText4, mBoolImageText5;
+    private String[] mBundlesstates = {"key1", "key2", "key3", "key4", "key5"};
+    private Button mAddbtn;
+    private byte[] mByteArray1, mByteArray2, mByteArray3, mByteArray4, mByteArray5;
 
 
     @Nullable
@@ -50,7 +48,7 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.gooods_fragment, container, false);
         init(view);
         setupClicks();
-        intent = getActivity().getIntent();
+        mIntent = getActivity().getIntent();
         spinnersInit();
         savedState(savedInstanceState);
         return view;
@@ -60,39 +58,39 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        if (boolmageText1) {
+        if (mBoolImageText1) {
 
-            outState.putString("key1", imageText1.getText().toString());
-            outState.putString("keyState1", bundlesstates[0]);
-            outState.putByteArray("byte1", byteArray1);
-
-
-        }
-        if (boolmageText2) {
-            outState.putString("key2", imageText2.getText().toString());
-            outState.putString("keyState2", bundlesstates[1]);
-            outState.putByteArray("byte2", byteArray2);
+            outState.putString("key1", mImageText1.getText().toString());
+            outState.putString("keyState1", mBundlesstates[0]);
+            outState.putByteArray("byte1", mByteArray1);
 
 
         }
-        if (boolmageText3) {
-            outState.putString("key3", imageText3.getText().toString());
-            outState.putString("keyState3", bundlesstates[2]);
-            outState.putByteArray("byte3", byteArray3);
+        if (mBoolImageText2) {
+            outState.putString("key2", mImageText2.getText().toString());
+            outState.putString("keyState2", mBundlesstates[1]);
+            outState.putByteArray("byte2", mByteArray2);
 
 
         }
-        if (boolmageText4) {
-            outState.putString("key4", imageText4.getText().toString());
-            outState.putString("keyState4", bundlesstates[3]);
-            outState.putByteArray("byte4", byteArray5);
+        if (mBoolImageText3) {
+            outState.putString("key3", mImageText3.getText().toString());
+            outState.putString("keyState3", mBundlesstates[2]);
+            outState.putByteArray("byte3", mByteArray3);
 
 
         }
-        if (boolmageText5) {
-            outState.putString("key5", imageText5.getText().toString());
-            outState.putString("keyState5", bundlesstates[4]);
-            outState.putByteArray("byte5", byteArray5);
+        if (mBoolImageText4) {
+            outState.putString("key4", mImageText4.getText().toString());
+            outState.putString("keyState4", mBundlesstates[3]);
+            outState.putByteArray("byte4", mByteArray5);
+
+
+        }
+        if (mBoolImageText5) {
+            outState.putString("key5", mImageText5.getText().toString());
+            outState.putString("keyState5", mBundlesstates[4]);
+            outState.putByteArray("byte5", mByteArray5);
 
 
         }
@@ -102,93 +100,93 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
 
 
     private void init(View view) {
-        fab1 = (FloatingActionButton) view.findViewById(R.id.goods_choose_button_1);
-        fab2 = (FloatingActionButton) view.findViewById(R.id.goods_choose_button_2);
-        fab3 = (FloatingActionButton) view.findViewById(R.id.goods_choose_button_3);
-        fab4 = (FloatingActionButton) view.findViewById(R.id.goods_choose_button_4);
-        fab5 = (FloatingActionButton) view.findViewById(R.id.goods_choose_button_5);
-        imageText1 = (TextView) view.findViewById(R.id.goods_choose_photos_name_1);
-        imageText2 = (TextView) view.findViewById(R.id.goods_choose_photos_name_2);
-        imageText3 = (TextView) view.findViewById(R.id.goods_choose_photos_name_3);
-        imageText4 = (TextView) view.findViewById(R.id.goods_choose_photos_name_4);
-        imageText5 = (TextView) view.findViewById(R.id.goods_choose_photos_name_5);
-        sectionspinner = (Spinner) view.findViewById(R.id.goods_section_spinner);
-        goodssubsectionspinner = (Spinner) view.findViewById(R.id.goods_subsection_spinner);
-        goodscitiesspinner = (Spinner) view.findViewById(R.id.goods_cities_spinner);
-        goods_name = (EditText) view.findViewById(R.id.goods_name_edit);
-        goods_discript = (EditText) view.findViewById(R.id.goods_description_edit);
-        goods_price = (EditText) view.findViewById(R.id.goods_price_edit);
-        goods_contacts_name = (EditText) view.findViewById(R.id.goods_contacts_name);
-        goods_contacts_email = (EditText) view.findViewById(R.id.goods_contacts_email);
-        goods_contacts_phone = (EditText) view.findViewById(R.id.goods_contacts_phone);
-        goods_notes = (EditText) view.findViewById(R.id.goods_contacts_notes);
-        addbtn = (Button) view.findViewById(R.id.goods_add_button);
+        mFab1 = (FloatingActionButton) view.findViewById(R.id.goods_choose_button_1);
+        mFab2 = (FloatingActionButton) view.findViewById(R.id.goods_choose_button_2);
+        mFab3 = (FloatingActionButton) view.findViewById(R.id.goods_choose_button_3);
+        mFab4 = (FloatingActionButton) view.findViewById(R.id.goods_choose_button_4);
+        mFab5 = (FloatingActionButton) view.findViewById(R.id.goods_choose_button_5);
+        mImageText1 = (TextView) view.findViewById(R.id.goods_choose_photos_name_1);
+        mImageText2 = (TextView) view.findViewById(R.id.goods_choose_photos_name_2);
+        mImageText3 = (TextView) view.findViewById(R.id.goods_choose_photos_name_3);
+        mImageText4 = (TextView) view.findViewById(R.id.goods_choose_photos_name_4);
+        mImageText5 = (TextView) view.findViewById(R.id.goods_choose_photos_name_5);
+        mSectionSpinner = (Spinner) view.findViewById(R.id.goods_section_spinner);
+        mGoodsSubSectionSpinner = (Spinner) view.findViewById(R.id.goods_subsection_spinner);
+        mGoodsCitiesSpinner = (Spinner) view.findViewById(R.id.goods_cities_spinner);
+        mGoodsName = (EditText) view.findViewById(R.id.goods_name_edit);
+        mGoodsDescript = (EditText) view.findViewById(R.id.goods_description_edit);
+        mGoodsPrice = (EditText) view.findViewById(R.id.goods_price_edit);
+        mGoodsContactsName = (EditText) view.findViewById(R.id.goods_contacts_name);
+        mGoodsContactsEmail = (EditText) view.findViewById(R.id.goods_contacts_email);
+        mGoodsContactsPhone = (EditText) view.findViewById(R.id.goods_contacts_phone);
+        mGoodsNotes = (EditText) view.findViewById(R.id.goods_contacts_notes);
+        mAddbtn = (Button) view.findViewById(R.id.goods_add_button);
 
     }
 
     private void setupClicks() {
-        fab1.setOnClickListener(this);
-        fab2.setOnClickListener(this);
-        fab3.setOnClickListener(this);
-        fab4.setOnClickListener(this);
-        fab5.setOnClickListener(this);
-        addbtn.setOnClickListener(this);
+        mFab1.setOnClickListener(this);
+        mFab2.setOnClickListener(this);
+        mFab3.setOnClickListener(this);
+        mFab4.setOnClickListener(this);
+        mFab5.setOnClickListener(this);
+        mAddbtn.setOnClickListener(this);
 
     }
 
 
-    private void savedState(Bundle  savedInstanceState){
+    private void savedState(Bundle savedInstanceState) {
 
         if (savedInstanceState != null) {
 
 
             if (savedInstanceState.getString("keyState1") != null) {
-                if (savedInstanceState.getString("keyState1").equals(bundlesstates[0])) {
+                if (savedInstanceState.getString("keyState1").equals(mBundlesstates[0])) {
 
-                    imageText1.setText(savedInstanceState.getString("key1"));
-                    byteArray1 = savedInstanceState.getByteArray("byte1");
-                    bm1 = BitmapFactory.decodeByteArray(byteArray1, 0, byteArray1.length);
-                    boolmageText1 = true;
+                    mImageText1.setText(savedInstanceState.getString("key1"));
+                    mByteArray1 = savedInstanceState.getByteArray("byte1");
+                    mBm1 = BitmapFactory.decodeByteArray(mByteArray1, 0, mByteArray1.length);
+                    mBoolImageText1 = true;
 
                 }
             }
             if (savedInstanceState.getString("keyState2") != null) {
-                if (savedInstanceState.getString("keyState2").equals(bundlesstates[1])) {
+                if (savedInstanceState.getString("keyState2").equals(mBundlesstates[1])) {
 
-                    imageText2.setText(savedInstanceState.getString("key2"));
-                    byteArray2 = savedInstanceState.getByteArray("byte2");
-                    bm2 = BitmapFactory.decodeByteArray(byteArray2, 0, byteArray2.length);
-                    boolmageText2 = true;
+                    mImageText2.setText(savedInstanceState.getString("key2"));
+                    mByteArray2 = savedInstanceState.getByteArray("byte2");
+                    mBm2 = BitmapFactory.decodeByteArray(mByteArray2, 0, mByteArray2.length);
+                    mBoolImageText2 = true;
 
                 }
             }
             if (savedInstanceState.getString("keyState3") != null) {
-                if (savedInstanceState.getString("keyState3").equals(bundlesstates[2])) {
+                if (savedInstanceState.getString("keyState3").equals(mBundlesstates[2])) {
 
-                    imageText3.setText(savedInstanceState.getString("key3"));
-                    byteArray3 = savedInstanceState.getByteArray("byte3");
-                    bm3 = BitmapFactory.decodeByteArray(byteArray3, 0, byteArray2.length);
-                    boolmageText3 = true;
+                    mImageText3.setText(savedInstanceState.getString("key3"));
+                    mByteArray3 = savedInstanceState.getByteArray("byte3");
+                    mBm3 = BitmapFactory.decodeByteArray(mByteArray3, 0, mByteArray2.length);
+                    mBoolImageText3 = true;
 
                 }
             }
             if (savedInstanceState.getString("keyState4") != null) {
-                if (savedInstanceState.getString("keyState4").equals(bundlesstates[3])) {
+                if (savedInstanceState.getString("keyState4").equals(mBundlesstates[3])) {
 
-                    imageText4.setText(savedInstanceState.getString("key4"));
-                    byteArray4 = savedInstanceState.getByteArray("byte4");
-                    bm4 = BitmapFactory.decodeByteArray(byteArray4, 0, byteArray4.length);
-                    boolmageText4 = true;
+                    mImageText4.setText(savedInstanceState.getString("key4"));
+                    mByteArray4 = savedInstanceState.getByteArray("byte4");
+                    mBm4 = BitmapFactory.decodeByteArray(mByteArray4, 0, mByteArray4.length);
+                    mBoolImageText4 = true;
 
                 }
             }
             if (savedInstanceState.getString("keyState5") != null) {
-                if (savedInstanceState.getString("keyState5").equals(bundlesstates[4])) {
+                if (savedInstanceState.getString("keyState5").equals(mBundlesstates[4])) {
 
-                    imageText5.setText(savedInstanceState.getString("key5"));
-                    byteArray5 = savedInstanceState.getByteArray("byte5");
-                    bm5 = BitmapFactory.decodeByteArray(byteArray5, 0, byteArray5.length);
-                    boolmageText5 = true;
+                    mImageText5.setText(savedInstanceState.getString("key5"));
+                    mByteArray5 = savedInstanceState.getByteArray("byte5");
+                    mBm5 = BitmapFactory.decodeByteArray(mByteArray5, 0, mByteArray5.length);
+                    mBoolImageText5 = true;
 
                 }
             }
@@ -199,59 +197,59 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
 
     private void spinnersInit() {
 
-        sectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.goods_titles, R.layout.drop_down_spinner_item);
-        goodscitiesadapter = ArrayAdapter.createFromResource(getContext(), R.array.cities, R.layout.drop_down_spinner_item);
+        mSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.goods_titles, R.layout.drop_down_spinner_item);
+        mGoodsCitiesAdapter = ArrayAdapter.createFromResource(getContext(), R.array.cities, R.layout.drop_down_spinner_item);
 
-        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.bydefualt, R.layout.drop_down_spinner_item);
-        sectionspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        mGoodsSubSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.bydefualt, R.layout.drop_down_spinner_item);
+        mSectionSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
 
 
                     case 1:
-                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.comp_equipment, R.layout.drop_down_spinner_item);
-                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        mGoodsSubSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.comp_equipment, R.layout.drop_down_spinner_item);
+                        mGoodsSubSectionSpinner.setAdapter(mGoodsSubSectionAdapter);
                         break;
                     case 2:
-                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.ever_events, R.layout.drop_down_spinner_item);
-                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        mGoodsSubSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.ever_events, R.layout.drop_down_spinner_item);
+                        mGoodsSubSectionSpinner.setAdapter(mGoodsSubSectionAdapter);
                         break;
                     case 3:
-                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.sound_equipments, R.layout.drop_down_spinner_item);
-                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        mGoodsSubSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.sound_equipments, R.layout.drop_down_spinner_item);
+                        mGoodsSubSectionSpinner.setAdapter(mGoodsSubSectionAdapter);
                         break;
                     case 4:
-                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.cameras, R.layout.drop_down_spinner_item);
-                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        mGoodsSubSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.cameras, R.layout.drop_down_spinner_item);
+                        mGoodsSubSectionSpinner.setAdapter(mGoodsSubSectionAdapter);
                         break;
                     case 5:
-                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.tools, R.layout.drop_down_spinner_item);
-                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        mGoodsSubSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.tools, R.layout.drop_down_spinner_item);
+                        mGoodsSubSectionSpinner.setAdapter(mGoodsSubSectionAdapter);
                         break;
                     case 6:
-                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.tourism, R.layout.drop_down_spinner_item);
-                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        mGoodsSubSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.tourism, R.layout.drop_down_spinner_item);
+                        mGoodsSubSectionSpinner.setAdapter(mGoodsSubSectionAdapter);
                         break;
                     case 7:
-                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.clothing, R.layout.drop_down_spinner_item);
-                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        mGoodsSubSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.clothing, R.layout.drop_down_spinner_item);
+                        mGoodsSubSectionSpinner.setAdapter(mGoodsSubSectionAdapter);
                         break;
                     case 8:
-                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.communications, R.layout.drop_down_spinner_item);
-                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        mGoodsSubSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.communications, R.layout.drop_down_spinner_item);
+                        mGoodsSubSectionSpinner.setAdapter(mGoodsSubSectionAdapter);
                         break;
                     case 9:
-                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.entertaiment, R.layout.drop_down_spinner_item);
-                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        mGoodsSubSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.entertaiment, R.layout.drop_down_spinner_item);
+                        mGoodsSubSectionSpinner.setAdapter(mGoodsSubSectionAdapter);
                         break;
                     case 10:
-                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.tableware, R.layout.drop_down_spinner_item);
-                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        mGoodsSubSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.tableware, R.layout.drop_down_spinner_item);
+                        mGoodsSubSectionSpinner.setAdapter(mGoodsSubSectionAdapter);
                         break;
                     case 11:
-                        goodsubsectionadapter = ArrayAdapter.createFromResource(getContext(), R.array.other_goods, R.layout.drop_down_spinner_item);
-                        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
+                        mGoodsSubSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.other_goods, R.layout.drop_down_spinner_item);
+                        mGoodsSubSectionSpinner.setAdapter(mGoodsSubSectionAdapter);
                         break;
 
 
@@ -263,9 +261,9 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
 
             }
         });
-        sectionspinner.setAdapter(sectionadapter);
-        goodssubsectionspinner.setAdapter(goodsubsectionadapter);
-        goodscitiesspinner.setAdapter(goodscitiesadapter);
+        mSectionSpinner.setAdapter(mSectionAdapter);
+        mGoodsSubSectionSpinner.setAdapter(mGoodsSubSectionAdapter);
+        mGoodsCitiesSpinner.setAdapter(mGoodsCitiesAdapter);
 
 
     }
@@ -315,10 +313,10 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
         switch (requestCode) {
             case REQ_CODE1:
                 if (resultCode == RESULT_OK) {
-                    byteArray1 = data.getByteArrayExtra("bitmap");
-                    bm1 = BitmapFactory.decodeByteArray(byteArray1, 0, byteArray1.length);
-                    imageText1.setText(R.string.image_uploaded);
-                    boolmageText1 = true;
+                    mByteArray1 = data.getByteArrayExtra("bitmap");
+                    mBm1 = BitmapFactory.decodeByteArray(mByteArray1, 0, mByteArray1.length);
+                    mImageText1.setText(R.string.image_uploaded);
+                    mBoolImageText1 = true;
 
                 } else {
                     Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
@@ -326,40 +324,40 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
                 break;
             case REQ_CODE2:
                 if (resultCode == RESULT_OK) {
-                    byteArray2 = data.getByteArrayExtra("bitmap");
-                    bm2 = BitmapFactory.decodeByteArray(byteArray2, 0, byteArray2.length);
-                    imageText2.setText(R.string.image_uploaded);
-                    boolmageText2 = true;
+                    mByteArray2 = data.getByteArrayExtra("bitmap");
+                    mBm2 = BitmapFactory.decodeByteArray(mByteArray2, 0, mByteArray2.length);
+                    mImageText2.setText(R.string.image_uploaded);
+                    mBoolImageText2 = true;
                 } else {
                     Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE3:
                 if (resultCode == RESULT_OK) {
-                    byteArray3 = data.getByteArrayExtra("bitmap");
-                    bm3 = BitmapFactory.decodeByteArray(byteArray3, 0, byteArray3.length);
-                    imageText3.setText(R.string.image_uploaded);
-                    boolmageText3 = true;
+                    mByteArray3 = data.getByteArrayExtra("bitmap");
+                    mBm3 = BitmapFactory.decodeByteArray(mByteArray3, 0, mByteArray3.length);
+                    mImageText3.setText(R.string.image_uploaded);
+                    mBoolImageText3 = true;
                 } else {
                     Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE4:
                 if (resultCode == RESULT_OK) {
-                    byteArray4 = data.getByteArrayExtra("bitmap");
-                    bm4 = BitmapFactory.decodeByteArray(byteArray4, 0, byteArray4.length);
-                    imageText4.setText(R.string.image_uploaded);
-                    boolmageText4 = true;
+                    mByteArray4 = data.getByteArrayExtra("bitmap");
+                    mBm4 = BitmapFactory.decodeByteArray(mByteArray4, 0, mByteArray4.length);
+                    mImageText4.setText(R.string.image_uploaded);
+                    mBoolImageText4 = true;
                 } else {
                     Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE5:
                 if (resultCode == RESULT_OK) {
-                    byteArray5 = data.getByteArrayExtra("bitmap");
-                    bm5 = BitmapFactory.decodeByteArray(byteArray5, 0, byteArray5.length);
-                    imageText5.setText(R.string.image_uploaded);
-                    boolmageText5 = true;
+                    mByteArray5 = data.getByteArrayExtra("bitmap");
+                    mBm5 = BitmapFactory.decodeByteArray(mByteArray5, 0, mByteArray5.length);
+                    mImageText5.setText(R.string.image_uploaded);
+                    mBoolImageText5 = true;
                 } else {
                     Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                 }

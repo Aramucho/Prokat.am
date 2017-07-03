@@ -57,9 +57,9 @@
 Для ознакомления с договором более подробно, нажмите здесь</string>
     <string name="section">Раздел</string>
     <string name="subsection">Подраздел</string>
-    <string name="city">Город</string>
+    <string name="mCity">Город</string>
     <string name="description">Описание</string>
-    <string name="price">Цена</string>
+    <string name="mPrice">Цена</string>
     <string name="time_period">Срок</string>
     <string name="hour">Час</string>
     <string name="day">День</string>

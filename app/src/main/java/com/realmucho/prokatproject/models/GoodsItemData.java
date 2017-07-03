@@ -5,30 +5,30 @@ package com.realmucho.prokatproject.models;
 
 public class GoodsItemData extends ItemData {
 
-    private String title,subtitle;
-    private int city;
+    private String mTitle, mSubTitle;
+    private int mCity;
 
-    public String getTitle() {
-        return title;
+    public String getmTitle() {
+        return mTitle;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setmTitle(String mTitle) {
+        this.mTitle = mTitle;
     }
 
-    public String getSubtitle() {
-        return subtitle;
+    public String getmSubTitle() {
+        return mSubTitle;
     }
 
-    public void setSubtitle(String subtitle) {
-        this.subtitle = subtitle;
+    public void setmSubTitle(String mSubTitle) {
+        this.mSubTitle = mSubTitle;
     }
 
-    public int getCity() {
-        return city;
+    public int getmCity() {
+        return mCity;
     }
 
-    public void setCity(int city) {
-        this.city = city;
+    public void setmCity(int mCity) {
+        this.mCity = mCity;
     }
 }

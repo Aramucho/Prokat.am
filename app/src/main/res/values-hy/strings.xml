@@ -46,9 +46,9 @@
     <string name="conditions_all">- Վարձակալի և վարձատուի հարաբերությունները կարգավորվում են պայմանագրով\t\n - Վարձակալը պատվերը տալիս է նախապես` 2 օր առաջ\t\n - Գործարքը իրականացվում է 50% կանխավճարով\t\n - Ժամկետը երկարացնելու համար անհրաժեշտ է նախապես վճարել ավելացված օրերի վարձավճարն ամբողջությամբ\t\n - Անհրաժեշտ փաստաթղթեր` անձը հաստատող փաստաթուղթ և վարորդական իրավունք (մեքենայի վարձակալության դեպքում)\t\n - Պայմանագրին ավելի մանրամասն ծանոթանալու համար սեղմեք\n</string>
     <string name="section">Բաժին</string>
     <string name="subsection">Ենթաբաժին</string>
-    <string name="city">Քաղաք</string>
+    <string name="mCity">Քաղաք</string>
     <string name="description">Բնութագիր</string>
-    <string name="price">Գին</string>
+    <string name="mPrice">Գին</string>
     <string name="time_period">Ժամանակ</string>
     <string name="hour">Ժամ</string>
     <string name="day">Օր</string>

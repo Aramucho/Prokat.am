@@ -99,7 +99,7 @@
                     android:layout_weight="0.6"
                     android:gravity="center_vertical"
                     android:minHeight="40dp"
-                    android:text="@string/price"
+                    android:text="@string/mPrice"
                     android:textColor="@color/maincolorblue"
                     android:textSize="20sp" />
 

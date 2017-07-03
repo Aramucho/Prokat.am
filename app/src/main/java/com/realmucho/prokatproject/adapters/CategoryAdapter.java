@@ -60,7 +60,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         holder.categoryname.setText(categoryData.getName());
         if (curPosition != -1 && position == curPosition) {
             holder.relativeLayout.setBackgroundColor(context.getResources().getColor(R.color.maincolorblue));
-            holder.categoryphoto.setBackgroundResource(categoryData.getCheckedphoto());
+            holder.categoryphoto.setBackgroundResource(categoryData.getmCheckedPhoto());
             holder.categoryname.setTextColor(context.getResources().getColor(R.color.maincolorwhite));
 
         } else {

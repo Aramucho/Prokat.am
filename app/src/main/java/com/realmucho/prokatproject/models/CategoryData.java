@@ -1,30 +1,27 @@
 package com.realmucho.prokatproject.models;
 
 
-
-
 public class CategoryData {
 
 
-    private int checkedphoto;
-    private int uncheckedphoto;
+    private int mCheckedPhoto;
+    private int mUncheckedPhoto;
     private String name;
-    private boolean checked = false;
 
 
-    public CategoryData(int uncheckedphote, String name, int checkedphoto) {
-        this.uncheckedphoto = uncheckedphote;
-        this.name = name;
-        this.checkedphoto = checkedphoto;
+    public CategoryData(int mUncheckedPhoto, String mName, int mCheckedPhoto) {
+        this.mUncheckedPhoto = mUncheckedPhoto;
+        this.name = mName;
+        this.mCheckedPhoto = mCheckedPhoto;
     }
 
     public int getUncheckedphote() {
-        return uncheckedphoto;
+        return mUncheckedPhoto;
     }
 
 
-    public int getCheckedphoto() {
-        return checkedphoto;
+    public int getmCheckedPhoto() {
+        return mCheckedPhoto;
     }
 
 

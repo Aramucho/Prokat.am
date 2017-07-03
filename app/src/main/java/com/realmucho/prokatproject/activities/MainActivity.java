@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity
     private FragmentManager fragmentManager;
     private ActionBarDrawerToggle toggle;
     private Fragment fragment = null;
-    private final int LOCATION_ON = 111;
 
 
     @Override

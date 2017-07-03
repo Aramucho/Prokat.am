@@ -29,13 +29,13 @@ import static android.app.Activity.RESULT_OK;
 
 public class UploadDialogFragment extends DialogFragment implements View.OnClickListener {
 
-    private ImageView camera_image, gallery_image;
-    private Button upload_cancel, upload_ok;
-    private int chacked_status = -1;
-    private Bitmap bitmap;
-    private int reqCode;
-    private final int CAMERA_ON = 888, GALLERY_ON = 999;
-    private boolean dism = false;
+    private ImageView mCameraImage, mGalleryImage;
+    private Button mUploadCancel, mUploadOk;
+    private int mChackedStatus = -1;
+    private Bitmap mBitmap;
+    private int mReqCode;
+    private final static int CAMERA_ON = 888, GALLERY_ON = 999;
+    private boolean mBoolDissmis = false;
 
     public static UploadDialogFragment newInstance(int code) {
         UploadDialogFragment dialogFragment = new UploadDialogFragment();
@@ -51,16 +51,24 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.image_upload_dialog, container, false);
-        reqCode = getArguments().getInt("num");
-        camera_image = (ImageView) view.findViewById(R.id.camera_image);
-        gallery_image = (ImageView) view.findViewById(R.id.gallery_image);
-        upload_cancel = (Button) view.findViewById(R.id.upload_dialog_cancel_button);
-        upload_ok = (Button) view.findViewById(R.id.upload_dialog_ok_button);
-        camera_image.setOnClickListener(this);
-        gallery_image.setOnClickListener(this);
-        upload_cancel.setOnClickListener(this);
-        upload_ok.setOnClickListener(this);
+        init(view);
+        setupClicks();
         return view;
+    }
+
+    private void init(View view) {
+        mReqCode = getArguments().getInt("num");
+        mCameraImage = (ImageView) view.findViewById(R.id.camera_image);
+        mGalleryImage = (ImageView) view.findViewById(R.id.gallery_image);
+        mUploadCancel = (Button) view.findViewById(R.id.upload_dialog_cancel_button);
+        mUploadOk = (Button) view.findViewById(R.id.upload_dialog_ok_button);
+    }
+
+    private void setupClicks() {
+        mCameraImage.setOnClickListener(this);
+        mGalleryImage.setOnClickListener(this);
+        mUploadCancel.setOnClickListener(this);
+        mUploadOk.setOnClickListener(this);
     }
 
     @Override
@@ -69,22 +77,22 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
 
         switch (id) {
             case R.id.camera_image:
-                chacked_status = 1;
-                camera_image.setImageResource(R.drawable.upload_camera_checked);
-                gallery_image.setImageResource(R.drawable.upload_gallery_unchecked);
+                mChackedStatus = 1;
+                mCameraImage.setImageResource(R.drawable.upload_camera_checked);
+                mGalleryImage.setImageResource(R.drawable.upload_gallery_unchecked);
                 break;
             case R.id.gallery_image:
-                chacked_status = 2;
-                camera_image.setImageResource(R.drawable.upload_camera_unchecked);
-                gallery_image.setImageResource(R.drawable.upload_gallery_checked);
+                mChackedStatus = 2;
+                mCameraImage.setImageResource(R.drawable.upload_camera_unchecked);
+                mGalleryImage.setImageResource(R.drawable.upload_gallery_checked);
                 break;
             case R.id.upload_dialog_cancel_button:
                 getDialog().dismiss();
                 break;
             case R.id.upload_dialog_ok_button:
-                if (chacked_status == -1) {
+                if (mChackedStatus == -1) {
                     Toast.makeText(getContext(), R.string.upload_type, Toast.LENGTH_SHORT).show();
-                } else if (chacked_status == 1) {
+                } else if (mChackedStatus == 1) {
                     if (ContextCompat.checkSelfPermission(getActivity(),
                             Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
 //                        if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
@@ -93,10 +101,10 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
 //                        }
                     } else {
                         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                        startActivityForResult(intent, chacked_status);
+                        startActivityForResult(intent, mChackedStatus);
                     }
 
-                } else if (chacked_status == 2) {
+                } else if (mChackedStatus == 2) {
                     if (ContextCompat.checkSelfPermission(getActivity(),
                             Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
 
@@ -104,7 +112,7 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
                     } else {
                         Intent intent = new Intent(Intent.ACTION_PICK);
                         intent.setType("image/*");
-                        startActivityForResult(intent, chacked_status);
+                        startActivityForResult(intent, mChackedStatus);
                     }
                 }
                 break;
@@ -115,8 +123,8 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
     @Override
     public void onResume() {
         super.onResume();
-        if (dism) {
-            dism = false;
+        if (mBoolDissmis) {
+            mBoolDissmis = false;
             dismiss();
         }
 
@@ -125,15 +133,15 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1 && resultCode == RESULT_OK) {
-            bitmap = (Bitmap) data.getExtras().get("data");
+            mBitmap = (Bitmap) data.getExtras().get("data");
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+            mBitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
             byte[] byteArray = outputStream.toByteArray();
 
             Intent intent = new Intent()
                     .putExtra("bitmap", byteArray);
             getTargetFragment().onActivityResult(getTargetRequestCode(), RESULT_OK, intent);
-            dism = true;
+            mBoolDissmis = true;
         } else if (requestCode == 2 && resultCode == RESULT_OK) {
             Uri pickedImage = data.getData();
             Bitmap bitmap = null;
@@ -148,7 +156,7 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
             byte[] byteArray = outputStream.toByteArray();
             Intent intent = new Intent().putExtra("bitmap", byteArray);
             getTargetFragment().onActivityResult(getTargetRequestCode(), RESULT_OK, intent);
-            dism = true;
+            mBoolDissmis = true;
 
 
         }
@@ -164,7 +172,7 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    startActivityForResult(intent, chacked_status);
+                    startActivityForResult(intent, mChackedStatus);
 
                 } else {
                     Toast.makeText(getContext(), R.string.camera_permission_deny, Toast.LENGTH_SHORT).show();
@@ -180,7 +188,7 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     Intent intent = new Intent(Intent.ACTION_PICK);
                     intent.setType("image/*");
-                    startActivityForResult(intent, chacked_status);
+                    startActivityForResult(intent, mChackedStatus);
 
                 } else {
                     Toast.makeText(getContext(), R.string.gallery_permission_deny, Toast.LENGTH_SHORT).show();

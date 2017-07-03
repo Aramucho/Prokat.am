@@ -5,10 +5,10 @@ import android.graphics.Bitmap;
 
 public class ItemData {
 
-    private int timeInterval,mainImage;
-    private String itemName;
-    private String price,discription,contactName,contactEmail,contactPhone,contactNotes;
-    private Bitmap bm1,bm2,bm3,bm4,bm5;
+    private int mTimeInterval,mainImage;
+    private String name;
+    private String mPrice, mDescription, mContactName, mContactEmail, mContactPhone, MContactNotes;
+    private Bitmap mBm1, mBm2, mBm3, mBm4, mBm5;
 
 
 
@@ -16,11 +16,11 @@ public class ItemData {
     }
 
 
-    public ItemData(int mainImage, String itemnName, String price) {
+    public ItemData(int mainImage, String name, String mPrice) {
 
         this.mainImage = mainImage;
-        this.itemName = itemnName;
-        this.price = price;
+        this.name = name;
+        this.mPrice = mPrice;
     }
 
 
@@ -33,109 +33,109 @@ public class ItemData {
         this.mainImage = mainImage;
     }
 
-    public String getItemName() {
-        return itemName;
+    public String getName() {
+        return name;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPrice() {
-        return price;
+    public String getmPrice() {
+        return mPrice;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setmPrice(String mPrice) {
+        this.mPrice = mPrice;
     }
 
-    public int getTimeInterval() {
-        return timeInterval;
+    public int getmTimeInterval() {
+        return mTimeInterval;
     }
 
-    public void setTimeInterval(int timeInterval) {
-        this.timeInterval = timeInterval;
+    public void setmTimeInterval(int mTimeInterval) {
+        this.mTimeInterval = mTimeInterval;
     }
 
-    public String getDiscription() {
-        return discription;
+    public String getmDescription() {
+        return mDescription;
     }
 
-    public void setDiscription(String discription) {
-        this.discription = discription;
+    public void setmDescription(String mDescription) {
+        this.mDescription = mDescription;
     }
 
-    public String getContactName() {
-        return contactName;
+    public String getmContactName() {
+        return mContactName;
     }
 
-    public void setContactName(String contactName) {
-        this.contactName = contactName;
+    public void setmContactName(String mContactName) {
+        this.mContactName = mContactName;
     }
 
-    public String getContactEmail() {
-        return contactEmail;
+    public String getmContactEmail() {
+        return mContactEmail;
     }
 
-    public void setContactEmail(String contactEmail) {
-        this.contactEmail = contactEmail;
+    public void setmContactEmail(String mContactEmail) {
+        this.mContactEmail = mContactEmail;
     }
 
-    public String getContactPhone() {
-        return contactPhone;
+    public String getmContactPhone() {
+        return mContactPhone;
     }
 
-    public void setContactPhone(String contactPhone) {
-        this.contactPhone = contactPhone;
+    public void setmContactPhone(String mContactPhone) {
+        this.mContactPhone = mContactPhone;
     }
 
-    public String getContactNotes() {
-        return contactNotes;
+    public String getMContactNotes() {
+        return MContactNotes;
     }
 
-    public void setContactNotes(String contactNotes) {
-        this.contactNotes = contactNotes;
+    public void setMContactNotes(String MContactNotes) {
+        this.MContactNotes = MContactNotes;
     }
 
-    public Bitmap getBm1() {
-        return bm1;
+    public Bitmap getmBm1() {
+        return mBm1;
     }
 
-    public void setBm1(Bitmap bm1) {
-        this.bm1 = bm1;
+    public void setmBm1(Bitmap mBm1) {
+        this.mBm1 = mBm1;
 
     }
 
-    public Bitmap getBm2() {
-        return bm2;
+    public Bitmap getmBm2() {
+        return mBm2;
     }
 
-    public void setBm2(Bitmap bm2) {
-        this.bm2 = bm2;
+    public void setmBm2(Bitmap mBm2) {
+        this.mBm2 = mBm2;
     }
 
-    public Bitmap getBm3() {
-        return bm3;
+    public Bitmap getmBm3() {
+        return mBm3;
     }
 
-    public void setBm3(Bitmap bm3) {
-        this.bm3 = bm3;
+    public void setmBm3(Bitmap mBm3) {
+        this.mBm3 = mBm3;
     }
 
-    public Bitmap getBm4() {
-        return bm4;
+    public Bitmap getmBm4() {
+        return mBm4;
     }
 
-    public void setBm4(Bitmap bm4) {
-        this.bm4 = bm4;
+    public void setmBm4(Bitmap mBm4) {
+        this.mBm4 = mBm4;
     }
 
-    public Bitmap getBm5() {
-        return bm5;
+    public Bitmap getmBm5() {
+        return mBm5;
     }
 
-    public void setBm5(Bitmap bm5) {
-        this.bm5 = bm5;
+    public void setmBm5(Bitmap mBm5) {
+        this.mBm5 = mBm5;
     }
 }
 

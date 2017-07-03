@@ -21,17 +21,17 @@ import java.util.ArrayList;
 
 
 public class TransportCategoryFragment extends Fragment implements PaneCallBack {
-    private RecyclerView categoryrw;
-    private CategoryAdapter adapter;
+    private RecyclerView mCategoryRv;
+    private CategoryAdapter mCategoryAdapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.transport_category_fragment, container, false);
-        categoryrw = (RecyclerView) view.findViewById(R.id.transport_category_rw);
-        categoryrw.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new CategoryAdapter(setData(), getContext(), this);
-        categoryrw.setAdapter(adapter);
+        mCategoryRv = (RecyclerView) view.findViewById(R.id.transport_category_rw);
+        mCategoryRv.setLayoutManager(new LinearLayoutManager(getContext()));
+        mCategoryAdapter = new CategoryAdapter(setData(), getContext(), this);
+        mCategoryRv.setAdapter(mCategoryAdapter);
         return view;
     }
 

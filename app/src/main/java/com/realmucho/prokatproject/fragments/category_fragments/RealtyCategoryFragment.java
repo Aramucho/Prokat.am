@@ -21,17 +21,17 @@ import java.util.ArrayList;
 
 
 public class RealtyCategoryFragment extends Fragment implements PaneCallBack {
-    private RecyclerView categoryrw;
-    private CategoryAdapter adapter;
+    private RecyclerView mCategoryRv;
+    private CategoryAdapter mCategoryadapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.realty_category_fragment, container, false);
-        categoryrw = (RecyclerView) view.findViewById(R.id.realty_category_rw);
-        categoryrw.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new CategoryAdapter(setData(), getContext(), this);
-        categoryrw.setAdapter(adapter);
+        mCategoryRv = (RecyclerView) view.findViewById(R.id.realty_category_rw);
+        mCategoryRv.setLayoutManager(new LinearLayoutManager(getContext()));
+        mCategoryadapter = new CategoryAdapter(setData(), getContext(), this);
+        mCategoryRv.setAdapter(mCategoryadapter);
         return view;
     }
 
@@ -53,9 +53,10 @@ public class RealtyCategoryFragment extends Fragment implements PaneCallBack {
     @Override
     public void paneopen(int position) {
         Intent intent = new Intent(getContext(), PostsActivity.class);
-        intent.putExtra("request",position);
+        intent.putExtra("request", position);
         startActivity(intent);
     }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -65,7 +66,7 @@ public class RealtyCategoryFragment extends Fragment implements PaneCallBack {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
-                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
 
 
                     getActivity().finish();

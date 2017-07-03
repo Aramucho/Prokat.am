@@ -46,9 +46,9 @@
     <string name="conditions_all">- The relations of leaseholder and lesee are regulated by contract \t\n- The leasholder places his order beforehand(2days)\t\n- The transaction is carried out by 50% advance payment\t\n- To extent the term of the rent one must pay the whole rent of extra days in advance\t\n- The required documnets: Passport and drivin license (in case of car renting)\t\n- For more information click here</string>
     <string name="section">Section</string>
     <string name="subsection">Subsection</string>
-    <string name="city">City</string>
+    <string name="mCity">City</string>
     <string name="description">Description</string>
-    <string name="price">Price</string>
+    <string name="mPrice">Price</string>
     <string name="time_period">Time</string>
     <string name="hour">Hour</string>
     <string name="day">Day</string>
