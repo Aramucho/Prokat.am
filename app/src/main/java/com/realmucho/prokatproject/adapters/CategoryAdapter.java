@@ -18,30 +18,30 @@ import java.util.ArrayList;
 
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder> {
-    private ArrayList<CategoryData> dataArrayList;
-    private Context context;
-    private PaneCallBack paneCallBack;
-    private int curPosition = -1;
+    private ArrayList<CategoryData> mDataArrayList;
+    private Context mContext;
+    private PaneCallBack mPaneCallBack;
+    private int mCurrentPosition = -1;
 
-    public CategoryAdapter(ArrayList<CategoryData> dataArrayList, Context context,PaneCallBack paneCallBack) {
-        this.dataArrayList = dataArrayList;
-        this.context = context;
-        this.paneCallBack=paneCallBack;
+    public CategoryAdapter(ArrayList<CategoryData> mDataArrayList, Context mContext,PaneCallBack mPaneCallBack) {
+        this.mDataArrayList = mDataArrayList;
+        this.mContext = mContext;
+        this.mPaneCallBack = mPaneCallBack;
 
     }
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView categoryphoto;
-        private TextView categoryname;
-        private RelativeLayout relativeLayout;
+        private ImageView mCategoryPhoto;
+        private TextView mCategoryName;
+        private RelativeLayout mRelativeLayout;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            categoryphoto = (ImageView) itemView.findViewById(R.id.category_photo);
-            categoryname = (TextView) itemView.findViewById(R.id.category_text);
-            relativeLayout = (RelativeLayout) itemView.findViewById(R.id.item_layout);
+            mCategoryPhoto = (ImageView) itemView.findViewById(R.id.category_photo);
+            mCategoryName = (TextView) itemView.findViewById(R.id.category_text);
+            mRelativeLayout = (RelativeLayout) itemView.findViewById(R.id.item_layout);
         }
 
     }
@@ -49,39 +49,39 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
     @Override
     public CategoryAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.category_item_view, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.category_item_view, parent, false);
         return new MyViewHolder(view);
 
     }
 
     @Override
     public void onBindViewHolder(final CategoryAdapter.MyViewHolder holder, final int position) {
-        final CategoryData categoryData = dataArrayList.get(position);
-        holder.categoryname.setText(categoryData.getName());
-        if (curPosition != -1 && position == curPosition) {
-            holder.relativeLayout.setBackgroundColor(context.getResources().getColor(R.color.maincolorblue));
-            holder.categoryphoto.setBackgroundResource(categoryData.getmCheckedPhoto());
-            holder.categoryname.setTextColor(context.getResources().getColor(R.color.maincolorwhite));
+        final CategoryData categoryData = mDataArrayList.get(position);
+        holder.mCategoryName.setText(categoryData.getName());
+        if (mCurrentPosition != -1 && position == mCurrentPosition) {
+            holder.mRelativeLayout.setBackgroundColor(mContext.getResources().getColor(R.color.maincolorblue));
+            holder.mCategoryPhoto.setBackgroundResource(categoryData.getCheckedphoto());
+            holder.mCategoryName.setTextColor(mContext.getResources().getColor(R.color.maincolorwhite));
 
         } else {
-            holder.relativeLayout.setBackgroundColor(context.getResources().getColor(R.color.maincolorwhite));
-            holder.categoryphoto.setBackgroundResource(categoryData.getUncheckedphote());
-            holder.categoryname.setTextColor(context.getResources().getColor(R.color.maincolorblue));
+            holder.mRelativeLayout.setBackgroundColor(mContext.getResources().getColor(R.color.maincolorwhite));
+            holder.mCategoryPhoto.setBackgroundResource(categoryData.getUncheckedphote());
+            holder.mCategoryName.setTextColor(mContext.getResources().getColor(R.color.maincolorblue));
 
         }
-        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+        holder.mRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                curPosition = position;
+                mCurrentPosition = position;
                 notifyDataSetChanged();
-                paneCallBack.paneopen(position);
+                mPaneCallBack.paneOpen(position);
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return dataArrayList.size();
+        return mDataArrayList.size();
     }
 
 }

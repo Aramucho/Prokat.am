@@ -74,10 +74,10 @@
     <string name="name">Имя</string>
     <string name="engine_type">Вид топлива</string>
     <string name="engine_volume">Объем двигателя</string>
-    <string name="box">Коробка передач</string>
-    <string name="year">Год</string>
+    <string name="mBox">Коробка передач</string>
+    <string name="mYear">Год</string>
     <string name="rooms">Комнаты</string>
-    <string name="floor">Этаж</string>
+    <string name="mFloor">Этаж</string>
     <string name="language">Язык</string>
     <string name="please">Пожалуйста выберите раздел</string>
     <string name="transport_year">Год</string>

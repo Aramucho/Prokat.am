@@ -19,33 +19,33 @@ import java.util.List;
 
 public class AddActivity extends AppCompatActivity {
 
-    private ViewPager viewPager;
-    private TabLayout tabLayout;
+    private ViewPager mViewPager;
+    private TabLayout mTabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
         init();
-        setupViewPager(viewPager);
-        tabLayout.setupWithViewPager(viewPager);
+        setupViewPager(mViewPager);
+        mTabLayout.setupWithViewPager(mViewPager);
         setupTabIcons();
 
 
     }
 
     private void setupTabIcons() {
-        tabLayout.getTabAt(0).setIcon(R.drawable.goods_icon_change);
-        tabLayout.getTabAt(1).setIcon(R.drawable.transport_icon_change);
-        tabLayout.getTabAt(2).setIcon(R.drawable.realty_icon_change);
-        tabLayout.getTabAt(3).setIcon(R.drawable.service_icon_change);
+        mTabLayout.getTabAt(0).setIcon(R.drawable.goods_icon_change);
+        mTabLayout.getTabAt(1).setIcon(R.drawable.transport_icon_change);
+        mTabLayout.getTabAt(2).setIcon(R.drawable.realty_icon_change);
+        mTabLayout.getTabAt(3).setIcon(R.drawable.service_icon_change);
 
 
     }
 
     private void init() {
-        viewPager = (ViewPager) findViewById(R.id.add_view_pager);
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        mViewPager = (ViewPager) findViewById(R.id.add_view_pager);
+        mTabLayout = (TabLayout) findViewById(R.id.tabs);
 
 
     }

@@ -63,10 +63,10 @@
     <string name="name">Անվանում</string>
     <string name="engine_type">Վառելիքի տեսակը</string>
     <string name="engine_volume">Շարժիչի ծավալը</string>
-    <string name="box">Փոխանցման տուփ</string>
-    <string name="year">Տարեթիվ</string>
+    <string name="mBox">Փոխանցման տուփ</string>
+    <string name="mYear">Տարեթիվ</string>
     <string name="rooms">Սենյակներ</string>
-    <string name="floor">Հարկ</string>
+    <string name="mFloor">Հարկ</string>
     <string name="language">Լեզու</string>
     <string name="please">Խնդրում ենք ընտրել բաժինը</string>
     <string name="transport_year">Տարեթիվ</string>
@@ -90,6 +90,7 @@
     <string name="image_uploaded">Նկարը ներբեռնված է</string>
     <string name="map_permission">Տեղադրության թույլատվությունը բացակայում է։ Խնդրում ենք թույլ տալ հավելվածին տեղեկություններ ստանալ Ձեր տեղադրության մասին և վերագործարկել հավելվածը։</string>
     <string name="maps_permission_deny">«Google Maps»-ը կարող է աշխատել ոչ կոռեկտ</string>
+    <string name="canceled">Մերժված է</string>
     <string-array name="bydefualt">
         <item>---</item>
     </string-array>

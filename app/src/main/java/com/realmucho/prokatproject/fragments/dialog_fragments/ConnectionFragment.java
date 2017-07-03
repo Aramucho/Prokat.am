@@ -17,27 +17,19 @@ import com.realmucho.prokatproject.R;
 
 
 public class ConnectionFragment extends DialogFragment implements View.OnClickListener {
-    private Button mCancelBtn, mRetryBtn;
-    private ConnectionCallback mConnectionCallback;
+    private Button cancelbtn, retrybtn;
+    private ConnectionCallback connectionCallback;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.connection_dialog, container, false);
-        init(view);
-        setupClicks();
+        cancelbtn = (Button) view.findViewById(R.id.cancel_btn);
+        retrybtn = (Button) view.findViewById(R.id.retry_btn);
+        cancelbtn.setOnClickListener(this);
+        retrybtn.setOnClickListener(this);
         return view;
-    }
-
-    private void init(View view) {
-        mCancelBtn = (Button) view.findViewById(R.id.cancel_btn);
-        mRetryBtn = (Button) view.findViewById(R.id.retry_btn);
-    }
-
-    private void setupClicks() {
-        mCancelBtn.setOnClickListener(this);
-        mRetryBtn.setOnClickListener(this);
     }
 
     @Override
@@ -55,9 +47,9 @@ public class ConnectionFragment extends DialogFragment implements View.OnClickLi
             case R.id.retry_btn:
                 ConnectivityManager ConnectionManager = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = ConnectionManager.getActiveNetworkInfo();
-                if (networkInfo != null && networkInfo.isConnected() == true) {
+                if(networkInfo != null && networkInfo.isConnected() == true){
                     getDialog().dismiss();
-                    mConnectionCallback.conncallback();
+                    connectionCallback.connectionCallback();
 
                 }
                 break;
@@ -67,6 +59,6 @@ public class ConnectionFragment extends DialogFragment implements View.OnClickLi
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.mConnectionCallback = (ConnectionCallback) context;
+        this.connectionCallback=(ConnectionCallback)context;
     }
 }

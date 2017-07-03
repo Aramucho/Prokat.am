@@ -21,24 +21,22 @@ import java.util.ArrayList;
 
 
 public class ServiceCategoryFragment extends Fragment implements PaneCallBack {
-    private RecyclerView mCategoryRv;
-    private CategoryAdapter mCategoryAdapter;
-
+    private RecyclerView categoryrw;
+    private CategoryAdapter adapter;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.service_category_fragment, container, false);
-        mCategoryRv = (RecyclerView) view.findViewById(R.id.service_category_rw);
-        mCategoryRv.setLayoutManager(new LinearLayoutManager(getContext()));
-        mCategoryAdapter = new CategoryAdapter(setData(), getContext(), this);
-        mCategoryRv.setAdapter(mCategoryAdapter);
+        View view=inflater.inflate(R.layout.service_category_fragment,container,false);
+        categoryrw = (RecyclerView) view.findViewById(R.id.service_category_rw);
+        categoryrw.setLayoutManager(new LinearLayoutManager(getContext()));
+        adapter = new CategoryAdapter(setData(), getContext(), this);
+        categoryrw.setAdapter(adapter);
         return view;
     }
-
     private ArrayList<CategoryData> setData() {
         ArrayList<CategoryData> arrayList = new ArrayList<>();
-        int[] checked = new int[]{R.drawable.hars_pesa_chacked_icon, R.drawable.vfx_chacked_icon, R.drawable.celebration_chacked_icon, R.drawable.furshet_chacked_icon, R.drawable.aficant_chacked_icon, R.drawable.balloons_chacked_icon, R.drawable.kids_chacked_icon, R.drawable.pcservice_chacked_icon, R.drawable.shinarar_chacked_icon, R.drawable.tochki_checked_icon};
-        int[] unchecked = new int[]{R.drawable.hars_pesa_icon, R.drawable.vfx_icon, R.drawable.celebration_icon, R.drawable.furshet_icon, R.drawable.aficant_icon, R.drawable.balloons_icon, R.drawable.kids_icon, R.drawable.pcservice_icon, R.drawable.shinarar_icon, R.drawable.tochki_icon};
+        int[] checked = new int[]{R.drawable.hars_pesa_chacked_icon, R.drawable.vfx_chacked_icon, R.drawable.celebration_chacked_icon,  R.drawable.furshet_chacked_icon, R.drawable.aficant_chacked_icon, R.drawable.balloons_chacked_icon, R.drawable.kids_chacked_icon, R.drawable.pcservice_chacked_icon, R.drawable.shinarar_chacked_icon, R.drawable.tochki_checked_icon};
+        int[] unchecked = new int[]{R.drawable.hars_pesa_icon, R.drawable.vfx_icon, R.drawable.celebration_icon,  R.drawable.furshet_icon, R.drawable.aficant_icon, R.drawable.balloons_icon, R.drawable.kids_icon, R.drawable.pcservice_icon, R.drawable.shinarar_icon, R.drawable.tochki_icon};
         String[] names = getResources().getStringArray(R.array.service_items);
 
         for (int i = 0; i < 10; i++) {
@@ -51,9 +49,9 @@ public class ServiceCategoryFragment extends Fragment implements PaneCallBack {
     }
 
     @Override
-    public void paneopen(int position) {
-        Intent intent = new Intent(getContext(), PostsActivity.class);
-        intent.putExtra("request", position);
+    public void paneOpen(int position) {
+        Intent intent=new Intent(getContext(), PostsActivity.class);
+        intent.putExtra("request",position);
         startActivity(intent);
     }
 
@@ -66,7 +64,7 @@ public class ServiceCategoryFragment extends Fragment implements PaneCallBack {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
-                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
 
 
                     getActivity().finish();

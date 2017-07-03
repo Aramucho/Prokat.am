@@ -63,10 +63,10 @@
     <string name="name">Name</string>
     <string name="engine_type">Engine type</string>
     <string name="engine_volume">Engine volume</string>
-    <string name="box">Box</string>
-    <string name="year">Year</string>
+    <string name="mBox">Box</string>
+    <string name="mYear">Year</string>
     <string name="rooms">Rooms</string>
-    <string name="floor">Floor</string>
+    <string name="mFloor">Floor</string>
     <string name="language">Language</string>
     <string name="please">Please choose a section</string>
     <string name="transport_year">Year</string>
@@ -90,6 +90,7 @@
     <string name="image_uploaded">Photo is uploaded</string>
     <string name="map_permission">Missing location permissions for application. Please allow permission and restart the application.</string>
     <string name="maps_permission_deny">Google maps can work not correctly</string>
+    <string name="canceled">Canceled</string>
     <string-array name="bydefualt">
         <item>---</item>
     </string-array>

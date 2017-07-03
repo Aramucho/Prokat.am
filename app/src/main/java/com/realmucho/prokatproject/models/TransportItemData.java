@@ -4,46 +4,46 @@ package com.realmucho.prokatproject.models;
 
 public class TransportItemData extends ItemData {
 
-    private String model;
-    private int fuelType,engineVolume,box,year;
+    private String mModel;
+    private int mFuelType, mEngineVolume, mBox, mYear;
 
-    public String getModel() {
-        return model;
+    public String getmModel() {
+        return mModel;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setmModel(String mModel) {
+        this.mModel = mModel;
     }
 
-    public int getFuelType() {
-        return fuelType;
+    public int getmFuelType() {
+        return mFuelType;
     }
 
-    public void setFuelType(int fuelType) {
-        this.fuelType = fuelType;
+    public void setmFuelType(int mFuelType) {
+        this.mFuelType = mFuelType;
     }
 
-    public int getEngineVolume() {
-        return engineVolume;
+    public int getmEngineVolume() {
+        return mEngineVolume;
     }
 
-    public void setEngineVolume(int engineVolume) {
-        this.engineVolume = engineVolume;
+    public void setmEngineVolume(int mEngineVolume) {
+        this.mEngineVolume = mEngineVolume;
     }
 
-    public int getBox() {
-        return box;
+    public int getmBox() {
+        return mBox;
     }
 
-    public void setBox(int box) {
-        this.box = box;
+    public void setmBox(int mBox) {
+        this.mBox = mBox;
     }
 
-    public int getYear() {
-        return year;
+    public int getmYear() {
+        return mYear;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setmYear(int mYear) {
+        this.mYear = mYear;
     }
 }

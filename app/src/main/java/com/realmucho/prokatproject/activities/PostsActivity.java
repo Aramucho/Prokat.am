@@ -1,8 +1,6 @@
 package com.realmucho.prokatproject.activities;
 
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
@@ -14,10 +12,6 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.util.DisplayMetrics;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -37,18 +31,18 @@ import me.relex.circleindicator.CircleIndicator;
 
 public class PostsActivity extends AppCompatActivity implements PaneCallBack, View.OnClickListener {
 
-    private SlidingPaneLayout slidingPaneLayout;
-    private RecyclerView recyclerView;
-    private PostsListAdapter adapter;
-    private MaterialRefreshLayout refreshLayout;
-    private GridLayoutManager layoutManager;
-    private ViewPager viewPager;
-    private ItemPagerAdapter pageradapter;
-    private ImageButton scroll;
-    private CircleIndicator indicator;
-    private Button order, relatives;
-    private Toolbar toolbar;
-    private SearchView searchView;
+    private SlidingPaneLayout mSlidingPaneLayout;
+    private RecyclerView mPostsRv;
+    private PostsListAdapter mPostsAdapter;
+    private MaterialRefreshLayout mRefreshLayout;
+    private GridLayoutManager mGridLayoutManager;
+    private ViewPager mViewPager;
+    private ItemPagerAdapter mPagerAdapter;
+    private ImageButton mScrollButton;
+    private CircleIndicator mIndicator;
+    private Button mOrder, mRelatives;
+    private Toolbar mToolbar;
+    private SearchView mSearchView;
 
 
     @Override
@@ -56,24 +50,23 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.posts_activity);
         init();
-        pageradapter = new ItemPagerAdapter(this);
-        viewPager.setAdapter(pageradapter);
-        indicator.setViewPager(viewPager);
-        setSupportActionBar(toolbar);
-        indicator.animate().rotation(180);
-        order.setOnClickListener(this);
-        relatives.setOnClickListener(this);
-        pageradapter.registerDataSetObserver(indicator.getDataSetObserver());
-        slidingPaneLayout.setSliderFadeColor(Color.TRANSPARENT);
-        layoutManager = new GridLayoutManager(this, 2);
-        layoutManager.scrollToPositionWithOffset(2, 20);
-        recyclerView.setLayoutManager(layoutManager);
-        adapter = new PostsListAdapter(setItemData(), this, this);
-        recyclerView.setAdapter(adapter);
+        setupClicks();
+        mPagerAdapter = new ItemPagerAdapter(this);
+        mViewPager.setAdapter(mPagerAdapter);
+        mIndicator.setViewPager(mViewPager);
+        setSupportActionBar(mToolbar);
+        mIndicator.animate().rotation(180);
+        mPagerAdapter.registerDataSetObserver(mIndicator.getDataSetObserver());
+        mSlidingPaneLayout.setSliderFadeColor(Color.TRANSPARENT);
+        mGridLayoutManager = new GridLayoutManager(this, 2);
+        mGridLayoutManager.scrollToPositionWithOffset(2, 20);
+        mPostsRv.setLayoutManager(mGridLayoutManager);
+        mPostsAdapter = new PostsListAdapter(setItemData(), this, this);
+        mPostsRv.setAdapter(mPostsAdapter);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        scrollinit();
+        scrollInit();
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Intent intent=new Intent(PostsActivity.this,PostsActivity.class);
@@ -89,32 +82,37 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
     }
 
     private void init(){
-        viewPager = (ViewPager) findViewById(R.id.detailed_pager);
-        indicator = (CircleIndicator) findViewById(R.id.indicator);
-        scroll = (ImageButton) findViewById(R.id.scroll_up);
-        toolbar=(Toolbar)findViewById(R.id.posts_toolbar);
-        order = (Button) findViewById(R.id.order);
-        relatives = (Button) findViewById(R.id.relatives);
-        refreshLayout = (MaterialRefreshLayout) findViewById(R.id.refreshlayout);
-        slidingPaneLayout = (SlidingPaneLayout) findViewById(R.id.posts_sliding_pane);
-        recyclerView = (RecyclerView) findViewById(R.id.itemList);
-        searchView=(SearchView)findViewById(R.id.posts_search);
+        mViewPager = (ViewPager) findViewById(R.id.detailed_pager);
+        mIndicator = (CircleIndicator) findViewById(R.id.indicator);
+        mScrollButton = (ImageButton) findViewById(R.id.scroll_up);
+        mToolbar =(Toolbar)findViewById(R.id.posts_toolbar);
+        mOrder = (Button) findViewById(R.id.order);
+        mRelatives = (Button) findViewById(R.id.relatives);
+        mRefreshLayout = (MaterialRefreshLayout) findViewById(R.id.refreshlayout);
+        mSlidingPaneLayout = (SlidingPaneLayout) findViewById(R.id.posts_sliding_pane);
+        mPostsRv = (RecyclerView) findViewById(R.id.itemList);
+        mSearchView =(SearchView)findViewById(R.id.posts_search);
 
+    }
+
+    private void setupClicks(){
+        mOrder.setOnClickListener(this);
+        mRelatives.setOnClickListener(this);
     }
 
 
 
 
 
-    private void scrollinit() {
-        scroll.setOnClickListener(new View.OnClickListener() {
+    private void scrollInit() {
+        mScrollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GridLayoutManager layoutManager = (GridLayoutManager) recyclerView.getLayoutManager();
+                GridLayoutManager layoutManager = (GridLayoutManager) mPostsRv.getLayoutManager();
                 layoutManager.scrollToPositionWithOffset(0, 0);
             }
         });
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+        mPostsRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
@@ -123,11 +121,11 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
 
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                int firstposition = layoutManager.findFirstVisibleItemPosition();
-                if (firstposition != 0) {
-                    scroll.setVisibility(View.VISIBLE);
+                int firstPosition = mGridLayoutManager.findFirstVisibleItemPosition();
+                if (firstPosition != 0) {
+                    mScrollButton.setVisibility(View.VISIBLE);
                 } else {
-                    scroll.setVisibility(View.GONE);
+                    mScrollButton.setVisibility(View.GONE);
                 }
             }
         });
@@ -151,14 +149,14 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
     @Override
     protected void onResume() {
         super.onResume();
-        refreshLayout.setMaterialRefreshListener(new MaterialRefreshListener() {
+        mRefreshLayout.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
             public void onRefresh(MaterialRefreshLayout materialRefreshLayout) {
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        refreshLayout.finishRefresh();
+                        mRefreshLayout.finishRefresh();
                     }
                 }, 1000);
             }
@@ -169,17 +167,17 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
 
     @Override
     public void onBackPressed() {
-        Intent reqintent = getIntent();
+        Intent reqIntent = getIntent();
         Intent intent;
 
 
-        if (slidingPaneLayout.isOpen()) {
-            slidingPaneLayout.closePane();
-        } else if (!slidingPaneLayout.isOpen()) {
-            if (reqintent.getIntExtra("req_top", 5) == 0) {
+        if (mSlidingPaneLayout.isOpen()) {
+            mSlidingPaneLayout.closePane();
+        } else if (!mSlidingPaneLayout.isOpen()) {
+            if (reqIntent.getIntExtra("req_top", 5) == 0) {
                 intent=new Intent(this,MainActivity.class);
                 startActivity(intent);
-            } else if (reqintent.getIntExtra("req_new", 5) == 1) {
+            } else if (reqIntent.getIntExtra("req_new", 5) == 1) {
                 intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
             }
@@ -193,8 +191,8 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
     }
 
     @Override
-    public void paneopen(int position) {
-        slidingPaneLayout.openPane();
+    public void paneOpen(int position) {
+        mSlidingPaneLayout.openPane();
     }
 
 

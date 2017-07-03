@@ -5,5 +5,5 @@ package com.realmucho.prokatproject.interfaces;
  */
 
 public interface ConnectionCallback {
-    void conncallback();
+    void connectionCallback();
 }

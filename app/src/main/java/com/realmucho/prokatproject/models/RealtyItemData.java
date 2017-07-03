@@ -4,30 +4,30 @@ package com.realmucho.prokatproject.models;
 public class RealtyItemData extends ItemData {
 
 
-    private int roomCount,floor;
-    private String adress;
+    private int mRoomCount, mFloor;
+    private String mAdress;
 
-    public int getRoomCount() {
-        return roomCount;
+    public int getmRoomCount() {
+        return mRoomCount;
     }
 
-    public void setRoomCount(int roomCount) {
-        this.roomCount = roomCount;
+    public void setmRoomCount(int mRoomCount) {
+        this.mRoomCount = mRoomCount;
     }
 
-    public int getFloor() {
-        return floor;
+    public int getmFloor() {
+        return mFloor;
     }
 
-    public void setFloor(int floor) {
-        this.floor = floor;
+    public void setmFloor(int mFloor) {
+        this.mFloor = mFloor;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getmAdress() {
+        return mAdress;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setmAdress(String mAdress) {
+        this.mAdress = mAdress;
     }
 }

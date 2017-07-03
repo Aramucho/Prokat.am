@@ -1,20 +1,13 @@
 package com.realmucho.prokatproject.activities;
 
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,11 +19,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 
 import com.realmucho.prokatproject.R;
-import com.realmucho.prokatproject.activities.PostsActivity;
 import com.realmucho.prokatproject.fragments.drawer_fragments.AboutFragment;
 import com.realmucho.prokatproject.fragments.drawer_fragments.ConditionsFragment;
 import com.realmucho.prokatproject.fragments.drawer_fragments.FeedBackFragment;
@@ -41,14 +32,14 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private SearchView search;
-    private Fragment mainFragment, landmainFragment;
-    private Toolbar toolbar;
-    private DrawerLayout drawer;
-    private NavigationView navigationView;
-    private FragmentManager fragmentManager;
-    private ActionBarDrawerToggle toggle;
-    private Fragment fragment = null;
+    private SearchView mSearch;
+    private Fragment mMainFragment, mLandmainFragment;
+    private Toolbar mToolbar;
+    private DrawerLayout mDrawer;
+    private NavigationView mNavigationView;
+    private FragmentManager mFragmentManager;
+    private ActionBarDrawerToggle mToggle;
+    private Fragment mFragment = null;
 
 
     @Override
@@ -56,26 +47,25 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         loadLocale();
         setContentView(R.layout.activity_main);
-
         init();
-        setSupportActionBar(toolbar);
+        setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        fragmentManager = getSupportFragmentManager();
+        mFragmentManager = getSupportFragmentManager();
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            fragmentManager.beginTransaction().add(R.id.root, mainFragment, "Main").commit();
+            mFragmentManager.beginTransaction().add(R.id.root, mMainFragment, "Main").commit();
 
         } else {
-            fragmentManager.beginTransaction().add(R.id.root, landmainFragment, "Land").commit();
+            mFragmentManager.beginTransaction().add(R.id.root, mLandmainFragment, "Land").commit();
 
         }
-        toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
-        navigationView.getMenu().getItem(0).setChecked(true);
+        mToggle = new ActionBarDrawerToggle(
+                this, mDrawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        mDrawer.setDrawerListener(mToggle);
+        mToggle.syncState();
+        mNavigationView.setNavigationItemSelectedListener(this);
+        mNavigationView.getMenu().getItem(0).setChecked(true);
 
-        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        mSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Intent intent = new Intent(MainActivity.this, PostsActivity.class);
@@ -94,12 +84,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        if (mainFragment.isAdded() || landmainFragment.isAdded() || fragment instanceof MainFragment || fragment instanceof LandMainFragment) {
+        if (mMainFragment.isAdded() || mLandmainFragment.isAdded() || mFragment instanceof MainFragment || mFragment instanceof LandMainFragment) {
 
             if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-                fragmentManager.beginTransaction().replace(R.id.root, mainFragment).commit();
+                mFragmentManager.beginTransaction().replace(R.id.root, mMainFragment).commit();
             } else if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                fragmentManager.beginTransaction().replace(R.id.root, landmainFragment).commit();
+                mFragmentManager.beginTransaction().replace(R.id.root, mLandmainFragment).commit();
             }
 
         }
@@ -107,12 +97,12 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void init() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
-        search = (SearchView) findViewById(R.id.search);
-        mainFragment = new MainFragment();
-        landmainFragment = new LandMainFragment();
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mNavigationView = (NavigationView) findViewById(R.id.nav_view);
+        mSearch = (SearchView) findViewById(R.id.search);
+        mMainFragment = new MainFragment();
+        mLandmainFragment = new LandMainFragment();
     }
 
     @Override
@@ -163,8 +153,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         Intent intent;
-        int reqcode;
-
+        int reqCode;
         int id = item.getItemId();
 
 
@@ -172,87 +161,87 @@ public class MainActivity extends AppCompatActivity
 
             case R.id.main:
                 if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-                    fragmentManager.beginTransaction().remove(fragment);
-                    fragment = new MainFragment();
+                    mFragmentManager.beginTransaction().remove(mFragment);
+                    mFragment = new MainFragment();
 
                 } else {
-                    fragmentManager.beginTransaction().remove(fragment);
-                    fragment = new LandMainFragment();
+                    mFragmentManager.beginTransaction().remove(mFragment);
+                    mFragment = new LandMainFragment();
                 }
-                search.setVisibility(View.VISIBLE);
-                search.setQuery("", false);
-                if (!search.isIconified()) {
-                    search.setIconified(true);
+                mSearch.setVisibility(View.VISIBLE);
+                mSearch.setQuery("", false);
+                if (!mSearch.isIconified()) {
+                    mSearch.setIconified(true);
                 }
 
 
                 break;
             case R.id.topof:
 
-                reqcode = 0;
+                reqCode = 0;
                 intent = new Intent(MainActivity.this, PostsActivity.class);
-                intent.putExtra("req_top", reqcode);
+                intent.putExtra("req_top", reqCode);
                 startActivity(intent);
 
                 if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
 
-                    fragment = new MainFragment();
+                    mFragment = new MainFragment();
 
                 } else {
-                    fragment = new LandMainFragment();
+                    mFragment = new LandMainFragment();
                 }
 
 
-                search.setVisibility(View.VISIBLE);
-                search.setQuery("", false);
+                mSearch.setVisibility(View.VISIBLE);
+                mSearch.setQuery("", false);
 
-                if (!search.isIconified()) {
-                    search.setIconified(true);
+                if (!mSearch.isIconified()) {
+                    mSearch.setIconified(true);
                 }
 
 
                 break;
             case R.id.newof:
-                reqcode = 1;
+                reqCode = 1;
                 intent = new Intent(MainActivity.this, PostsActivity.class);
-                intent.putExtra("req_new", reqcode);
+                intent.putExtra("req_new", reqCode);
                 startActivity(intent);
                 if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-                    fragment = new MainFragment();
+                    mFragment = new MainFragment();
 
                 } else {
-                    fragment = new LandMainFragment();
+                    mFragment = new LandMainFragment();
                 }
 
-                search.setVisibility(View.VISIBLE);
-                search.setQuery("", false);
-                if (!search.isIconified()) {
-                    search.setIconified(true);
+                mSearch.setVisibility(View.VISIBLE);
+                mSearch.setQuery("", false);
+                if (!mSearch.isIconified()) {
+                    mSearch.setIconified(true);
                 }
 
                 break;
             case R.id.about:
-                fragment = new AboutFragment();
-                search.setVisibility(View.GONE);
+                mFragment = new AboutFragment();
+                mSearch.setVisibility(View.GONE);
 
 
                 break;
             case R.id.conditions:
-                fragment = new ConditionsFragment();
-                search.setVisibility(View.GONE);
+                mFragment = new ConditionsFragment();
+                mSearch.setVisibility(View.GONE);
 
                 break;
             case R.id.feedback: {
-                fragment = new FeedBackFragment();
-                search.setVisibility(View.GONE);
+                mFragment = new FeedBackFragment();
+                mSearch.setVisibility(View.GONE);
                 break;
             }
 
         }
 
 
-        fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.root, fragment).commit();
+        mFragmentManager = getSupportFragmentManager();
+        mFragmentManager.beginTransaction().replace(R.id.root, mFragment).commit();
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

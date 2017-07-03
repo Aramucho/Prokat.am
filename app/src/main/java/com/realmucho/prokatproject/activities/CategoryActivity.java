@@ -16,7 +16,7 @@ import com.realmucho.prokatproject.R;
 public class CategoryActivity extends AppCompatActivity {
 
 
- private FragmentBackPressed fragmentBackPressed;
+ private FragmentBackPressed mFragmentBackPressed;
 
 
     @Override
@@ -51,7 +51,7 @@ public class CategoryActivity extends AppCompatActivity {
     public void onBackPressed() {
         int count=getFragmentManager().getBackStackEntryCount();
         if(count==0){
-            fragmentBackPressed.closePane();
+            mFragmentBackPressed.closePane();
 
 
         }else{
@@ -60,8 +60,6 @@ public class CategoryActivity extends AppCompatActivity {
         }
     }
 
-    public void setFragmentBackPressed(FragmentBackPressed fragmentBackPressed){
-        this.fragmentBackPressed=fragmentBackPressed;
-    }
+
 
 }

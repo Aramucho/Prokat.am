@@ -51,7 +51,7 @@ public class RealtyCategoryFragment extends Fragment implements PaneCallBack {
     }
 
     @Override
-    public void paneopen(int position) {
+    public void paneOpen(int position) {
         Intent intent = new Intent(getContext(), PostsActivity.class);
         intent.putExtra("request", position);
         startActivity(intent);

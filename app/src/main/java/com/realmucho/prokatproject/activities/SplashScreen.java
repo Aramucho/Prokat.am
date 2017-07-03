@@ -23,25 +23,25 @@ import com.realmucho.prokatproject.R;
 public class SplashScreen extends AppCompatActivity implements ConnectionCallback {
 
 
-    private ImageView logo;
+    private ImageView mLogo;
     private final int LOCATION_ON = 111;
-    private ConnectivityManager connectionManager;
-    private NetworkInfo networkInfo;
-    private boolean aBoolean;
+    private ConnectivityManager mConnectionManager;
+    private NetworkInfo mNetworkInfo;
+    private boolean mBoolLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        logo = (ImageView) findViewById(R.id.logo);
-        connectionManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        networkInfo = connectionManager.getActiveNetworkInfo();
+        mLogo = (ImageView) findViewById(R.id.logo);
+        mConnectionManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        mNetworkInfo = mConnectionManager.getActiveNetworkInfo();
         if (Build.VERSION.SDK_INT >= 23) {
             if (ContextCompat.checkSelfPermission(this,
                     Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_ON);
             } else {
-                if (networkInfo != null && networkInfo.isConnected() == true) {
+                if (mNetworkInfo != null && mNetworkInfo.isConnected() == true) {
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -62,7 +62,7 @@ public class SplashScreen extends AppCompatActivity implements ConnectionCallbac
             }
         } else {
 
-            if (networkInfo != null && networkInfo.isConnected() == true) {
+            if (mNetworkInfo != null && mNetworkInfo.isConnected() == true) {
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
@@ -88,7 +88,7 @@ public class SplashScreen extends AppCompatActivity implements ConnectionCallbac
         super.onWindowFocusChanged(hasFocus);
 
         if (hasFocus) {
-            if(aBoolean){
+            if(mBoolLocation){
                 Intent closeDialog = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
                 sendBroadcast(closeDialog);
                 FragmentManager fragmentManager = getSupportFragmentManager();
@@ -100,7 +100,7 @@ public class SplashScreen extends AppCompatActivity implements ConnectionCallbac
     }
 
     @Override
-    public void conncallback() {
+    public void connectionCallback() {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -125,7 +125,7 @@ public class SplashScreen extends AppCompatActivity implements ConnectionCallbac
 
                 } else {
                     Toast.makeText(this, R.string.maps_permission_deny, Toast.LENGTH_SHORT).show();
-                    if (networkInfo != null && networkInfo.isConnected() == true) {
+                    if (mNetworkInfo != null && mNetworkInfo.isConnected() == true) {
                         Handler handler = new Handler();
                         handler.postDelayed(new Runnable() {
                             @Override
@@ -137,7 +137,7 @@ public class SplashScreen extends AppCompatActivity implements ConnectionCallbac
                         }, 2500);
 
                     } else {
-                        aBoolean = true;
+                        mBoolLocation = true;
 
                     }
 

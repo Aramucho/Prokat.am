@@ -14,12 +14,12 @@ import com.realmucho.prokatproject.R;
 
 public class ItemPagerAdapter extends PagerAdapter {
 
-    private Context context;
+    private Context mContext;
     private LayoutInflater layoutInflater;
 
-    public ItemPagerAdapter(Context context) {
-        this.context = context;
-        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    public ItemPagerAdapter(Context mContext) {
+        this.mContext = mContext;
+        layoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
 
@@ -37,7 +37,7 @@ public class ItemPagerAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         View itemView=layoutInflater.inflate(R.layout.pager_item,container,false);
         ImageView imageView=(ImageView) itemView.findViewById(R.id.item_image);
-        Glide.with(context).load(array[position]).centerCrop().into(imageView);
+        Glide.with(mContext).load(array[position]).centerCrop().into(imageView);
         container.addView(itemView);
 
         return itemView;

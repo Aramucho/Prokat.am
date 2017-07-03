@@ -15,44 +15,43 @@ import com.realmucho.prokatproject.R;
 
 
 public class CategoryTitleAdapter extends RecyclerView.Adapter<CategoryTitleAdapter.TitleViewHolder> {
-    private Context context;
-    private String[] titlesdata;
-    private int curposition=-1;
+    private Context mContext;
+    private String[] mTitlesData;
+    private int mCurrentPosition =-1;
 
 
 
-    public CategoryTitleAdapter(Context context, String[] titlesdata) {
-        this.context = context;
-        this.titlesdata = titlesdata;
+    public CategoryTitleAdapter(Context mContext, String[] mTitlesData) {
+        this.mContext = mContext;
+        this.mTitlesData = mTitlesData;
 
     }
 
     @Override
     public TitleViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.title_rv_item, viewGroup,false);
-
+        View view = LayoutInflater.from(mContext).inflate(R.layout.title_rv_item, viewGroup,false);
         return new TitleViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(TitleViewHolder holder,final int position) {
-        holder.title.setText(titlesdata[position]);
-        if(curposition!=-1 && position==curposition){
-            holder.layout.setBackgroundColor(context.getResources().getColor(R.color.maincolorwhite));
-            holder.title.setTextColor(context.getResources().getColor(R.color.maincolorblue));
+        holder.title.setText(mTitlesData[position]);
+        if(mCurrentPosition !=-1 && position== mCurrentPosition){
+            holder.layout.setBackgroundColor(mContext.getResources().getColor(R.color.maincolorwhite));
+            holder.title.setTextColor(mContext.getResources().getColor(R.color.maincolorblue));
         }else{
-            holder.layout.setBackgroundColor(context.getResources().getColor(R.color.maincolorblue));
-            holder.title.setTextColor(context.getResources().getColor(R.color.maincolorwhite));
+            holder.layout.setBackgroundColor(mContext.getResources().getColor(R.color.maincolorblue));
+            holder.title.setTextColor(mContext.getResources().getColor(R.color.maincolorwhite));
         }
 
         holder.title.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                curposition=position;
+                mCurrentPosition =position;
                 notifyDataSetChanged();
-                Intent intent=new Intent(context, PostsActivity.class);
+                Intent intent=new Intent(mContext, PostsActivity.class);
                 intent.getIntExtra("request",position);
-                context.startActivity(intent);
+                mContext.startActivity(intent);
             }
         });
 
@@ -60,7 +59,7 @@ public class CategoryTitleAdapter extends RecyclerView.Adapter<CategoryTitleAdap
 
     @Override
     public int getItemCount() {
-        return titlesdata.length;
+        return mTitlesData.length;
     }
 
     class TitleViewHolder extends RecyclerView.ViewHolder {

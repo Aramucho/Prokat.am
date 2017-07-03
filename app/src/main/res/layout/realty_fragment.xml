@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.6"
                 android:gravity="center_vertical"
-                android:text="@string/floor"
+                android:text="@string/mFloor"
                 android:textColor="@color/maincolorblue"
                 android:textSize="20sp" />
 
