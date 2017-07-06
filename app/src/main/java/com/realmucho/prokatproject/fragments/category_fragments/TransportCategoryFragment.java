@@ -35,6 +35,8 @@ public class TransportCategoryFragment extends Fragment implements PaneCallBack 
         return view;
     }
 
+
+    /**Setting local data for testing recyclerViews*/
     private ArrayList<CategoryData> setData() {
         ArrayList<CategoryData> arrayList = new ArrayList<>();
         int[] checked = new int[]{R.drawable.econom_icon, R.drawable.biznes_icon, R.drawable.jeep_icon, R.drawable.nerka_icon, R.drawable.limuzin_icon, R.drawable.cabriolet_icon, R.drawable.miniven_icon, R.drawable.retro_icon, R.drawable.karq_icon, R.drawable.tochki_icon};
@@ -43,9 +45,7 @@ public class TransportCategoryFragment extends Fragment implements PaneCallBack 
 
         for (int i = 0; i < 10; i++) {
             arrayList.add(new CategoryData(unchecked[i], names[i + 1], checked[i]));
-
         }
-
 
         return arrayList;
     }
@@ -66,13 +66,9 @@ public class TransportCategoryFragment extends Fragment implements PaneCallBack 
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
                 if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
-
-
                         getActivity().finish();
 
-
                     return true;
-
                 }
 
                 return false;

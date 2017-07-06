@@ -44,7 +44,7 @@ public class RealtyFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.realty_fragment, container, false);
         init(view);
         setupClicks();
-        spinnersInit();
+        spinnersFunctions();
         savedState(savedInstanceState);
         mSection.setFocusableInTouchMode(true);
         mSection.requestFocus();
@@ -187,7 +187,8 @@ public class RealtyFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void spinnersInit() {
+    /**Initializing and organizing spinners functions*/
+    private void spinnersFunctions() {
 
         mRealtySpinnerAdpater = ArrayAdapter.createFromResource(getContext(), R.array.realty_items, R.layout.drop_down_spinner_item);
         mRealtySpinner.setAdapter(mRealtySpinnerAdpater);
@@ -239,7 +240,7 @@ public class RealtyFragment extends Fragment implements View.OnClickListener {
                     mBoolImageText1 = true;
 
                 } else {
-                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.image_uploaded, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE2:
@@ -250,7 +251,7 @@ public class RealtyFragment extends Fragment implements View.OnClickListener {
                     mBoolImageText2 = true;
 
                 } else {
-                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.image_uploaded, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE3:
@@ -261,7 +262,7 @@ public class RealtyFragment extends Fragment implements View.OnClickListener {
                     mBoolImageText3 = true;
 
                 } else {
-                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.image_uploaded, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE4:
@@ -272,7 +273,7 @@ public class RealtyFragment extends Fragment implements View.OnClickListener {
                     mBoolImageText4 = true;
 
                 } else {
-                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.image_uploaded, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE5:
@@ -283,7 +284,7 @@ public class RealtyFragment extends Fragment implements View.OnClickListener {
                     mBoolImageText5 = true;
 
                 } else {
-                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.image_uploaded, Toast.LENGTH_SHORT).show();
                 }
                 break;
         }

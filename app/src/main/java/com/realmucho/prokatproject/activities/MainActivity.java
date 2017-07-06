@@ -33,7 +33,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private SearchView mSearch;
-    private Fragment mMainFragment, mLandmainFragment;
+    private Fragment mMainFragment, mLandMainFragment;
     private Toolbar mToolbar;
     private DrawerLayout mDrawer;
     private NavigationView mNavigationView;
@@ -48,22 +48,16 @@ public class MainActivity extends AppCompatActivity
         loadLocale();
         setContentView(R.layout.activity_main);
         init();
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        drawerInit();
         mFragmentManager = getSupportFragmentManager();
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             mFragmentManager.beginTransaction().add(R.id.root, mMainFragment, "Main").commit();
 
         } else {
-            mFragmentManager.beginTransaction().add(R.id.root, mLandmainFragment, "Land").commit();
+            mFragmentManager.beginTransaction().add(R.id.root, mLandMainFragment, "Land").commit();
 
         }
-        mToggle = new ActionBarDrawerToggle(
-                this, mDrawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        mDrawer.setDrawerListener(mToggle);
-        mToggle.syncState();
-        mNavigationView.setNavigationItemSelectedListener(this);
-        mNavigationView.getMenu().getItem(0).setChecked(true);
+
 
         mSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -84,12 +78,12 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        if (mMainFragment.isAdded() || mLandmainFragment.isAdded() || mFragment instanceof MainFragment || mFragment instanceof LandMainFragment) {
+        if (mMainFragment.isAdded() || mLandMainFragment.isAdded() || mFragment instanceof MainFragment || mFragment instanceof LandMainFragment) {
 
             if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
                 mFragmentManager.beginTransaction().replace(R.id.root, mMainFragment).commit();
             } else if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                mFragmentManager.beginTransaction().replace(R.id.root, mLandmainFragment).commit();
+                mFragmentManager.beginTransaction().replace(R.id.root, mLandMainFragment).commit();
             }
 
         }
@@ -102,7 +96,18 @@ public class MainActivity extends AppCompatActivity
         mNavigationView = (NavigationView) findViewById(R.id.nav_view);
         mSearch = (SearchView) findViewById(R.id.search);
         mMainFragment = new MainFragment();
-        mLandmainFragment = new LandMainFragment();
+        mLandMainFragment = new LandMainFragment();
+    }
+
+    private void drawerInit(){
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        mToggle = new ActionBarDrawerToggle(
+                this, mDrawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        mDrawer.setDrawerListener(mToggle);
+        mToggle.syncState();
+        mNavigationView.setNavigationItemSelectedListener(this);
+        mNavigationView.getMenu().getItem(0).setChecked(true);
     }
 
     @Override
@@ -111,6 +116,7 @@ public class MainActivity extends AppCompatActivity
         inflater.inflate(R.menu.language_menu, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -237,19 +243,18 @@ public class MainActivity extends AppCompatActivity
                 break;
             }
 
+
         }
 
 
         mFragmentManager = getSupportFragmentManager();
         mFragmentManager.beginTransaction().replace(R.id.root, mFragment).commit();
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-
+/**Changes language of application*/
     private void setLocale(String lang) {
         if (lang.equalsIgnoreCase("")) {
             return;
@@ -261,7 +266,7 @@ public class MainActivity extends AppCompatActivity
         config.locale = myLocale;
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
     }
-
+    /**Saves language changes*/
     public void saveLocale(String lang) {
         String langPref = "Language";
         SharedPreferences prefs = getSharedPreferences("CommonPrefs",
@@ -271,6 +276,8 @@ public class MainActivity extends AppCompatActivity
         editor.commit();
     }
 
+
+    /**Get saved language and set it*/
     public void loadLocale() {
         String langPref = "Language";
         SharedPreferences prefs = getSharedPreferences("CommonPrefs",

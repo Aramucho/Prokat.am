@@ -23,7 +23,7 @@ import com.realmucho.prokatproject.R;
 import java.util.HashMap;
 import java.util.Map;
 
-
+/** Created for orientation related bugs' solution*/
 public class LandMainFragment extends Fragment implements View.OnClickListener {
 
     private ImageView mGoodsImage, mTransportImage, mServiceImage, mRealtyImage, mRoundCategory;

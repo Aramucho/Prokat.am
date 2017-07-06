@@ -23,6 +23,11 @@ public class CategoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.category_activity);
+        setCategoryFragment();
+    }
+
+    /**Set category fragment, depending on what category was chosen before*/
+    private void setCategoryFragment(){
         Intent intent=getIntent();
         int code=intent.getIntExtra("code",0);
         Fragment fragment=null;

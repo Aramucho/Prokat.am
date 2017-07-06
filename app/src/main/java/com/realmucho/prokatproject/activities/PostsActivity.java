@@ -64,7 +64,7 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
         mPostsAdapter = new PostsListAdapter(setItemData(), this, this);
         mPostsRv.setAdapter(mPostsAdapter);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        scrollInit();
+        scrollButtonFunction();
 
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -99,12 +99,8 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
         mOrder.setOnClickListener(this);
         mRelatives.setOnClickListener(this);
     }
-
-
-
-
-
-    private void scrollInit() {
+    /**Initializing and organizing scrollUp buttons functions*/
+    private void scrollButtonFunction() {
         mScrollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,6 +128,7 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
     }
 
 
+    /**Setting local data for testing recyclerView*/
     private ArrayList<ItemData> setItemData() {
         ArrayList<ItemData> arrayList = new ArrayList<>();
         int[] array = {R.drawable.bad, R.drawable.bird, R.drawable.bird2, R.drawable.katil, R.drawable.bad, R.drawable.bird, R.drawable.bird2, R.drawable.katil, R.drawable.bird2, R.drawable.katil};

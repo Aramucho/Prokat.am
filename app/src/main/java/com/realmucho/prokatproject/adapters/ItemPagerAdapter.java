@@ -31,6 +31,7 @@ public class ItemPagerAdapter extends PagerAdapter {
         return view==((LinearLayout)object);
     }
 
+    /**Pager's images data*/
     int[] array = {R.drawable.bird, R.drawable.bird2, R.drawable.katil, R.drawable.bird};
 
     @Override
@@ -39,7 +40,6 @@ public class ItemPagerAdapter extends PagerAdapter {
         ImageView imageView=(ImageView) itemView.findViewById(R.id.item_image);
         Glide.with(mContext).load(array[position]).centerCrop().into(imageView);
         container.addView(itemView);
-
         return itemView;
     }
 
@@ -47,6 +47,7 @@ public class ItemPagerAdapter extends PagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((LinearLayout)object);
     }
+
     @Override
     public int getCount() {
         return array.length;

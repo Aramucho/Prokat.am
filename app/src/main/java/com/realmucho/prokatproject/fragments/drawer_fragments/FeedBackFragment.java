@@ -48,7 +48,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
     private TextView mLink;
     private SlidingPaneLayout mPaneLayout;
     private RelativeLayout mFeedLayout, mMessageLayout;
-    private NestedScrollView mBottomsheet;
+    private NestedScrollView mBottomSheet;
 
     @Nullable
     @Override
@@ -56,16 +56,16 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.feedback_fragment, container, false);
         init(view);
         setupClicks();
-        mBottomSheetBehavior = BottomSheetBehavior.from(mBottomsheet);
+        mBottomSheetBehavior = BottomSheetBehavior.from(mBottomSheet);
         mMapView.onCreate(savedInstanceState != null ? savedInstanceState.getBundle("map") : savedInstanceState);
         bottomInit();
-        mapInit();
+        mapFunctions();
         return view;
     }
 
     private void init(View view) {
 
-        mBottomsheet = (NestedScrollView) view.findViewById(R.id.bottom_sheet);
+        mBottomSheet = (NestedScrollView) view.findViewById(R.id.bottom_sheet);
         mMapView = (MapView) view.findViewById(R.id.map_view);
         mPaneLayout = (SlidingPaneLayout) view.findViewById(R.id.feed_sliding_pane);
         mFeedLayout = (RelativeLayout) view.findViewById(R.id.feed_layout);
@@ -164,7 +164,8 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    private void mapInit() {
+    /** Initializing and organizing google map's functions*/
+    private void mapFunctions() {
 
 
         try {
@@ -272,6 +273,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         mMapView.onLowMemory();
     }
 
+    /** Getting facebook's page URL and opening an app on that page*/
     private String getFacebookPageURL(Context context) {
         String url = "https://www.facebook.com/Prakatam";
         PackageManager packageManager = context.getPackageManager();
@@ -289,17 +291,18 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        Bundle mapViewstate = new Bundle(outState);
-        mMapView.onSaveInstanceState(mapViewstate);
-        outState.putBundle("map", mapViewstate);
+        Bundle mapViewState = new Bundle(outState);
+        mMapView.onSaveInstanceState(mapViewState);
+        outState.putBundle("map", mapViewState);
         super.onSaveInstanceState(outState);
     }
-
+/** This method opens web page with chosen browser */
     private void urlIntent(String url) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(intent);
     }
 
+    /** Getting Skype's page URL and opening an app on that page*/
     private void getSkypePageUrl(Context myContext, String url) {
 
         if (isSkypeClientInstalled(myContext)) {
@@ -318,6 +321,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
     }
 
 
+    /** Checking if there is Skype application installed on phone*/
     private boolean isSkypeClientInstalled(Context myContext) {
         PackageManager myPackageMgr = myContext.getPackageManager();
         try {
@@ -328,10 +332,10 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         return (true);
     }
 
-
+    /** Getting Instagram's page URL and opening an app */
     private void getInstagramPageUrl(String url) {
 
-
+//TODO: dont open users page, only opens instagram app
         Intent intent = getContext().getPackageManager().getLaunchIntentForPackage("com.instagram.android");
         intent.setData(Uri.parse(url));
         if (intent != null) {

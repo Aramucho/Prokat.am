@@ -35,7 +35,7 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
     private Bitmap mBitmap;
     private int mReqCode;
     private final static int CAMERA_ON = 888, GALLERY_ON = 999;
-    private boolean mBoolDissmis = false;
+    private boolean mBoolDismiss = false;
 
     public static UploadDialogFragment newInstance(int code) {
         UploadDialogFragment dialogFragment = new UploadDialogFragment();
@@ -95,10 +95,7 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
                 } else if (mChackedStatus == 1) {
                     if (ContextCompat.checkSelfPermission(getActivity(),
                             Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-//                        if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
-//                                Manifest.permission.CAMERA)) {
                         requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_ON);
-//                        }
                     } else {
                         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                         startActivityForResult(intent, mChackedStatus);
@@ -107,7 +104,6 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
                 } else if (mChackedStatus == 2) {
                     if (ContextCompat.checkSelfPermission(getActivity(),
                             Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-
                         requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, GALLERY_ON);
                     } else {
                         Intent intent = new Intent(Intent.ACTION_PICK);
@@ -123,8 +119,9 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
     @Override
     public void onResume() {
         super.onResume();
-        if (mBoolDissmis) {
-            mBoolDissmis = false;
+        /**Illegal statement error solution(cant dismiss while dialogFragment is in onCreate)*/
+        if (mBoolDismiss) {
+            mBoolDismiss = false;
             dismiss();
         }
 
@@ -137,11 +134,10 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             mBitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
             byte[] byteArray = outputStream.toByteArray();
-
             Intent intent = new Intent()
                     .putExtra("bitmap", byteArray);
             getTargetFragment().onActivityResult(getTargetRequestCode(), RESULT_OK, intent);
-            mBoolDissmis = true;
+            mBoolDismiss = true;
         } else if (requestCode == 2 && resultCode == RESULT_OK) {
             Uri pickedImage = data.getData();
             Bitmap bitmap = null;
@@ -156,7 +152,7 @@ public class UploadDialogFragment extends DialogFragment implements View.OnClick
             byte[] byteArray = outputStream.toByteArray();
             Intent intent = new Intent().putExtra("bitmap", byteArray);
             getTargetFragment().onActivityResult(getTargetRequestCode(), RESULT_OK, intent);
-            mBoolDissmis = true;
+            mBoolDismiss = true;
 
 
         }

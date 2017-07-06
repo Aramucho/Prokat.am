@@ -45,7 +45,7 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
         View view = inflater.inflate(R.layout.transport_fragment, container, false);
         init(view);
         setupClicks();
-        spinnerInit();
+        spinnerFunctions();
         savedState(savedInstanceState);
         return view;
     }
@@ -129,7 +129,8 @@ public class TransportFragment extends Fragment implements View.OnClickListener 
 
     }
 
-    private void spinnerInit() {
+    /**Initializing and organizing spinners functions*/
+    private void spinnerFunctions() {
         mTranportSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.transport_titles, R.layout.drop_down_spinner_item);
         mTransportSectionSpinner.setAdapter(mTranportSectionAdapter);
         mFuelTypeAdapter = ArrayAdapter.createFromResource(getContext(), R.array.fuel_types, R.layout.drop_down_spinner_item);

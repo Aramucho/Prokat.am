@@ -17,7 +17,7 @@ import com.realmucho.prokatproject.R;
 public class CategoryTitleAdapter extends RecyclerView.Adapter<CategoryTitleAdapter.TitleViewHolder> {
     private Context mContext;
     private String[] mTitlesData;
-    private int mCurrentPosition =-1;
+    private int mCurrentPosition =-1; //position of selected item
 
 
 

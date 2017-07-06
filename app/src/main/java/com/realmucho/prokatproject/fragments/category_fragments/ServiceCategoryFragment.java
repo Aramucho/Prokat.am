@@ -21,18 +21,22 @@ import java.util.ArrayList;
 
 
 public class ServiceCategoryFragment extends Fragment implements PaneCallBack {
-    private RecyclerView categoryrw;
-    private CategoryAdapter adapter;
+    private RecyclerView mCategoryRv;
+    private CategoryAdapter mCategoryAdapter;
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.service_category_fragment,container,false);
-        categoryrw = (RecyclerView) view.findViewById(R.id.service_category_rw);
-        categoryrw.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new CategoryAdapter(setData(), getContext(), this);
-        categoryrw.setAdapter(adapter);
+        mCategoryRv = (RecyclerView) view.findViewById(R.id.service_category_rw);
+        mCategoryRv.setLayoutManager(new LinearLayoutManager(getContext()));
+        mCategoryAdapter = new CategoryAdapter(setData(), getContext(), this);
+        mCategoryRv.setAdapter(mCategoryAdapter);
         return view;
     }
+
+    /**Setting local data for testing recyclerViews*/
     private ArrayList<CategoryData> setData() {
         ArrayList<CategoryData> arrayList = new ArrayList<>();
         int[] checked = new int[]{R.drawable.hars_pesa_chacked_icon, R.drawable.vfx_chacked_icon, R.drawable.celebration_chacked_icon,  R.drawable.furshet_chacked_icon, R.drawable.aficant_chacked_icon, R.drawable.balloons_chacked_icon, R.drawable.kids_chacked_icon, R.drawable.pcservice_chacked_icon, R.drawable.shinarar_chacked_icon, R.drawable.tochki_checked_icon};
@@ -43,7 +47,6 @@ public class ServiceCategoryFragment extends Fragment implements PaneCallBack {
             arrayList.add(new CategoryData(checked[i], names[i + 1], unchecked[i]));
 
         }
-
 
         return arrayList;
     }

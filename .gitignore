@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.gradle/3.3/
+.idea/libraries/android_android_25.xml
+.idea/markdown-navigator.xml
+.idea/markdown-navigator/
+.idea/workspace.xml
+build/android-profile/
+build/generated/

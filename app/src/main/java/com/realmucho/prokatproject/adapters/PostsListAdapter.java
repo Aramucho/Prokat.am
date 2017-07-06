@@ -23,7 +23,9 @@ public class PostsListAdapter extends RecyclerView.Adapter<PostsListAdapter.Item
     private ArrayList<ItemData> mDataArrayList;
     private Context mContext;
     private PaneCallBack mPaneCallBack;
-    private int mCurrentPosition = -1;
+    private int mCurrentPosition = -1;//selected item's position
+
+
 
     public PostsListAdapter(ArrayList<ItemData> mDataArrayList, Context mContext,PaneCallBack mPaneCallBack) {
         this.mDataArrayList = mDataArrayList;
@@ -41,8 +43,8 @@ public class PostsListAdapter extends RecyclerView.Adapter<PostsListAdapter.Item
     public void onBindViewHolder(ItemListHolder holder,final int position) {
         ItemData itemData= mDataArrayList.get(position);
         Glide.with(mContext).load(itemData.getMainImage()).centerCrop().into(holder.mainImage);
-        holder.itemName.setText(itemData.getItemName());
-        holder.price.setText(itemData.getPrice());
+        holder.itemName.setText(itemData.getName());
+        holder.price.setText(itemData.getmPrice());
         if (mCurrentPosition != -1 && position == mCurrentPosition) {
             holder.cardView.setCardBackgroundColor(mContext.getResources().getColor(R.color.maincolorblue));
             holder.linear.setBackgroundColor(mContext.getResources().getColor(R.color.maincolorwhite));
@@ -86,8 +88,8 @@ public class PostsListAdapter extends RecyclerView.Adapter<PostsListAdapter.Item
         public ItemListHolder(View itemView) {
             super(itemView);
             mainImage=(ImageView) itemView.findViewById(R.id.mainImage);
-            itemName=(TextView)itemView.findViewById(R.id.itemName);
-            price=(TextView)itemView.findViewById(R.id.price);
+            itemName=(TextView)itemView.findViewById(R.id.name);
+            price=(TextView)itemView.findViewById(R.id.mPrice);
             cardView=(CardView)itemView.findViewById(R.id.card_view);
             linear=(LinearLayout)itemView.findViewById(R.id.linear);
         }

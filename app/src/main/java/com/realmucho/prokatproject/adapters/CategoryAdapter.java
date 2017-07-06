@@ -21,7 +21,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     private ArrayList<CategoryData> mDataArrayList;
     private Context mContext;
     private PaneCallBack mPaneCallBack;
-    private int mCurrentPosition = -1;
+    private int mCurrentPosition = -1; //position of selected item
 
     public CategoryAdapter(ArrayList<CategoryData> mDataArrayList, Context mContext,PaneCallBack mPaneCallBack) {
         this.mDataArrayList = mDataArrayList;
@@ -60,7 +60,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
         holder.mCategoryName.setText(categoryData.getName());
         if (mCurrentPosition != -1 && position == mCurrentPosition) {
             holder.mRelativeLayout.setBackgroundColor(mContext.getResources().getColor(R.color.maincolorblue));
-            holder.mCategoryPhoto.setBackgroundResource(categoryData.getCheckedphoto());
+            holder.mCategoryPhoto.setBackgroundResource(categoryData.getmCheckedPhoto());
             holder.mCategoryName.setTextColor(mContext.getResources().getColor(R.color.maincolorwhite));
 
         } else {

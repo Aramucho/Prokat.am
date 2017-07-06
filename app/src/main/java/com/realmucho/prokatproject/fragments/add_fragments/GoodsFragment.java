@@ -49,7 +49,7 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
         init(view);
         setupClicks();
         mIntent = getActivity().getIntent();
-        spinnersInit();
+        spinnersFunctions();
         savedState(savedInstanceState);
         return view;
     }
@@ -57,6 +57,8 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+
+/** Putting bitmaps and indicators in savedInstanceStates bundle for saving them when orientation has changed*/
 
         if (mBoolImageText1) {
 
@@ -195,7 +197,9 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void spinnersInit() {
+    /**Initializing and organizing spinners functions*/
+
+    private void spinnersFunctions() {
 
         mSectionAdapter = ArrayAdapter.createFromResource(getContext(), R.array.goods_titles, R.layout.drop_down_spinner_item);
         mGoodsCitiesAdapter = ArrayAdapter.createFromResource(getContext(), R.array.cities, R.layout.drop_down_spinner_item);
@@ -319,7 +323,7 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
                     mBoolImageText1 = true;
 
                 } else {
-                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.image_uploaded, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE2:
@@ -329,7 +333,7 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
                     mImageText2.setText(R.string.image_uploaded);
                     mBoolImageText2 = true;
                 } else {
-                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.image_uploaded, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE3:
@@ -339,7 +343,7 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
                     mImageText3.setText(R.string.image_uploaded);
                     mBoolImageText3 = true;
                 } else {
-                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.image_uploaded, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE4:
@@ -349,7 +353,7 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
                     mImageText4.setText(R.string.image_uploaded);
                     mBoolImageText4 = true;
                 } else {
-                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.image_uploaded, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE5:
@@ -359,7 +363,7 @@ public class GoodsFragment extends Fragment implements View.OnClickListener {
                     mImageText5.setText(R.string.image_uploaded);
                     mBoolImageText5 = true;
                 } else {
-                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.image_uploaded, Toast.LENGTH_SHORT).show();
                 }
                 break;
         }

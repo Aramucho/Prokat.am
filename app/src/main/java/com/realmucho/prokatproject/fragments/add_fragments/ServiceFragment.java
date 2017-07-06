@@ -41,7 +41,7 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.service_fragment, container, false);
         init(view);
         setupClicks();
-        spinnersInit();
+        spinnersFunctions();
         savedState(savedInstanceState);
         return view;
     }
@@ -78,7 +78,8 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    private void spinnersInit() {
+    /**Initializing and organizing spinners functions*/
+    private void spinnersFunctions() {
 
         mServiceSpinnerAdapter = ArrayAdapter.createFromResource(getContext(), R.array.service_items, R.layout.drop_down_spinner_item);
         mServiceSectionSpinner.setAdapter(mServiceSpinnerAdapter);
@@ -233,7 +234,7 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
                     mImageText1.setText(R.string.image_uploaded);
                     mBoolImageText1 = true;
                 } else {
-                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.image_uploaded, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE2:
@@ -243,7 +244,7 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
                     mImageText2.setText(R.string.image_uploaded);
                     mBoolImageText2 = true;
                 } else {
-                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.image_uploaded, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE3:
@@ -253,7 +254,7 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
                     mImageText3.setText(R.string.image_uploaded);
                     mBoolImageText3 = true;
                 } else {
-                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.image_uploaded, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE4:
@@ -263,7 +264,7 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
                     mImageText4.setText(R.string.image_uploaded);
                     mBoolImageText4 = true;
                 } else {
-                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.image_uploaded, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case REQ_CODE5:
@@ -273,7 +274,7 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
                     mImageText5.setText(R.string.image_uploaded);
                     mBoolImageText5 = true;
                 } else {
-                    Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.image_uploaded, Toast.LENGTH_SHORT).show();
                 }
                 break;
         }

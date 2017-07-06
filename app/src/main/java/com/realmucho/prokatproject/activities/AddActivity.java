@@ -34,6 +34,8 @@ public class AddActivity extends AppCompatActivity {
 
     }
 
+
+    /**Sets TabLayout's icons*/
     private void setupTabIcons() {
         mTabLayout.getTabAt(0).setIcon(R.drawable.goods_icon_change);
         mTabLayout.getTabAt(1).setIcon(R.drawable.transport_icon_change);
@@ -46,11 +48,9 @@ public class AddActivity extends AppCompatActivity {
     private void init() {
         mViewPager = (ViewPager) findViewById(R.id.add_view_pager);
         mTabLayout = (TabLayout) findViewById(R.id.tabs);
-
-
     }
 
-
+/**Sets ViewPagers fragments*/
     private void setupViewPager(ViewPager viewPager) {
         AddPagerAdapter adapter = new AddPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new GoodsFragment());
@@ -60,6 +60,8 @@ public class AddActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
+
+    /**This is adapter for ViewPager*/
     class AddPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
 

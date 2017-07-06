@@ -25,12 +25,12 @@ import java.util.ArrayList;
 
 public class GoodsCategoryFragment extends Fragment implements PaneCallBack, FragmentBackPressed {
 
-    private SlidingPaneLayout slidingPaneLayout;
-    private RecyclerView categoryrw;
-    private RecyclerView categoryTitlerw;
-    private CategoryAdapter adapter;
-    private CategoryTitleAdapter titleAdapter;
-    private TextView please;
+    private SlidingPaneLayout mSlidingPaneLayout;
+    private RecyclerView mCategoryRv;
+    private RecyclerView mCategoryTitleRv;
+    private CategoryAdapter mCategoryAdapter;
+    private CategoryTitleAdapter mTitleAdapter;
+    private TextView mUnselectedTitleText;
 
 
     @Nullable
@@ -38,24 +38,24 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack, Fra
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.goods_category_fragment, container, false);
         init(view);
-        slidingPaneLayout.setSliderFadeColor(Color.TRANSPARENT);
-        categoryrw.setLayoutManager(new LinearLayoutManager(getContext()));
-        categoryTitlerw.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new CategoryAdapter(setData(), getContext(), this);
-        categoryrw.setAdapter(adapter);
+        mSlidingPaneLayout.setSliderFadeColor(Color.TRANSPARENT);
+        mCategoryRv.setLayoutManager(new LinearLayoutManager(getContext()));
+        mCategoryTitleRv.setLayoutManager(new LinearLayoutManager(getContext()));
+        mCategoryAdapter = new CategoryAdapter(setData(), getContext(), this);
+        mCategoryRv.setAdapter(mCategoryAdapter);
         return view;
     }
 
     private void init(View view){
 
-        slidingPaneLayout = (SlidingPaneLayout) view.findViewById(R.id.slidingPane);
-        please = (TextView) view.findViewById(R.id.please);
-        categoryrw = (RecyclerView) view.findViewById(R.id.goods_category_rw);
-        categoryTitlerw = (RecyclerView) view.findViewById(R.id.subtitle_list);
+        mSlidingPaneLayout = (SlidingPaneLayout) view.findViewById(R.id.slidingPane);
+        mUnselectedTitleText = (TextView) view.findViewById(R.id.please);
+        mCategoryRv = (RecyclerView) view.findViewById(R.id.goods_category_rw);
+        mCategoryTitleRv = (RecyclerView) view.findViewById(R.id.subtitle_list);
 
     }
 
-
+    /**Setting local data for testing recyclerViews*/
     private ArrayList<CategoryData> setData() {
         ArrayList<CategoryData> arrayList = new ArrayList<>();
         int[] checked = new int[]{R.drawable.pc_icon, R.drawable.birthday_cake_icon, R.drawable.dinamik_icon, R.drawable.camera_icon, R.drawable.build_icon, R.drawable.travel_icon, R.drawable.clothing_hanger_icon, R.drawable.heraxos_icon, R.drawable.ultimate_icon, R.drawable.aman_chaman_icon, R.drawable.tochki_icon};
@@ -74,18 +74,18 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack, Fra
 
     @Override
     public void paneOpen(int position) {
-        please.setVisibility(View.GONE);
-        categoryTitlerw.setVisibility(View.VISIBLE);
-        titleAdapter = new CategoryTitleAdapter(getContext(), getsubtitles().get(position));
-        categoryTitlerw.setAdapter(titleAdapter);
-        slidingPaneLayout.openPane();
+        mUnselectedTitleText.setVisibility(View.GONE);
+        mCategoryTitleRv.setVisibility(View.VISIBLE);
+        mTitleAdapter = new CategoryTitleAdapter(getContext(), getSubtitles().get(position));
+        mCategoryTitleRv.setAdapter(mTitleAdapter);
+        mSlidingPaneLayout.openPane();
 
     }
 
 
-    private ArrayList<String[]> getsubtitles() {
+    /**Setting subtitle data depending on what title has been chosen*/
+    private ArrayList<String[]> getSubtitles() {
         ArrayList<String[]> arrayList = new ArrayList<>();
-
         arrayList.add(getResources().getStringArray(R.array.comp_equipment_1));
         arrayList.add(getResources().getStringArray(R.array.ever_events_1));
         arrayList.add(getResources().getStringArray(R.array.sound_equipments_1));
@@ -104,7 +104,7 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack, Fra
 
     @Override
     public void closePane() {
-        slidingPaneLayout.closePane();
+        mSlidingPaneLayout.closePane();
     }
 
     @Override
@@ -118,9 +118,9 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack, Fra
 
                 if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
 
-                    if (slidingPaneLayout.isOpen()) {
-                        slidingPaneLayout.closePane();
-                    } else if (!slidingPaneLayout.isOpen()) {
+                    if (mSlidingPaneLayout.isOpen()) {
+                        mSlidingPaneLayout.closePane();
+                    } else if (!mSlidingPaneLayout.isOpen()) {
                         getActivity().finish();
                     }
 

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class RealtyCategoryFragment extends Fragment implements PaneCallBack {
     private RecyclerView mCategoryRv;
-    private CategoryAdapter mCategoryadapter;
+    private CategoryAdapter mCategoryAdapter;
 
     @Nullable
     @Override
@@ -30,11 +30,11 @@ public class RealtyCategoryFragment extends Fragment implements PaneCallBack {
         View view = inflater.inflate(R.layout.realty_category_fragment, container, false);
         mCategoryRv = (RecyclerView) view.findViewById(R.id.realty_category_rw);
         mCategoryRv.setLayoutManager(new LinearLayoutManager(getContext()));
-        mCategoryadapter = new CategoryAdapter(setData(), getContext(), this);
-        mCategoryRv.setAdapter(mCategoryadapter);
+        mCategoryAdapter = new CategoryAdapter(setData(), getContext(), this);
+        mCategoryRv.setAdapter(mCategoryAdapter);
         return view;
     }
-
+    /**Setting local data for testing recyclerViews*/
     private ArrayList<CategoryData> setData() {
         ArrayList<CategoryData> arrayList = new ArrayList<>();
         int[] checked = new int[]{R.drawable.tun_mek_checked_icon, R.drawable.tun_erku_checked_icon, R.drawable.tun_ereq_checked_icon, R.drawable.arandznatun_checked_icon, R.drawable.shop_checked_icon, R.drawable.cottage_checked_icon};

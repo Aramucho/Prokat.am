@@ -17,18 +17,18 @@ import com.realmucho.prokatproject.R;
 
 
 public class ConnectionFragment extends DialogFragment implements View.OnClickListener {
-    private Button cancelbtn, retrybtn;
-    private ConnectionCallback connectionCallback;
+    private Button mCancelButton, mRetryButton;
+    private ConnectionCallback mConnectionCallback;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.connection_dialog, container, false);
-        cancelbtn = (Button) view.findViewById(R.id.cancel_btn);
-        retrybtn = (Button) view.findViewById(R.id.retry_btn);
-        cancelbtn.setOnClickListener(this);
-        retrybtn.setOnClickListener(this);
+        mCancelButton = (Button) view.findViewById(R.id.cancel_btn);
+        mRetryButton = (Button) view.findViewById(R.id.retry_btn);
+        mCancelButton.setOnClickListener(this);
+        mRetryButton.setOnClickListener(this);
         return view;
     }
 
@@ -49,7 +49,7 @@ public class ConnectionFragment extends DialogFragment implements View.OnClickLi
                 NetworkInfo networkInfo = ConnectionManager.getActiveNetworkInfo();
                 if(networkInfo != null && networkInfo.isConnected() == true){
                     getDialog().dismiss();
-                    connectionCallback.connectionCallback();
+                    mConnectionCallback.connectionCallback();
 
                 }
                 break;
@@ -59,6 +59,6 @@ public class ConnectionFragment extends DialogFragment implements View.OnClickLi
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.connectionCallback=(ConnectionCallback)context;
+        this.mConnectionCallback =(ConnectionCallback)context;
     }
 }
