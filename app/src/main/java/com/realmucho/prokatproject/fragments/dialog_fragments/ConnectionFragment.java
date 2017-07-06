@@ -42,7 +42,6 @@ public class ConnectionFragment extends DialogFragment implements View.OnClickLi
                 homeIntent.addCategory(Intent.CATEGORY_HOME);
                 homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(homeIntent);
-
                 break;
             case R.id.retry_btn:
                 ConnectivityManager ConnectionManager = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);

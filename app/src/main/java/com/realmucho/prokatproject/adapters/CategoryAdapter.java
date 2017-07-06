@@ -16,6 +16,7 @@ import com.realmucho.prokatproject.R;
 
 import java.util.ArrayList;
 
+/**The adapter for CategoryRv*/
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder> {
     private ArrayList<CategoryData> mDataArrayList;

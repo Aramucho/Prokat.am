@@ -58,7 +58,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         setupClicks();
         mBottomSheetBehavior = BottomSheetBehavior.from(mBottomSheet);
         mMapView.onCreate(savedInstanceState != null ? savedInstanceState.getBundle("map") : savedInstanceState);
-        bottomInit();
+        bottomSheetInit();
         mapFunctions();
         return view;
     }
@@ -140,14 +140,15 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.ok_icon:
                 urlIntent("https://mOkBtn.ru/profile/562361186775");
-
                 break;
-
             case R.id.insta_icon:
                 getInstagramPageUrl("https://www.instagram.com/prokat.am/");
+                //TODO: just opens Instagram Home Page
                 break;
             case R.id.skype_icon:
                 getSkypePageUrl(getContext(), "www.mSkypeBtn.com");
+                //TODO: just opens Skype Home Page
+
                 break;
             case R.id.share:
                 mPaneLayout.openPane();
@@ -158,13 +159,14 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
                     mPaneLayout.closePane();
                 }
 
-
         }
 
 
     }
 
-    /** Initializing and organizing google map's functions*/
+    /**
+     * Initializing and organizing google map's functions
+     */
     private void mapFunctions() {
 
 
@@ -201,7 +203,7 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         });
     }
 
-    private void bottomInit() {
+    private void bottomSheetInit() {
         mBottomSheetBehavior.setPeekHeight(0);
 
 
@@ -225,6 +227,9 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
     public void onResume() {
         super.onResume();
         mMapView.onResume();
+
+        /**OnBackPressed functions*/
+
         getView().setFocusableInTouchMode(true);
         getView().requestFocus();
         getView().setOnKeyListener(new View.OnKeyListener() {
@@ -273,7 +278,9 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         mMapView.onLowMemory();
     }
 
-    /** Getting facebook's page URL and opening an app on that page*/
+    /**
+     * Getting facebook's page URL and opening an app on that page
+     */
     private String getFacebookPageURL(Context context) {
         String url = "https://www.facebook.com/Prakatam";
         PackageManager packageManager = context.getPackageManager();
@@ -296,13 +303,18 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         outState.putBundle("map", mapViewState);
         super.onSaveInstanceState(outState);
     }
-/** This method opens web page with chosen browser */
+
+    /**
+     * This method opens web page with chosen browser
+     */
     private void urlIntent(String url) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(intent);
     }
 
-    /** Getting Skype's page URL and opening an app on that page*/
+    /**
+     * Getting Skype's page URL and opening an app on that page
+     */
     private void getSkypePageUrl(Context myContext, String url) {
 
         if (isSkypeClientInstalled(myContext)) {
@@ -321,7 +333,9 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
     }
 
 
-    /** Checking if there is Skype application installed on phone*/
+    /**
+     * Checking if there is Skype application installed on phone
+     */
     private boolean isSkypeClientInstalled(Context myContext) {
         PackageManager myPackageMgr = myContext.getPackageManager();
         try {
@@ -332,7 +346,9 @@ public class FeedBackFragment extends Fragment implements View.OnClickListener {
         return (true);
     }
 
-    /** Getting Instagram's page URL and opening an app */
+    /**
+     * Getting Instagram's page URL and opening an app
+     */
     private void getInstagramPageUrl(String url) {
 
 //TODO: dont open users page, only opens instagram app

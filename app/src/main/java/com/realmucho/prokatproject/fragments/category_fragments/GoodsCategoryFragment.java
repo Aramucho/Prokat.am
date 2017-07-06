@@ -110,6 +110,9 @@ public class GoodsCategoryFragment extends Fragment implements PaneCallBack, Fra
     @Override
     public void onResume() {
         super.onResume();
+
+        /**OnBackPressed functions*/
+
         getView().setFocusableInTouchMode(true);
         getView().requestFocus();
         getView().setOnKeyListener(new View.OnKeyListener() {

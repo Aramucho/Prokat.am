@@ -13,6 +13,7 @@ import com.realmucho.prokatproject.activities.PostsActivity;
 
 import com.realmucho.prokatproject.R;
 
+/**The adapter for CategoryTitleRv*/
 
 public class CategoryTitleAdapter extends RecyclerView.Adapter<CategoryTitleAdapter.TitleViewHolder> {
     private Context mContext;

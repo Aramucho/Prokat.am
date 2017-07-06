@@ -59,6 +59,9 @@ public class TransportCategoryFragment extends Fragment implements PaneCallBack 
     @Override
     public void onResume() {
         super.onResume();
+
+        /**OnBackPressed functions*/
+
         getView().setFocusableInTouchMode(true);
         getView().requestFocus();
         getView().setOnKeyListener(new View.OnKeyListener() {

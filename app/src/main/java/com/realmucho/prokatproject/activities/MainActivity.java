@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity
     private NavigationView mNavigationView;
     private FragmentManager mFragmentManager;
     private ActionBarDrawerToggle mToggle;
-    private Fragment mFragment = null;
+    private Fragment mPageFragment = null;
 
 
     @Override
@@ -58,12 +58,11 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-
         mSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Intent intent = new Intent(MainActivity.this, PostsActivity.class);
-
+                //TODO: send search query (String)
                 startActivity(intent);
                 return false;
             }
@@ -78,7 +77,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        if (mMainFragment.isAdded() || mLandMainFragment.isAdded() || mFragment instanceof MainFragment || mFragment instanceof LandMainFragment) {
+        if (mMainFragment.isAdded() || mLandMainFragment.isAdded() || mPageFragment instanceof MainFragment || mPageFragment instanceof LandMainFragment) {
 
             if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
                 mFragmentManager.beginTransaction().replace(R.id.root, mMainFragment).commit();
@@ -117,9 +116,10 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        /**Changing language*/
         switch (item.getItemId()) {
             case R.id.arm:
                 setLocale("hy");
@@ -143,7 +143,9 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        }
+        /**Exiting from app only from mainFragment*/
+        else {
             Intent homeIntent = new Intent(Intent.ACTION_MAIN);
             homeIntent.addCategory(Intent.CATEGORY_HOME);
             homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -153,7 +155,6 @@ public class MainActivity extends AppCompatActivity
 
 
     }
-
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -167,15 +168,17 @@ public class MainActivity extends AppCompatActivity
 
             case R.id.main:
                 if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-                    mFragmentManager.beginTransaction().remove(mFragment);
-                    mFragment = new MainFragment();
+                    mFragmentManager.beginTransaction().remove(mPageFragment);
+                    mPageFragment = new MainFragment();
 
                 } else {
-                    mFragmentManager.beginTransaction().remove(mFragment);
-                    mFragment = new LandMainFragment();
+                    mFragmentManager.beginTransaction().remove(mPageFragment);
+                    mPageFragment = new LandMainFragment();
                 }
+                /**do not need to be visible in some fragments*/
                 mSearch.setVisibility(View.VISIBLE);
                 mSearch.setQuery("", false);
+                /**need to be closed when come back to that fragment*/
                 if (!mSearch.isIconified()) {
                     mSearch.setIconified(true);
                 }
@@ -188,15 +191,12 @@ public class MainActivity extends AppCompatActivity
                 intent = new Intent(MainActivity.this, PostsActivity.class);
                 intent.putExtra("req_top", reqCode);
                 startActivity(intent);
-
+                //TODO: set clickable false for pizza
                 if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-
-                    mFragment = new MainFragment();
-
+                    mPageFragment = new MainFragment();
                 } else {
-                    mFragment = new LandMainFragment();
+                    mPageFragment = new LandMainFragment();
                 }
-
 
                 mSearch.setVisibility(View.VISIBLE);
                 mSearch.setQuery("", false);
@@ -212,11 +212,11 @@ public class MainActivity extends AppCompatActivity
                 intent = new Intent(MainActivity.this, PostsActivity.class);
                 intent.putExtra("req_new", reqCode);
                 startActivity(intent);
+                //TODO: set clickable false for pizza
                 if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-                    mFragment = new MainFragment();
-
+                    mPageFragment = new MainFragment();
                 } else {
-                    mFragment = new LandMainFragment();
+                    mPageFragment = new LandMainFragment();
                 }
 
                 mSearch.setVisibility(View.VISIBLE);
@@ -227,18 +227,18 @@ public class MainActivity extends AppCompatActivity
 
                 break;
             case R.id.about:
-                mFragment = new AboutFragment();
+                mPageFragment = new AboutFragment();
                 mSearch.setVisibility(View.GONE);
 
 
                 break;
             case R.id.conditions:
-                mFragment = new ConditionsFragment();
+                mPageFragment = new ConditionsFragment();
                 mSearch.setVisibility(View.GONE);
 
                 break;
             case R.id.feedback: {
-                mFragment = new FeedBackFragment();
+                mPageFragment = new FeedBackFragment();
                 mSearch.setVisibility(View.GONE);
                 break;
             }
@@ -248,13 +248,13 @@ public class MainActivity extends AppCompatActivity
 
 
         mFragmentManager = getSupportFragmentManager();
-        mFragmentManager.beginTransaction().replace(R.id.root, mFragment).commit();
+        mFragmentManager.beginTransaction().replace(R.id.root, mPageFragment).commit();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-/**Changes language of application*/
+    /**Changes language of application*/
     private void setLocale(String lang) {
         if (lang.equalsIgnoreCase("")) {
             return;
@@ -266,6 +266,7 @@ public class MainActivity extends AppCompatActivity
         config.locale = myLocale;
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
     }
+
     /**Saves language changes*/
     public void saveLocale(String lang) {
         String langPref = "Language";
@@ -275,7 +276,6 @@ public class MainActivity extends AppCompatActivity
         editor.putString(langPref, lang);
         editor.commit();
     }
-
 
     /**Get saved language and set it*/
     public void loadLocale() {

@@ -54,14 +54,11 @@ public class CategoryActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        int count=getFragmentManager().getBackStackEntryCount();
+        int count=getFragmentManager().getBackStackEntryCount();//nayel
         if(count==0){
             mFragmentBackPressed.closePane();
-
-
         }else{
             super.onBackPressed();
-
         }
     }
 

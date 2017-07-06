@@ -27,7 +27,7 @@ public class SplashScreen extends AppCompatActivity implements ConnectionCallbac
     private final int LOCATION_ON = 111;
     private ConnectivityManager mConnectionManager;
     private NetworkInfo mNetworkInfo;
-    private boolean mBoolLocation;
+    private boolean mBoolLocation; //for denying the access of location
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +36,13 @@ public class SplashScreen extends AppCompatActivity implements ConnectionCallbac
         mLogo = (ImageView) findViewById(R.id.logo);
         mConnectionManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         mNetworkInfo = mConnectionManager.getActiveNetworkInfo();
+        /**Checking permission for google maps feature*/
         if (Build.VERSION.SDK_INT >= 23) {
             if (ContextCompat.checkSelfPermission(this,
                     Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_ON);
             } else {
+                /**checking inet connection*/
                 if (mNetworkInfo != null && mNetworkInfo.isConnected() == true) {
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
@@ -82,6 +84,12 @@ public class SplashScreen extends AppCompatActivity implements ConnectionCallbac
 
         }
     }
+
+    /**When user there is no connection and user has no permission for location, he must choose allow or deny it.
+     * Regardless of the outcome there is an error (illegal state exception) for permission dialog.
+     * If user allows permission, activity recreates, and if access is denied, dialog manually is closing
+     * and app continues to work with toasting a warning about google map's possible issues.
+      */
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {

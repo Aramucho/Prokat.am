@@ -60,6 +60,9 @@ public class RealtyCategoryFragment extends Fragment implements PaneCallBack {
     @Override
     public void onResume() {
         super.onResume();
+
+        /**OnBackPressed functions*/
+
         getView().setFocusableInTouchMode(true);
         getView().requestFocus();
         getView().setOnKeyListener(new View.OnKeyListener() {
@@ -67,13 +70,8 @@ public class RealtyCategoryFragment extends Fragment implements PaneCallBack {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
                 if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK) {
-
-
                     getActivity().finish();
-
-
                     return true;
-
                 }
 
                 return false;

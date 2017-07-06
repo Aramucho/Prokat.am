@@ -51,25 +51,13 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
         setContentView(R.layout.posts_activity);
         init();
         setupClicks();
-        mPagerAdapter = new ItemPagerAdapter(this);
-        mViewPager.setAdapter(mPagerAdapter);
-        mIndicator.setViewPager(mViewPager);
-        setSupportActionBar(mToolbar);
-        mIndicator.animate().rotation(180);
-        mPagerAdapter.registerDataSetObserver(mIndicator.getDataSetObserver());
-        mSlidingPaneLayout.setSliderFadeColor(Color.TRANSPARENT);
-        mGridLayoutManager = new GridLayoutManager(this, 2);
-        mGridLayoutManager.scrollToPositionWithOffset(2, 20);
-        mPostsRv.setLayoutManager(mGridLayoutManager);
-        mPostsAdapter = new PostsListAdapter(setItemData(), this, this);
-        mPostsRv.setAdapter(mPostsAdapter);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
         scrollButtonFunction();
 
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Intent intent=new Intent(PostsActivity.this,PostsActivity.class);
+                //TODO: send search query (String)
                 startActivity(intent);
                 return false;
             }
@@ -92,6 +80,18 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
         mSlidingPaneLayout = (SlidingPaneLayout) findViewById(R.id.posts_sliding_pane);
         mPostsRv = (RecyclerView) findViewById(R.id.itemList);
         mSearchView =(SearchView)findViewById(R.id.posts_search);
+        mPagerAdapter = new ItemPagerAdapter(this);
+        mViewPager.setAdapter(mPagerAdapter);
+        mIndicator.setViewPager(mViewPager);
+        setSupportActionBar(mToolbar);
+        mIndicator.animate().rotation(180);//TODO: recreate with new direction
+        mPagerAdapter.registerDataSetObserver(mIndicator.getDataSetObserver());
+        mSlidingPaneLayout.setSliderFadeColor(Color.TRANSPARENT);
+        mGridLayoutManager = new GridLayoutManager(this, 2);
+        mPostsRv.setLayoutManager(mGridLayoutManager);
+        mPostsAdapter = new PostsListAdapter(setItemData(), this, this);
+        mPostsRv.setAdapter(mPostsAdapter);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
     }
 
@@ -99,6 +99,7 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
         mOrder.setOnClickListener(this);
         mRelatives.setOnClickListener(this);
     }
+
     /**Initializing and organizing scrollUp buttons functions*/
     private void scrollButtonFunction() {
         mScrollButton.setOnClickListener(new View.OnClickListener() {
@@ -146,6 +147,7 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
     @Override
     protected void onResume() {
         super.onResume();
+        //TODO: set duration to onSuccess
         mRefreshLayout.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
             public void onRefresh(MaterialRefreshLayout materialRefreshLayout) {
@@ -170,7 +172,10 @@ public class PostsActivity extends AppCompatActivity implements PaneCallBack, Vi
 
         if (mSlidingPaneLayout.isOpen()) {
             mSlidingPaneLayout.closePane();
-        } else if (!mSlidingPaneLayout.isOpen()) {
+        }
+
+        /**If activity is opened from Top or New offers' section*/
+        else if (!mSlidingPaneLayout.isOpen()) {
             if (reqIntent.getIntExtra("req_top", 5) == 0) {
                 intent=new Intent(this,MainActivity.class);
                 startActivity(intent);
